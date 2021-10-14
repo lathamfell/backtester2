@@ -1,0 +1,510 @@
+[
+  {
+    '_id': {
+      'datafilename': 'test_data/BYBITBTCUSD_240_2021_33_trades.csv',
+      'drawdown_limit': -100,
+      'leverage': 10,
+      'loss_limit_fraction': 0,
+      'sl_reset_points': [
+        [
+          2,
+          -1
+        ],
+        [
+          2.5,
+          -1.5
+        ],
+        [
+          3,
+          -2.5
+        ],
+        [
+          3.5,
+          -3
+        ],
+        [
+          4,
+          -3.5
+        ],
+        [
+          4.5,
+          -4
+        ],
+        [
+          5,
+          -4.5
+        ],
+        [
+          5.5,
+          -5
+        ],
+        [
+          6,
+          -5.5
+        ],
+        [
+          6.5,
+          -6
+        ],
+        [
+          7,
+          -6.5
+        ],
+        [
+          7.5,
+          -7
+        ],
+        [
+          8,
+          -7.5
+        ],
+        [
+          8.5,
+          -8
+        ],
+        [
+          9,
+          -8.5
+        ],
+        [
+          9.5,
+          -9
+        ],
+        [
+          10,
+          -9.5
+        ]
+      ],
+      'stop_loss': 0.06,
+      'take_profit': 0.14,
+      'trail_delay': false,
+      'trailing_sl': false,
+      'winrate_floor': 50,
+      'winrate_grace_period': 50,
+      'reenter_on_new_signal': false,
+      'signal_exits_only': false
+    },
+    'alpha': 185.03,
+    'beta': 531.3,
+    'daily_profit_pct_avg': 1.21,
+    'days': 250.8,
+    'end_date': '2021-09-08T16:00:00Z',
+    'entries': 33,
+    'final_assets': 20.35,
+    'finished_entries': 33,
+    'max_assets': 20.35,
+    'max_drawdown_pct': -70,
+    'mean+median': 0.296,
+    'mean_hrs_in_trade': 21.94,
+    'mean_profit': 0.161,
+    'median_profit': 0.135,
+    'min_assets': 1.0,
+    'signal_exits_at_loss': 3,
+    'signal_exits_in_profit': 0,
+    'start_date': '2021-01-01T00:00:00Z',
+    'stop_loss_exits_at_loss': 2,
+    'stop_loss_exits_in_profit': 27,
+    'take_profit_exits': 1,
+    'total_profit_pct': 1935,
+    'trade_history': [
+      {
+        'assets': 1.94,
+        'direction': 'short',
+        'duration': 3,
+        'entry': '2021-01-11T04:00:00Z',
+        'exit': '2021-01-11T16:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.9984,
+        'min_profit': -0.5892,
+        'profit': 0.935
+      },
+      {
+        'assets': 2.2,
+        'direction': 'long',
+        'duration': 2,
+        'entry': '2021-01-28T20:00:00Z',
+        'exit': '2021-01-29T04:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2756,
+        'min_profit': -0.4442,
+        'profit': 0.135
+      },
+      {
+        'assets': 2.71,
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-02-22T12:00:00Z',
+        'exit': '2021-02-22T20:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2985,
+        'min_profit': -0.3343,
+        'profit': 0.235
+      },
+      {
+        'assets': 3.62,
+        'direction': 'long',
+        'duration': 2,
+        'entry': '2021-03-03T04:00:00Z',
+        'exit': '2021-03-03T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.397,
+        'min_profit': -0.015,
+        'profit': 0.335
+      },
+      {
+        'assets': 1.39,
+        'direction': 'short',
+        'duration': 10,
+        'entry': '2021-03-16T00:00:00Z',
+        'exit': '2021-03-17T16:00:00Z',
+        'exit_type': 'sl_loss',
+        'leverage': 10,
+        'max_profit': 0.1144,
+        'min_profit': -0.615,
+        'profit': -0.615
+      },
+      {
+        'assets': 1.86,
+        'direction': 'long',
+        'duration': 8,
+        'entry': '2021-03-28T04:00:00Z',
+        'exit': '2021-03-29T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3862,
+        'min_profit': -0.2747,
+        'profit': 0.335
+      },
+      {
+        'assets': 1.24,
+        'direction': 'short',
+        'duration': 3,
+        'entry': '2021-04-05T04:00:00Z',
+        'exit': '2021-04-05T16:00:00Z',
+        'exit_type': 'sig_loss',
+        'leverage': 10,
+        'max_profit': 0.0675,
+        'min_profit': -0.3738,
+        'profit': -0.3337
+      },
+      {
+        'assets': 1.05,
+        'direction': 'long',
+        'duration': 6,
+        'entry': '2021-04-05T16:00:00Z',
+        'exit': '2021-04-06T16:00:00Z',
+        'exit_type': 'sig_loss',
+        'leverage': 10,
+        'max_profit': 0.0719,
+        'min_profit': -0.3005,
+        'profit': -0.1528
+      },
+      {
+        'assets': 1.4,
+        'direction': 'short',
+        'duration': 5,
+        'entry': '2021-04-06T16:00:00Z',
+        'exit': '2021-04-07T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.4148,
+        'min_profit': -0.0875,
+        'profit': 0.335
+      },
+      {
+        'assets': 1.94,
+        'direction': 'long',
+        'duration': 20,
+        'entry': '2021-04-10T04:00:00Z',
+        'exit': '2021-04-13T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.4508,
+        'min_profit': -0.3956,
+        'profit': 0.385
+      },
+      {
+        'assets': 4.63,
+        'direction': 'short',
+        'duration': 3,
+        'entry': '2021-04-17T12:00:00Z',
+        'exit': '2021-04-18T00:00:00Z',
+        'exit_type': 'tp',
+        'leverage': 10,
+        'max_profit': 1.385,
+        'min_profit': -0.1248,
+        'profit': 1.385
+      },
+      {
+        'assets': 5.26,
+        'direction': 'long',
+        'duration': 6,
+        'entry': '2021-04-26T12:00:00Z',
+        'exit': '2021-04-27T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2822,
+        'min_profit': -0.1904,
+        'profit': 0.135
+      },
+      {
+        'assets': 5.97,
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-05-04T16:00:00Z',
+        'exit': '2021-05-05T00:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2613,
+        'min_profit': -0.1685,
+        'profit': 0.135
+      },
+      {
+        'assets': 7.37,
+        'direction': 'long',
+        'duration': 18,
+        'entry': '2021-05-05T12:00:00Z',
+        'exit': '2021-05-08T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3049,
+        'min_profit': -0.4192,
+        'profit': 0.235
+      },
+      {
+        'assets': 8.0,
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-05-10T20:00:00Z',
+        'exit': '2021-05-11T04:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2278,
+        'min_profit': -0.1186,
+        'profit': 0.085
+      },
+      {
+        'assets': 8.68,
+        'direction': 'long',
+        'duration': 2,
+        'entry': '2021-05-24T20:00:00Z',
+        'exit': '2021-05-25T04:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2316,
+        'min_profit': -0.32,
+        'profit': 0.085
+      },
+      {
+        'assets': 3.34,
+        'direction': 'short',
+        'duration': 3,
+        'entry': '2021-05-29T16:00:00Z',
+        'exit': '2021-05-30T04:00:00Z',
+        'exit_type': 'sl_loss',
+        'leverage': 10,
+        'max_profit': 0.1809,
+        'min_profit': -0.615,
+        'profit': -0.615
+      },
+      {
+        'assets': 3.62,
+        'direction': 'long',
+        'duration': 4,
+        'entry': '2021-05-31T12:00:00Z',
+        'exit': '2021-06-01T04:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2242,
+        'min_profit': -0.1477,
+        'profit': 0.085
+      },
+      {
+        'assets': 5.56,
+        'direction': 'short',
+        'duration': 13,
+        'entry': '2021-06-05T20:00:00Z',
+        'exit': '2021-06-08T00:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.623,
+        'min_profit': -0.3843,
+        'profit': 0.535
+      },
+      {
+        'assets': 6.31,
+        'direction': 'long',
+        'duration': 4,
+        'entry': '2021-06-09T20:00:00Z',
+        'exit': '2021-06-10T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2732,
+        'min_profit': -0.3178,
+        'profit': 0.135
+      },
+      {
+        'assets': 7.8,
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-06-18T12:00:00Z',
+        'exit': '2021-06-18T20:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3261,
+        'min_profit': -0.1096,
+        'profit': 0.235
+      },
+      {
+        'assets': 8.85,
+        'direction': 'long',
+        'duration': 2,
+        'entry': '2021-06-28T00:00:00Z',
+        'exit': '2021-06-28T08:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2429,
+        'min_profit': -0.1562,
+        'profit': 0.135
+      },
+      {
+        'assets': 10.93,
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-07-08T00:00:00Z',
+        'exit': '2021-07-08T08:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3007,
+        'min_profit': -0.0764,
+        'profit': 0.235
+      },
+      {
+        'assets': 5.59,
+        'direction': 'long',
+        'duration': 4,
+        'entry': '2021-07-12T00:00:00Z',
+        'exit': '2021-07-12T16:00:00Z',
+        'exit_type': 'sig_loss',
+        'leverage': 10,
+        'max_profit': 0.0608,
+        'min_profit': -0.5142,
+        'profit': -0.4886
+      },
+      {
+        'assets': 7.18,
+        'direction': 'short',
+        'duration': 9,
+        'entry': '2021-07-12T16:00:00Z',
+        'exit': '2021-07-14T04:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.346,
+        'min_profit': -0.1777,
+        'profit': 0.285
+      },
+      {
+        'assets': 8.15,
+        'direction': 'long',
+        'duration': 2,
+        'entry': '2021-07-21T12:00:00Z',
+        'exit': '2021-07-21T20:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2771,
+        'min_profit': -0.136,
+        'profit': 0.135
+      },
+      {
+        'assets': 9.25,
+        'direction': 'short',
+        'duration': 3,
+        'entry': '2021-08-02T12:00:00Z',
+        'exit': '2021-08-03T00:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2453,
+        'min_profit': -0.0861,
+        'profit': 0.135
+      },
+      {
+        'assets': 10.04,
+        'direction': 'long',
+        'duration': 4,
+        'entry': '2021-08-06T16:00:00Z',
+        'exit': '2021-08-07T08:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2234,
+        'min_profit': -0.1337,
+        'profit': 0.085
+      },
+      {
+        'assets': 12.4,
+        'direction': 'short',
+        'duration': 7,
+        'entry': '2021-08-16T20:00:00Z',
+        'exit': '2021-08-18T00:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3291,
+        'min_profit': -0.3031,
+        'profit': 0.235
+      },
+      {
+        'assets': 13.45,
+        'direction': 'long',
+        'duration': 8,
+        'entry': '2021-08-20T12:00:00Z',
+        'exit': '2021-08-21T20:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.2063,
+        'min_profit': -0.1107,
+        'profit': 0.085
+      },
+      {
+        'assets': 14.6,
+        'direction': 'short',
+        'duration': 6,
+        'entry': '2021-08-25T08:00:00Z',
+        'exit': '2021-08-26T08:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.1978,
+        'min_profit': -0.3923,
+        'profit': 0.085
+      },
+      {
+        'assets': 15.84,
+        'direction': 'long',
+        'duration': 9,
+        'entry': '2021-09-02T00:00:00Z',
+        'exit': '2021-09-03T12:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.1882,
+        'min_profit': -0.2735,
+        'profit': 0.085
+      },
+      {
+        'assets': 20.35,
+        'direction': 'short',
+        'duration': 5,
+        'entry': '2021-09-07T12:00:00Z',
+        'exit': '2021-09-08T08:00:00Z',
+        'exit_type': 'sl_profit',
+        'leverage': 10,
+        'max_profit': 0.3414,
+        'min_profit': -0.1984,
+        'profit': 0.285
+      }
+    ],
+    'valid': true,
+    'win_rate': 84
+  }
+]

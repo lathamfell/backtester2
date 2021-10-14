@@ -1,0 +1,6 @@
+.idea/
+.~lock*
+output/
+venv/
+.coverage
+__pycache__/
