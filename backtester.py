@@ -10,7 +10,7 @@ import config_prod as c
 import config_common as cc
 import exceptions as e
 
-FEES = 0.0015  # Bybit charges 0.075% for market entry/exit
+FEES = 0.15  # Bybit charges 0.075% for market entry/exit; 0.075 + 0.075 = 0.15%
 # types of exits
 STOP_LOSS = "STOP_LOSS"
 TAKE_PROFIT = "TAKE_PROFIT"
@@ -37,8 +37,6 @@ def main(
     leverages=c.LEVERAGES,
     trailing_sls=c.TRAILING_SLS,
     trail_delays=c.TRAIL_DELAYS,
-    reenter_on_new_signal=False,  # only relevant for HTF arrow sets
-    signal_exits_only=False,  # True to ignore TP/SL & only exit on signals (useful for alpha runs...and more?)
     sls=c.SLS,
     loss_limit_fractions=c.LOSS_LIMIT_FRACTIONS,
     drawdown_limits=c.DRAWDOWN_LIMITS,
@@ -47,13 +45,16 @@ def main(
     multiproc=c.MULTIPROCESSING,
     clear_db=c.CLEAR_DB,
     write_invalid_to_db=c.WRITE_INVALID_TO_DB,
-    enable_qol=c.ENABLE_QOL  # script has things like sleep, pauses, for human interaction. Disable for testing or whatever
+    enable_qol=c.ENABLE_QOL,  # script has things like sleep, pauses, for human interaction. Disable for testing or whatever
+    replace_existing_scenarios=c.REPLACE,  # True to overwrite scenarios with matching id
+    accuracy_tester_mode=c.ACCURACY_TESTER_MODE,
+    pure_delta_mode=c.PURE_DELTA_MODE
 ):
     start_time = time.perf_counter()
 
     if QUICK_RUN:  # switch for a convenient run of a particular set
-        take_profits = [0.1]
-        stop_losses = [0.1]
+        take_profits = [1]
+        stop_losses = [1]
         leverages = [1]
         trailing_sls = [False]
         trail_delays = [False]
@@ -61,8 +62,26 @@ def main(
         multiproc = False
         drawdown_limits = [-100]
         loss_limit_fractions = [0]
-        signal_exits_only = True
         winrate_floor = -1
+        replace_existing_scenarios = True
+    if accuracy_tester_mode:
+        print(f"\nRUNNING IN ACCURACY TESTER MODE\n")
+        leverages = [1]
+        trailing_sls = [False]
+        trail_delays = [False]
+        sls = [[[]]]
+        drawdown_limits = [-100]
+        winrate_floor = 0
+    if pure_delta_mode:
+        print(f"\nRUNNING IN PURE DELTA MODE\n")
+        take_profits = [10000]
+        stop_losses = [49]
+        leverages = [1]
+        trailing_sls = [False]
+        trail_delays = [False]
+        sls = [[[]]]
+        drawdown_limits = [-100]
+        winrate_floor = 0
 
     scenario_count = 0
     specs = []
@@ -71,7 +90,8 @@ def main(
     mongo = pymongo.MongoClient(db_connection)
     bt_coll = mongo[db][db_coll]
     if clear_db:
-        bt_coll.drop()
+        print(f"Clearing db collection while leaving indexes in place. This may take some time.")
+        bt_coll.delete_many({})
 
     # print(f"db connection established at {time.perf_counter() - start_time} seconds")
     # count the scenarios
@@ -79,6 +99,8 @@ def main(
         for leverage in leverages:
             for stop_loss in stop_losses:
                 for take_profit in take_profits:
+                    if accuracy_tester_mode and stop_loss != take_profit:
+                        continue
                     for trailing_sl in trailing_sls:
                         for trail_delay in trail_delays:
                             for sl in sls:
@@ -94,12 +116,14 @@ def main(
             datafilename_only = datafilename.split("/")[1]
         except IndexError:
             datafilename_only = datafilename
-        timeframe = int(re.split("[-m_]", datafilename_only)[1])
         df = pd.read_csv(filepath_or_buffer=datafilename, parse_dates=["time"])
+        timeframe = calculate_timeframe(df=df)
         for leverage in leverages:
-            print(f"assembling specs for leverage {leverage}")
+            print(f"assembling specs for {datafilename_only} leverage {leverage}")
             for stop_loss in stop_losses:
                 for take_profit in take_profits:
+                    if accuracy_tester_mode and stop_loss != take_profit:
+                        continue
                     for trailing_sl in trailing_sls:
                         for trail_delay in trail_delays:
                             for sl in sls:
@@ -109,14 +133,14 @@ def main(
                                         spec = {
                                             "scenario_num": scenario_num,
                                             "scenario_count": scenario_count,
-                                            "datafilename": datafilename,
+                                            "datafilename": datafilename_only,
                                             "df": df,
                                             "timeframe": timeframe,
                                             "leverage": leverage,
                                             "stop_loss": stop_loss,
                                             "take_profit": take_profit,
                                             "trailing_sl": trailing_sl,
-                                            "sl_reset_points": sl,
+                                            "sl_reset_points": get_scrubbed_sl_reset_points(sl),
                                             "trail_delay": trail_delay,
                                             "db": db,
                                             "db_coll": db_coll,
@@ -125,28 +149,32 @@ def main(
                                             "drawdown_limit": drawdown_limit,
                                             "winrate_floor": winrate_floor,
                                             "winrate_grace_period": winrate_grace_period,
-                                            "signal_exits_only": signal_exits_only,
-                                            "reenter_on_new_signal": reenter_on_new_signal
+                                            "pure_delta_mode": pure_delta_mode
                                         }
                                         spec["_id"] = get_unique_composite_key(spec)
                                         specs.append(spec)
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
     # screen out specs already in db
-    if not QUICK_RUN:
-        specs_not_in_db = []
-        counter = 0
-        for spec in specs:
-            if not scenario_in_db(bt_coll, spec["_id"]):
-                specs_not_in_db.append(spec)
-            counter += 1
-            if counter % 100000 == 0:
-                print(f"checked for {counter} specs in db")
-    else:
-        specs_not_in_db = specs
+    specs_not_in_db = []
+    specs_in_db = []
+    counter = 0
+    for spec in specs:
+        if scenario_in_db(bt_coll, spec["_id"]):
+            specs_in_db.append(spec)
+        else:
+            specs_not_in_db.append(spec)
+        counter += 1
+        if counter % 100000 == 0:
+            print(f"checked for {counter} specs in db")
+    if replace_existing_scenarios:
+        # drop the existing scenarios so they can be rerun; easier than trying to update them
+        bt_coll.delete_many({"_id": {"$in": [spec["_id"] for spec in specs_in_db]}})
+        print(f"Dropped {len(specs_in_db)} scenarios due to replace option received.")
+        # now all specs are "not in db!"
+        specs_not_in_db += specs_in_db
 
-    print(f"finished initial db check in {time.perf_counter() - start_time} seconds, "
-          f"{len(specs) - len(specs_not_in_db)} out of {len(specs)} are already in db, "
+    print(f"{len(specs) - len(specs_not_in_db)} out of {len(specs)} are already in db, "
           f"leaving {len(specs_not_in_db)} to load.")
     if enable_qol:
         input("Press enter to continue")
@@ -180,6 +208,21 @@ def main(
     return
 
 
+def get_scrubbed_sl_reset_points(sl):
+    # in case someone gives me reset points as strings
+    if len(sl[0]) < 2:
+        return sl
+    sl_out = []
+    for pt in sl:
+        sl_out.append([float(pt[0]), float(pt[1])])
+    return sl_out
+
+
+def calculate_timeframe(df):
+    # given a pandas dataframe representing the datafile, calculate timeframe from the first two time values
+    return (df.iloc[1]['time'] - df.iloc[0]['time']).total_seconds() / 60
+
+
 def scenario_in_db(coll, _id):
     return coll.count_documents({"_id": _id}, limit=1)  # 20 sec per 100k docs
 
@@ -198,7 +241,6 @@ class ScenarioRunner:
         self.spec = spec
         self.stop_loss = self.sl_trail = spec["stop_loss"]
         self.trailing_on = spec["trailing_sl"] and not spec["trail_delay"]
-        self.sig_exits_only = spec["signal_exits_only"]
 
         # calculate number of days
         candle_count = len(spec["df"].index)
@@ -209,7 +251,6 @@ class ScenarioRunner:
         self.short_entry_price = None
         self.assets = 1.0
         self.min_assets = self.max_assets = self.assets
-        self.entries = 0
         self.stop_loss_exits_in_profit = 0
         self.stop_loss_exits_at_loss = 0
         self.take_profit_exits = 0
@@ -226,16 +267,11 @@ class ScenarioRunner:
         self.sl_reset_points_hit = []
         self.candles_spent_in_trade = 0
 
-        self.price_movement_at_candle_low = 0
-        self.price_movement_at_candle_high = 0
-        self.min_price_movement_at_candle_low = 1
-        self.max_price_movement_at_candle_high = -1
-        self.price_movement_low = 0
-        self.price_movement_high = 0
-        self.max_profit = 0
-        self.min_profit = 0
-        self.alpha = None
-        self.beta = None
+        self.price_movement_at_candle_high = self.price_movement_at_candle_low = 0
+        self.max_profit = self.min_profit = 0
+        self.price_movement_high = -1000
+        self.price_movement_low = 1000
+        self.max_profit_pre_drawdown = None
 
         self.row = None
         self.win_rate = None
@@ -254,37 +290,41 @@ class ScenarioRunner:
             if self.long_entry_price:
                 self.candles_spent_in_trade += 1
                 # get the low point of the candle
-                self.price_movement_at_candle_low = (
+                self.price_movement_at_candle_low = ((
                     getattr(self.row, "low") / self.long_entry_price
-                ) - 1
+                ) - 1) * 100
                 # check for a new trade low and min profit and if so save it for later
                 self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
                 if self.price_movement_low == self.price_movement_at_candle_low:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_low)
+                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_low)[0]
                 # check for SL
-                if self.price_movement_at_candle_low <= (-1 * self.stop_loss) and not self.sig_exits_only:
+                if self.price_movement_at_candle_low <= (-1 * self.stop_loss):
                     # we stopped out somewhere in this candle
                     try:
+                        if self.max_profit_pre_drawdown is None:
+                            # SL on first candle so we never got a chance to set this, set now to min_profit
+                            self.max_profit_pre_drawdown = self.min_profit
                         self.finish_trade(_type=STOP_LOSS)
                     except (e.TooMuchDrawdown, e.WinRateTooLow):
                         return self.finish_scenario(failed=True)
                 if self.long_entry_price:
                     # get the high point of the candle
-                    self.price_movement_at_candle_high = (
+                    self.price_movement_at_candle_high = ((
                         getattr(self.row, "high") / self.long_entry_price
-                    ) - 1
+                    ) - 1) * 100
                     # check for a new trade high
                     self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
                     if self.price_movement_high == self.price_movement_at_candle_high:
                         # new max profit for this trade: save it, and reset trailing if applicable
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high)
+                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high)[0]
+                        self.max_profit_pre_drawdown = self.min_profit
                         if self.trailing_on:
                             # this is a new max, need to move trailing SL
                             self.stop_loss = (
                                 self.sl_trail - self.price_movement_at_candle_high
                             )
-                    if self.price_movement_at_candle_high >= self.spec["take_profit"] and not self.sig_exits_only:
+                    if self.price_movement_at_candle_high >= self.spec["take_profit"]:
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
@@ -305,32 +345,36 @@ class ScenarioRunner:
             if self.short_entry_price:
                 self.candles_spent_in_trade += 1
                 # get the high point of the candle
-                self.price_movement_at_candle_high = (
+                self.price_movement_at_candle_high = ((
                     getattr(self.row, "high") / self.short_entry_price
-                ) - 1
+                ) - 1) * 100
                 # check for new trade high (i.e. new min profit in a short)
                 self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
                 if self.price_movement_high == self.price_movement_at_candle_high:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_high))
+                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_high))[0]
                 # check for SL
-                if self.price_movement_at_candle_high >= self.stop_loss and not self.sig_exits_only:
+                if self.price_movement_at_candle_high >= self.stop_loss:
                     # we stopped out somewhere in this candle
                     try:
+                        if self.max_profit_pre_drawdown is None:
+                            # SL on first candle so we never got a chance to set this, set now to min_profit
+                            self.max_profit_pre_drawdown = self.min_profit
                         self.finish_trade(_type=STOP_LOSS)
                     except (e.TooMuchDrawdown, e.WinRateTooLow):
                         return self.finish_scenario(failed=True)
 
                 if self.short_entry_price:
                     # get the low point of the candle
-                    self.price_movement_at_candle_low = (
+                    self.price_movement_at_candle_low = ((
                         getattr(self.row, "low") / self.short_entry_price
-                    ) - 1
+                    ) - 1) * 100
                     # check for a new trade low (i.e. new max profit in a short)
                     self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
                     if self.price_movement_low == self.price_movement_at_candle_low:
                         # new max profit for this trade
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low))
+                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low))[0]
+                        self.max_profit_pre_drawdown = self.min_profit
                         if self.trailing_on:
                             # this is a new min, need to move trailing SL
                             self.stop_loss = (
@@ -338,7 +382,7 @@ class ScenarioRunner:
                             )  # adjust sl
                     if self.price_movement_at_candle_low <= (
                         self.spec["take_profit"] * -1
-                    ) and not self.sig_exits_only:
+                    ):
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
@@ -358,7 +402,6 @@ class ScenarioRunner:
             # check for long entry
             if self.should_open_long():
                 self.long_entry_price = getattr(self.row, "close")
-                self.entries += 1
                 self.sl_reset_points_hit = (
                     []
                 )  # clear out sl reset points for the next trade
@@ -370,10 +413,12 @@ class ScenarioRunner:
                 )
                 self.profit_pct = None
                 self.candles_spent_in_trade = 0
-                self.price_movement_at_candle_high = self.price_movement_high = self.max_profit = 0
-                self.price_movement_at_candle_low = self.price_movement_low = self.min_profit = 0
-                self.max_price_movement_at_candle_high = -1
-                self.min_price_movement_at_candle_low = 1
+
+                self.price_movement_at_candle_high = self.price_movement_at_candle_low = 0
+                self.max_profit = self.min_profit = 0
+                self.price_movement_high = -1000
+                self.price_movement_low = 1000
+                self.max_profit_pre_drawdown = None
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -388,7 +433,6 @@ class ScenarioRunner:
             # check for short entry
             if self.should_open_short():
                 self.short_entry_price = getattr(self.row, "close")
-                self.entries += 1
                 self.sl_reset_points_hit = (
                     []
                 )  # clear out sl reset points for the next trade
@@ -400,10 +444,12 @@ class ScenarioRunner:
                 )
                 self.profit_pct = None
                 self.candles_spent_in_trade = 0
-                self.price_movement_at_candle_high = self.price_movement_high = self.min_profit = 0
-                self.price_movement_at_candle_low = self.price_movement_low = self.max_profit = 0
-                self.max_price_movement_at_candle_high = -1
-                self.min_price_movement_at_candle_low = 1
+
+                self.price_movement_at_candle_high = self.price_movement_at_candle_low = 0
+                self.max_profit = self.min_profit = 0
+                self.price_movement_high = -1000
+                self.price_movement_low = 1000
+                self.max_profit_pre_drawdown = None
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -417,6 +463,42 @@ class ScenarioRunner:
 
         return self.finish_scenario()
 
+    def should_close_short(self):
+        bot_in_trade = self.short_entry_price
+        try:
+            long_signal = getattr(self.row, "long") == 1
+            return bot_in_trade and long_signal
+        except AttributeError:
+            pass
+
+        opposing_htf_signal = getattr(self.row, "long_htf") == 1
+        if bot_in_trade and opposing_htf_signal:
+            return True
+        if self.spec["pure_delta_mode"]:
+            # close this trade if we got another signal in the same direction
+            #   in pure delta mode each entry measures its own delta
+            supporting_ltf_signal = getattr(self.row, "short_ltf") == 1
+            if bot_in_trade and supporting_ltf_signal:
+                return True
+        return False
+
+    def should_close_long(self):
+        bot_in_trade = self.long_entry_price
+        try:
+            short_signal = getattr(self.row, "short") == 1
+            return bot_in_trade and short_signal
+        except AttributeError:
+            pass
+
+        opposing_htf_signal = getattr(self.row, "short_htf") == 1
+        if bot_in_trade and opposing_htf_signal:
+            return True
+        if self.spec["pure_delta_mode"]:
+            supporting_ltf_signal = getattr(self.row, "long_ltf") == 1
+            if bot_in_trade and supporting_ltf_signal:
+                return True
+        return False
+
     def should_open_short(self):
         bot_in_trade = self.short_entry_price
         try:
@@ -427,7 +509,7 @@ class ScenarioRunner:
 
         htf_signal = getattr(self.row, "short_htf") == 1
         ltf_signal = getattr(self.row, "short_ltf") == 1
-        if htf_signal and not bot_in_trade:
+        if htf_signal and not bot_in_trade:  # should close long already called
             self.htf_shadow = "short"
             return True
         if ltf_signal and self.htf_shadow == "short" and not bot_in_trade:
@@ -444,68 +526,48 @@ class ScenarioRunner:
 
         htf_signal = getattr(self.row, "long_htf") == 1
         ltf_signal = getattr(self.row, "long_ltf") == 1
-        if htf_signal and not bot_in_trade:
+        if htf_signal and not bot_in_trade:  # should close short already called
             self.htf_shadow = "long"
             return True
         if ltf_signal and self.htf_shadow == "long" and not bot_in_trade:
             return True
         return False
 
-    def should_close_short(self):
-        bot_in_trade = self.short_entry_price
-        try:
-            long_signal = getattr(self.row, "long") == 1
-            return bot_in_trade and long_signal
-        except AttributeError:
-            pass
-
-        opposing_htf_signal = getattr(self.row, "long_htf") == 1
-        if bot_in_trade and opposing_htf_signal:
-            return True
-        return False
-
-    def should_close_long(self):
-        bot_in_trade = self.long_entry_price
-        try:
-            short_signal = getattr(self.row, "short") == 1
-            return bot_in_trade and short_signal
-        except AttributeError:
-            pass
-
-        opposing_htf_signal = getattr(self.row, "short_htf") == 1
-        if bot_in_trade and opposing_htf_signal:
-            return True
-        return False
-
     def get_profit_pct_from_exit_price(self, exit_price):
         # takes an exit price like 34,001 and returns profit pct after fees and leverage
+        exit_pct = None
         if self.long_entry_price:
-            return ((exit_price / self.long_entry_price) - 1) * self.leverage - FEES * self.leverage
-        if self.short_entry_price:
-            return ((exit_price / self.short_entry_price) - 1) * -1 * self.leverage - FEES * self.leverage
+            exit_pct = ((exit_price / self.long_entry_price) - 1) * 100
+        elif self.short_entry_price:
+            exit_pct = ((exit_price / self.short_entry_price) - 1) * -100
+
+        profit_pct = exit_pct * self.leverage - FEES * self.leverage
+        return profit_pct, exit_pct
 
     def get_profit_pct_from_exit_pct(self, exit_pct):
         # takes an exit price based profit pct like 2% and returns final profit pct after fees and leverage
         exit_pct = min(exit_pct, self.spec["take_profit"])  # cut off anything beyond TP
         exit_pct = max(exit_pct, -1 * self.spec["stop_loss"])  # cut off anything below SL
-        return exit_pct * self.leverage - FEES * self.leverage
+        profit_pct = exit_pct * self.leverage - FEES * self.leverage
+        return profit_pct, exit_pct
 
     def finish_trade(self, _type):
         exit_price = getattr(self.row, "close")
         exit_type = None
+        exit_pct = None
         if _type == STOP_LOSS:
-            self.profit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss))
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss))
             if self.profit_pct > 0:
                 exit_type = "sl_profit"
             else:
                 exit_type = "sl_loss"
 
         elif _type == TAKE_PROFIT:
-            self.profit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"])
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"])
             exit_type = "tp"
 
         elif _type == SIGNAL:
-            self.profit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price)
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price)
             if self.profit_pct > 0:
                 exit_type = "sig_profit"
             else:
@@ -515,7 +577,7 @@ class ScenarioRunner:
             None  # clear both for convenience, even though only one is set
         )
         self.long_entry_price = None
-        self.assets *= 1 + self.profit_pct
+        self.assets *= 1 + self.profit_pct/100
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
         drawdown_pct = int((1 - (self.assets / self.max_assets)) * -100)  # e.g. -68 (=68% drawdown from peak)
@@ -524,13 +586,16 @@ class ScenarioRunner:
 
         # update trade history
         self.trade["exit"] = getattr(self.row, "time").isoformat().replace("+00:00", "Z")
-        self.trade["profit"] = round(self.profit_pct, 4)
+        self.trade["exit_pct"] = round(exit_pct, 2)
+        self.trade["profit"] = round(self.profit_pct, 2)
         self.trade["duration"] = self.candles_spent_in_trade
         self.trade["assets"] = round(self.assets, 2)
         self.trade["leverage"] = self.leverage
         self.trade["exit_type"] = exit_type
-        self.trade["min_profit"] = round(self.min_profit, 4)
-        self.trade["max_profit"] = round(self.max_profit, 4)
+        self.trade["min_profit"] = round(self.min_profit, 2)
+        self.trade["max_profit"] = round(self.max_profit, 2)
+        self.trade["max_profit_pre_drawdown"] = round(self.max_profit_pre_drawdown, 2)
+        self.trade["delta"] = round(self.trade["max_profit"] + self.trade["max_profit_pre_drawdown"], 2)
         self.trade_history.append(self.trade)
 
         if self.max_drawdown_pct < self.spec["drawdown_limit"]:
@@ -546,19 +611,18 @@ class ScenarioRunner:
             (self.assets ** (1 / float(self.days)) - 1) * 100, 2
         )
 
-        mean_profit = None
-        median_profit = None
-        mean_hrs_in_trade = None
+        mean_profit = median_profit = mean_hrs_in_trade = delta = delta_mean = delta_median = None
 
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
-            mean_profit = round(mean(self.get_profits()), 3)
-            median_profit = round(median(self.get_profits()), 3)
+            mean_profit = round(mean(self.get_profits()), 2)
+            median_profit = round(median(self.get_profits()), 2)
             mean_hrs_in_trade = round(
                 mean(self.get_durations()) * int(self.spec["timeframe"]) / 60, 2
             )
-            self.alpha = self.calculate_alpha()
-            self.beta = round(mean_profit * len(self.trade_history) * 100, 3)
+            delta = round(sum(self.get_deltas()), 2)
+            delta_mean = round(mean(self.get_deltas()), 2)
+            delta_median = round(median(self.get_deltas()), 2)
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         print(
@@ -574,8 +638,7 @@ class ScenarioRunner:
             "daily_profit_pct_avg": daily_profit_pct_avg,
             "max_drawdown_pct": self.max_drawdown_pct,
             "win_rate": self.win_rate,
-            "entries": self.entries,
-            "finished_entries": len(self.trade_history),
+            "trades": len(self.trade_history),
             "stop_loss_exits_in_profit": self.get_exit_type_count('sl_profit'),
             "stop_loss_exits_at_loss": self.get_exit_type_count('sl_loss'),
             "take_profit_exits": self.get_exit_type_count('tp'),
@@ -583,15 +646,16 @@ class ScenarioRunner:
             "signal_exits_at_loss": self.get_exit_type_count('sig_loss'),
             "mean_profit": mean_profit,
             "median_profit": median_profit,
+            "mean * trades": round(mean_profit * len(self.trade_history), 2),
             "days": self.days,
             "mean_hrs_in_trade": mean_hrs_in_trade,
             "valid": not failed,
             "final_assets": round(self.assets, 2),
             "min_assets": round(self.min_assets, 2),
             "max_assets": round(self.max_assets, 2),
-            "mean+median": round(mean_profit + median_profit, 3),
-            "alpha": self.alpha,
-            "beta": self.beta
+            "delta": delta,
+            "mean_delta": delta_mean,
+            "median_delta": delta_median
         }
         if QUICK_RUN:
             print(f"result for spec {self.spec['_id']}: \n{result}")
@@ -607,14 +671,14 @@ class ScenarioRunner:
     def get_profits(self):
         return [trade['profit'] for trade in self.trade_history]
 
+    def get_deltas(self):
+        return [trade['delta'] for trade in self.trade_history]
+
     def get_exit_type_count(self, exit_type):
         return len([trade['exit_type'] for trade in self.trade_history if trade['exit_type'] == exit_type])
 
     def get_durations(self):
         return [trade['duration'] for trade in self.trade_history]
-
-    def calculate_alpha(self):
-        return round(sum([trade["max_profit"] + trade["min_profit"] for trade in self.trade_history]) * 100, 3)
 
     def check_reset_points(self, price_movement):
         for sl_reset_point in self.spec["sl_reset_points"]:
@@ -624,19 +688,19 @@ class ScenarioRunner:
                 if sl_trigger not in self.sl_reset_points_hit:
                     # haven't hit this one yet, check if we have reached it now
                     if self.short_entry_price:
-                        trigger_hit = price_movement <= (-1 * sl_trigger) / 100
+                        trigger_hit = price_movement <= (-1 * sl_trigger)
                     elif self.long_entry_price:
-                        trigger_hit = price_movement >= sl_trigger / 100
+                        trigger_hit = price_movement >= sl_trigger
                     else:
                         raise Exception("check_reset_points called w/o live trade")
                     if trigger_hit:
                         # we hit it somewhere in this candle!  change the stop loss
-                        self.stop_loss = new_sl / 100
+                        self.stop_loss = new_sl
                         # record that we hit it, so we don't repeat
                         self.sl_reset_points_hit.append(sl_trigger)
                         if self.spec["trailing_sl"]:
                             # update the trail
-                            self.sl_trail = (sl_trigger + new_sl) / 100
+                            self.sl_trail = (sl_trigger + new_sl)
                             # update current sl with trail
                             if self.short_entry_price:
                                 self.stop_loss = price_movement + self.sl_trail
@@ -652,8 +716,9 @@ def get_adjusted_leverage(stop_loss, max_leverage, total_profit_pct, loss_limit_
     if loss_limit_fraction == 0:  # no loss limit desired
         return max_leverage, 0
     pct_of_starting_assets = total_profit_pct + 100
-    loss_limit = max(0.1, round(pct_of_starting_assets * loss_limit_fraction / 100, 3))
+    loss_limit = max(10, round(pct_of_starting_assets * loss_limit_fraction, 3))
     potential_loss = stop_loss * max_leverage
+    loss_limit = min(loss_limit, 100)  # no need for loss limit to exceed 100%
     if (potential_loss <= loss_limit) or max_leverage == 1:
         # there are no problems.  leverage is fine
         return max_leverage, loss_limit
@@ -669,7 +734,7 @@ def is_valid_scenario(spec):
     tp_tsl_valid = False
     drawdown_valid = False
     # a valid scenario is protected from liquidation
-    if spec["stop_loss"] < (1 / (1 + spec["leverage"])):
+    if spec["stop_loss"]/100 < (1 / (1 + spec["leverage"])):
         protected = True
     # a valid scenario uses one of the valid trail/trail delay configs
     config = (spec["trailing_sl"], spec["trail_delay"])
@@ -678,10 +743,10 @@ def is_valid_scenario(spec):
     # a valid scenario has a TP higher than the highest reset trigger
     if not len(spec["sl_reset_points"][-1]):
         tp_tsl_valid = True
-    elif spec["take_profit"] > spec["sl_reset_points"][-1][0] / 100:
+    elif spec["take_profit"] > spec["sl_reset_points"][-1][0]:
         tp_tsl_valid = True
     # a valid scenario is protected from hitting drawdown limit in a single trade
-    if -1 * (spec["stop_loss"] * 100 * spec["leverage"]) >= spec["drawdown_limit"]:
+    if -1 * (spec["stop_loss"] * spec["leverage"]) >= spec["drawdown_limit"]:
         drawdown_valid = True
 
     return protected and trail_config_valid and tp_tsl_valid and drawdown_valid
@@ -700,8 +765,7 @@ def get_unique_composite_key(spec):
         "drawdown_limit": spec["drawdown_limit"],
         "winrate_floor": spec["winrate_floor"],
         "winrate_grace_period": spec["winrate_grace_period"],
-        "signal_exits_only": spec["signal_exits_only"],
-        "reenter_on_new_signal": spec["reenter_on_new_signal"]
+        "pure_delta_mode": spec["pure_delta_mode"]
     }
     return unique_composite_key
 
@@ -716,8 +780,7 @@ def get_invalid_scenario_result(_id, start_date, end_date):
         "daily_profit_pct_avg": None,
         "max_drawdown_pct": None,
         "win_rate": None,
-        "entries": None,
-        "finished_entries": None,
+        "trades": None,
         "stop_loss_exits_in_profit": None,
         "stop_loss_exits_at_loss": None,
         "take_profit_exits": None,
@@ -731,9 +794,9 @@ def get_invalid_scenario_result(_id, start_date, end_date):
         "final_assets": None,
         "min_assets": None,
         "max_assets": None,
-        "mean+median": None,
-        "alpha": None,
-        "beta": None
+        "delta": None,
+        "mean_delta": None,
+        "median_delta": None
     }
     return result
 

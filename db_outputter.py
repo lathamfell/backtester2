@@ -3,7 +3,12 @@ import pymongo
 import config_prod as c
 import pandas as pd
 
-FILTER = {"valid": True, "_id.datafilename": "data/btcusd-5m_with_cols_2019_laguerre_1h_4h.csv"}
+#FILTER = {"valid": True, "_id.datafilename": "data/btcusd-5m_with_cols_2019_laguerre_1h_4h.csv"}
+
+#FILTER = {"_id.winrate_floor": 0}
+FILTER = {"_id.stop_loss": {"$gt": 0.5}}
+FILTER = {"_id.take_profit": {"$gt": 0.5}}
+FILTER = {"$expr": {"$eq": ["_id.stop_loss", "_id.take_profit"]}}
 
 
 def main():

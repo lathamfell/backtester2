@@ -1,97 +1,96 @@
 [
   {
     "_id": {
-      "datafilename": "test_data/BYBITBTCUSD_240_2021_three_trades.csv",
+      "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
       "leverage": 2,
-      "stop_loss": 0.06,
-      "take_profit": 0.14,
+      "stop_loss": 6,
+      "take_profit": 14,
       "trailing_sl": false,
       "trail_delay": false,
       "sl_reset_points": [
         [
-          1,
+          1.0,
           -0.5
         ],
         [
           1.5,
-          -1
+          -1.0
         ],
         [
-          2,
+          2.0,
           -1.5
         ],
         [
           2.5,
-          -2
+          -2.0
         ],
         [
-          3,
-          -2
+          3.0,
+          -2.0
         ],
         [
           3.5,
           -2.5
         ],
         [
-          4,
-          -3
+          4.0,
+          -3.0
         ],
         [
           4.5,
           -3.5
         ],
         [
-          5,
-          -4
+          5.0,
+          -4.0
         ],
         [
-          6,
-          -5
+          6.0,
+          -5.0
         ],
         [
-          7,
-          -6
+          7.0,
+          -6.0
         ],
         [
-          8,
-          -7
+          8.0,
+          -7.0
         ],
         [
-          9,
-          -8
+          9.0,
+          -8.0
         ],
         [
-          10,
-          -9
+          10.0,
+          -9.0
         ],
       ],
       "loss_limit_fraction": 0,
+      'pure_delta_mode': false,
       "drawdown_limit": -100,
       "winrate_floor": 50,
       "winrate_grace_period": 50,
-      'reenter_on_new_signal': false,
-      'signal_exits_only': false
     },
-    'alpha': 4.1,
-    'beta': 25.2,
     "start_date": "2021-01-01T00:00:00Z",
     "end_date": "2021-03-03T04:00:00Z",
     "days": 61.3,
+    'delta': 16.86,
     "mean_hrs_in_trade": 9.33,
     "total_profit_pct": 26,
     "daily_profit_pct_avg": 0.39,
     "max_drawdown_pct": 0,
+    'mean * trades': 25.11,
+    'mean_delta': 5.62,
+    'median_delta': 5.15,
     "win_rate": 100,
-    "entries": 4,
-    "finished_entries": 3,
+    'trades': 3,
     "stop_loss_exits_in_profit": 3,
     "stop_loss_exits_at_loss": 0,
     "take_profit_exits": 0,
     "signal_exits_in_profit": 0,
     "signal_exits_at_loss": 0,
-    "mean_profit": 0.084,
-    "median_profit": 0.037,
-    "mean+median": 0.121,
+    "mean_profit": 8.37,
+    "median_profit": 3.7,
     "valid": true,
     "final_assets": 1.27,
     "max_assets": 1.27,
@@ -99,39 +98,48 @@
     "trade_history": [
       {
         "assets": 1.18,
+        'delta': 8.19,
         "direction": "short",
         "duration": 3,
         "entry": "2021-01-11T04:00:00Z",
         "exit": "2021-01-11T16:00:00Z",
-        "profit": 0.177,
+        'exit_pct': 9.0,
+        "profit": 17.7,
         "exit_type": "sl_profit",
         "leverage": 2,
-        'max_profit': 0.1997,
-        'min_profit': -0.1178
+        'max_profit': 19.97,
+        'max_profit_pre_drawdown': -11.78,
+        'min_profit': -11.78,
       },
       {
         "assets": 1.22,
+        'delta': 5.15,
         "direction": "long",
         "duration": 2,
         "entry": "2021-01-28T20:00:00Z",
         "exit": "2021-01-29T04:00:00Z",
-        "profit": 0.037,
+        'exit_pct': 2.0,
+        "profit": 3.7,
         "exit_type": "sl_profit",
         "leverage": 2,
-        'max_profit': 0.0551,
-        'min_profit': -0.0888
+        'max_profit': 5.51,
+        'max_profit_pre_drawdown': -0.36,
+        'min_profit': -8.88,
       },
       {
         "assets": 1.27,
+        'delta': 3.52,
         "direction": "short",
         "duration": 2,
         "entry": "2021-02-22T12:00:00Z",
         "exit": "2021-02-22T20:00:00Z",
-        "profit": 0.037,
+        'exit_pct': 2.0,
+        "profit": 3.7,
         "exit_type": "sl_profit",
         "leverage": 2,
-        'max_profit': 0.0597,
-        'min_profit': -0.0669
+        'max_profit': 5.97,
+        'max_profit_pre_drawdown': -2.45,
+        'min_profit': -6.69,
       },
     ],
   }

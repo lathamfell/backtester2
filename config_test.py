@@ -10,18 +10,27 @@ DATAFILENAMES_7 = ["test_data/btcusd-5m_with_cols_2017_T3_first_trade_removed.cs
 DATAFILENAMES_8 = ["test_data/btcusd-5m_with_cols_2017_laguerre.csv"]
 DATAFILENAMES_9 = ["test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv"]
 DATAFILENAMES_10 = ["test_data/btcusd-5m_with_cols_2017_laguerre_4h_1D.csv"]
+DATAFILENAMES_11 = ["test_data/BYBITBTCUSD_240_2021_one_trade_last_line_removed.csv"]
+DATAFILENAMES_12 = [
+    "test_data/COINBASE_BTCUSD_15_1h_on_5m_2021.csv",
+    "test_data/COINBASE_BTCUSD_1h_on_5m_2021.csv"
+]
+DATAFILENAMES_13 = [
+    "test_data/COINBASE_BTCUSD_2h_on_5m_2020.csv",
+    "test_data/COINBASE_BTCUSD_15_2h_on_5m_2021.csv"
+]
 DB_CONNECTION = "mongodb://localhost:27017"
 DB = "bt"
 COLL = "btcoll_test"
-TAKE_PROFITS_0 = [0.12]
-TAKE_PROFITS_1 = [0.02]
-TAKE_PROFITS_2 = [0.005, 0.02]
-TAKE_PROFITS_3 = [0.04]
-TAKE_PROFITS_4 = [0.1]
-TAKE_PROFITS_5 = [0.14]
-STOP_LOSSES_0 = [0.12]
-STOP_LOSSES_1 = [0.06]
-STOP_LOSSES_2 = [0.01, 0.06]
+TAKE_PROFITS_0 = [12]
+TAKE_PROFITS_1 = [2]
+TAKE_PROFITS_2 = [0.5, 2]
+TAKE_PROFITS_3 = [4]
+TAKE_PROFITS_4 = [1]
+TAKE_PROFITS_5 = [14]
+STOP_LOSSES_0 = [12]
+STOP_LOSSES_1 = [6]
+STOP_LOSSES_2 = [1, 6]
 LEVERAGES_0 = [5]
 LEVERAGES_1 = [1]
 LEVERAGES_2 = [2]

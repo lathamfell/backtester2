@@ -1,7 +1,7 @@
 [
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 5,
             "loss_limit_fraction": 0.2,
@@ -17,9 +17,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": -0.46,
         "days": 69.4,
-        "entries": 12,
         "final_assets": 0.73,
-        "finished_entries": 12,
         "max_assets": 1,
         "max_drawdown_pct": -36,
         "mean_hrs_in_trade": 4.81,
@@ -158,7 +156,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 5,
             "loss_limit_fraction": 0.2,
@@ -174,9 +172,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": 0.3,
         "days": 69.4,
-        "entries": 12,
         "final_assets": 1.23,
-        "finished_entries": 12,
         "max_assets": 1.55,
         "max_drawdown_pct": -33,
         "mean_hrs_in_trade": 24.23,
@@ -315,7 +311,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 5,
             "loss_limit_fraction": 0.2,
@@ -331,9 +327,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": 1.26,
         "days": 69.4,
-        "entries": 12,
         "final_assets": 2.38,
-        "finished_entries": 12,
         "max_assets": 2.38,
         "max_drawdown_pct": -20,
         "mean_hrs_in_trade": 30.96,
@@ -472,7 +466,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 5,
             "loss_limit_fraction": 0.2,
@@ -488,9 +482,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": 1.23,
         "days": 69.4,
-        "entries": 12,
         "final_assets": 2.34,
-        "finished_entries": 12,
         "max_assets": 2.34,
         "max_drawdown_pct": -18,
         "mean_hrs_in_trade": 30.99,
@@ -629,7 +621,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 5,
             "loss_limit_fraction": 0.2,
@@ -645,9 +637,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": null,
         "days": null,
-        "entries": null,
         "final_assets": null,
-        "finished_entries": null,
         "max_assets": null,
         "max_drawdown_pct": null,
         "mean_hrs_in_trade": null,
@@ -665,7 +655,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 10,
             "loss_limit_fraction": 0.2,
@@ -681,9 +671,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": -1.0,
         "days": 69.4,
-        "entries": 8,
         "final_assets": 0.5,
-        "finished_entries": 8,
         "max_assets": 1,
         "max_drawdown_pct": -50,
         "mean_hrs_in_trade": 4.11,
@@ -782,7 +770,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 10,
             "loss_limit_fraction": 0.2,
@@ -798,9 +786,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": 0.1,
         "days": 69.4,
-        "entries": 12,
         "final_assets": 1.07,
-        "finished_entries": 12,
         "max_assets": 1.6,
         "max_drawdown_pct": -33,
         "mean_hrs_in_trade": 24.23,
@@ -939,7 +925,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 10,
             "loss_limit_fraction": 0.2,
@@ -955,9 +941,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": null,
         "days": null,
-        "entries": null,
         "final_assets": null,
-        "finished_entries": null,
         "max_assets": null,
         "max_drawdown_pct": null,
         "mean_hrs_in_trade": null,
@@ -975,7 +959,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 10,
             "loss_limit_fraction": 0.2,
@@ -991,9 +975,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": null,
         "days": null,
-        "entries": null,
         "final_assets": null,
-        "finished_entries": null,
         "max_assets": null,
         "max_drawdown_pct": null,
         "mean_hrs_in_trade": null,
@@ -1011,7 +993,7 @@
     },
     {
         "_id": {
-            "datafilename": "test_data/btcusd-5m_with_cols_2017_laguerre_trunc.csv",
+            "datafilename": "btcusd-5m_with_cols_2017_laguerre_trunc.csv",
             "drawdown_limit": -49,
             "leverage": 10,
             "loss_limit_fraction": 0.2,
@@ -1027,9 +1009,7 @@
         "end_date": "2017-11-09T10:30:00Z",
         "daily_profit_pct_avg": null,
         "days": null,
-        "entries": null,
         "final_assets": null,
-        "finished_entries": null,
         "max_assets": null,
         "max_drawdown_pct": null,
         "mean_hrs_in_trade": null,

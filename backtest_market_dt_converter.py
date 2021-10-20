@@ -3,7 +3,9 @@ import datetime
 
 
 def main():
-    datafilename = "btcusd-1m_two_year_for_comparison_with_cols.csv"
+    # for raw BacktestMarket data, delete last column and add header labels:
+    #   date, time, open, high, low, close, short, long
+    datafilename = "data/btcusd-5m_og_labeled_2017.csv"
     # read in csv
     df = pd.read_csv(datafilename)
     out_df = df.copy(deep=True)

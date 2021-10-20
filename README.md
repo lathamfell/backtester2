@@ -6,8 +6,12 @@ Running in GitBash:
 The -u prevents GitBash from buffering stdout
 
 
-Useful db filters:
+Useful MongoDB Compass filters:
 {valid: true, "_id.drawdown_limit": -50, "_id.trailing_sl": false, "_id.sl_reset_points": { $size: 3}}
+{ $expr: { $gt: [ "$spent" , "$budget" ] } }  # why doesn't this work??
+
+If PyCharm is truncating test output with ellipsis, reduce the test file size.  PyCharm seems to truncate
+output above ~10k lines.
 
 Quick run settings to use for alpha runs:
         signal_exits_only = True

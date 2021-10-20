@@ -1,6 +1,7 @@
 import pymongo
 import pytest
 import json5
+import os
 
 from backtester import main, get_adjusted_leverage
 
@@ -31,7 +32,9 @@ def test_main_with_one_trade(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_one_trade.json5")
 
@@ -51,7 +54,9 @@ def test_main_with_one_trade_and_multiple_configs(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_one_trade_and_multiple_configs.json5")
 
@@ -71,7 +76,9 @@ def test_main_with_three_trades(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_three_trades.json5")
 
@@ -91,7 +98,9 @@ def test_main_with_three_trades_and_reset_sl_no_trailing(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_three_trades_and_reset_sl_no_trailing.json5")
 
@@ -111,7 +120,9 @@ def test_main_with_33_trades_and_good_reset_config_no_trailing(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_33_trades_good_reset_config_no_trailing.json5")
 
@@ -121,18 +132,20 @@ def test_main_with_invalid_sl_leverage_config(coll):
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_2,
         take_profits=c.TAKE_PROFITS_4,
-        stop_losses=[0.06],
+        stop_losses=[6],
         leverages=[20],
         trailing_sls=[False],
         trail_delays=[False],
-        sls=c.SLS_6,
+        sls=[[[]], [["2.5", "-0.5"]], [["2", "-1"], ["3", "-2.5"]], [["1", "-0.5"]]],
         loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_invalid_sl_leverage_config.json5")
 
@@ -141,7 +154,7 @@ def test_main_with_five_trades_and_trailing_reset_sl(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[0.2],
+        take_profits=[20],
         stop_losses=c.STOP_LOSSES_0,
         leverages=c.LEVERAGES_0,
         trailing_sls=[True],
@@ -153,7 +166,9 @@ def test_main_with_five_trades_and_trailing_reset_sl(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_five_trades_and_trailing_reset_sl.json5")
 
@@ -162,8 +177,8 @@ def test_main_with_five_trades_trailing_sl_no_reset(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[0.2],
-        stop_losses=[0.12],
+        take_profits=[20],
+        stop_losses=[12],
         leverages=c.LEVERAGES_0,
         trailing_sls=[True],
         trail_delays=[False],
@@ -174,7 +189,9 @@ def test_main_with_five_trades_trailing_sl_no_reset(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_five_trades_trailing_sl_no_reset.json5")
 
@@ -183,7 +200,7 @@ def test_main_with_five_trades_with_trail_delay(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[0.2],
+        take_profits=[20],
         stop_losses=c.STOP_LOSSES_0,
         leverages=c.LEVERAGES_0,
         trailing_sls=[True],
@@ -195,7 +212,9 @@ def test_main_with_five_trades_with_trail_delay(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_five_trades_with_trail_delay.json5")
 
@@ -204,8 +223,8 @@ def test_main_with_scenario_that_covers_signal_exits_in_profit(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[10],
-        stop_losses=[0.25],
+        take_profits=[1000],
+        stop_losses=[25],
         leverages=[2],
         trailing_sls=[False],
         trail_delays=[False],
@@ -216,7 +235,9 @@ def test_main_with_scenario_that_covers_signal_exits_in_profit(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_scenario_that_covers_signal_exits_in_profit.json5")
 
@@ -225,8 +246,8 @@ def test_main_with_trail_configs_to_check_validity_function(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[0.12],
-        stop_losses=[0.12],
+        take_profits=[12],
+        stop_losses=[12],
         leverages=[5],
         trailing_sls=[True, False],
         trail_delays=[True, False],
@@ -237,7 +258,9 @@ def test_main_with_trail_configs_to_check_validity_function(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_trail_configs_to_check_validity_function.json5")
 
@@ -246,8 +269,8 @@ def test_main_with_15m_chart(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_5,
-        take_profits=[0.12],
-        stop_losses=[0.11],
+        take_profits=[12],
+        stop_losses=[11],
         leverages=[5],
         trailing_sls=[True],
         trail_delays=[True],
@@ -258,7 +281,9 @@ def test_main_with_15m_chart(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_15m_chart.json5")
 
@@ -267,19 +292,21 @@ def test_loss_limiter(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.1],
-        stop_losses=[0.1],
+        take_profits=[10],
+        stop_losses=[10],
         leverages=[5],
         trailing_sls=[True],
         trail_delays=[True],
         sls=[[[2, -1]]],
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_loss_limiter.json5")
 
@@ -288,19 +315,21 @@ def test_invalid_tp_tsl_combinations(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_1,
-        take_profits=[0.005, 0.025, 0.035],
-        stop_losses=[0.1],
+        take_profits=[0.5, 2.5, 3.5],
+        stop_losses=[10],
         leverages=[1],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_4,
-        loss_limit_fractions=[0.1],
+        loss_limit_fractions=[.1],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_invalid_tp_tsl_combinations.json5")
 
@@ -310,124 +339,136 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.5],
-        stop_losses=[0.015],
+        take_profits=[50],
+        stop_losses=[1.5],
         leverages=[4],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         write_invalid_to_db=True,
         drawdown_limits=[-100],
         winrate_floor=50,
         winrate_grace_period=20,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     # should not screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.5],
-        stop_losses=[0.1],
+        take_profits=[50],
+        stop_losses=[10],
         leverages=[5],
         trailing_sls=[False],
         trail_delays=[False],
         sls=c.SLS_3,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-65],
         winrate_floor=50,
         winrate_grace_period=50,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     # should screen out on drawdown
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.005],
-        stop_losses=[0.01],
+        take_profits=[0.5],
+        stop_losses=[1],
         leverages=[10],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=50,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     
     # screens out during a long stop loss exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.3],
-        stop_losses=[0.02],
+        take_profits=[30],
+        stop_losses=[2],
         leverages=[2],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=20,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
 
     # screens out during a long take profit exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.02],
-        stop_losses=[0.01],
+        take_profits=[2],
+        stop_losses=[1],
         leverages=[2],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=10,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     ),
 
     # screens out during a long signal exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.3],
-        stop_losses=[0.02],
+        take_profits=[30],
+        stop_losses=[2],
         leverages=[2],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=10,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     # screens out during a short stop loss exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
-        take_profits=[0.12],
-        stop_losses=[0.12],
+        take_profits=[12],
+        stop_losses=[12],
         leverages=[5],
         trailing_sls=[True],
         trail_delays=[False],
@@ -439,45 +480,51 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         drawdown_limits=[-60],
         winrate_floor=50,
         winrate_grace_period=50,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     # screens out during a short take profit exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_7,
-        take_profits=[0.06],
-        stop_losses=[0.03],
+        take_profits=[6],
+        stop_losses=[3],
         leverages=[2],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_7,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=20,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     # screens out during a short signal exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[0.4],
-        stop_losses=[0.1],
+        take_profits=[40],
+        stop_losses=[10],
         leverages=[2],
         trailing_sls=[False],
         trail_delays=[False],
         sls=c.SLS_9,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
         drawdown_limits=[-40],
         winrate_floor=50,
         winrate_grace_period=20,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5")
 
@@ -487,15 +534,17 @@ def test_leverage_adjustment_with_large_stop_loss(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_8,
-        take_profits=[0.4],
-        stop_losses=[0.3],
+        take_profits=[40],
+        stop_losses=[30],
         leverages=[5],
         trailing_sls=[False],
         trail_delays=[False],
         sls=c.SLS_0,
         multiproc=False,
         write_invalid_to_db=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_leverage_adjustment_with_large_stop_loss.json5")
 
@@ -504,19 +553,21 @@ def test_invalid_scenarios_not_written_to_db(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_1,
-        take_profits=[0.005, 0.025, 0.035],
-        stop_losses=[0.1],
+        take_profits=[0.5, 2.5, 3.5],
+        stop_losses=[10],
         leverages=[1],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_4,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-33],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_invalid_scenarios_not_written_to_db.json5")
 
@@ -525,28 +576,30 @@ def test_invalid_scenarios_due_to_initial_drawdown_screener(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_9,
-        take_profits=[0.4],
-        stop_losses=[0.01, 0.04, 0.05, 0.06, 0.1],
+        take_profits=[40],
+        stop_losses=[1, 4, 5, 6, 10],
         leverages=[5, 10],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_0,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-49],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5")
 
 
 def test_get_adjusted_leverage():
-    loss_limit_fractions = [0, 0.1, 0.2, 0.5, 15]
+    loss_limit_fractions = [0, .1, .2, .5]
     leverages = [1, 2, 5, 10]
-    stop_losses = [0.01, 0.02, 0.04, 0.05, 0.1]
-    total_profit_pcts = [-50, 0, 50, 100, 150, 200, 301, 399, 467, 500, 9999]
+    stop_losses = [1, 2, 4, 5, 10]
+    total_profit_pcts = [-50, 0, 50, 100, 150, 200, 301, 399, 467, 500]
     results = []
 
     for llf in loss_limit_fractions:
@@ -584,7 +637,9 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_scenarios_already_in_db_are_not_rerun.json5")
     # run it again without clearing db, then re-compare
@@ -602,95 +657,193 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         winrate_floor=50,
         winrate_grace_period=50,
         multiproc=False,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_scenarios_already_in_db_are_not_rerun.json5")
 
 
+def test_scenarios_already_in_db_are_rerun_with_replace_option(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=c.DATAFILENAMES_1,
+        take_profits=[0.5, 2, 3, 4],
+        stop_losses=[1],
+        leverages=[1],
+        trailing_sls=[False],
+        trail_delays=[False],
+        sls=[[[]]],
+        loss_limit_fractions=[0],
+        drawdown_limits=[-100],
+        winrate_floor=50,
+        winrate_grace_period=50,
+        multiproc=False,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
+    )
+    compare(coll, "db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5")
+    # preserve original file
+    os.rename(c.DATAFILENAMES_1[0], f"{c.DATAFILENAMES_1[0]}_orig")
+    # rename the altered version of the original file so that it will produce the same scenario id
+    os.rename(c.DATAFILENAMES_11[0], c.DATAFILENAMES_1[0])
+
+    try:
+        main(
+            db_coll=c.COLL,
+            datafilenames=c.DATAFILENAMES_1,
+            take_profits=[3, 4, 5, 6],
+            stop_losses=[1],
+            leverages=[1],
+            trailing_sls=[False],
+            trail_delays=[False],
+            sls=[[[]]],
+            loss_limit_fractions=[0],
+            drawdown_limits=[-100],
+            winrate_floor=50,
+            winrate_grace_period=50,
+            multiproc=False,
+            enable_qol=False,
+            replace_existing_scenarios=True,
+            accuracy_tester_mode=False,
+        pure_delta_mode=False
+        )
+        compare(coll, "db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5")
+    finally:
+        # put filenames back to the way they were
+        os.rename(c.DATAFILENAMES_1[0], c.DATAFILENAMES_11[0])
+        os.rename(f"{c.DATAFILENAMES_1[0]}_orig", c.DATAFILENAMES_1[0])
+
+
 def test_multiproc(coll):
+    # this test mimics an earlier one, using the same file, it just does it with multiprocessing
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_9,
-        take_profits=[0.4],
-        stop_losses=[0.01, 0.04, 0.05, 0.06, 0.1],
+        take_profits=[40],
+        stop_losses=[1, 4, 5, 6, 10],
         leverages=[5, 10],
         trailing_sls=[True],
         trail_delays=[True],
         sls=c.SLS_0,
-        loss_limit_fractions=[0.2],
+        loss_limit_fractions=[.2],
         multiproc=True,
         drawdown_limits=[-49],
         winrate_floor=50,
         winrate_grace_period=50,
         write_invalid_to_db=True,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5")
 
 
 # htf dataset has short_ltf, long_ltf, short_htf, long_htf columns
-# this test mimics an earlier one, using the same file, it just does it with multiprocessing
 def test_htf_dataset(coll):
+    # this scenario is calibrated to produce at least one of each type of exit
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_10,
-        take_profits=[.5],
-        stop_losses=[0.1],
+        take_profits=[50],
+        stop_losses=[10],
         leverages=[3],
         trailing_sls=[False],
         trail_delays=[False],
-        sls=[[[1.5, -1], [3.5, -2], [4, -2.5], [6, -4.5]]],
-        loss_limit_fractions=[0.2],
+        sls=[[["1.5", "-1"], ["3.5", "-2"], ["4", "-2.5"], ["6", "-4.5"]]],
+        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-80],
         winrate_floor=10,
-        enable_qol=False
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
     compare(coll, "db_after_htf_dataset.json5")
 
 
-def test_signal_exits_only(coll):
-    # this is an alpha run with a single arrow dataset
+def test_multiple_datafilenames(coll):
     main(
         db_coll=c.COLL,
-        datafilenames=c.DATAFILENAMES_8,
-        take_profits=[0.1],
-        stop_losses=[0.1],
-        leverages=[1],
+        datafilenames=c.DATAFILENAMES_12,
+        take_profits=[5],
+        stop_losses=[5],
+        leverages=[3],
         trailing_sls=[False],
         trail_delays=[False],
-        sls=[[[]]],
-        multiproc=False,
-        drawdown_limits=[-100],
-        loss_limit_fractions=[0],
-        signal_exits_only=True,
-        winrate_floor=0,
-        enable_qol=False,
-
-    )
-    compare(coll, "db_after_signal_exits_only.json5")
-
-
-def test_htf_dataset_with_reentry_on_new_signals(coll):
-    # this is an alpha run with an HTF dataset
-    main(
-        db_coll=c.COLL,
-        datafilenames=c.DATAFILENAMES_10,
-        take_profits=[0.1],
-        stop_losses=[0.1],
-        leverages=[1],
-        trailing_sls=[False],
-        trail_delays=[False],
-        sls=[[[]]],
-        loss_limit_fractions=[0.2],
+        sls=[[[".3", "-.15"], [".6", "-.35"], ["1.5", "-1"], ["4", "-3"]]],
+        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-80],
         winrate_floor=10,
         enable_qol=False,
-        signal_exits_only=True,
-        reenter_on_new_signal=True
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
     )
-    compare(coll, "db_after_htf_dataset_with_reentry_on_new_signals.json5")
+    compare(coll, "db_after_multiple_datafilenames.json5")
+
+
+def test_accuracy_tester_mode(coll):
+    # in accuracy tester mode, only scenarios with equal TP and SL are run, others are skipped
+    #   additionally, the following settings are overwritten to the following values
+    #     leverages: [1]
+    #     trailing_sls: [False]
+    #     trail_delays: [False]
+    #     sls: [[[]]]
+    #     drawdown_limits: [-100]
+    #     winrate_floor: 0
+    main(
+        db_coll=c.COLL,
+        datafilenames=[c.DATAFILENAMES_12[0]],
+        take_profits=[1, 3],
+        stop_losses=[1, 3],
+        leverages=[25],
+        trailing_sls=[True],
+        trail_delays=[True],
+        sls=[[[0.5, -0.25]]],
+        loss_limit_fractions=[.2],
+        multiproc=False,
+        drawdown_limits=[-2],
+        winrate_floor=99,
+        enable_qol=False,
+        accuracy_tester_mode=True,
+        pure_delta_mode=False
+    )
+    compare(coll, "db_after_accuracy_tester_mode.json5")
+
+
+def test_pure_delta_mode(coll):
+    # in pure delta mode, TP is set to 10000 and SL to 49.  If a trade encounters the same signal
+    #   it entered on, the strat re-enters, to allow each entry to produce its own delta.
+    #   As in accuracy tester mode, the following additional settings are overwritten:
+    #   leverages: [1]
+    #   trailing_sls: [False]
+    #   trail_delays: [False]
+    #   sls: [[[]]]
+    #   drawdown_limits: [-100]
+    #   winrate_floor: 0
+
+    # one datafile is single arrow, the other is double arrow
+    main(
+        db_coll=c.COLL,
+        datafilenames=c.DATAFILENAMES_13,
+        take_profits=[0.05, 0.075],
+        stop_losses=[0.05, 0.06],
+        leverages=[25],
+        trailing_sls=[True],
+        trail_delays=[True],
+        sls=[[[0.05, -0.025]]],
+        loss_limit_fractions=[.2],
+        multiproc=False,
+        drawdown_limits=[-2],
+        winrate_floor=99,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=True
+    )
+
+    compare(coll, "db_after_pure_delta_mode.json5")
 
 
 def compare(_coll, expected):
