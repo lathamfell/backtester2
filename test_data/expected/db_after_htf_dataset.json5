@@ -3,6 +3,7 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_4h_1D.csv',
       'drawdown_limit': -80,
+          'signal_timeframe': [],
       'leverage': 3,
       'loss_limit_fraction': 0.2,
       'pure_delta_mode': false,

@@ -5,6 +5,7 @@ import pymongo
 from statistics import mean, median
 import re
 from time import sleep
+from enum import Enum
 
 import config_prod as c
 import config_common as cc
@@ -17,6 +18,11 @@ TAKE_PROFIT = "TAKE_PROFIT"
 SIGNAL = "SIGNAL"
 CPUS = cpu_count() - 2
 CHUNK_SIZE = 1000000
+
+class FileType(Enum):
+    SINGLE = "SINGLE"
+    DOUBLE = "DOUBLE"
+    MULTI = "MULTI"
 
 # valid combinations of trail_sl and trail_delay are:
 # 1. T T: trailing with delay
@@ -32,6 +38,7 @@ def main(
     db=c.DB,
     db_coll=c.COLL,
     datafilenames=c.DATAFILENAMES,
+    signal_timeframes=c.SIGNAL_TIMEFRAMES,
     take_profits=c.TAKE_PROFITS,
     stop_losses=c.STOP_LOSSES,
     leverages=c.LEVERAGES,
@@ -96,17 +103,18 @@ def main(
     # print(f"db connection established at {time.perf_counter() - start_time} seconds")
     # count the scenarios
     for datafilename in datafilenames:
-        for leverage in leverages:
-            for stop_loss in stop_losses:
-                for take_profit in take_profits:
-                    if accuracy_tester_mode and stop_loss != take_profit:
-                        continue
-                    for trailing_sl in trailing_sls:
-                        for trail_delay in trail_delays:
-                            for sl in sls:
-                                for drawdown_limit in drawdown_limits:
-                                    for loss_limit_fraction in loss_limit_fractions:
-                                        scenario_count += 1
+        for signal_timeframe in signal_timeframes:
+            for leverage in leverages:
+                for stop_loss in stop_losses:
+                    for take_profit in take_profits:
+                        if accuracy_tester_mode and stop_loss != take_profit:
+                            continue
+                        for trailing_sl in trailing_sls:
+                            for trail_delay in trail_delays:
+                                for sl in sls:
+                                    for drawdown_limit in drawdown_limits:
+                                        for loss_limit_fraction in loss_limit_fractions:
+                                            scenario_count += 1
     scenario_num = 0
 
     print(f"{scenario_count} scenarios counted at {time.perf_counter() - start_time} seconds")
@@ -117,42 +125,46 @@ def main(
         except IndexError:
             datafilename_only = datafilename
         df = pd.read_csv(filepath_or_buffer=datafilename, parse_dates=["time"])
-        timeframe = calculate_timeframe(df=df)
-        for leverage in leverages:
-            print(f"assembling specs for {datafilename_only} leverage {leverage}")
-            for stop_loss in stop_losses:
-                for take_profit in take_profits:
-                    if accuracy_tester_mode and stop_loss != take_profit:
-                        continue
-                    for trailing_sl in trailing_sls:
-                        for trail_delay in trail_delays:
-                            for sl in sls:
-                                for drawdown_limit in drawdown_limits:
-                                    for loss_limit_fraction in loss_limit_fractions:
-                                        scenario_num += 1
-                                        spec = {
-                                            "scenario_num": scenario_num,
-                                            "scenario_count": scenario_count,
-                                            "datafilename": datafilename_only,
-                                            "df": df,
-                                            "timeframe": timeframe,
-                                            "leverage": leverage,
-                                            "stop_loss": stop_loss,
-                                            "take_profit": take_profit,
-                                            "trailing_sl": trailing_sl,
-                                            "sl_reset_points": get_scrubbed_sl_reset_points(sl),
-                                            "trail_delay": trail_delay,
-                                            "db": db,
-                                            "db_coll": db_coll,
-                                            "write_invalid_to_db": write_invalid_to_db,
-                                            "loss_limit_fraction": loss_limit_fraction,
-                                            "drawdown_limit": drawdown_limit,
-                                            "winrate_floor": winrate_floor,
-                                            "winrate_grace_period": winrate_grace_period,
-                                            "pure_delta_mode": pure_delta_mode
-                                        }
-                                        spec["_id"] = get_unique_composite_key(spec)
-                                        specs.append(spec)
+        interval_timeframe = calculate_interval_timeframe(df=df)
+        for signal_timeframe in signal_timeframes:
+            file_type = get_file_type(df, signal_timeframe)
+            for leverage in leverages:
+                print(f"assembling specs for {datafilename_only} leverage {leverage}")
+                for stop_loss in stop_losses:
+                    for take_profit in take_profits:
+                        if accuracy_tester_mode and stop_loss != take_profit:
+                            continue
+                        for trailing_sl in trailing_sls:
+                            for trail_delay in trail_delays:
+                                for sl in sls:
+                                    for drawdown_limit in drawdown_limits:
+                                        for loss_limit_fraction in loss_limit_fractions:
+                                            scenario_num += 1
+                                            spec = {
+                                                "scenario_num": scenario_num,
+                                                "scenario_count": scenario_count,
+                                                "datafilename": datafilename_only,
+                                                "signal_timeframe": signal_timeframe,
+                                                "df": df,
+                                                "interval_timeframe": interval_timeframe,
+                                                "file_type": file_type,
+                                                "leverage": leverage,
+                                                "stop_loss": stop_loss,
+                                                "take_profit": take_profit,
+                                                "trailing_sl": trailing_sl,
+                                                "sl_reset_points": get_scrubbed_sl_reset_points(sl),
+                                                "trail_delay": trail_delay,
+                                                "db": db,
+                                                "db_coll": db_coll,
+                                                "write_invalid_to_db": write_invalid_to_db,
+                                                "loss_limit_fraction": loss_limit_fraction,
+                                                "drawdown_limit": drawdown_limit,
+                                                "winrate_floor": winrate_floor,
+                                                "winrate_grace_period": winrate_grace_period,
+                                                "pure_delta_mode": pure_delta_mode
+                                            }
+                                            spec["_id"] = get_unique_composite_key(spec)
+                                            specs.append(spec)
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
     # screen out specs already in db
@@ -218,9 +230,19 @@ def get_scrubbed_sl_reset_points(sl):
     return sl_out
 
 
-def calculate_timeframe(df):
+def calculate_interval_timeframe(df):
     # given a pandas dataframe representing the datafile, calculate timeframe from the first two time values
     return (df.iloc[1]['time'] - df.iloc[0]['time']).total_seconds() / 60
+
+
+def get_file_type(df, signal_timeframe):
+    row = df.iloc[0]
+    if len(signal_timeframe) == 0:
+        if row.get("short") and row.get("long"):
+            return FileType.SINGLE
+        if row.get("short_htf") and row.get("long_htf") and row.get("short_ltf") and row.get("long_ltf"):
+            return FileType.DOUBLE
+    return FileType.MULTI
 
 
 def scenario_in_db(coll, _id):
@@ -244,7 +266,7 @@ class ScenarioRunner:
 
         # calculate number of days
         candle_count = len(spec["df"].index)
-        minutes = candle_count * int(spec["timeframe"])
+        minutes = candle_count * int(spec["interval_timeframe"])
         self.days = round(minutes / 1440, 1)
 
         self.long_entry_price = None
@@ -276,7 +298,7 @@ class ScenarioRunner:
         self.row = None
         self.win_rate = None
 
-        self.htf_shadow = None  # only used in HTF dataset scenarios
+        self.htf_shadow = None# only used in HTF dataset scenarios
 
     def run_scenario(self):
         if not is_valid_scenario(self.spec):
@@ -465,51 +487,86 @@ class ScenarioRunner:
 
     def should_close_short(self):
         bot_in_trade = self.short_entry_price
-        try:
+        # single timeframe scenarios: same logic, header depends on file type
+        if self.spec["file_type"] == FileType.SINGLE:
             long_signal = getattr(self.row, "long") == 1
             return bot_in_trade and long_signal
-        except AttributeError:
-            pass
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
+            long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
+            return bot_in_trade and long_signal
 
-        opposing_htf_signal = getattr(self.row, "long_htf") == 1
+        # double timeframe scenarios: same logic, header depends on file type
+        long_htf_header = short_ltf_header = None
+        if self.spec["file_type"] == FileType.DOUBLE:
+            long_htf_header = "long_htf"
+            short_ltf_header = "short_ltf"
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
+            long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
+            short_ltf_header = f"short_{self.spec['signal_timeframe'][1]}"
+
+        opposing_htf_signal = getattr(self.row, long_htf_header) == 1
         if bot_in_trade and opposing_htf_signal:
             return True
         if self.spec["pure_delta_mode"]:
             # close this trade if we got another signal in the same direction
             #   in pure delta mode each entry measures its own delta
-            supporting_ltf_signal = getattr(self.row, "short_ltf") == 1
+            supporting_ltf_signal = getattr(self.row, short_ltf_header) == 1
             if bot_in_trade and supporting_ltf_signal:
                 return True
+
         return False
 
     def should_close_long(self):
         bot_in_trade = self.long_entry_price
-        try:
+        # single timeframe scenarios: same logic, header depends on file type
+        if self.spec["file_type"] == FileType.SINGLE:
             short_signal = getattr(self.row, "short") == 1
             return bot_in_trade and short_signal
-        except AttributeError:
-            pass
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
+            short_signal = getattr(self.row, f"short_{self.spec['signal_timeframe'][0]}") == 1
+            return bot_in_trade and short_signal
 
-        opposing_htf_signal = getattr(self.row, "short_htf") == 1
+        # double timeframe scenarios: same logic, header depends on file type
+        short_htf_header = long_ltf_header = None
+        if self.spec["file_type"] == FileType.DOUBLE:
+            short_htf_header = "short_htf"
+            long_ltf_header = "long_ltf"
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
+            short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
+            long_ltf_header = f"long_{self.spec['signal_timeframe'][1]}"
+
+        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
         if bot_in_trade and opposing_htf_signal:
             return True
         if self.spec["pure_delta_mode"]:
-            supporting_ltf_signal = getattr(self.row, "long_ltf") == 1
+            supporting_ltf_signal = getattr(self.row, long_ltf_header) == 1
             if bot_in_trade and supporting_ltf_signal:
                 return True
         return False
 
     def should_open_short(self):
         bot_in_trade = self.short_entry_price
-        try:
+
+        # single timeframe scenarios: same logic, header depends on file type
+        if self.spec["file_type"] == FileType.SINGLE:
             short_signal = getattr(self.row, "short") == 1
             return not bot_in_trade and short_signal
-        except AttributeError:
-            pass
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
+            short_signal = getattr(self.row, f"short_{self.spec['signal_timeframe'][0]}") == 1
+            return not bot_in_trade and short_signal
 
-        htf_signal = getattr(self.row, "short_htf") == 1
-        ltf_signal = getattr(self.row, "short_ltf") == 1
-        if htf_signal and not bot_in_trade:  # should close long already called
+        # double timeframe scenarios: same logic, header depends on file type
+        short_htf_header = short_ltf_header = None
+        if self.spec["file_type"] == FileType.DOUBLE:
+            short_htf_header = "short_htf"
+            short_ltf_header = "short_ltf"
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
+            short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
+            short_ltf_header = f"short_{self.spec['signal_timeframe'][1]}"
+
+        htf_signal = getattr(self.row, short_htf_header) == 1
+        ltf_signal = getattr(self.row, short_ltf_header) == 1
+        if htf_signal and not bot_in_trade:  # should_close_long() already called
             self.htf_shadow = "short"
             return True
         if ltf_signal and self.htf_shadow == "short" and not bot_in_trade:
@@ -518,15 +575,27 @@ class ScenarioRunner:
 
     def should_open_long(self):
         bot_in_trade = self.long_entry_price
-        try:
+
+        # single timeframe scenarios: same logic, header depends on file type
+        if self.spec["file_type"] == FileType.SINGLE:
             long_signal = getattr(self.row, "long") == 1
             return not bot_in_trade and long_signal
-        except AttributeError:
-            pass
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
+            long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
+            return not bot_in_trade and long_signal
 
-        htf_signal = getattr(self.row, "long_htf") == 1
-        ltf_signal = getattr(self.row, "long_ltf") == 1
-        if htf_signal and not bot_in_trade:  # should close short already called
+        # double timeframe scenarios: same logic, header depends on file type
+        long_htf_header = long_ltf_header = None
+        if self.spec["file_type"] == FileType.DOUBLE:
+            long_htf_header = "long_htf"
+            long_ltf_header = "long_ltf"
+        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
+            long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
+            long_ltf_header = f"long_{self.spec['signal_timeframe'][1]}"
+
+        htf_signal = getattr(self.row, long_htf_header) == 1
+        ltf_signal = getattr(self.row, long_ltf_header) == 1
+        if htf_signal and not bot_in_trade:  # should_close_long() already called
             self.htf_shadow = "long"
             return True
         if ltf_signal and self.htf_shadow == "long" and not bot_in_trade:
@@ -618,7 +687,7 @@ class ScenarioRunner:
             mean_profit = round(mean(self.get_profits()), 2)
             median_profit = round(median(self.get_profits()), 2)
             mean_hrs_in_trade = round(
-                mean(self.get_durations()) * int(self.spec["timeframe"]) / 60, 2
+                mean(self.get_durations()) * int(self.spec["interval_timeframe"]) / 60, 2
             )
             delta = round(sum(self.get_deltas()), 2)
             delta_mean = round(mean(self.get_deltas()), 2)
@@ -755,6 +824,7 @@ def is_valid_scenario(spec):
 def get_unique_composite_key(spec):
     unique_composite_key = {
         "datafilename": spec["datafilename"],
+        "signal_timeframe": spec["signal_timeframe"],
         "leverage": spec["leverage"],
         "stop_loss": spec["stop_loss"],
         "take_profit": spec["take_profit"],

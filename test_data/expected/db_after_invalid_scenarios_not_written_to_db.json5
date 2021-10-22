@@ -2,6 +2,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -61,6 +62,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -120,6 +122,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -182,6 +185,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -241,6 +245,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -303,6 +308,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+          'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,

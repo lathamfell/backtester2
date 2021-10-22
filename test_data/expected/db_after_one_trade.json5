@@ -12,6 +12,7 @@
       ],
       "loss_limit_fraction": 0,
       'pure_delta_mode': false,
+      'signal_timeframe': [],
       "drawdown_limit": -100,
       "winrate_floor": 50,
       "winrate_grace_period": 50

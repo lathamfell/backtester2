@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -229,6 +230,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -456,6 +458,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -683,6 +686,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -910,6 +914,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -955,6 +960,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
@@ -1122,6 +1128,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
@@ -1349,6 +1356,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
@@ -1394,6 +1402,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
@@ -1439,6 +1448,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -49,
       'leverage': 10,
       'loss_limit_fraction': 0.2,

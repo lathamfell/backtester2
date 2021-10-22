@@ -9,45 +9,27 @@ from dateutil import parser
 from datetime import timedelta
 
 # note: HTF file must have long/short cols labeled
-# note: for LTF file use the 5m base file that goes back to the same year as the HTF. It won't be edited
+# note: for LTF file use the 5m base file that goes back to the same mo/year as the HTF. It won't be edited
+# NOTE: WHEN ADDING FRESH DATA TO BASE FILES DO NOT BRING IN THE 5M SIGNALS TOO!  BASE FILES == NO SIGNALS
 PAIRS = [  # tuples of HTF file/LTF file
-    #("data/TFs_above_5m/COINBASE_BTCUSD_15_2021.csv", "data/btcusd-5m_base_2021.csv"),  # 15m full
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_30_2020.csv", "data/btcusd-5m_base_2021.csv"),  # 30m full
-    #("data/TFs_above_5m/COINBASE_BTCUSD_30_2020.csv", "data/btcusd-5m_base_2020.csv"),  # 30m just 2021
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_1h_2019.csv", "data/btcusd-5m_base_2021.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_1h_2019.csv", "data/btcusd-5m_base_2020.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_1h_2019.csv", "data/btcusd-5m_base_2019.csv"),
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_2h_2017.csv", "data/btcusd-5m_base_2021.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_2h_2017.csv", "data/btcusd-5m_base_2020.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_2h_2017.csv", "data/btcusd-5m_base_2019.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_2h_2017.csv", "data/btcusd-5m_base_2017.csv"),
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_4h_2015.csv", "data/btcusd-5m_base_2021.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_4h_2015.csv", "data/btcusd-5m_base_2020.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_4h_2015.csv", "data/btcusd-5m_base_2019.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_4h_2015.csv", "data/btcusd-5m_base_2017.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_4h_2015.csv", "data/btcusd-5m_base_2015.csv"),
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_8h_2015.csv", "data/btcusd-5m_base_2021.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_8h_2015.csv", "data/btcusd-5m_base_2020.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_8h_2015.csv", "data/btcusd-5m_base_2019.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_8h_2015.csv", "data/btcusd-5m_base_2017.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_8h_2015.csv", "data/btcusd-5m_base_2015.csv"),
-
-    #("data/TFs_above_5m/COINBASE_BTCUSD_12h_2015.csv", "data/btcusd-5m_base_2021.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_12h_2015.csv", "data/btcusd-5m_base_2020.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_12h_2015.csv", "data/btcusd-5m_base_2019.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_12h_2015.csv", "data/btcusd-5m_base_2017.csv"),
-    #("data/TFs_above_5m/COINBASE_BTCUSD_12h_2015.csv", "data/btcusd-5m_base_2015.csv"),
-
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_2015.csv", "data/btcusd-5m_base_2021.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_2015.csv", "data/btcusd-5m_base_2020.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_2015.csv", "data/btcusd-5m_base_2019.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_2015.csv", "data/btcusd-5m_base_2017.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_2015.csv", "data/btcusd-5m_base_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_10m_05_2021.csv", "data/btcusd-5m_base_05_2021.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_15m_03_2021.csv", "data/btcusd-5m_base_03_2021.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_90m_01_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_2h_01_2017.csv", "data/btcusd-5m_base_01_2017.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_3h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_4h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_5h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_6h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_7h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_8h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_10h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_12h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_16h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_20h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
 ]
 
 
@@ -79,29 +61,49 @@ def process_pair(htf_datafilename, ltf_datafilename):
             out_df.at[lf_idx, sig] = 1
             print(f"mapped signal at {dt_htf} to LTF {ltf_sig_time}")
 
-    base_year = ltf_datafilename.split("_")[2].split('.')[0]
+    base_month_and_year = ltf_datafilename.split("_")[2] + "_" + ltf_datafilename.split("_")[3].split(".")[0]
     htf_name_wo_year = "_".join([htf_datafilename.split("_")[2].split("/")[1], htf_datafilename.split("_")[3], htf])
-    outfilename = f"data/{htf_name_wo_year}_on_5m_{base_year}.csv"
+    outfilename = f"data/{htf_name_wo_year}_on_5m_{base_month_and_year}.csv"
     out_df.to_csv(outfilename, index=False)
 
 
 def get_lf_timedelta(htf, ltf):
     if htf == "1D" and ltf == 5:
         return timedelta(hours=23, minutes=55)
+    if htf == "20h" and ltf == 5:
+        return timedelta(hours=19, minutes=55)
+    if htf == "16h" and ltf == 5:
+        return timedelta(hours=15, minutes=55)
     if htf == "12h" and ltf == 5:
         return timedelta(hours=11, minutes=55)
+    if htf == "10h" and ltf == 5:
+        return timedelta(hours=9, minutes=55)
     if htf == "8h" and ltf == 5:
         return timedelta(hours=7, minutes=55)
+    if htf == "7h" and ltf == 5:
+        return timedelta(hours=6, minutes=55)
+    if htf == "6h" and ltf == 5:
+        return timedelta(hours=5, minutes=55)
+    if htf == "5h" and ltf == 5:
+        return timedelta(hours=4, minutes=55)
     if htf == "4h" and ltf == 5:
         return timedelta(hours=3, minutes=55)
+    if htf == "3h" and ltf == 5:
+        return timedelta(hours=2, minutes=55)
     if htf == "2h" and ltf == 5:
         return timedelta(hours=1, minutes=55)
+    if htf == "90m" and ltf == 5:
+        return timedelta(hours=1, minutes=25)
     if htf == "1h" and ltf == 5:
         return timedelta(hours=0, minutes=55)
-    if htf == "30" and ltf == 5:
+    if htf == "45m" and ltf == 5:
+        return timedelta(hours=0, minutes=40)
+    if htf == "30m" and ltf == 5:
         return timedelta(hours=0, minutes=25)
-    if htf == "15" and ltf == 5:
+    if htf == "15m" and ltf == 5:
         return timedelta(hours=0, minutes=10)
+    if htf == "10m" and ltf == 5:
+        return timedelta(hours=0, minutes=5)
 
 
 def get_sig(row):

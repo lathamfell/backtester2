@@ -2,6 +2,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
+      'signal_timeframe': [],
       "leverage": 20,
       "stop_loss": 6,
       "take_profit": 1,
@@ -44,6 +45,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
+      'signal_timeframe': [],
       "leverage": 20,
       "stop_loss": 6,
       "take_profit": 1,
@@ -89,6 +91,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
+      'signal_timeframe': [],
       "leverage": 20,
       "stop_loss": 6,
       "take_profit": 1,
@@ -138,6 +141,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
+      'signal_timeframe': [],
       "leverage": 20,
       "stop_loss": 6,
       "take_profit": 1,

@@ -19,6 +19,9 @@ DATAFILENAMES_13 = [
     "test_data/COINBASE_BTCUSD_2h_on_5m_2020.csv",
     "test_data/COINBASE_BTCUSD_15_2h_on_5m_2021.csv"
 ]
+DATAFILENAMES_14 = [
+    "test_data/COINBASE_BTCUSD_all_TFs_on_5m.csv"
+]
 DB_CONNECTION = "mongodb://localhost:27017"
 DB = "bt"
 COLL = "btcoll_test"

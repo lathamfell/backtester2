@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_33_trades.csv',
+      'signal_timeframe': [],
       'drawdown_limit': -100,
       'leverage': 10,
       'loss_limit_fraction': 0,

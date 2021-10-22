@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_15_from_09_2017_with_T3_4h.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -100,
       'leverage': 5,
       'loss_limit_fraction': 0,

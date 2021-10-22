@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'COINBASE_BTCUSD_15_1h_on_5m_2021.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -100,
       'leverage': 1,
       'loss_limit_fraction': 0.2,
@@ -5911,6 +5912,7 @@
   {
     '_id': {
       'datafilename': 'COINBASE_BTCUSD_15_1h_on_5m_2021.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -100,
       'leverage': 1,
       'loss_limit_fraction': 0.2,

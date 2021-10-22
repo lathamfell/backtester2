@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -100,
       'leverage': 4,
       'loss_limit_fraction': 0.2,
@@ -346,6 +347,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -65,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
@@ -3502,6 +3504,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -33,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
@@ -3756,6 +3759,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -33,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
@@ -4100,6 +4104,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -33,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
@@ -4294,6 +4299,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -33,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
@@ -4488,6 +4494,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_five_trades.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -60,
       'leverage': 5,
       'loss_limit_fraction': 0,
@@ -4607,6 +4614,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3_first_trade_removed.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -33,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
@@ -4951,6 +4959,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
+          'signal_timeframe': [],
       'drawdown_limit': -40,
       'leverage': 2,
       'loss_limit_fraction': 0.2,

@@ -846,6 +846,47 @@ def test_pure_delta_mode(coll):
     compare(coll, "db_after_pure_delta_mode.json5")
 
 
+def test_timeframe_specific_column_headers(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=c.DATAFILENAMES_14,
+        signal_timeframes=[["12h"], ["15m"], ["90m", "30m"]],
+        take_profits=[10],
+        stop_losses=[10],
+        leverages=[1],
+        trailing_sls=[False],
+        trail_delays=[False],
+        sls=[[[]]],
+        loss_limit_fractions=[.2],
+        multiproc=False,
+        drawdown_limits=[-90],
+        winrate_floor=20,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=False
+    )
+    # and with pure delta
+    main(
+        db_coll=c.COLL,
+        datafilenames=c.DATAFILENAMES_14,
+        signal_timeframes=[["12h"], ["15m"], ["90m", "30m"]],
+        take_profits=[2],
+        stop_losses=[2],
+        leverages=[1],
+        trailing_sls=[False],
+        trail_delays=[False],
+        sls=[[[]]],
+        loss_limit_fractions=[.2],
+        multiproc=False,
+        drawdown_limits=[-90],
+        winrate_floor=60,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        pure_delta_mode=True
+    )
+    compare(coll, "db_after_timeframe_specific_column_headers.json5")
+
+
 def compare(_coll, expected):
     actual = list(_coll.find())
     with open("test_data/expected/" + expected) as _f:
