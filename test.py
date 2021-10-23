@@ -595,33 +595,6 @@ def test_invalid_scenarios_due_to_initial_drawdown_screener(coll):
     compare(coll, "db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5")
 
 
-def test_get_adjusted_leverage():
-    loss_limit_fractions = [0, .1, .2, .5]
-    leverages = [1, 2, 5, 10]
-    stop_losses = [1, 2, 4, 5, 10]
-    total_profit_pcts = [-50, 0, 50, 100, 150, 200, 301, 399, 467, 500]
-    results = []
-
-    for llf in loss_limit_fractions:
-        for l in leverages:
-            for sl in stop_losses:
-                for tpp in total_profit_pcts:
-                    adj_leverage, loss_limit = get_adjusted_leverage(
-                        stop_loss=sl, max_leverage=l, total_profit_pct=tpp,
-                        loss_limit_fraction=llf)
-                    results.append(
-                        {"tpp": tpp,
-                         "sl": sl,
-                         "l": l,
-                         "llf": llf,
-                         "adj_leverage": adj_leverage,
-                         "loss_limit": loss_limit,
-                         "potential_loss": round(sl * adj_leverage, 3)})
-    with open("test_data/expected/expected_adjusted_leverages.json5") as _f:
-        expected = json5.load(_f)
-    assert results == expected
-
-
 def test_scenarios_already_in_db_are_not_rerun(coll):
     main(
         db_coll=c.COLL,
@@ -885,6 +858,33 @@ def test_timeframe_specific_column_headers(coll):
         pure_delta_mode=True
     )
     compare(coll, "db_after_timeframe_specific_column_headers.json5")
+
+
+def test_get_adjusted_leverage():
+    loss_limit_fractions = [0, .1, .2, .5]
+    leverages = [1, 2, 5, 10]
+    stop_losses = [1, 2, 4, 5, 10]
+    total_profit_pcts = [-50, 0, 50, 100, 150, 200, 301, 399, 467, 500]
+    results = []
+
+    for llf in loss_limit_fractions:
+        for l in leverages:
+            for sl in stop_losses:
+                for tpp in total_profit_pcts:
+                    adj_leverage, loss_limit = get_adjusted_leverage(
+                        stop_loss=sl, max_leverage=l, total_profit_pct=tpp,
+                        loss_limit_fraction=llf)
+                    results.append(
+                        {"tpp": tpp,
+                         "sl": sl,
+                         "l": l,
+                         "llf": llf,
+                         "adj_leverage": adj_leverage,
+                         "loss_limit": loss_limit,
+                         "potential_loss": round(sl * adj_leverage, 3)})
+    with open("test_data/expected/expected_adjusted_leverages.json5") as _f:
+        expected = json5.load(_f)
+    assert results == expected
 
 
 def compare(_coll, expected):

@@ -2,7 +2,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -41,19 +41,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.0,
+        'assets': 1.0,
         'delta': -5.54,
-        "direction": "short",
-        "duration": 1,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T08:00:00Z",
+        'direction': 'short',
+        'duration': 1,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T08:00:00Z',
         'exit_pct': 0.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 0.35,
+        'exit_price': 34199.1,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 0.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 0.35
       }
     ],
     "valid": true,
@@ -62,7 +64,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -101,19 +103,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.02,
+        'assets': 1.02,
         'delta': -3.54,
-        "direction": "short",
-        "duration": 2,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T12:00:00Z",
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 2.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 2.35,
+        'exit_price': 33511.7,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 2.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 2.35
       }
     ],
     "valid": true,
@@ -122,7 +126,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -164,19 +168,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.02,
+        'assets': 1.02,
         'delta': -3.54,
-        "direction": "short",
-        "duration": 2,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T12:00:00Z",
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 2.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 2.35,
+        'exit_price': 33511.7,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 2.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 2.35
       }
     ],
     "valid": true,
@@ -185,7 +191,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -224,19 +230,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.03,
+        'assets': 1.03,
         'delta': -2.54,
-        "direction": "short",
-        "duration": 2,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T12:00:00Z",
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 3.35,
+        'exit_price': 33168.0,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 3.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 3.35
       }
     ],
     "valid": true,
@@ -245,7 +253,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -287,19 +295,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.03,
+        'assets': 1.03,
         'delta': -2.54,
-        "direction": "short",
-        "duration": 2,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T12:00:00Z",
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 3.35,
+        'exit_price': 33168.0,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 3.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 3.35
       }
     ],
     "valid": true,
@@ -308,7 +318,7 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
-          'signal_timeframe': [],
+      'signal_timeframe': [],
       "leverage": 1,
       "loss_limit_fraction": 0.2,
       'pure_delta_mode': false,
@@ -354,19 +364,21 @@
     'trades': 1,
     "trade_history": [
       {
-        "assets": 1.03,
+        'assets': 1.03,
         'delta': -2.54,
-        "direction": "short",
-        "duration": 2,
-        "entry": "2021-01-11T04:00:00Z",
-        "exit": "2021-01-11T12:00:00Z",
+        'direction': 'short',
+        'duration': 2,
+        'entry': '2021-01-11T04:00:00Z',
+        'entry_price': 34371.0,
+        'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
-        "exit_type": "tp",
-        "leverage": 1,
-        "profit": 3.35,
+        'exit_price': 33168.0,
+        'exit_type': 'tp',
+        'leverage': 1,
         'max_profit': 3.35,
         'max_profit_pre_drawdown': -5.89,
-        'min_profit': -5.89
+        'min_profit': -5.89,
+        'profit': 3.35
       }
     ],
     "valid": true,

@@ -6,12 +6,7 @@ CLEAR_DB = False
 #   analyses on same file!  e.g. if you want to run a subset of trades for a file,
 #   create a new file with the trades you want and run that
 DATAFILENAMES = [  # these will be run
-    "data/COINBASE_BTCUSD_30_2h_on_5m_2021.csv",
-    "data/COINBASE_BTCUSD_30_2h_on_5m_2020.csv",
-    "data/COINBASE_BTCUSD_15_2h_on_5m_2021.csv",
-    "data/COINBASE_BTCUSD_1h_4h_on_5m_2021.csv",
-    "data/COINBASE_BTCUSD_1h_4h_on_5m_2020.csv",
-    "data/COINBASE_BTCUSD_1h_4h_on_5m_2019.csv",
+    "data/COINBASE_BTCUSD_all_TFs_on_5m.csv"
 ]
 
 DATAFILENAMES_ALL = [  # for reference
@@ -107,3 +102,20 @@ ENABLE_QOL = True
 REPLACE = False
 ACCURACY_TESTER_MODE = False  # only runs equal TP/Sl spec; overwrites leverage, trail/delay, sls, dd, winrate floor
 PURE_DELTA_MODE = False  # measures pure delta with max TP and SL; overwrites most other settings
+
+SIGNAL_TIMEFRAME_START_TIMES = {
+    "1D": "2015-01-01T00:00:00Z",
+    "12h": "2015-01-01T00:00:00Z",
+    "8h": "2015-01-01T00:00:00Z",
+    "6h": "2015-01-01T00:00:00Z",
+    "4h": "2015-01-01T00:00:00Z",
+    "3h": "2015-01-01T00:00:00Z",
+    "2h": "2017-01-01T00:00:00Z",
+    "90m": "2018-01-01T00:00:00Z",
+    "1h": "2019-01-01T00:00:00Z",
+    "45m": "2020-01-01T00:00:00Z",
+    "30m": "2020-01-01T00:00:00Z",
+    "15m": "2021-03-01T00:00:00Z",
+    "10m": "2021-05-31T00:00:00Z",
+    "5m": "2021-08-09T00:00:00Z"
+}

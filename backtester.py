@@ -6,6 +6,7 @@ from statistics import mean, median
 import re
 from time import sleep
 from enum import Enum
+from datetime import datetime
 
 import config_prod as c
 import config_common as cc
@@ -19,10 +20,12 @@ SIGNAL = "SIGNAL"
 CPUS = cpu_count() - 2
 CHUNK_SIZE = 1000000
 
+
 class FileType(Enum):
     SINGLE = "SINGLE"
     DOUBLE = "DOUBLE"
     MULTI = "MULTI"
+
 
 # valid combinations of trail_sl and trail_delay are:
 # 1. T T: trailing with delay
@@ -284,8 +287,9 @@ class ScenarioRunner:
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
 
-        self.start_date = spec["df"].iloc[0]["time"].isoformat().replace("+00:00", "Z")
-        self.end_date = spec["df"].iloc[-1]["time"].isoformat().replace("+00:00", "Z")
+        #self.start_date = spec["df"].iloc[0]["time"].isoformat().replace("+00:00", "Z")
+        self.start_date_str, self.start_date_ts = self.get_start_date()
+        self.end_date = self.spec["df"].iloc[-1]["time"].isoformat().replace("+00:00", "Z")
         self.sl_reset_points_hit = []
         self.candles_spent_in_trade = 0
 
@@ -298,16 +302,33 @@ class ScenarioRunner:
         self.row = None
         self.win_rate = None
 
-        self.htf_shadow = None# only used in HTF dataset scenarios
+        self.htf_shadow = None # only used in HTF dataset scenarios
+
+    def get_start_date(self):
+        if self.spec["file_type"] in [FileType.SINGLE, FileType.DOUBLE]:
+            # return the first time in the file
+            start_date = self.spec["df"].iloc[0]["time"].isoformat().replace("+00:00", "Z")
+            return start_date, pd.to_datetime(start_date)
+        if self.spec["file_type"] == FileType.MULTI:
+            if len(self.spec["signal_timeframe"]) == 1:
+                # return start date of the single timeframe
+                start_date = c.SIGNAL_TIMEFRAME_START_TIMES[self.spec["signal_timeframe"][0]]
+                return start_date, pd.to_datetime(start_date)
+            if len(self.spec["signal_timeframe"]) == 2:
+                # return start date of the LTF
+                start_date = c.SIGNAL_TIMEFRAME_START_TIMES[self.spec["signal_timeframe"][1]]
+                return start_date, pd.to_datetime(start_date)
 
     def run_scenario(self):
         if not is_valid_scenario(self.spec):
             del self.spec["df"]  # no longer need it, and it doesn't print gracefully
             print(f"invalid spec: {self.spec}")
             return get_invalid_scenario_result(
-                self.spec["_id"], self.start_date, self.end_date)
+                self.spec["_id"], self.start_date_str, self.end_date)
 
         for row in self.spec["df"].itertuples():
+            if getattr(row, "time") < self.start_date_ts:
+                continue
             self.row = row
             if self.long_entry_price:
                 self.candles_spent_in_trade += 1
@@ -620,12 +641,20 @@ class ScenarioRunner:
         profit_pct = exit_pct * self.leverage - FEES * self.leverage
         return profit_pct, exit_pct
 
+    def get_exit_price_from_exit_pct(self, exit_pct):
+        # take an exit pct like -2% and returns exit price based on direction and entry price
+        if self.long_entry_price:
+            return round(self.long_entry_price * (1 + exit_pct/100), 1)
+        if self.short_entry_price:
+            return round(self.short_entry_price * (1 - exit_pct/100), 1)
+
     def finish_trade(self, _type):
-        exit_price = getattr(self.row, "close")
         exit_type = None
         exit_pct = None
+        exit_price = None
         if _type == STOP_LOSS:
             self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss))
+            exit_price = self.get_exit_price_from_exit_pct(exit_pct=(-1 * self.stop_loss))
             if self.profit_pct > 0:
                 exit_type = "sl_profit"
             else:
@@ -633,19 +662,17 @@ class ScenarioRunner:
 
         elif _type == TAKE_PROFIT:
             self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"])
+            exit_price = self.get_exit_price_from_exit_pct(exit_pct=self.spec["take_profit"])
             exit_type = "tp"
 
         elif _type == SIGNAL:
+            exit_price = getattr(self.row, "close")
             self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price)
             if self.profit_pct > 0:
                 exit_type = "sig_profit"
             else:
                 exit_type = "sig_loss"
 
-        self.short_entry_price = (
-            None  # clear both for convenience, even though only one is set
-        )
-        self.long_entry_price = None
         self.assets *= 1 + self.profit_pct/100
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
@@ -654,6 +681,8 @@ class ScenarioRunner:
         self.total_profit_pct = int((self.assets - 1) * 100)  # e.g. 103 (=103% profit)
 
         # update trade history
+        self.trade["entry_price"] = self.short_entry_price if self.short_entry_price else self.long_entry_price
+        self.trade["exit_price"] = exit_price
         self.trade["exit"] = getattr(self.row, "time").isoformat().replace("+00:00", "Z")
         self.trade["exit_pct"] = round(exit_pct, 2)
         self.trade["profit"] = round(self.profit_pct, 2)
@@ -674,6 +703,9 @@ class ScenarioRunner:
             self.calculate_win_rate()
             if self.win_rate < self.spec["winrate_floor"]:
                 raise e.WinRateTooLow
+
+        # clear both for convenience, even though only one is set
+        self.short_entry_price = self.long_entry_price = None
 
     def finish_scenario(self, failed=False):
         daily_profit_pct_avg = round(
@@ -700,7 +732,7 @@ class ScenarioRunner:
 
         result = {
             "_id": self.spec["_id"],
-            "start_date": self.start_date,
+            "start_date": self.start_date_str,
             "end_date": self.end_date,
             "trade_history": self.trade_history,
             "total_profit_pct": self.total_profit_pct,
