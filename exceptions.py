@@ -4,3 +4,7 @@ class TooMuchDrawdown(Exception):
 
 class WinRateTooLow(Exception):
     pass
+
+
+class MeanOrMedianTooLow(Exception):
+    pass

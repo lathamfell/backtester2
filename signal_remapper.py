@@ -12,24 +12,19 @@ from datetime import timedelta
 # note: for LTF file use the 5m base file that goes back to the same mo/year as the HTF. It won't be edited
 # NOTE: WHEN ADDING FRESH DATA TO BASE FILES DO NOT BRING IN THE 5M SIGNALS TOO!  BASE FILES == NO SIGNALS
 PAIRS = [  # tuples of HTF file/LTF file
-    ("data/TFs_above_5m/COINBASE_BTCUSD_10m_05_2021.csv", "data/btcusd-5m_base_05_2021.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_15m_03_2021.csv", "data/btcusd-5m_base_03_2021.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_90m_01_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_2h_01_2017.csv", "data/btcusd-5m_base_01_2017.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_3h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_4h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_5h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_6h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_7h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_8h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_10h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_12h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_16h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_20h_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
-    ("data/TFs_above_5m/COINBASE_BTCUSD_1D_01_2015.csv", "data/btcusd-5m_base_01_2015.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_10m_06_2021.csv", "data/ethusd-5m_base_06_2021.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_15m_03_2021.csv", "data/ethusd-5m_base_03_2021.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_30m_01_2020.csv", "data/ethusd-5m_base_01_2020.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_45m_01_2020.csv", "data/ethusd-5m_base_01_2020.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_1h_01_2019.csv", "data/ethusd-5m_base_01_2019.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_90m_01_2018.csv", "data/ethusd-5m_base_01_2018.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_2h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_3h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_4h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_6h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_8h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_12h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    ("data/TV_data_exports/COINBASE_ETHUSD_1D_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
 ]
 
 
@@ -70,22 +65,12 @@ def process_pair(htf_datafilename, ltf_datafilename):
 def get_lf_timedelta(htf, ltf):
     if htf == "1D" and ltf == 5:
         return timedelta(hours=23, minutes=55)
-    if htf == "20h" and ltf == 5:
-        return timedelta(hours=19, minutes=55)
-    if htf == "16h" and ltf == 5:
-        return timedelta(hours=15, minutes=55)
     if htf == "12h" and ltf == 5:
         return timedelta(hours=11, minutes=55)
-    if htf == "10h" and ltf == 5:
-        return timedelta(hours=9, minutes=55)
     if htf == "8h" and ltf == 5:
         return timedelta(hours=7, minutes=55)
-    if htf == "7h" and ltf == 5:
-        return timedelta(hours=6, minutes=55)
     if htf == "6h" and ltf == 5:
         return timedelta(hours=5, minutes=55)
-    if htf == "5h" and ltf == 5:
-        return timedelta(hours=4, minutes=55)
     if htf == "4h" and ltf == 5:
         return timedelta(hours=3, minutes=55)
     if htf == "3h" and ltf == 5:

@@ -3,13 +3,9 @@ import time
 from multiprocessing import Pool, cpu_count
 import pymongo
 from statistics import mean, median
-import re
-from time import sleep
 from enum import Enum
-from datetime import datetime
 
 import config_prod as c
-import config_common as cc
 import exceptions as e
 
 FEES = 0.15  # Bybit charges 0.075% for market entry/exit; 0.075 + 0.075 = 0.15%
@@ -41,24 +37,29 @@ def main(
     db=c.DB,
     db_coll=c.COLL,
     datafilenames=c.DATAFILENAMES,
+    signal_start_dates=[None],
     signal_timeframes=c.SIGNAL_TIMEFRAMES,
     take_profits=c.TAKE_PROFITS,
     stop_losses=c.STOP_LOSSES,
     leverages=c.LEVERAGES,
     trailing_sls=c.TRAILING_SLS,
     trail_delays=c.TRAIL_DELAYS,
+    trail_last_resets=c.TRAIL_LAST_RESETS,
     sls=c.SLS,
     loss_limit_fractions=c.LOSS_LIMIT_FRACTIONS,
     drawdown_limits=c.DRAWDOWN_LIMITS,
     winrate_floor=c.WINRATE_FLOOR,
-    winrate_grace_period=c.WINRATE_GRACE_PERIOD,
+    mean_floor=c.MEAN_FLOOR,
+    median_floor=c.MEDIAN_FLOOR,
+    floor_grace_period=c.FLOOR_GRACE_PERIOD,
     multiproc=c.MULTIPROCESSING,
     clear_db=c.CLEAR_DB,
     write_invalid_to_db=c.WRITE_INVALID_TO_DB,
     enable_qol=c.ENABLE_QOL,  # script has things like sleep, pauses, for human interaction. Disable for testing or whatever
     replace_existing_scenarios=c.REPLACE,  # True to overwrite scenarios with matching id
     accuracy_tester_mode=c.ACCURACY_TESTER_MODE,
-    pure_delta_mode=c.PURE_DELTA_MODE
+    signal_exits=[True],
+    check_for_dupes_up_front=False
 ):
     start_time = time.perf_counter()
 
@@ -79,22 +80,15 @@ def main(
         leverages = [1]
         trailing_sls = [False]
         trail_delays = [False]
+        trail_last_resets = [False]
         sls = [[[]]]
         drawdown_limits = [-100]
         winrate_floor = 0
-    if pure_delta_mode:
-        print(f"\nRUNNING IN PURE DELTA MODE\n")
-        take_profits = [10000]
-        stop_losses = [49]
-        leverages = [1]
-        trailing_sls = [False]
-        trail_delays = [False]
-        sls = [[[]]]
-        drawdown_limits = [-100]
-        winrate_floor = 0
+        mean_floor = median_floor = -100
 
     scenario_count = 0
     specs = []
+    spec_ids = []  # used to detect dupe specs
 
     # db connection
     mongo = pymongo.MongoClient(db_connection)
@@ -107,17 +101,20 @@ def main(
     # count the scenarios
     for datafilename in datafilenames:
         for signal_timeframe in signal_timeframes:
-            for leverage in leverages:
-                for stop_loss in stop_losses:
-                    for take_profit in take_profits:
-                        if accuracy_tester_mode and stop_loss != take_profit:
-                            continue
-                        for trailing_sl in trailing_sls:
-                            for trail_delay in trail_delays:
-                                for sl in sls:
-                                    for drawdown_limit in drawdown_limits:
-                                        for loss_limit_fraction in loss_limit_fractions:
-                                            scenario_count += 1
+            for signal_start_date in signal_start_dates:
+                for leverage in leverages:
+                    for stop_loss in stop_losses:
+                        for take_profit in take_profits:
+                            if accuracy_tester_mode and stop_loss != take_profit:
+                                continue
+                            for trailing_sl in trailing_sls:
+                                for trail_delay in trail_delays:
+                                    for trail_last_reset in trail_last_resets:
+                                        for sl in sls:
+                                            for drawdown_limit in drawdown_limits:
+                                                for loss_limit_fraction in loss_limit_fractions:
+                                                    for signal_exit in signal_exits:
+                                                        scenario_count += 1
     scenario_num = 0
 
     print(f"{scenario_count} scenarios counted at {time.perf_counter() - start_time} seconds")
@@ -127,47 +124,62 @@ def main(
             datafilename_only = datafilename.split("/")[1]
         except IndexError:
             datafilename_only = datafilename
+        coin = "BTC" if "BTC" in datafilename_only else "ETH"
         df = pd.read_csv(filepath_or_buffer=datafilename, parse_dates=["time"])
         interval_timeframe = calculate_interval_timeframe(df=df)
         for signal_timeframe in signal_timeframes:
             file_type = get_file_type(df, signal_timeframe)
-            for leverage in leverages:
-                print(f"assembling specs for {datafilename_only} leverage {leverage}")
-                for stop_loss in stop_losses:
-                    for take_profit in take_profits:
-                        if accuracy_tester_mode and stop_loss != take_profit:
-                            continue
-                        for trailing_sl in trailing_sls:
-                            for trail_delay in trail_delays:
-                                for sl in sls:
-                                    for drawdown_limit in drawdown_limits:
-                                        for loss_limit_fraction in loss_limit_fractions:
-                                            scenario_num += 1
-                                            spec = {
-                                                "scenario_num": scenario_num,
-                                                "scenario_count": scenario_count,
-                                                "datafilename": datafilename_only,
-                                                "signal_timeframe": signal_timeframe,
-                                                "df": df,
-                                                "interval_timeframe": interval_timeframe,
-                                                "file_type": file_type,
-                                                "leverage": leverage,
-                                                "stop_loss": stop_loss,
-                                                "take_profit": take_profit,
-                                                "trailing_sl": trailing_sl,
-                                                "sl_reset_points": get_scrubbed_sl_reset_points(sl),
-                                                "trail_delay": trail_delay,
-                                                "db": db,
-                                                "db_coll": db_coll,
-                                                "write_invalid_to_db": write_invalid_to_db,
-                                                "loss_limit_fraction": loss_limit_fraction,
-                                                "drawdown_limit": drawdown_limit,
-                                                "winrate_floor": winrate_floor,
-                                                "winrate_grace_period": winrate_grace_period,
-                                                "pure_delta_mode": pure_delta_mode
-                                            }
-                                            spec["_id"] = get_unique_composite_key(spec)
-                                            specs.append(spec)
+            for signal_start_date in signal_start_dates:
+                start_date = get_start_date(signal_start_date, file_type, df, signal_timeframe, coin)
+                for leverage in leverages:
+                    print(f"assembling specs for {datafilename_only} signal timeframe {signal_timeframe} leverage {leverage}")
+                    for stop_loss in stop_losses:
+                        for take_profit in take_profits:
+                            if accuracy_tester_mode and stop_loss != take_profit:
+                                continue
+                            for trailing_sl in trailing_sls:
+                                for trail_delay in trail_delays:
+                                    for trail_last_reset in trail_last_resets:
+                                        for sl in sls:
+                                            for drawdown_limit in drawdown_limits:
+                                                for loss_limit_fraction in loss_limit_fractions:
+                                                    for signal_exit in signal_exits:
+                                                        scenario_num += 1
+                                                        spec = {
+                                                            "scenario_num": scenario_num,
+                                                            "scenario_count": scenario_count,
+                                                            "datafilename": datafilename_only,
+                                                            "start_date": start_date,
+                                                            "signal_timeframe": signal_timeframe,
+                                                            "df": df,
+                                                            "interval_timeframe": interval_timeframe,
+                                                            "file_type": file_type,
+                                                            "leverage": leverage,
+                                                            "stop_loss": stop_loss,
+                                                            "take_profit": take_profit,
+                                                            "trailing_sl": trailing_sl,
+                                                            "trail_last_reset": trail_last_reset,
+                                                            "sl_reset_points": get_scrubbed_sl_reset_points(sl),
+                                                            "trail_delay": trail_delay,
+                                                            "db": db,
+                                                            "db_coll": db_coll,
+                                                            "write_invalid_to_db": write_invalid_to_db,
+                                                            "loss_limit_fraction": loss_limit_fraction,
+                                                            "drawdown_limit": drawdown_limit,
+                                                            "winrate_floor": winrate_floor,
+                                                            "mean_floor": mean_floor,
+                                                            "median_floor": median_floor,
+                                                            "floor_grace_period": floor_grace_period,
+                                                            "signal_exit": signal_exit
+                                                        }
+                                                        spec["_id"] = get_unique_composite_key(spec)
+                                                        specs.append(spec)
+
+                                                        if check_for_dupes_up_front:
+                                                            if spec["_id"] in spec_ids:
+                                                                raise ValueError(f"spec {spec['_id']} already found")
+                                                            spec_ids.append(spec["_id"])
+
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
     # screen out specs already in db
@@ -248,6 +260,24 @@ def get_file_type(df, signal_timeframe):
     return FileType.MULTI
 
 
+def get_start_date(signal_start_date, file_type, df, signal_timeframe, coin):
+    if signal_start_date:
+        return signal_start_date
+    if file_type in [FileType.SINGLE, FileType.DOUBLE]:
+        # return the first time in the file
+        start_date = df.iloc[0]["time"].isoformat().replace("+00:00", "Z")
+        return start_date
+    if file_type == FileType.MULTI:
+        if len(signal_timeframe) == 1:
+            # return start date of the single timeframe
+            start_date = c.SIGNAL_TIMEFRAME_START_TIMES[coin][signal_timeframe[0]]
+            return start_date
+        if len(signal_timeframe) == 2:
+            # return start date of the LTF
+            start_date = c.SIGNAL_TIMEFRAME_START_TIMES[coin][signal_timeframe[1]]
+            return start_date
+
+
 def scenario_in_db(coll, _id):
     return coll.count_documents({"_id": _id}, limit=1)  # 20 sec per 100k docs
 
@@ -267,11 +297,6 @@ class ScenarioRunner:
         self.stop_loss = self.sl_trail = spec["stop_loss"]
         self.trailing_on = spec["trailing_sl"] and not spec["trail_delay"]
 
-        # calculate number of days
-        candle_count = len(spec["df"].index)
-        minutes = candle_count * int(spec["interval_timeframe"])
-        self.days = round(minutes / 1440, 1)
-
         self.long_entry_price = None
         self.short_entry_price = None
         self.assets = 1.0
@@ -286,9 +311,10 @@ class ScenarioRunner:
         self.trade_history = []
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
+        self.total_candles = 0
 
-        #self.start_date = spec["df"].iloc[0]["time"].isoformat().replace("+00:00", "Z")
-        self.start_date_str, self.start_date_ts = self.get_start_date()
+        self.start_date_ts = pd.to_datetime(self.spec["start_date"])
+
         self.end_date = self.spec["df"].iloc[-1]["time"].isoformat().replace("+00:00", "Z")
         self.sl_reset_points_hit = []
         self.candles_spent_in_trade = 0
@@ -297,39 +323,24 @@ class ScenarioRunner:
         self.max_profit = self.min_profit = 0
         self.price_movement_high = -1000
         self.price_movement_low = 1000
-        self.max_profit_pre_drawdown = None
 
         self.row = None
         self.win_rate = None
 
-        self.htf_shadow = None # only used in HTF dataset scenarios
-
-    def get_start_date(self):
-        if self.spec["file_type"] in [FileType.SINGLE, FileType.DOUBLE]:
-            # return the first time in the file
-            start_date = self.spec["df"].iloc[0]["time"].isoformat().replace("+00:00", "Z")
-            return start_date, pd.to_datetime(start_date)
-        if self.spec["file_type"] == FileType.MULTI:
-            if len(self.spec["signal_timeframe"]) == 1:
-                # return start date of the single timeframe
-                start_date = c.SIGNAL_TIMEFRAME_START_TIMES[self.spec["signal_timeframe"][0]]
-                return start_date, pd.to_datetime(start_date)
-            if len(self.spec["signal_timeframe"]) == 2:
-                # return start date of the LTF
-                start_date = c.SIGNAL_TIMEFRAME_START_TIMES[self.spec["signal_timeframe"][1]]
-                return start_date, pd.to_datetime(start_date)
+        self.htf_shadow = None  # only used in HTF dataset scenarios
 
     def run_scenario(self):
         if not is_valid_scenario(self.spec):
             del self.spec["df"]  # no longer need it, and it doesn't print gracefully
             print(f"invalid spec: {self.spec}")
             return get_invalid_scenario_result(
-                self.spec["_id"], self.start_date_str, self.end_date)
+                self.spec["_id"], self.end_date)
 
         for row in self.spec["df"].itertuples():
             if getattr(row, "time") < self.start_date_ts:
                 continue
             self.row = row
+            self.total_candles += 1
             if self.long_entry_price:
                 self.candles_spent_in_trade += 1
                 # get the low point of the candle
@@ -345,11 +356,8 @@ class ScenarioRunner:
                 if self.price_movement_at_candle_low <= (-1 * self.stop_loss):
                     # we stopped out somewhere in this candle
                     try:
-                        if self.max_profit_pre_drawdown is None:
-                            # SL on first candle so we never got a chance to set this, set now to min_profit
-                            self.max_profit_pre_drawdown = self.min_profit
                         self.finish_trade(_type=STOP_LOSS)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
                 if self.long_entry_price:
                     # get the high point of the candle
@@ -361,7 +369,6 @@ class ScenarioRunner:
                     if self.price_movement_high == self.price_movement_at_candle_high:
                         # new max profit for this trade: save it, and reset trailing if applicable
                         self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high)[0]
-                        self.max_profit_pre_drawdown = self.min_profit
                         if self.trailing_on:
                             # this is a new max, need to move trailing SL
                             self.stop_loss = (
@@ -371,18 +378,18 @@ class ScenarioRunner:
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
-                        except (e.TooMuchDrawdown, e.WinRateTooLow):
+                        except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                             return self.finish_scenario(failed=True)
                     else:
                         # we didn't TP yet, but check if we hit a reset point
                         self.check_reset_points(self.price_movement_at_candle_high)
 
                 # check if we need to exit our long due to a signal
-                if self.should_close_long():
+                if self.spec["signal_exit"] and self.should_close_long():
                     # exit long
                     try:
                         self.finish_trade(_type=SIGNAL)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
 
             if self.short_entry_price:
@@ -400,11 +407,8 @@ class ScenarioRunner:
                 if self.price_movement_at_candle_high >= self.stop_loss:
                     # we stopped out somewhere in this candle
                     try:
-                        if self.max_profit_pre_drawdown is None:
-                            # SL on first candle so we never got a chance to set this, set now to min_profit
-                            self.max_profit_pre_drawdown = self.min_profit
                         self.finish_trade(_type=STOP_LOSS)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
 
                 if self.short_entry_price:
@@ -417,7 +421,6 @@ class ScenarioRunner:
                     if self.price_movement_low == self.price_movement_at_candle_low:
                         # new max profit for this trade
                         self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low))[0]
-                        self.max_profit_pre_drawdown = self.min_profit
                         if self.trailing_on:
                             # this is a new min, need to move trailing SL
                             self.stop_loss = (
@@ -429,28 +432,31 @@ class ScenarioRunner:
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
-                        except (e.TooMuchDrawdown, e.WinRateTooLow):
+                        except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                             return self.finish_scenario(failed=True)
                     else:
                         # we didn't TP yet, but check if we hit a reset point
                         self.check_reset_points(self.price_movement_at_candle_low)
 
                 # check if need to exit our short due to a signal
-                if self.should_close_short():
+                if self.spec["signal_exit"] and self.should_close_short():
                     try:
                         self.finish_trade(_type=SIGNAL)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
 
             # check for long entry
             if self.should_open_long():
                 self.long_entry_price = getattr(self.row, "close")
+                # clear out sl reset points for the next trade
                 self.sl_reset_points_hit = (
                     []
-                )  # clear out sl reset points for the next trade
+                )
+                # reset stop_loss to starting value
                 self.stop_loss = self.sl_trail = self.spec[
                     "stop_loss"
-                ]  # reset stop_loss to starting value
+                ]
+                # reset trailing
                 self.trailing_on = (
                     self.spec["trailing_sl"] and not self.spec["trail_delay"]
                 )
@@ -461,7 +467,6 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.max_profit_pre_drawdown = None
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -476,12 +481,13 @@ class ScenarioRunner:
             # check for short entry
             if self.should_open_short():
                 self.short_entry_price = getattr(self.row, "close")
-                self.sl_reset_points_hit = (
-                    []
-                )  # clear out sl reset points for the next trade
+                # clear out sl reset points for the next trade
+                self.sl_reset_points_hit = ([])
+                # reset stop_loss to starting value
                 self.stop_loss = self.sl_trail = self.spec[
                     "stop_loss"
-                ]  # reset stop_loss to starting value
+                ]
+                # reset trailing
                 self.trailing_on = (
                     self.spec["trailing_sl"] and not self.spec["trail_delay"]
                 )
@@ -492,7 +498,6 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.max_profit_pre_drawdown = None
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -507,66 +512,52 @@ class ScenarioRunner:
         return self.finish_scenario()
 
     def should_close_short(self):
-        bot_in_trade = self.short_entry_price
+        bot_in_short = self.short_entry_price
         # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
             long_signal = getattr(self.row, "long") == 1
-            return bot_in_trade and long_signal
+            return bot_in_short and long_signal
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
             long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
-            return bot_in_trade and long_signal
+            return bot_in_short and long_signal
 
-        # double timeframe scenarios: same logic, header depends on file type
-        long_htf_header = short_ltf_header = None
+        # double/multi timeframe scenarios: same logic, header depends on file type
+        long_htf_header = None
         if self.spec["file_type"] == FileType.DOUBLE:
             long_htf_header = "long_htf"
-            short_ltf_header = "short_ltf"
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
             long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
-            short_ltf_header = f"short_{self.spec['signal_timeframe'][1]}"
 
         opposing_htf_signal = getattr(self.row, long_htf_header) == 1
-        if bot_in_trade and opposing_htf_signal:
+        if bot_in_short and opposing_htf_signal:
             return True
-        if self.spec["pure_delta_mode"]:
-            # close this trade if we got another signal in the same direction
-            #   in pure delta mode each entry measures its own delta
-            supporting_ltf_signal = getattr(self.row, short_ltf_header) == 1
-            if bot_in_trade and supporting_ltf_signal:
-                return True
 
         return False
 
     def should_close_long(self):
-        bot_in_trade = self.long_entry_price
+        bot_in_long = self.long_entry_price
         # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
             short_signal = getattr(self.row, "short") == 1
-            return bot_in_trade and short_signal
+            return bot_in_long and short_signal
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
             short_signal = getattr(self.row, f"short_{self.spec['signal_timeframe'][0]}") == 1
-            return bot_in_trade and short_signal
+            return bot_in_long and short_signal
 
-        # double timeframe scenarios: same logic, header depends on file type
-        short_htf_header = long_ltf_header = None
+        # double/multi timeframe scenarios: same logic, header depends on file type
+        short_htf_header = None
         if self.spec["file_type"] == FileType.DOUBLE:
             short_htf_header = "short_htf"
-            long_ltf_header = "long_ltf"
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
             short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
-            long_ltf_header = f"long_{self.spec['signal_timeframe'][1]}"
 
         opposing_htf_signal = getattr(self.row, short_htf_header) == 1
-        if bot_in_trade and opposing_htf_signal:
+        if bot_in_long and opposing_htf_signal:
             return True
-        if self.spec["pure_delta_mode"]:
-            supporting_ltf_signal = getattr(self.row, long_ltf_header) == 1
-            if bot_in_trade and supporting_ltf_signal:
-                return True
         return False
 
     def should_open_short(self):
-        bot_in_trade = self.short_entry_price
+        bot_in_trade = self.short_entry_price or self.long_entry_price
 
         # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
@@ -576,26 +567,29 @@ class ScenarioRunner:
             short_signal = getattr(self.row, f"short_{self.spec['signal_timeframe'][0]}") == 1
             return not bot_in_trade and short_signal
 
-        # double timeframe scenarios: same logic, header depends on file type
-        short_htf_header = short_ltf_header = None
+        # double/multi timeframe scenarios: same logic, header depends on file type
+        short_htf_header = short_ltf_header = long_htf_header = None
         if self.spec["file_type"] == FileType.DOUBLE:
             short_htf_header = "short_htf"
             short_ltf_header = "short_ltf"
+            long_htf_header = "long_htf"
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
             short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
             short_ltf_header = f"short_{self.spec['signal_timeframe'][1]}"
+            long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
 
         htf_signal = getattr(self.row, short_htf_header) == 1
         ltf_signal = getattr(self.row, short_ltf_header) == 1
-        if htf_signal and not bot_in_trade:  # should_close_long() already called
+        opposing_htf_signal = getattr(self.row, long_htf_header) == 1
+        if htf_signal and not bot_in_trade:  # should_close_short() already called
             self.htf_shadow = "short"
             return True
-        if ltf_signal and self.htf_shadow == "short" and not bot_in_trade:
+        if ltf_signal and self.htf_shadow == "short" and not bot_in_trade and not opposing_htf_signal:
             return True
         return False
 
     def should_open_long(self):
-        bot_in_trade = self.long_entry_price
+        bot_in_trade = self.long_entry_price or self.short_entry_price
 
         # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
@@ -605,21 +599,23 @@ class ScenarioRunner:
             long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
             return not bot_in_trade and long_signal
 
-        # double timeframe scenarios: same logic, header depends on file type
-        long_htf_header = long_ltf_header = None
+        # double/multi timeframe scenarios: same logic, header depends on file type
+        long_htf_header = long_ltf_header = short_htf_header = None
         if self.spec["file_type"] == FileType.DOUBLE:
             long_htf_header = "long_htf"
             long_ltf_header = "long_ltf"
+            short_htf_header = "short_htf"
         if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
             long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
             long_ltf_header = f"long_{self.spec['signal_timeframe'][1]}"
-
+            short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
         htf_signal = getattr(self.row, long_htf_header) == 1
         ltf_signal = getattr(self.row, long_ltf_header) == 1
+        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
         if htf_signal and not bot_in_trade:  # should_close_long() already called
             self.htf_shadow = "long"
             return True
-        if ltf_signal and self.htf_shadow == "long" and not bot_in_trade:
+        if ltf_signal and self.htf_shadow == "long" and not bot_in_trade and not opposing_htf_signal:
             return True
         return False
 
@@ -692,27 +688,30 @@ class ScenarioRunner:
         self.trade["exit_type"] = exit_type
         self.trade["min_profit"] = round(self.min_profit, 2)
         self.trade["max_profit"] = round(self.max_profit, 2)
-        self.trade["max_profit_pre_drawdown"] = round(self.max_profit_pre_drawdown, 2)
-        self.trade["delta"] = round(self.trade["max_profit"] + self.trade["max_profit_pre_drawdown"], 2)
         self.trade_history.append(self.trade)
 
+        # check drawdown
         if self.max_drawdown_pct < self.spec["drawdown_limit"]:
             raise e.TooMuchDrawdown
 
-        if len(self.trade_history) >= self.spec["winrate_grace_period"]:
+        # check floors
+        if len(self.trade_history) >= self.spec["floor_grace_period"]:
             self.calculate_win_rate()
             if self.win_rate < self.spec["winrate_floor"]:
                 raise e.WinRateTooLow
+            mean_profit = mean(self.get_profits())
+            if mean_profit < self.spec["mean_floor"]:
+                raise e.MeanOrMedianTooLow
+            median_profit = median(self.get_profits())
+            if median_profit < self.spec["median_floor"]:
+                raise e.MeanOrMedianTooLow
 
         # clear both for convenience, even though only one is set
         self.short_entry_price = self.long_entry_price = None
 
     def finish_scenario(self, failed=False):
-        daily_profit_pct_avg = round(
-            (self.assets ** (1 / float(self.days)) - 1) * 100, 2
-        )
 
-        mean_profit = median_profit = mean_hrs_in_trade = delta = delta_mean = delta_median = None
+        mean_profit = median_profit = mean_hrs_in_trade = None
 
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
@@ -721,18 +720,23 @@ class ScenarioRunner:
             mean_hrs_in_trade = round(
                 mean(self.get_durations()) * int(self.spec["interval_timeframe"]) / 60, 2
             )
-            delta = round(sum(self.get_deltas()), 2)
-            delta_mean = round(mean(self.get_deltas()), 2)
-            delta_median = round(median(self.get_deltas()), 2)
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
-        print(
-            f"{median_profit} median profit from spec: {self.spec}"
+        if failed:
+            print(f"failed strat {self.spec}")
+        else:
+            print(
+                f"{mean_profit} {median_profit} mean/median from spec: {self.spec}"
+            )
+
+        minutes = self.total_candles * int(self.spec["interval_timeframe"])
+        days = round(minutes / 1440, 1)
+        daily_profit_pct_avg = round(
+            (self.assets ** (1 / float(days)) - 1) * 100, 2
         )
 
         result = {
             "_id": self.spec["_id"],
-            "start_date": self.start_date_str,
             "end_date": self.end_date,
             "trade_history": self.trade_history,
             "total_profit_pct": self.total_profit_pct,
@@ -748,15 +752,12 @@ class ScenarioRunner:
             "mean_profit": mean_profit,
             "median_profit": median_profit,
             "mean * trades": round(mean_profit * len(self.trade_history), 2),
-            "days": self.days,
+            "days": days,
             "mean_hrs_in_trade": mean_hrs_in_trade,
             "valid": not failed,
             "final_assets": round(self.assets, 2),
             "min_assets": round(self.min_assets, 2),
-            "max_assets": round(self.max_assets, 2),
-            "delta": delta,
-            "mean_delta": delta_mean,
-            "median_delta": delta_median
+            "max_assets": round(self.max_assets, 2)
         }
         if QUICK_RUN:
             print(f"result for spec {self.spec['_id']}: \n{result}")
@@ -771,9 +772,6 @@ class ScenarioRunner:
 
     def get_profits(self):
         return [trade['profit'] for trade in self.trade_history]
-
-    def get_deltas(self):
-        return [trade['delta'] for trade in self.trade_history]
 
     def get_exit_type_count(self, exit_type):
         return len([trade['exit_type'] for trade in self.trade_history if trade['exit_type'] == exit_type])
@@ -799,7 +797,7 @@ class ScenarioRunner:
                         self.stop_loss = new_sl
                         # record that we hit it, so we don't repeat
                         self.sl_reset_points_hit.append(sl_trigger)
-                        if self.spec["trailing_sl"]:
+                        if self.start_trailing():
                             # update the trail
                             self.sl_trail = (sl_trigger + new_sl)
                             # update current sl with trail
@@ -811,6 +809,14 @@ class ScenarioRunner:
                             self.trailing_on = True
                     else:
                         return
+
+    def start_trailing(self):
+        if self.spec['trailing_sl']:
+            return True
+        last_reset_hit = len(self.sl_reset_points_hit) == len(self.spec['sl_reset_points'])
+        if self.spec['trail_last_reset'] and last_reset_hit:
+            return True
+        return False
 
 
 def get_adjusted_leverage(stop_loss, max_leverage, total_profit_pct, loss_limit_fraction):
@@ -856,6 +862,7 @@ def is_valid_scenario(spec):
 def get_unique_composite_key(spec):
     unique_composite_key = {
         "datafilename": spec["datafilename"],
+        "start_date": spec["start_date"],
         "signal_timeframe": spec["signal_timeframe"],
         "leverage": spec["leverage"],
         "stop_loss": spec["stop_loss"],
@@ -863,19 +870,21 @@ def get_unique_composite_key(spec):
         "trailing_sl": spec["trailing_sl"],
         "sl_reset_points": spec["sl_reset_points"],
         "trail_delay": spec["trail_delay"],
+        "trail_last_reset": spec["trail_last_reset"],
         "loss_limit_fraction": spec["loss_limit_fraction"],
         "drawdown_limit": spec["drawdown_limit"],
         "winrate_floor": spec["winrate_floor"],
-        "winrate_grace_period": spec["winrate_grace_period"],
-        "pure_delta_mode": spec["pure_delta_mode"]
+        "median_floor": spec["median_floor"],
+        "mean_floor": spec["mean_floor"],
+        "floor_grace_period": spec["floor_grace_period"],
+        "signal_exit": spec["signal_exit"]
     }
     return unique_composite_key
 
 
-def get_invalid_scenario_result(_id, start_date, end_date):
+def get_invalid_scenario_result(_id, end_date):
     result = {
         "_id": _id,
-        "start_date": start_date,
         "end_date": end_date,
         "trade_history": None,
         "total_profit_pct": None,
@@ -896,9 +905,6 @@ def get_invalid_scenario_result(_id, start_date, end_date):
         "final_assets": None,
         "min_assets": None,
         "max_assets": None,
-        "delta": None,
-        "mean_delta": None,
-        "median_delta": None
     }
     return result
 

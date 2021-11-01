@@ -2,32 +2,32 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
+      "start_date": "2021-01-01T00:00:00Z",
       'signal_timeframe': [],
       "leverage": 2,
       "stop_loss": 6,
       "take_profit": 4,
       "trailing_sl": false,
       "trail_delay": false,
+      "trail_last_reset": false,
       "sl_reset_points": [
         []
       ],
       "loss_limit_fraction": 0,
-      'pure_delta_mode': false,
+      'signal_exit': true,
       "drawdown_limit": -100,
       "winrate_floor": 50,
-      "winrate_grace_period": 50,
+      'mean_floor': 4,
+      'median_floor': 4,
+      "floor_grace_period": 50,
     },
-    "start_date": "2021-01-01T00:00:00Z",
     "end_date": "2021-03-03T04:00:00Z",
     "days": 61.3,
-    'delta': -4.25,
     "mean_hrs_in_trade": 10.67,
     "total_profit_pct": 24,
     "daily_profit_pct_avg": 0.36,
     "max_drawdown_pct": 0,
     'mean * trades': 23.1,
-    'mean_delta': -1.42,
-    'median_delta': -1.18,
     "win_rate": 100,
     "final_assets": 1.25,
     "max_assets": 1.25,
@@ -44,7 +44,6 @@
     "trade_history": [
       {
         'assets': 1.08,
-        'delta': -4.08,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
@@ -55,13 +54,11 @@
         'exit_type': 'tp',
         'leverage': 2,
         'max_profit': 7.7,
-        'max_profit_pre_drawdown': -11.78,
         'min_profit': -11.78,
         'profit': 7.7
       },
       {
         'assets': 1.16,
-        'delta': -1.18,
         'direction': 'long',
         'duration': 3,
         'entry': '2021-01-28T20:00:00Z',
@@ -72,13 +69,11 @@
         'exit_type': 'tp',
         'leverage': 2,
         'max_profit': 7.7,
-        'max_profit_pre_drawdown': -8.88,
         'min_profit': -8.88,
         'profit': 7.7
       },
       {
         'assets': 1.25,
-        'delta': 1.01,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-02-22T12:00:00Z',
@@ -89,7 +84,6 @@
         'exit_type': 'tp',
         'leverage': 2,
         'max_profit': 7.7,
-        'max_profit_pre_drawdown': -6.69,
         'min_profit': -6.69,
         'profit': 7.7
       }

@@ -2,29 +2,31 @@
   {
     "_id": {
       "datafilename": "BYBITBTCUSD_240_2021_one_trade.csv",
+      'start_date': '2021-01-01T00:00:00Z',
       "leverage": 1,
       "stop_loss": 6,
       "take_profit": 2,
       "trailing_sl": false,
       "trail_delay": false,
+      "trail_last_reset": false,
       "sl_reset_points": [
         []
       ],
       "loss_limit_fraction": 0,
-      'pure_delta_mode': false,
+      'signal_exit': true,
       'signal_timeframe': [],
       "drawdown_limit": -100,
       "winrate_floor": 50,
-      "winrate_grace_period": 50
+      'mean_floor': 4,
+      'median_floor': 4,
+      "floor_grace_period": 50
     },
-    "start_date": "2021-01-01T00:00:00Z",
     "end_date": "2021-01-28T20:00:00Z",
     "total_profit_pct": 1,
     "daily_profit_pct_avg": 0.07,
     "max_drawdown_pct": 0,
     'mean * trades': 1.85,
     'trades': 1,
-    'mean_delta': -4.04,
     "win_rate": 100,
     "stop_loss_exits_in_profit": 0,
     "stop_loss_exits_at_loss": 0,
@@ -32,10 +34,8 @@
     "signal_exits_in_profit": 0,
     "signal_exits_at_loss": 0,
     "mean_profit": 1.85,
-    'median_delta': -4.04,
     "median_profit": 1.85,
     "days": 28.0,
-    'delta': -4.04,
     "mean_hrs_in_trade": 8.0,
     "valid": true,
     "final_assets": 1.02,
@@ -44,7 +44,6 @@
     "trade_history": [
       {
         "assets": 1.02,
-        'delta': -4.04,
         "direction": "short",
         "duration": 2,
         "entry": "2021-01-11T04:00:00Z",
@@ -56,7 +55,6 @@
         "exit_type": "tp",
         "leverage": 1,
         'max_profit': 1.85,
-        'max_profit_pre_drawdown': -5.89,
         'min_profit': -5.89
       }
     ],

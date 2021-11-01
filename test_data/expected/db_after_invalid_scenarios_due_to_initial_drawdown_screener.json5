@@ -3,9 +3,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -13,30 +16,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 1,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.46,
     'days': 69.4,
-    'delta': 61.86,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 0.73,
     'max_assets': 1.0,
     'max_drawdown_pct': -36,
     'mean * trades': -27.84,
-    'mean_delta': 5.16,
     'mean_hrs_in_trade': 4.81,
     'mean_profit': -2.32,
-    'median_delta': 3.67,
     'median_profit': -5.75,
     'min_assets': 0.64,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 10,
     'stop_loss_exits_in_profit': 2,
     'take_profit_exits': 0,
@@ -44,7 +44,6 @@
     'trade_history': [
       {
         'assets': 0.94,
-        'delta': 3.95,
         'direction': 'short',
         'duration': 30,
         'entry': '2017-09-04T07:55:00Z',
@@ -55,13 +54,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 8.44,
-        'max_profit_pre_drawdown': -4.49,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.89,
-        'delta': -0.21,
         'direction': 'long',
         'duration': 17,
         'entry': '2017-09-08T11:55:00Z',
@@ -72,13 +69,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 1.39,
-        'max_profit_pre_drawdown': -1.6,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.84,
-        'delta': 3.94,
         'direction': 'short',
         'duration': 3,
         'entry': '2017-09-08T19:55:00Z',
@@ -89,13 +84,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 6.08,
-        'max_profit_pre_drawdown': -2.14,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.91,
-        'delta': 16.42,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -106,13 +99,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 18.6,
-        'max_profit_pre_drawdown': -2.18,
         'min_profit': -2.18,
         'profit': 8.6
       },
       {
         'assets': 0.86,
-        'delta': 5.13,
         'direction': 'short',
         'duration': 15,
         'entry': '2017-09-21T19:55:00Z',
@@ -123,13 +114,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 7.35,
-        'max_profit_pre_drawdown': -2.22,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.81,
-        'delta': 3.41,
         'direction': 'long',
         'duration': 18,
         'entry': '2017-09-25T15:55:00Z',
@@ -140,13 +129,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 4.16,
-        'max_profit_pre_drawdown': -0.75,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.76,
-        'delta': 3.97,
         'direction': 'short',
         'duration': 235,
         'entry': '2017-10-04T15:55:00Z',
@@ -157,13 +144,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 8.04,
-        'max_profit_pre_drawdown': -4.07,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.72,
-        'delta': -4.91,
         'direction': 'long',
         'duration': 43,
         'entry': '2017-10-05T19:55:00Z',
@@ -174,13 +159,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': -0.33,
-        'max_profit_pre_drawdown': -4.58,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.68,
-        'delta': 2.05,
         'direction': 'short',
         'duration': 4,
         'entry': '2017-10-18T07:55:00Z',
@@ -191,13 +174,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 3.47,
-        'max_profit_pre_drawdown': -1.42,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.64,
-        'delta': 0.63,
         'direction': 'long',
         'duration': 31,
         'entry': '2017-10-20T03:55:00Z',
@@ -208,13 +189,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 2.58,
-        'max_profit_pre_drawdown': -1.95,
         'min_profit': -5.75,
         'profit': -5.75
       },
       {
         'assets': 0.77,
-        'delta': 28.01,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
@@ -225,13 +204,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 31.09,
-        'max_profit_pre_drawdown': -3.08,
         'min_profit': -3.08,
         'profit': 21.09
       },
       {
         'assets': 0.73,
-        'delta': -0.53,
         'direction': 'long',
         'duration': 31,
         'entry': '2017-10-26T15:55:00Z',
@@ -242,7 +219,6 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 2.01,
-        'max_profit_pre_drawdown': -2.54,
         'min_profit': -5.75,
         'profit': -5.75
       }
@@ -255,9 +231,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -265,30 +244,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 4,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.3,
     'days': 69.4,
-    'delta': 110.84,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 1.23,
     'max_assets': 1.55,
     'max_drawdown_pct': -33,
     'mean * trades': 38.16,
-    'mean_delta': 9.24,
     'mean_hrs_in_trade': 24.23,
     'mean_profit': 3.18,
-    'median_delta': 4.84,
     'median_profit': 5.18,
     'min_assets': 0.7,
     'signal_exits_at_loss': 1,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 3,
     'stop_loss_exits_in_profit': 8,
     'take_profit_exits': 0,
@@ -296,7 +272,6 @@
     'trade_history': [
       {
         'assets': 1.05,
-        'delta': 5.76,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
@@ -307,13 +282,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 15.21,
-        'max_profit_pre_drawdown': -9.45,
         'min_profit': -9.45,
         'profit': 5.21
       },
       {
         'assets': 0.83,
-        'delta': -0.21,
         'direction': 'long',
         'duration': 20,
         'entry': '2017-09-08T11:55:00Z',
@@ -324,13 +297,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 1.39,
-        'max_profit_pre_drawdown': -1.6,
         'min_profit': -20.75,
         'profit': -20.75
       },
       {
         'assets': 0.7,
-        'delta': 0.47,
         'direction': 'short',
         'duration': 119,
         'entry': '2017-09-08T19:55:00Z',
@@ -341,13 +312,11 @@
         'exit_type': 'sl_loss',
         'leverage': 4,
         'max_profit': 6.19,
-        'max_profit_pre_drawdown': -5.72,
         'min_profit': -16.6,
         'profit': -16.6
       },
       {
         'assets': 0.73,
-        'delta': 9.85,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -358,13 +327,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 11.16,
-        'max_profit_pre_drawdown': -1.31,
         'min_profit': -1.31,
         'profit': 5.16
       },
       {
         'assets': 0.74,
-        'delta': -3.34,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
@@ -375,13 +342,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 7.85,
-        'max_profit_pre_drawdown': -11.19,
         'min_profit': -11.19,
         'profit': 1.85
       },
       {
         'assets': 0.89,
-        'delta': 18.99,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
@@ -392,13 +357,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 25.5,
-        'max_profit_pre_drawdown': -6.51,
         'min_profit': -6.51,
         'profit': 19.5
       },
       {
         'assets': 0.76,
-        'delta': 3.19,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
@@ -409,13 +372,11 @@
         'exit_type': 'sig_loss',
         'leverage': 4,
         'max_profit': 6.44,
-        'max_profit_pre_drawdown': -3.25,
         'min_profit': -14.28,
         'profit': -14.21
       },
       {
         'assets': 0.98,
-        'delta': 28.91,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
@@ -426,13 +387,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 34.66,
-        'max_profit_pre_drawdown': -5.75,
         'min_profit': -5.75,
         'profit': 28.66
       },
       {
         'assets': 1.03,
-        'delta': 3.92,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
@@ -443,13 +402,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 13.19,
-        'max_profit_pre_drawdown': -9.27,
         'min_profit': -9.27,
         'profit': 5.19
       },
       {
         'assets': 1.28,
-        'delta': 25.04,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
@@ -460,13 +417,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 33.83,
-        'max_profit_pre_drawdown': -8.79,
         'min_profit': -8.79,
         'profit': 23.83
       },
       {
         'assets': 1.55,
-        'delta': 28.01,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
@@ -477,13 +432,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 31.09,
-        'max_profit_pre_drawdown': -3.08,
         'min_profit': -3.08,
         'profit': 21.09
       },
       {
         'assets': 1.23,
-        'delta': -9.75,
         'direction': 'long',
         'duration': 260,
         'entry': '2017-10-26T15:55:00Z',
@@ -494,7 +447,6 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 3.78,
-        'max_profit_pre_drawdown': -13.53,
         'min_profit': -20.75,
         'profit': -20.75
       }
@@ -507,9 +459,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -517,30 +472,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 5,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 1.26,
     'days': 69.4,
-    'delta': 123.89,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 2.38,
     'max_assets': 2.38,
     'max_drawdown_pct': -20,
     'mean * trades': 102.48,
-    'mean_delta': 10.32,
     'mean_hrs_in_trade': 30.96,
     'mean_profit': 8.54,
-    'median_delta': 5.03,
     'median_profit': 6.06,
     'min_assets': 0.83,
     'signal_exits_at_loss': 1,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 1,
     'stop_loss_exits_in_profit': 10,
     'take_profit_exits': 0,
@@ -548,7 +500,6 @@
     'trade_history': [
       {
         'assets': 1.04,
-        'delta': 4.61,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
@@ -559,13 +510,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 12.17,
-        'max_profit_pre_drawdown': -7.56,
         'min_profit': -7.56,
         'profit': 4.17
       },
       {
         'assets': 0.83,
-        'delta': -0.17,
         'direction': 'long',
         'duration': 22,
         'entry': '2017-09-08T11:55:00Z',
@@ -576,13 +525,11 @@
         'exit_type': 'sl_loss',
         'leverage': 4,
         'max_profit': 1.11,
-        'max_profit_pre_drawdown': -1.28,
         'min_profit': -20.6,
         'profit': -20.6
       },
       {
         'assets': 0.88,
-        'delta': -0.57,
         'direction': 'short',
         'duration': 426,
         'entry': '2017-09-08T19:55:00Z',
@@ -593,13 +540,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 12.93,
-        'max_profit_pre_drawdown': -13.5,
         'min_profit': -13.5,
         'profit': 6.93
       },
       {
         'assets': 0.93,
-        'delta': 9.85,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -610,13 +555,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 11.16,
-        'max_profit_pre_drawdown': -1.31,
         'min_profit': -1.31,
         'profit': 5.16
       },
       {
         'assets': 0.95,
-        'delta': -3.34,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
@@ -627,13 +570,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 7.85,
-        'max_profit_pre_drawdown': -11.19,
         'min_profit': -11.19,
         'profit': 1.85
       },
       {
         'assets': 1.13,
-        'delta': 18.99,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
@@ -644,13 +585,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 25.5,
-        'max_profit_pre_drawdown': -6.51,
         'min_profit': -6.51,
         'profit': 19.5
       },
       {
         'assets': 0.97,
-        'delta': 3.19,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
@@ -661,13 +600,11 @@
         'exit_type': 'sig_loss',
         'leverage': 4,
         'max_profit': 6.44,
-        'max_profit_pre_drawdown': -3.25,
         'min_profit': -14.28,
         'profit': -14.21
       },
       {
         'assets': 1.25,
-        'delta': 28.91,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
@@ -678,13 +615,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 34.66,
-        'max_profit_pre_drawdown': -5.75,
         'min_profit': -5.75,
         'profit': 28.66
       },
       {
         'assets': 1.31,
-        'delta': 3.92,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
@@ -695,13 +630,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 13.19,
-        'max_profit_pre_drawdown': -9.27,
         'min_profit': -9.27,
         'profit': 5.19
       },
       {
         'assets': 1.63,
-        'delta': 25.04,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
@@ -712,13 +645,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 33.83,
-        'max_profit_pre_drawdown': -8.79,
         'min_profit': -8.79,
         'profit': 23.83
       },
       {
         'assets': 1.97,
-        'delta': 28.01,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
@@ -729,13 +660,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 31.09,
-        'max_profit_pre_drawdown': -3.08,
         'min_profit': -3.08,
         'profit': 21.09
       },
       {
         'assets': 2.38,
-        'delta': 5.45,
         'direction': 'long',
         'duration': 920,
         'entry': '2017-10-26T15:55:00Z',
@@ -746,7 +675,6 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 30.95,
-        'max_profit_pre_drawdown': -25.5,
         'min_profit': -25.5,
         'profit': 20.95
       }
@@ -759,9 +687,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -769,30 +700,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 6,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 1.23,
     'days': 69.4,
-    'delta': 113.88,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 2.34,
     'max_assets': 2.34,
     'max_drawdown_pct': -18,
     'mean * trades': 98.4,
-    'mean_delta': 9.49,
     'mean_hrs_in_trade': 30.99,
     'mean_profit': 8.2,
-    'median_delta': 4.69,
     'median_profit': 4.91,
     'min_assets': 0.84,
     'signal_exits_at_loss': 1,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 1,
     'stop_loss_exits_in_profit': 10,
     'take_profit_exits': 0,
@@ -800,7 +728,6 @@
     'trade_history': [
       {
         'assets': 1.03,
-        'delta': 3.45,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
@@ -811,13 +738,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 9.12,
-        'max_profit_pre_drawdown': -5.67,
         'min_profit': -5.67,
         'profit': 3.12
       },
       {
         'assets': 0.84,
-        'delta': -0.12,
         'direction': 'long',
         'duration': 26,
         'entry': '2017-09-08T11:55:00Z',
@@ -828,13 +753,11 @@
         'exit_type': 'sl_loss',
         'leverage': 3,
         'max_profit': 0.84,
-        'max_profit_pre_drawdown': -0.96,
         'min_profit': -18.45,
         'profit': -18.45
       },
       {
         'assets': 0.88,
-        'delta': -0.38,
         'direction': 'short',
         'duration': 426,
         'entry': '2017-09-08T19:55:00Z',
@@ -845,13 +768,11 @@
         'exit_type': 'sl_profit',
         'leverage': 2,
         'max_profit': 8.62,
-        'max_profit_pre_drawdown': -9.0,
         'min_profit': -9.0,
         'profit': 4.62
       },
       {
         'assets': 0.91,
-        'delta': 6.57,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -862,13 +783,11 @@
         'exit_type': 'sl_profit',
         'leverage': 2,
         'max_profit': 7.44,
-        'max_profit_pre_drawdown': -0.87,
         'min_profit': -0.87,
         'profit': 3.44
       },
       {
         'assets': 0.93,
-        'delta': -3.34,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
@@ -879,13 +798,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 7.85,
-        'max_profit_pre_drawdown': -11.19,
         'min_profit': -11.19,
         'profit': 1.85
       },
       {
         'assets': 1.11,
-        'delta': 18.99,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
@@ -896,13 +813,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 25.5,
-        'max_profit_pre_drawdown': -6.51,
         'min_profit': -6.51,
         'profit': 19.5
       },
       {
         'assets': 0.99,
-        'delta': 2.39,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
@@ -913,13 +828,11 @@
         'exit_type': 'sig_loss',
         'leverage': 3,
         'max_profit': 4.83,
-        'max_profit_pre_drawdown': -2.44,
         'min_profit': -10.71,
         'profit': -10.66
       },
       {
         'assets': 1.27,
-        'delta': 28.91,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
@@ -930,13 +843,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 34.66,
-        'max_profit_pre_drawdown': -5.75,
         'min_profit': -5.75,
         'profit': 28.66
       },
       {
         'assets': 1.34,
-        'delta': 3.92,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
@@ -947,13 +858,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 13.19,
-        'max_profit_pre_drawdown': -9.27,
         'min_profit': -9.27,
         'profit': 5.19
       },
       {
         'assets': 1.59,
-        'delta': 20.03,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
@@ -964,13 +873,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 27.06,
-        'max_profit_pre_drawdown': -7.03,
         'min_profit': -7.03,
         'profit': 19.06
       },
       {
         'assets': 1.93,
-        'delta': 28.01,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
@@ -981,13 +888,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 31.09,
-        'max_profit_pre_drawdown': -3.08,
         'min_profit': -3.08,
         'profit': 21.09
       },
       {
         'assets': 2.34,
-        'delta': 5.45,
         'direction': 'long',
         'duration': 920,
         'entry': '2017-10-26T15:55:00Z',
@@ -998,7 +903,6 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 30.95,
-        'max_profit_pre_drawdown': -25.5,
         'min_profit': -25.5,
         'profit': 20.95
       }
@@ -1011,9 +915,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1021,29 +928,26 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 10,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
     'days': null,
-    'delta': null,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': null,
     'max_assets': null,
     'max_drawdown_pct': null,
-    'mean_delta': null,
     'mean_hrs_in_trade': null,
     'mean_profit': null,
-    'median_delta': null,
     'median_profit': null,
     'min_assets': null,
     'signal_exits_at_loss': null,
     'signal_exits_in_profit': null,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': null,
     'stop_loss_exits_in_profit': null,
     'take_profit_exits': null,
@@ -1057,9 +961,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1067,30 +974,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 1,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
-    'daily_profit_pct_avg': -1.0,
-    'days': 69.4,
-    'delta': 63.38,
+    'daily_profit_pct_avg': -1.97,
+    'days': 35.0,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 0.5,
     'max_assets': 1.0,
     'max_drawdown_pct': -50,
     'mean * trades': -63.28,
-    'mean_delta': 7.92,
     'mean_hrs_in_trade': 4.11,
     'mean_profit': -7.91,
-    'median_delta': 7.88,
     'median_profit': -11.5,
     'min_assets': 0.5,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 7,
     'stop_loss_exits_in_profit': 1,
     'take_profit_exits': 0,
@@ -1098,7 +1002,6 @@
     'trade_history': [
       {
         'assets': 0.89,
-        'delta': 7.9,
         'direction': 'short',
         'duration': 30,
         'entry': '2017-09-04T07:55:00Z',
@@ -1109,13 +1012,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 16.89,
-        'max_profit_pre_drawdown': -8.99,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.78,
-        'delta': -0.41,
         'direction': 'long',
         'duration': 17,
         'entry': '2017-09-08T11:55:00Z',
@@ -1126,13 +1027,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 2.78,
-        'max_profit_pre_drawdown': -3.19,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.69,
-        'delta': 7.87,
         'direction': 'short',
         'duration': 3,
         'entry': '2017-09-08T19:55:00Z',
@@ -1143,13 +1042,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 12.15,
-        'max_profit_pre_drawdown': -4.28,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.81,
-        'delta': 32.83,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -1160,13 +1057,11 @@
         'exit_type': 'sl_profit',
         'leverage': 10,
         'max_profit': 37.19,
-        'max_profit_pre_drawdown': -4.36,
         'min_profit': -4.36,
         'profit': 17.19
       },
       {
         'assets': 0.72,
-        'delta': 10.24,
         'direction': 'short',
         'duration': 15,
         'entry': '2017-09-21T19:55:00Z',
@@ -1177,13 +1072,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 14.69,
-        'max_profit_pre_drawdown': -4.45,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.64,
-        'delta': 6.82,
         'direction': 'long',
         'duration': 18,
         'entry': '2017-09-25T15:55:00Z',
@@ -1194,13 +1087,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 8.32,
-        'max_profit_pre_drawdown': -1.5,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.56,
-        'delta': 7.96,
         'direction': 'short',
         'duration': 235,
         'entry': '2017-10-04T15:55:00Z',
@@ -1211,13 +1102,11 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': 16.09,
-        'max_profit_pre_drawdown': -8.13,
         'min_profit': -11.5,
         'profit': -11.5
       },
       {
         'assets': 0.5,
-        'delta': -9.83,
         'direction': 'long',
         'duration': 43,
         'entry': '2017-10-05T19:55:00Z',
@@ -1228,7 +1117,6 @@
         'exit_type': 'sl_loss',
         'leverage': 10,
         'max_profit': -0.67,
-        'max_profit_pre_drawdown': -9.16,
         'min_profit': -11.5,
         'profit': -11.5
       }
@@ -1241,9 +1129,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1251,30 +1142,27 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 4,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.1,
     'days': 69.4,
-    'delta': 110.59,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': 1.07,
     'max_assets': 1.6,
     'max_drawdown_pct': -33,
     'mean * trades': 30.0,
-    'mean_delta': 9.22,
     'mean_hrs_in_trade': 24.23,
     'mean_profit': 2.5,
-    'median_delta': 4.84,
     'median_profit': 5.18,
     'min_assets': 0.7,
     'signal_exits_at_loss': 1,
     'signal_exits_in_profit': 0,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': 3,
     'stop_loss_exits_in_profit': 8,
     'take_profit_exits': 0,
@@ -1282,7 +1170,6 @@
     'trade_history': [
       {
         'assets': 1.05,
-        'delta': 5.76,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
@@ -1293,13 +1180,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 15.21,
-        'max_profit_pre_drawdown': -9.45,
         'min_profit': -9.45,
         'profit': 5.21
       },
       {
         'assets': 0.83,
-        'delta': -0.21,
         'direction': 'long',
         'duration': 20,
         'entry': '2017-09-08T11:55:00Z',
@@ -1310,13 +1195,11 @@
         'exit_type': 'sl_loss',
         'leverage': 5,
         'max_profit': 1.39,
-        'max_profit_pre_drawdown': -1.6,
         'min_profit': -20.75,
         'profit': -20.75
       },
       {
         'assets': 0.7,
-        'delta': 0.47,
         'direction': 'short',
         'duration': 119,
         'entry': '2017-09-08T19:55:00Z',
@@ -1327,13 +1210,11 @@
         'exit_type': 'sl_loss',
         'leverage': 4,
         'max_profit': 6.19,
-        'max_profit_pre_drawdown': -5.72,
         'min_profit': -16.6,
         'profit': -16.6
       },
       {
         'assets': 0.73,
-        'delta': 9.85,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
@@ -1344,13 +1225,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 11.16,
-        'max_profit_pre_drawdown': -1.31,
         'min_profit': -1.31,
         'profit': 5.16
       },
       {
         'assets': 0.74,
-        'delta': -3.34,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
@@ -1361,13 +1240,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 7.85,
-        'max_profit_pre_drawdown': -11.19,
         'min_profit': -11.19,
         'profit': 1.85
       },
       {
         'assets': 0.89,
-        'delta': 18.99,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
@@ -1378,13 +1255,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 25.5,
-        'max_profit_pre_drawdown': -6.51,
         'min_profit': -6.51,
         'profit': 19.5
       },
       {
         'assets': 0.76,
-        'delta': 3.19,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
@@ -1395,13 +1270,11 @@
         'exit_type': 'sig_loss',
         'leverage': 4,
         'max_profit': 6.44,
-        'max_profit_pre_drawdown': -3.25,
         'min_profit': -14.28,
         'profit': -14.21
       },
       {
         'assets': 0.98,
-        'delta': 28.91,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
@@ -1412,13 +1285,11 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 34.66,
-        'max_profit_pre_drawdown': -5.75,
         'min_profit': -5.75,
         'profit': 28.66
       },
       {
         'assets': 1.03,
-        'delta': 3.92,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
@@ -1429,13 +1300,11 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 13.19,
-        'max_profit_pre_drawdown': -9.27,
         'min_profit': -9.27,
         'profit': 5.19
       },
       {
         'assets': 1.28,
-        'delta': 25.04,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
@@ -1446,13 +1315,11 @@
         'exit_type': 'sl_profit',
         'leverage': 5,
         'max_profit': 33.83,
-        'max_profit_pre_drawdown': -8.79,
         'min_profit': -8.79,
         'profit': 23.83
       },
       {
         'assets': 1.6,
-        'delta': 33.61,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
@@ -1463,13 +1330,11 @@
         'exit_type': 'sl_profit',
         'leverage': 6,
         'max_profit': 37.31,
-        'max_profit_pre_drawdown': -3.7,
         'min_profit': -3.7,
         'profit': 25.31
       },
       {
         'assets': 1.07,
-        'delta': -15.6,
         'direction': 'long',
         'duration': 260,
         'entry': '2017-10-26T15:55:00Z',
@@ -1480,7 +1345,6 @@
         'exit_type': 'sl_loss',
         'leverage': 8,
         'max_profit': 6.05,
-        'max_profit_pre_drawdown': -21.65,
         'min_profit': -33.2,
         'profit': -33.2
       }
@@ -1493,9 +1357,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1503,29 +1370,26 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 5,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
     'days': null,
-    'delta': null,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': null,
     'max_assets': null,
     'max_drawdown_pct': null,
-    'mean_delta': null,
     'mean_hrs_in_trade': null,
     'mean_profit': null,
-    'median_delta': null,
     'median_profit': null,
     'min_assets': null,
     'signal_exits_at_loss': null,
     'signal_exits_in_profit': null,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': null,
     'stop_loss_exits_in_profit': null,
     'take_profit_exits': null,
@@ -1539,9 +1403,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1549,29 +1416,26 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 6,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
     'days': null,
-    'delta': null,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': null,
     'max_assets': null,
     'max_drawdown_pct': null,
-    'mean_delta': null,
     'mean_hrs_in_trade': null,
     'mean_profit': null,
-    'median_delta': null,
     'median_profit': null,
     'min_assets': null,
     'signal_exits_at_loss': null,
     'signal_exits_in_profit': null,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': null,
     'stop_loss_exits_in_profit': null,
     'take_profit_exits': null,
@@ -1585,9 +1449,12 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
       'drawdown_limit': -49,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
-      'pure_delta_mode': false,
+      'mean_floor': 4,
+      'median_floor': 4,
+      'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
         [
@@ -1595,29 +1462,26 @@
           -0.5
         ]
       ],
+      'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 10,
       'take_profit': 40,
       'trail_delay': true,
       'trailing_sl': true,
-      'winrate_floor': 50,
-      'winrate_grace_period': 50
+      "trail_last_reset": false,
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
     'days': null,
-    'delta': null,
     'end_date': '2017-11-09T10:30:00Z',
     'final_assets': null,
     'max_assets': null,
     'max_drawdown_pct': null,
-    'mean_delta': null,
     'mean_hrs_in_trade': null,
     'mean_profit': null,
-    'median_delta': null,
     'median_profit': null,
     'min_assets': null,
     'signal_exits_at_loss': null,
     'signal_exits_in_profit': null,
-    'start_date': '2017-09-01T00:00:00Z',
     'stop_loss_exits_at_loss': null,
     'stop_loss_exits_in_profit': null,
     'take_profit_exits': null,
