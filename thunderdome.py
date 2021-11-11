@@ -60,5 +60,51 @@ def accuracy_battle_eth():
         )
 
 
+def reset_battle_btc():
+    # all single and double TFs from their earliest date
+    main(
+        db_coll=cc.BTC_COLL,
+        datafilenames=["data/COINBASE_BTCUSD_all_TFs_on_5m.csv"],
+        signal_timeframes=cc.SINGLE_TIMEFRAMES + cc.DOUBLE_TIMEFRAMES,
+        loss_limit_fractions=[0.2],
+        enable_qol=False,
+        take_profits=cc.RESET_TEST_TPS,
+        stop_losses=cc.RESET_TEST_SLS,
+        leverages=[1],
+        trailing_sls=[False],
+        trail_delays=[False],
+        trail_last_resets=[False],
+        sls=[[[]]],
+        drawdown_limits=[-100],
+        winrate_floor=0,
+        mean_floor=-100,
+        median_floor=-100,
+        signal_exits=[True, False]
+    )
+    # each single TF with later start dates for comparison to lower TFs
+    for tf, start_dates in cc.COMPARISON_START_DATES["BTC"].items():
+        main(
+            db_coll=cc.BTC_COLL,
+            datafilenames=["data/COINBASE_BTCUSD_all_TFs_on_5m.csv"],
+            signal_timeframes=[[tf]],
+            signal_start_dates=start_dates,
+            loss_limit_fractions=[0.2],
+            enable_qol=False,
+            take_profits=cc.RESET_TEST_TPS,
+            stop_losses=cc.RESET_TEST_SLS,
+            leverages=[1],
+            trailing_sls=[False],
+            trail_delays=[False],
+            trail_last_resets=[False],
+            sls=[[[]]],
+            drawdown_limits=[-100],
+            winrate_floor=0,
+            mean_floor=-100,
+            median_floor=-100,
+            signal_exits=[True, False]
+        )
+
+
 if __name__ == "__main__":
-    accuracy_battle_eth()
+    #accuracy_battle_eth()
+    #reset_battle_btc()

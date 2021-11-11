@@ -8,7 +8,9 @@ from enum import Enum
 import config_prod as c
 import exceptions as e
 
-FEES = 0.15  # Bybit charges 0.075% for market entry/exit; 0.075 + 0.075 = 0.15%
+# Bybit charges 0.075% for market entry/exit; 0.075 + 0.075 = 0.15%
+#   with limit exit the fee is 0.075 - 0.025 = 0.05%
+FEES = 0.05
 # types of exits
 STOP_LOSS = "STOP_LOSS"
 TAKE_PROFIT = "TAKE_PROFIT"
