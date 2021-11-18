@@ -24,26 +24,27 @@ def run_btc_custom_reset_pts():
 def run_btc_standard_reset_pts():
     main(
         db_coll=cc.BTC_COLL,
-        datafilenames=["data/COINBASE_BTCUSD_1D_45m_on_5m_2020.csv"],
-        enable_qol=False,
+        datafilenames=["data/COINBASE_BTCUSD_1D_45m_on_5m_01_2020.csv"],
+        #enable_qol=False,
         #mean_floor=4,
         #median_floor=4,
         #winrate_floor=80,
         #winrate_floor=90,
-        winrate_floor=80,
-        drawdown_limits=[-50],
+        winrate_floor=50,
+        drawdown_limits=[-100],
         #mean_floor=3,
         #median_floor=3,
-        mean_floor=-1,
-        median_floor=-1,
-        #take_profits=[1000],
+        mean_floor=-2,
+        median_floor=-2,
         take_profits=[2],
-        sls=cc.SLS_ONE_RESET
-        + cc.SLS_TWO_RESETS
-        + cc.SLS_THREE_RESETS
-        + cc.SLS_FOUR_RESETS
-        + cc.SLS_FIVE_RESETS
-        + cc.SLS_SIX_RESETS
+        stop_losses=[7.5],
+        leverages=[2],
+        #sls=cc.SLS_ONE_RESET
+        #+ cc.SLS_TWO_RESETS
+        #+ cc.SLS_THREE_RESETS
+        #+ cc.SLS_FOUR_RESETS
+        #+ [[[]]]
+        sls=[[[0.5, -0.25], [1.5, -0.5]]]
     )
 
 
@@ -70,5 +71,5 @@ def run_eth_reset_pts():
 
 if __name__ == "__main__":
     #run_eth_reset_pts()
-    run_btc_custom_reset_pts()
-    # run_btc_standard_reset_pts()
+    #run_btc_custom_reset_pts()
+    run_btc_standard_reset_pts()

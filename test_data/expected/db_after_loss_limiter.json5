@@ -3,8 +3,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -100,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
+      'mean_floor': -5,
+      'median_floor': -5,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -17,22 +20,19 @@
       'stop_loss': 10,
       'take_profit': 10,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': -5,
-      'median_floor': -5,
-      'floor_grace_period': 50
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.11,
     'days': 1473.0,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 5.21,
-    'max_assets': 5.21,
+    'final_assets': 5.29,
+    'max_assets': 5.29,
     'max_drawdown_pct': -55,
-    'mean * trades': 229.77,
+    'mean * trades': 231.84,
     'mean_hrs_in_trade': 31.86,
-    'mean_profit': 1.11,
+    'mean_profit': 1.12,
     'median_profit': 2.3,
     'min_assets': 0.65,
     'signal_exits_at_loss': 47,
@@ -40,7 +40,7 @@
     'stop_loss_exits_at_loss': 3,
     'stop_loss_exits_in_profit': 156,
     'take_profit_exits': 1,
-    'total_profit_pct': 421,
+    'total_profit_pct': 429,
     'trade_history': [
       {
         'assets': 1.04,
@@ -730,7 +730,7 @@
         'leverage': 1,
         'max_profit': 9.85,
         'min_profit': -0.98,
-        'profit': 9.85
+        'profit': 9.95
       },
       {
         'assets': 0.88,
@@ -763,7 +763,7 @@
         'profit': 2.55
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 12,
         'entry': '2018-09-05T15:55:00Z',
@@ -1078,7 +1078,7 @@
         'profit': 0.9
       },
       {
-        'assets': 0.88,
+        'assets': 0.89,
         'direction': 'long',
         'duration': 384,
         'entry': '2019-01-26T07:55:00Z',
@@ -1273,7 +1273,7 @@
         'profit': 0.99
       },
       {
-        'assets': 0.98,
+        'assets': 0.99,
         'direction': 'short',
         'duration': 169,
         'entry': '2019-04-11T11:55:00Z',
@@ -1393,7 +1393,7 @@
         'profit': 2.32
       },
       {
-        'assets': 1.02,
+        'assets': 1.03,
         'direction': 'short',
         'duration': 3,
         'entry': '2019-06-30T15:55:00Z',
@@ -1528,7 +1528,7 @@
         'profit': 2.45
       },
       {
-        'assets': 1.17,
+        'assets': 1.18,
         'direction': 'long',
         'duration': 240,
         'entry': '2019-08-23T19:55:00Z',
@@ -1573,7 +1573,7 @@
         'profit': -12.28
       },
       {
-        'assets': 0.98,
+        'assets': 0.99,
         'direction': 'short',
         'duration': 127,
         'entry': '2019-08-28T19:55:00Z',
@@ -1708,7 +1708,7 @@
         'profit': 4.39
       },
       {
-        'assets': 1.48,
+        'assets': 1.49,
         'direction': 'long',
         'duration': 530,
         'entry': '2019-11-27T19:55:00Z',
@@ -1798,7 +1798,7 @@
         'profit': -8.04
       },
       {
-        'assets': 1.34,
+        'assets': 1.35,
         'direction': 'long',
         'duration': 55,
         'entry': '2019-12-29T15:55:00Z',
@@ -1843,7 +1843,7 @@
         'profit': 2.56
       },
       {
-        'assets': 1.55,
+        'assets': 1.56,
         'direction': 'short',
         'duration': 574,
         'entry': '2020-01-19T19:55:00Z',
@@ -1858,7 +1858,7 @@
         'profit': 4.9
       },
       {
-        'assets': 1.61,
+        'assets': 1.62,
         'direction': 'long',
         'duration': 45,
         'entry': '2020-01-27T15:55:00Z',
@@ -2038,7 +2038,7 @@
         'profit': -11.74
       },
       {
-        'assets': 2.18,
+        'assets': 2.19,
         'direction': 'long',
         'duration': 222,
         'entry': '2020-04-22T19:55:00Z',
@@ -2053,7 +2053,7 @@
         'profit': 25.87
       },
       {
-        'assets': 2.31,
+        'assets': 2.32,
         'direction': 'short',
         'duration': 154,
         'entry': '2020-05-10T03:55:00Z',
@@ -2068,7 +2068,7 @@
         'profit': 5.9
       },
       {
-        'assets': 2.4,
+        'assets': 2.41,
         'direction': 'long',
         'duration': 907,
         'entry': '2020-05-14T11:55:00Z',
@@ -2203,7 +2203,7 @@
         'profit': -8.76
       },
       {
-        'assets': 2.01,
+        'assets': 2.02,
         'direction': 'short',
         'duration': 1008,
         'entry': '2020-07-02T19:55:00Z',
@@ -2218,7 +2218,7 @@
         'profit': -6.78
       },
       {
-        'assets': 2.08,
+        'assets': 2.09,
         'direction': 'long',
         'duration': 217,
         'entry': '2020-07-06T07:55:00Z',
@@ -2338,7 +2338,7 @@
         'profit': 3.81
       },
       {
-        'assets': 1.4,
+        'assets': 1.41,
         'direction': 'long',
         'duration': 642,
         'entry': '2020-08-15T07:55:00Z',
@@ -2413,7 +2413,7 @@
         'profit': 3.83
       },
       {
-        'assets': 1.78,
+        'assets': 1.79,
         'direction': 'short',
         'duration': 34,
         'entry': '2020-09-21T11:55:00Z',
@@ -2488,7 +2488,7 @@
         'profit': -8.85
       },
       {
-        'assets': 1.62,
+        'assets': 1.63,
         'direction': 'long',
         'duration': 439,
         'entry': '2020-10-08T15:55:00Z',
@@ -2578,7 +2578,7 @@
         'profit': -6.39
       },
       {
-        'assets': 1.36,
+        'assets': 1.37,
         'direction': 'long',
         'duration': 159,
         'entry': '2020-11-04T03:55:00Z',
@@ -2608,7 +2608,7 @@
         'profit': 1.88
       },
       {
-        'assets': 1.46,
+        'assets': 1.47,
         'direction': 'long',
         'duration': 76,
         'entry': '2020-11-30T07:55:00Z',
@@ -2623,7 +2623,7 @@
         'profit': 5.34
       },
       {
-        'assets': 1.53,
+        'assets': 1.54,
         'direction': 'short',
         'duration': 134,
         'entry': '2020-12-08T11:55:00Z',
@@ -2683,7 +2683,7 @@
         'profit': 5.25
       },
       {
-        'assets': 1.91,
+        'assets': 1.92,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-02-22T15:55:00Z',
@@ -2758,7 +2758,7 @@
         'profit': -12.5
       },
       {
-        'assets': 2.05,
+        'assets': 2.06,
         'direction': 'long',
         'duration': 288,
         'entry': '2021-04-05T19:55:00Z',
@@ -2773,7 +2773,7 @@
         'profit': -5.67
       },
       {
-        'assets': 2.13,
+        'assets': 2.14,
         'direction': 'short',
         'duration': 163,
         'entry': '2021-04-06T19:55:00Z',
@@ -2788,7 +2788,7 @@
         'profit': 3.94
       },
       {
-        'assets': 2.42,
+        'assets': 2.43,
         'direction': 'long',
         'duration': 894,
         'entry': '2021-04-10T07:55:00Z',
@@ -2833,7 +2833,7 @@
         'profit': 6.89
       },
       {
-        'assets': 2.94,
+        'assets': 2.95,
         'direction': 'short',
         'duration': 50,
         'entry': '2021-05-04T19:55:00Z',
@@ -2863,7 +2863,7 @@
         'profit': 9.7
       },
       {
-        'assets': 3.43,
+        'assets': 3.44,
         'direction': 'short',
         'duration': 44,
         'entry': '2021-05-10T23:55:00Z',
@@ -2938,7 +2938,7 @@
         'profit': 12.45
       },
       {
-        'assets': 2.65,
+        'assets': 2.69,
         'direction': 'long',
         'duration': 130,
         'entry': '2021-06-09T23:55:00Z',
@@ -2947,13 +2947,13 @@
         'exit_pct': 1.68,
         'exit_price': 38025.0,
         'exit_type': 'sl_profit',
-        'leverage': 4,
-        'max_profit': 10.12,
-        'min_profit': -12.78,
-        'profit': 6.12
+        'leverage': 5,
+        'max_profit': 12.66,
+        'min_profit': -15.98,
+        'profit': 7.66
       },
       {
-        'assets': 2.95,
+        'assets': 3.0,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-06-18T15:55:00Z',
@@ -2968,7 +2968,7 @@
         'profit': 11.26
       },
       {
-        'assets': 3.15,
+        'assets': 3.2,
         'direction': 'long',
         'duration': 49,
         'entry': '2021-06-28T03:55:00Z',
@@ -2983,7 +2983,7 @@
         'profit': 6.91
       },
       {
-        'assets': 3.5,
+        'assets': 3.56,
         'direction': 'short',
         'duration': 60,
         'entry': '2021-07-08T03:55:00Z',
@@ -2998,7 +2998,7 @@
         'profit': 11.09
       },
       {
-        'assets': 2.65,
+        'assets': 2.69,
         'direction': 'long',
         'duration': 192,
         'entry': '2021-07-12T03:55:00Z',
@@ -3013,7 +3013,7 @@
         'profit': -24.47
       },
       {
-        'assets': 2.97,
+        'assets': 3.02,
         'direction': 'short',
         'duration': 389,
         'entry': '2021-07-12T19:55:00Z',
@@ -3028,7 +3028,7 @@
         'profit': 12.21
       },
       {
-        'assets': 3.21,
+        'assets': 3.26,
         'direction': 'long',
         'duration': 28,
         'entry': '2021-07-21T15:55:00Z',
@@ -3043,7 +3043,7 @@
         'profit': 8.2
       },
       {
-        'assets': 3.44,
+        'assets': 3.49,
         'direction': 'short',
         'duration': 68,
         'entry': '2021-08-02T15:55:00Z',
@@ -3058,7 +3058,7 @@
         'profit': 7.09
       },
       {
-        'assets': 3.66,
+        'assets': 3.71,
         'direction': 'long',
         'duration': 106,
         'entry': '2021-08-06T19:55:00Z',
@@ -3073,7 +3073,7 @@
         'profit': 6.23
       },
       {
-        'assets': 3.99,
+        'assets': 4.05,
         'direction': 'short',
         'duration': 250,
         'entry': '2021-08-16T23:55:00Z',
@@ -3088,7 +3088,7 @@
         'profit': 9.22
       },
       {
-        'assets': 4.19,
+        'assets': 4.26,
         'direction': 'long',
         'duration': 327,
         'entry': '2021-08-20T15:55:00Z',
@@ -3103,7 +3103,7 @@
         'profit': 5.05
       },
       {
-        'assets': 4.41,
+        'assets': 4.48,
         'direction': 'short',
         'duration': 237,
         'entry': '2021-08-25T11:55:00Z',
@@ -3118,7 +3118,7 @@
         'profit': 5.17
       },
       {
-        'assets': 4.78,
+        'assets': 4.86,
         'direction': 'long',
         'duration': 416,
         'entry': '2021-09-02T03:55:00Z',
@@ -3133,7 +3133,7 @@
         'profit': 8.46
       },
       {
-        'assets': 5.21,
+        'assets': 5.29,
         'direction': 'short',
         'duration': 175,
         'entry': '2021-09-07T15:55:00Z',

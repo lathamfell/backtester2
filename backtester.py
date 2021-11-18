@@ -10,7 +10,9 @@ import exceptions as e
 
 # Bybit charges 0.075% for market entry/exit; 0.075 + 0.075 = 0.15%
 #   with limit exit the fee is 0.075 - 0.025 = 0.05%
-FEES = 0.15
+BYBIT_MARKET_FEE = 0.075
+BYBIT_LIMIT_FEE = -0.025
+
 # types of exits
 STOP_LOSS = "STOP_LOSS"
 TAKE_PROFIT = "TAKE_PROFIT"
@@ -60,7 +62,7 @@ def main(
     enable_qol=c.ENABLE_QOL,  # script has things like sleep, pauses, for human interaction. Disable for testing or whatever
     replace_existing_scenarios=c.REPLACE,  # True to overwrite scenarios with matching id
     accuracy_tester_mode=c.ACCURACY_TESTER_MODE,
-    signal_exits=[True],
+    signal_exits=c.SIGNAL_EXITS,
     check_for_dupes_up_front=False
 ):
     start_time = time.perf_counter()
@@ -353,7 +355,7 @@ class ScenarioRunner:
                 self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
                 if self.price_movement_low == self.price_movement_at_candle_low:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_low)[0]
+                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_low, exit_type=STOP_LOSS)[0]
                 # check for SL
                 if self.price_movement_at_candle_low <= (-1 * self.stop_loss):
                     # we stopped out somewhere in this candle
@@ -370,7 +372,7 @@ class ScenarioRunner:
                     self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
                     if self.price_movement_high == self.price_movement_at_candle_high:
                         # new max profit for this trade: save it, and reset trailing if applicable
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high)[0]
+                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high, exit_type=STOP_LOSS)[0]
                         if self.trailing_on:
                             # this is a new max, need to move trailing SL
                             self.stop_loss = (
@@ -404,7 +406,7 @@ class ScenarioRunner:
                 self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
                 if self.price_movement_high == self.price_movement_at_candle_high:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_high))[0]
+                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_high), exit_type=STOP_LOSS)[0]
                 # check for SL
                 if self.price_movement_at_candle_high >= self.stop_loss:
                     # we stopped out somewhere in this candle
@@ -422,7 +424,7 @@ class ScenarioRunner:
                     self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
                     if self.price_movement_low == self.price_movement_at_candle_low:
                         # new max profit for this trade
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low))[0]
+                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low), exit_type=STOP_LOSS)[0]
                         if self.trailing_on:
                             # this is a new min, need to move trailing SL
                             self.stop_loss = (
@@ -621,22 +623,29 @@ class ScenarioRunner:
             return True
         return False
 
-    def get_profit_pct_from_exit_price(self, exit_price):
+    def get_profit_pct_from_exit_price(self, exit_price, exit_type):
         # takes an exit price like 34,001 and returns profit pct after fees and leverage
         exit_pct = None
         if self.long_entry_price:
             exit_pct = ((exit_price / self.long_entry_price) - 1) * 100
         elif self.short_entry_price:
             exit_pct = ((exit_price / self.short_entry_price) - 1) * -100
-
-        profit_pct = exit_pct * self.leverage - FEES * self.leverage
+        if exit_type == TAKE_PROFIT:
+            fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
+        else:
+            fees = BYBIT_MARKET_FEE * 2
+        profit_pct = exit_pct * self.leverage - fees * self.leverage
         return profit_pct, exit_pct
 
-    def get_profit_pct_from_exit_pct(self, exit_pct):
+    def get_profit_pct_from_exit_pct(self, exit_pct, exit_type):
         # takes an exit price based profit pct like 2% and returns final profit pct after fees and leverage
         exit_pct = min(exit_pct, self.spec["take_profit"])  # cut off anything beyond TP
         exit_pct = max(exit_pct, -1 * self.spec["stop_loss"])  # cut off anything below SL
-        profit_pct = exit_pct * self.leverage - FEES * self.leverage
+        if exit_type == TAKE_PROFIT:
+            fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
+        else:
+            fees = BYBIT_MARKET_FEE * 2
+        profit_pct = exit_pct * self.leverage - fees * self.leverage
         return profit_pct, exit_pct
 
     def get_exit_price_from_exit_pct(self, exit_pct):
@@ -651,7 +660,7 @@ class ScenarioRunner:
         exit_pct = None
         exit_price = None
         if _type == STOP_LOSS:
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss))
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss), exit_type=_type)
             exit_price = self.get_exit_price_from_exit_pct(exit_pct=(-1 * self.stop_loss))
             if self.profit_pct > 0:
                 exit_type = "sl_profit"
@@ -659,13 +668,13 @@ class ScenarioRunner:
                 exit_type = "sl_loss"
 
         elif _type == TAKE_PROFIT:
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"])
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"], exit_type=_type)
             exit_price = self.get_exit_price_from_exit_pct(exit_pct=self.spec["take_profit"])
             exit_type = "tp"
 
         elif _type == SIGNAL:
             exit_price = getattr(self.row, "close")
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price)
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price, exit_type=_type)
             if self.profit_pct > 0:
                 exit_type = "sig_profit"
             else:

@@ -17,27 +17,27 @@
       'stop_loss': 1,
       'take_profit': 1,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': false,
-      "trail_last_reset": false,
       'winrate_floor': 0
     },
-    'daily_profit_pct_avg': -0.33,
+    'daily_profit_pct_avg': -0.23,
     'days': 197.7,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 0.52,
-    'max_assets': 1.01,
-    'max_drawdown_pct': -49,
-    'mean * trades': -62.56,
+    'final_assets': 0.63,
+    'max_assets': 1.02,
+    'max_drawdown_pct': -39,
+    'mean * trades': -43.01,
     'mean_hrs_in_trade': 2.28,
-    'mean_profit': -0.16,
+    'mean_profit': -0.11,
     'median_profit': -1.15,
-    'min_assets': 0.51,
+    'min_assets': 0.61,
     'signal_exits_at_loss': 1,
     'signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 197,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 193,
-    'total_profit_pct': -47,
+    'total_profit_pct': -36,
     'trade_history': [
       {
         'assets': 1.01,
@@ -52,7 +52,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.23,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
         'assets': 1.0,
@@ -82,10 +82,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 1.01,
+        'assets': 1.02,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-03-03T05:55:00Z',
@@ -97,10 +97,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 1.0,
+        'assets': 1.01,
         'direction': 'long',
         'duration': 17,
         'entry': '2021-03-04T01:25:00Z',
@@ -157,7 +157,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.46,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
         'assets': 0.98,
@@ -190,7 +190,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.95,
+        'assets': 0.96,
         'direction': 'long',
         'duration': 27,
         'entry': '2021-03-06T07:10:00Z',
@@ -205,7 +205,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.94,
+        'assets': 0.95,
         'direction': 'short',
         'duration': 35,
         'entry': '2021-03-06T13:55:00Z',
@@ -220,7 +220,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.95,
+        'assets': 0.96,
         'direction': 'long',
         'duration': 32,
         'entry': '2021-03-06T22:55:00Z',
@@ -232,7 +232,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.38,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
         'assets': 0.96,
@@ -247,7 +247,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.33,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
         'assets': 0.95,
@@ -277,7 +277,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.51,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
         'assets': 0.95,
@@ -295,7 +295,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.93,
+        'assets': 0.94,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-03-09T20:40:00Z',
@@ -310,7 +310,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.94,
+        'assets': 0.95,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-03-10T08:25:00Z',
@@ -322,10 +322,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.43,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.93,
+        'assets': 0.94,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-03-10T21:55:00Z',
@@ -340,7 +340,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.92,
+        'assets': 0.93,
         'direction': 'short',
         'duration': 23,
         'entry': '2021-03-11T08:55:00Z',
@@ -355,7 +355,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.93,
+        'assets': 0.94,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-03-11T11:55:00Z',
@@ -367,10 +367,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.04,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.92,
+        'assets': 0.93,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-03-12T13:55:00Z',
@@ -385,7 +385,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'long',
         'duration': 30,
         'entry': '2021-03-12T16:55:00Z',
@@ -415,7 +415,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 15,
         'entry': '2021-03-13T08:55:00Z',
@@ -427,10 +427,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.45,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'long',
         'duration': 25,
         'entry': '2021-03-14T21:10:00Z',
@@ -442,10 +442,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.77,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-03-14T23:55:00Z',
@@ -460,7 +460,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-03-15T05:10:00Z',
@@ -472,10 +472,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.65,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-03-15T22:55:00Z',
@@ -490,7 +490,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.9,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-03-16T17:40:00Z',
@@ -505,7 +505,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 25,
         'entry': '2021-03-16T21:55:00Z',
@@ -517,10 +517,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.77,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.9,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-03-17T10:55:00Z',
@@ -532,10 +532,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.37,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.91,
+        'assets': 0.93,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-03-17T18:55:00Z',
@@ -547,10 +547,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.52,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.92,
+        'assets': 0.93,
         'direction': 'long',
         'duration': 4,
         'entry': '2021-03-18T15:40:00Z',
@@ -562,10 +562,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.16,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-03-19T00:55:00Z',
@@ -580,7 +580,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 21,
         'entry': '2021-03-19T11:55:00Z',
@@ -595,7 +595,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 20,
         'entry': '2021-03-20T02:10:00Z',
@@ -610,7 +610,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 43,
         'entry': '2021-03-20T08:10:00Z',
@@ -622,10 +622,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.29,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.89,
+        'assets': 0.9,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-03-20T23:55:00Z',
@@ -640,7 +640,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.91,
         'direction': 'short',
         'duration': 15,
         'entry': '2021-03-21T23:25:00Z',
@@ -652,10 +652,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.53,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.88,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 18,
         'entry': '2021-03-22T10:55:00Z',
@@ -670,7 +670,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.91,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-03-22T18:55:00Z',
@@ -682,10 +682,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.21,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.9,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 15,
         'entry': '2021-03-23T19:40:00Z',
@@ -697,10 +697,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.43,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.9,
+        'assets': 0.92,
         'direction': 'long',
         'duration': 37,
         'entry': '2021-03-24T08:55:00Z',
@@ -712,10 +712,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.62,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.91,
+        'assets': 0.93,
         'direction': 'short',
         'duration': 13,
         'entry': '2021-03-24T20:55:00Z',
@@ -727,10 +727,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.58,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.92,
+        'assets': 0.94,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-03-25T11:55:00Z',
@@ -742,10 +742,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.42,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.91,
+        'assets': 0.93,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-03-25T23:40:00Z',
@@ -760,7 +760,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 8,
         'entry': '2021-03-26T02:40:00Z',
@@ -775,7 +775,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 41,
         'entry': '2021-03-26T07:55:00Z',
@@ -790,7 +790,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.9,
+        'assets': 0.92,
         'direction': 'long',
         'duration': 9,
         'entry': '2021-03-27T15:25:00Z',
@@ -802,10 +802,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.55,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.89,
+        'assets': 0.91,
         'direction': 'long',
         'duration': 51,
         'entry': '2021-03-28T07:55:00Z',
@@ -820,7 +820,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.88,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 30,
         'entry': '2021-03-28T15:40:00Z',
@@ -835,7 +835,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.87,
+        'assets': 0.89,
         'direction': 'short',
         'duration': 44,
         'entry': '2021-03-28T19:55:00Z',
@@ -850,7 +850,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.86,
+        'assets': 0.88,
         'direction': 'short',
         'duration': 71,
         'entry': '2021-03-29T01:10:00Z',
@@ -865,7 +865,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.86,
+        'assets': 0.88,
         'direction': 'long',
         'duration': 8,
         'entry': '2021-03-29T08:55:00Z',
@@ -877,10 +877,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.32,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.87,
+        'assets': 0.89,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-03-30T04:55:00Z',
@@ -892,10 +892,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.48,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.88,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 70,
         'entry': '2021-03-31T00:40:00Z',
@@ -907,10 +907,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.01,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.89,
+        'assets': 0.91,
         'direction': 'short',
         'duration': 17,
         'entry': '2021-03-31T08:55:00Z',
@@ -922,10 +922,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.56,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.88,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 48,
         'entry': '2021-03-31T15:55:00Z',
@@ -940,7 +940,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.87,
+        'assets': 0.89,
         'direction': 'long',
         'duration': 70,
         'entry': '2021-04-01T01:10:00Z',
@@ -955,7 +955,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.86,
+        'assets': 0.88,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-04-01T08:25:00Z',
@@ -970,7 +970,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.85,
+        'assets': 0.87,
         'direction': 'long',
         'duration': 51,
         'entry': '2021-04-01T13:40:00Z',
@@ -985,7 +985,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.85,
+        'assets': 0.88,
         'direction': 'long',
         'duration': 76,
         'entry': '2021-04-01T20:10:00Z',
@@ -997,10 +997,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.85,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.84,
+        'assets': 0.87,
         'direction': 'short',
         'duration': 40,
         'entry': '2021-04-02T20:55:00Z',
@@ -1015,7 +1015,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.83,
+        'assets': 0.86,
         'direction': 'long',
         'duration': 33,
         'entry': '2021-04-03T05:55:00Z',
@@ -1030,7 +1030,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.82,
+        'assets': 0.85,
         'direction': 'long',
         'duration': 69,
         'entry': '2021-04-03T10:10:00Z',
@@ -1045,7 +1045,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.83,
+        'assets': 0.86,
         'direction': 'short',
         'duration': 17,
         'entry': '2021-04-03T15:55:00Z',
@@ -1057,10 +1057,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.66,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.82,
+        'assets': 0.85,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-04-04T11:55:00Z',
@@ -1075,7 +1075,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.83,
+        'assets': 0.85,
         'direction': 'short',
         'duration': 36,
         'entry': '2021-04-05T00:55:00Z',
@@ -1087,10 +1087,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.16,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.84,
+        'assets': 0.86,
         'direction': 'long',
         'duration': 18,
         'entry': '2021-04-05T12:55:00Z',
@@ -1102,10 +1102,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.52,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.83,
+        'assets': 0.85,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-04-06T00:10:00Z',
@@ -1120,7 +1120,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.82,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-04-06T12:40:00Z',
@@ -1135,7 +1135,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.82,
+        'assets': 0.85,
         'direction': 'short',
         'duration': 125,
         'entry': '2021-04-06T14:55:00Z',
@@ -1147,10 +1147,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.81,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.83,
+        'assets': 0.86,
         'direction': 'short',
         'duration': 29,
         'entry': '2021-04-07T08:25:00Z',
@@ -1162,10 +1162,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.72,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.82,
+        'assets': 0.85,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-04-08T00:10:00Z',
@@ -1180,7 +1180,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.81,
+        'assets': 0.84,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-04-08T10:10:00Z',
@@ -1195,7 +1195,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.82,
+        'assets': 0.85,
         'direction': 'long',
         'duration': 55,
         'entry': '2021-04-08T13:55:00Z',
@@ -1207,10 +1207,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.22,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.81,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 69,
         'entry': '2021-04-09T10:25:00Z',
@@ -1225,7 +1225,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.8,
+        'assets': 0.83,
         'direction': 'long',
         'duration': 35,
         'entry': '2021-04-09T20:10:00Z',
@@ -1240,7 +1240,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.81,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-04-10T02:10:00Z',
@@ -1252,10 +1252,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.27,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.8,
+        'assets': 0.83,
         'direction': 'short',
         'duration': 21,
         'entry': '2021-04-10T21:55:00Z',
@@ -1270,7 +1270,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.79,
+        'assets': 0.82,
         'direction': 'long',
         'duration': 62,
         'entry': '2021-04-11T00:55:00Z',
@@ -1285,7 +1285,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'short',
         'duration': 43,
         'entry': '2021-04-11T13:55:00Z',
@@ -1300,7 +1300,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.77,
+        'assets': 0.8,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-04-12T02:55:00Z',
@@ -1315,7 +1315,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.8,
         'direction': 'long',
         'duration': 24,
         'entry': '2021-04-12T04:55:00Z',
@@ -1327,10 +1327,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.25,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 30,
         'entry': '2021-04-13T00:10:00Z',
@@ -1342,10 +1342,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.32,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.79,
+        'assets': 0.82,
         'direction': 'long',
         'duration': 60,
         'entry': '2021-04-13T23:40:00Z',
@@ -1357,10 +1357,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.71,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 20,
         'entry': '2021-04-14T11:10:00Z',
@@ -1375,7 +1375,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.79,
+        'assets': 0.82,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-04-14T18:55:00Z',
@@ -1387,10 +1387,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.82,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.79,
+        'assets': 0.83,
         'direction': 'short',
         'duration': 32,
         'entry': '2021-04-15T08:25:00Z',
@@ -1402,10 +1402,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.37,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.82,
         'direction': 'short',
         'duration': 45,
         'entry': '2021-04-15T15:40:00Z',
@@ -1420,7 +1420,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 85,
         'entry': '2021-04-15T20:55:00Z',
@@ -1435,7 +1435,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.82,
         'direction': 'short',
         'duration': 50,
         'entry': '2021-04-16T04:55:00Z',
@@ -1447,10 +1447,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.93,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.77,
+        'assets': 0.81,
         'direction': 'short',
         'duration': 21,
         'entry': '2021-04-16T23:55:00Z',
@@ -1465,7 +1465,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-04-17T09:25:00Z',
@@ -1477,10 +1477,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.37,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.79,
+        'assets': 0.82,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-04-17T23:40:00Z',
@@ -1492,10 +1492,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.46,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.81,
         'direction': 'short',
         'duration': 12,
         'entry': '2021-04-19T10:10:00Z',
@@ -1510,7 +1510,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.82,
         'direction': 'short',
         'duration': 18,
         'entry': '2021-04-19T12:55:00Z',
@@ -1522,10 +1522,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.53,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.77,
+        'assets': 0.81,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-04-20T00:25:00Z',
@@ -1540,7 +1540,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.77,
+        'assets': 0.8,
         'direction': 'short',
         'duration': 8,
         'entry': '2021-04-20T15:40:00Z',
@@ -1555,7 +1555,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.76,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 58,
         'entry': '2021-04-20T19:55:00Z',
@@ -1570,7 +1570,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.75,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-04-21T11:55:00Z',
@@ -1585,7 +1585,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-04-21T15:55:00Z',
@@ -1600,7 +1600,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.75,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 19,
         'entry': '2021-04-21T20:55:00Z',
@@ -1612,10 +1612,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.6,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-04-22T08:25:00Z',
@@ -1627,10 +1627,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.39,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.8,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-04-22T17:40:00Z',
@@ -1642,10 +1642,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.38,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-04-24T00:40:00Z',
@@ -1660,7 +1660,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'long',
         'duration': 59,
         'entry': '2021-04-24T18:55:00Z',
@@ -1675,7 +1675,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.75,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 29,
         'entry': '2021-04-25T04:55:00Z',
@@ -1687,10 +1687,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.6,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'long',
         'duration': 28,
         'entry': '2021-04-25T15:55:00Z',
@@ -1705,7 +1705,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.75,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-04-25T19:55:00Z',
@@ -1717,10 +1717,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.68,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 1,
         'entry': '2021-04-26T01:55:00Z',
@@ -1732,10 +1732,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.13,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.8,
         'direction': 'long',
         'duration': 92,
         'entry': '2021-04-26T22:25:00Z',
@@ -1747,10 +1747,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.95,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 53,
         'entry': '2021-04-27T20:55:00Z',
@@ -1762,10 +1762,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.89,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.8,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-04-28T09:55:00Z',
@@ -1780,7 +1780,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-04-28T12:55:00Z',
@@ -1795,7 +1795,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-04-28T15:55:00Z',
@@ -1810,7 +1810,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 2,
         'entry': '2021-04-28T19:55:00Z',
@@ -1822,10 +1822,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.28,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'long',
         'duration': 26,
         'entry': '2021-04-29T00:10:00Z',
@@ -1840,7 +1840,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-04-29T03:55:00Z',
@@ -1852,10 +1852,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.17,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-04-29T13:25:00Z',
@@ -1867,10 +1867,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.26,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.8,
         'direction': 'long',
         'duration': 80,
         'entry': '2021-04-30T06:55:00Z',
@@ -1882,10 +1882,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.78,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 31,
         'entry': '2021-05-01T19:25:00Z',
@@ -1900,7 +1900,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.78,
         'direction': 'long',
         'duration': 49,
         'entry': '2021-05-01T23:25:00Z',
@@ -1915,7 +1915,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.73,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 18,
         'entry': '2021-05-02T03:55:00Z',
@@ -1930,7 +1930,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.72,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 25,
         'entry': '2021-05-02T22:10:00Z',
@@ -1945,7 +1945,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.73,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 67,
         'entry': '2021-05-03T01:55:00Z',
@@ -1957,10 +1957,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.69,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 23,
         'entry': '2021-05-03T20:55:00Z',
@@ -1975,7 +1975,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.72,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-05-04T12:25:00Z',
@@ -1987,10 +1987,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.14,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 11,
         'entry': '2021-05-05T06:40:00Z',
@@ -2005,7 +2005,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.71,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-05-05T13:55:00Z',
@@ -2020,7 +2020,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-05-06T04:25:00Z',
@@ -2035,7 +2035,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.71,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 6,
         'entry': '2021-05-06T09:40:00Z',
@@ -2047,10 +2047,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.29,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 11,
         'entry': '2021-05-06T18:55:00Z',
@@ -2065,7 +2065,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-05-07T01:25:00Z',
@@ -2077,10 +2077,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.39,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-05-07T13:55:00Z',
@@ -2092,10 +2092,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.57,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.76,
         'direction': 'long',
         'duration': 20,
         'entry': '2021-05-08T02:40:00Z',
@@ -2107,10 +2107,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.33,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 82,
         'entry': '2021-05-08T18:10:00Z',
@@ -2125,7 +2125,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 20,
         'entry': '2021-05-09T01:55:00Z',
@@ -2140,7 +2140,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.71,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 27,
         'entry': '2021-05-09T09:55:00Z',
@@ -2152,10 +2152,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'long',
         'duration': 19,
         'entry': '2021-05-10T01:55:00Z',
@@ -2167,10 +2167,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.25,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 11,
         'entry': '2021-05-10T13:55:00Z',
@@ -2182,10 +2182,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.09,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-05-10T17:10:00Z',
@@ -2197,10 +2197,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.36,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-05-11T12:10:00Z',
@@ -2215,7 +2215,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.72,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 37,
         'entry': '2021-05-12T00:55:00Z',
@@ -2227,10 +2227,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.78,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.73,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-05-12T15:55:00Z',
@@ -2242,10 +2242,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.47,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-05-13T15:40:00Z',
@@ -2260,7 +2260,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-05-14T04:40:00Z',
@@ -2275,7 +2275,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 26,
         'entry': '2021-05-14T10:55:00Z',
@@ -2290,7 +2290,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.69,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 11,
         'entry': '2021-05-15T01:55:00Z',
@@ -2305,7 +2305,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 12,
         'entry': '2021-05-15T06:55:00Z',
@@ -2317,10 +2317,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.28,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 34,
         'entry': '2021-05-15T16:25:00Z',
@@ -2332,10 +2332,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.86,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 11,
         'entry': '2021-05-16T10:55:00Z',
@@ -2350,7 +2350,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 8,
         'entry': '2021-05-16T15:55:00Z',
@@ -2362,10 +2362,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.8,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-05-17T14:25:00Z',
@@ -2380,7 +2380,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-05-17T22:40:00Z',
@@ -2392,10 +2392,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.89,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 14,
         'entry': '2021-05-18T10:55:00Z',
@@ -2410,7 +2410,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-05-18T13:55:00Z',
@@ -2422,10 +2422,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.08,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-05-19T23:40:00Z',
@@ -2437,10 +2437,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.69,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 4,
         'entry': '2021-05-20T11:55:00Z',
@@ -2452,10 +2452,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.01,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'long',
         'duration': 6,
         'entry': '2021-05-20T23:10:00Z',
@@ -2470,7 +2470,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-05-21T09:55:00Z',
@@ -2485,7 +2485,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-05-21T14:55:00Z',
@@ -2497,10 +2497,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.88,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-05-22T04:55:00Z',
@@ -2512,10 +2512,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.42,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-05-22T18:40:00Z',
@@ -2530,7 +2530,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.71,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-05-23T02:40:00Z',
@@ -2542,10 +2542,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.51,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-05-24T07:55:00Z',
@@ -2560,7 +2560,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 14,
         'entry': '2021-05-25T06:55:00Z',
@@ -2575,7 +2575,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.68,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-05-25T12:55:00Z',
@@ -2590,7 +2590,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.69,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 12,
         'entry': '2021-05-26T02:55:00Z',
@@ -2602,10 +2602,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.46,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 19,
         'entry': '2021-05-26T22:10:00Z',
@@ -2617,10 +2617,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.93,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 15,
         'entry': '2021-05-27T01:55:00Z',
@@ -2632,10 +2632,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 9,
         'entry': '2021-05-27T11:55:00Z',
@@ -2650,7 +2650,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.7,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 43,
         'entry': '2021-05-28T00:55:00Z',
@@ -2662,10 +2662,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.07,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-05-28T16:55:00Z',
@@ -2680,7 +2680,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-05-29T08:25:00Z',
@@ -2692,10 +2692,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.48,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.69,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-05-30T00:40:00Z',
@@ -2710,7 +2710,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.68,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-05-30T07:55:00Z',
@@ -2725,7 +2725,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 69,
         'entry': '2021-05-30T17:25:00Z',
@@ -2740,7 +2740,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.68,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-05-31T02:55:00Z',
@@ -2752,10 +2752,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.18,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.68,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-05-31T08:55:00Z',
@@ -2767,10 +2767,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.74,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-05-31T22:10:00Z',
@@ -2785,7 +2785,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-06-01T05:55:00Z',
@@ -2800,7 +2800,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 2,
         'entry': '2021-06-01T13:40:00Z',
@@ -2815,7 +2815,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 17,
         'entry': '2021-06-01T16:55:00Z',
@@ -2830,7 +2830,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 14,
         'entry': '2021-06-02T01:10:00Z',
@@ -2845,7 +2845,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 66,
         'entry': '2021-06-02T07:55:00Z',
@@ -2857,10 +2857,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.12,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 11,
         'entry': '2021-06-03T04:10:00Z',
@@ -2872,10 +2872,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.29,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 26,
         'entry': '2021-06-03T21:25:00Z',
@@ -2887,10 +2887,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.41,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 26,
         'entry': '2021-06-04T02:55:00Z',
@@ -2902,10 +2902,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.08,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-06-04T23:10:00Z',
@@ -2920,7 +2920,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-06-05T09:40:00Z',
@@ -2932,10 +2932,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 41,
         'entry': '2021-06-06T10:40:00Z',
@@ -2947,10 +2947,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.8,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.68,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 43,
         'entry': '2021-06-06T18:40:00Z',
@@ -2962,10 +2962,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.47,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 21,
         'entry': '2021-06-07T01:55:00Z',
@@ -2980,7 +2980,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 43,
         'entry': '2021-06-07T10:25:00Z',
@@ -2995,7 +2995,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.67,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-06-07T16:55:00Z',
@@ -3007,10 +3007,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.38,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.67,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 8,
         'entry': '2021-06-08T13:25:00Z',
@@ -3022,10 +3022,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.65,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-09T01:55:00Z',
@@ -3040,7 +3040,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-06-09T06:55:00Z',
@@ -3055,7 +3055,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 1,
         'entry': '2021-06-10T09:55:00Z',
@@ -3067,10 +3067,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.47,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-06-11T00:25:00Z',
@@ -3085,7 +3085,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 13,
         'entry': '2021-06-11T01:55:00Z',
@@ -3100,7 +3100,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 14,
         'entry': '2021-06-11T10:55:00Z',
@@ -3115,7 +3115,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.69,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-06-11T19:40:00Z',
@@ -3130,7 +3130,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.69,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-06-11T22:40:00Z',
@@ -3145,7 +3145,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-06-12T01:55:00Z',
@@ -3157,10 +3157,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 13,
         'entry': '2021-06-12T23:55:00Z',
@@ -3175,7 +3175,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.69,
         'direction': 'long',
         'duration': 39,
         'entry': '2021-06-13T12:55:00Z',
@@ -3187,10 +3187,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.63,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 25,
         'entry': '2021-06-14T23:25:00Z',
@@ -3205,7 +3205,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-06-15T13:10:00Z',
@@ -3220,7 +3220,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 9,
         'entry': '2021-06-15T17:10:00Z',
@@ -3232,10 +3232,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.48,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-06-16T04:55:00Z',
@@ -3250,7 +3250,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.68,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-06-16T10:55:00Z',
@@ -3262,10 +3262,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.18,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 23,
         'entry': '2021-06-17T12:10:00Z',
@@ -3277,10 +3277,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.29,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-06-18T06:10:00Z',
@@ -3292,10 +3292,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.05,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-18T12:25:00Z',
@@ -3307,10 +3307,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.6,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-06-19T02:55:00Z',
@@ -3322,10 +3322,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.35,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-19T17:25:00Z',
@@ -3337,10 +3337,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.32,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-06-19T22:25:00Z',
@@ -3352,10 +3352,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.42,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 32,
         'entry': '2021-06-20T07:10:00Z',
@@ -3367,10 +3367,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.8,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 15,
         'entry': '2021-06-20T20:55:00Z',
@@ -3385,7 +3385,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-06-21T03:55:00Z',
@@ -3397,10 +3397,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.29,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-06-22T08:25:00Z',
@@ -3412,10 +3412,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.46,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 2,
         'entry': '2021-06-22T18:55:00Z',
@@ -3430,7 +3430,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 4,
         'entry': '2021-06-23T00:40:00Z',
@@ -3442,10 +3442,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.91,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 12,
         'entry': '2021-06-23T23:40:00Z',
@@ -3460,7 +3460,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-06-24T02:55:00Z',
@@ -3475,7 +3475,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 27,
         'entry': '2021-06-24T12:55:00Z',
@@ -3487,10 +3487,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.95,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 8,
         'entry': '2021-06-25T02:10:00Z',
@@ -3505,7 +3505,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-25T11:55:00Z',
@@ -3517,10 +3517,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.96,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-06-26T06:55:00Z',
@@ -3532,10 +3532,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.31,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-06-26T13:55:00Z',
@@ -3547,10 +3547,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.31,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-06-26T21:10:00Z',
@@ -3565,7 +3565,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 4,
         'entry': '2021-06-27T00:55:00Z',
@@ -3577,10 +3577,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.43,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-06-27T11:55:00Z',
@@ -3595,7 +3595,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 1,
         'entry': '2021-06-27T22:10:00Z',
@@ -3607,10 +3607,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.24,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 8,
         'entry': '2021-06-28T15:55:00Z',
@@ -3625,7 +3625,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-06-28T20:40:00Z',
@@ -3640,7 +3640,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 2,
         'entry': '2021-06-29T00:25:00Z',
@@ -3652,10 +3652,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.13,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 31,
         'entry': '2021-06-29T04:10:00Z',
@@ -3667,10 +3667,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.77,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 15,
         'entry': '2021-06-30T04:55:00Z',
@@ -3685,7 +3685,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-07-01T02:25:00Z',
@@ -3697,10 +3697,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.14,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-07-01T19:10:00Z',
@@ -3712,10 +3712,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.25,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 15,
         'entry': '2021-07-02T02:10:00Z',
@@ -3727,10 +3727,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-07-02T09:40:00Z',
@@ -3745,7 +3745,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 25,
         'entry': '2021-07-02T19:25:00Z',
@@ -3760,7 +3760,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 49,
         'entry': '2021-07-02T22:55:00Z',
@@ -3775,7 +3775,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 27,
         'entry': '2021-07-04T03:25:00Z',
@@ -3787,10 +3787,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.34,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 26,
         'entry': '2021-07-05T01:55:00Z',
@@ -3802,10 +3802,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.37,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-07-05T11:25:00Z',
@@ -3817,10 +3817,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-07-06T02:10:00Z',
@@ -3835,7 +3835,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 39,
         'entry': '2021-07-06T05:55:00Z',
@@ -3850,7 +3850,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 14,
         'entry': '2021-07-06T22:55:00Z',
@@ -3862,10 +3862,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.35,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-07-07T23:55:00Z',
@@ -3877,10 +3877,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.33,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 35,
         'entry': '2021-07-08T22:10:00Z',
@@ -3892,10 +3892,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.97,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 56,
         'entry': '2021-07-09T08:25:00Z',
@@ -3910,7 +3910,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 92,
         'entry': '2021-07-09T13:55:00Z',
@@ -3922,10 +3922,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.52,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 67,
         'entry': '2021-07-10T11:40:00Z',
@@ -3940,7 +3940,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-07-10T20:55:00Z',
@@ -3955,7 +3955,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 51,
         'entry': '2021-07-11T04:10:00Z',
@@ -3970,7 +3970,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 91,
         'entry': '2021-07-11T13:55:00Z',
@@ -3982,10 +3982,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.73,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-07-12T11:55:00Z',
@@ -3997,10 +3997,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.35,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 19,
         'entry': '2021-07-13T05:25:00Z',
@@ -4015,7 +4015,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 17,
         'entry': '2021-07-13T11:10:00Z',
@@ -4027,10 +4027,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.66,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 29,
         'entry': '2021-07-14T00:55:00Z',
@@ -4042,10 +4042,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.55,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 121,
         'entry': '2021-07-14T14:55:00Z',
@@ -4057,10 +4057,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.99,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 30,
         'entry': '2021-07-15T10:55:00Z',
@@ -4072,10 +4072,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.12,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.66,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-07-16T06:25:00Z',
@@ -4087,10 +4087,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.46,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 52,
         'entry': '2021-07-16T16:55:00Z',
@@ -4105,7 +4105,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 105,
         'entry': '2021-07-16T23:55:00Z',
@@ -4120,7 +4120,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 39,
         'entry': '2021-07-17T10:25:00Z',
@@ -4135,7 +4135,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 38,
         'entry': '2021-07-17T19:55:00Z',
@@ -4150,7 +4150,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-07-18T00:55:00Z',
@@ -4162,10 +4162,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.25,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 34,
         'entry': '2021-07-18T14:55:00Z',
@@ -4180,7 +4180,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 55,
         'entry': '2021-07-19T01:10:00Z',
@@ -4195,7 +4195,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 25,
         'entry': '2021-07-19T08:40:00Z',
@@ -4207,10 +4207,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-07-20T01:10:00Z',
@@ -4222,10 +4222,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.49,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 79,
         'entry': '2021-07-20T21:40:00Z',
@@ -4240,7 +4240,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 60,
         'entry': '2021-07-21T04:55:00Z',
@@ -4252,10 +4252,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.47,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 50,
         'entry': '2021-07-21T22:25:00Z',
@@ -4270,7 +4270,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 34,
         'entry': '2021-07-22T12:55:00Z',
@@ -4282,10 +4282,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.77,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 18,
         'entry': '2021-07-23T01:10:00Z',
@@ -4297,10 +4297,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 23,
         'entry': '2021-07-23T14:10:00Z',
@@ -4315,7 +4315,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-07-23T17:55:00Z',
@@ -4330,7 +4330,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 8,
         'entry': '2021-07-23T21:55:00Z',
@@ -4342,10 +4342,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.24,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 24,
         'entry': '2021-07-24T23:55:00Z',
@@ -4360,7 +4360,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 29,
         'entry': '2021-07-25T02:55:00Z',
@@ -4372,10 +4372,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.38,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 65,
         'entry': '2021-07-25T17:40:00Z',
@@ -4387,10 +4387,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.7,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 6,
         'entry': '2021-07-26T15:55:00Z',
@@ -4402,10 +4402,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.38,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 26,
         'entry': '2021-07-27T03:55:00Z',
@@ -4420,7 +4420,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 1,
         'entry': '2021-07-27T13:55:00Z',
@@ -4435,7 +4435,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 14,
         'entry': '2021-07-27T21:25:00Z',
@@ -4447,10 +4447,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.61,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-07-28T10:10:00Z',
@@ -4462,10 +4462,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.64,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 3,
         'entry': '2021-07-28T17:10:00Z',
@@ -4480,7 +4480,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 6,
         'entry': '2021-07-28T18:55:00Z',
@@ -4495,7 +4495,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 46,
         'entry': '2021-07-29T05:55:00Z',
@@ -4507,10 +4507,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.08,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-07-29T18:55:00Z',
@@ -4525,7 +4525,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 45,
         'entry': '2021-07-30T04:55:00Z',
@@ -4537,10 +4537,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.34,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 3,
         'entry': '2021-07-30T20:55:00Z',
@@ -4552,10 +4552,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.17,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 32,
         'entry': '2021-07-31T10:55:00Z',
@@ -4570,7 +4570,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 40,
         'entry': '2021-07-31T20:40:00Z',
@@ -4585,7 +4585,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-08-01T14:55:00Z',
@@ -4597,10 +4597,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.63,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 42,
         'entry': '2021-08-02T08:40:00Z',
@@ -4612,10 +4612,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.75,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-08-02T19:40:00Z',
@@ -4627,10 +4627,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.18,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-08-03T12:10:00Z',
@@ -4642,10 +4642,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.8,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-08-04T00:25:00Z',
@@ -4660,7 +4660,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 62,
         'entry': '2021-08-04T03:10:00Z',
@@ -4672,10 +4672,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.53,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 15,
         'entry': '2021-08-04T13:55:00Z',
@@ -4687,10 +4687,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.58,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 34,
         'entry': '2021-08-05T09:55:00Z',
@@ -4702,10 +4702,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.67,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 4,
         'entry': '2021-08-05T16:55:00Z',
@@ -4717,10 +4717,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.34,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 41,
         'entry': '2021-08-06T06:25:00Z',
@@ -4735,7 +4735,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 24,
         'entry': '2021-08-07T19:55:00Z',
@@ -4750,7 +4750,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 21,
         'entry': '2021-08-08T12:40:00Z',
@@ -4765,7 +4765,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-08-08T18:55:00Z',
@@ -4780,7 +4780,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 12,
         'entry': '2021-08-09T00:10:00Z',
@@ -4792,10 +4792,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.55,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 38,
         'entry': '2021-08-09T10:55:00Z',
@@ -4807,10 +4807,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.98,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-08-09T22:55:00Z',
@@ -4825,7 +4825,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 22,
         'entry': '2021-08-10T08:40:00Z',
@@ -4840,7 +4840,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.6,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 10,
         'entry': '2021-08-10T12:55:00Z',
@@ -4855,7 +4855,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.59,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 21,
         'entry': '2021-08-10T16:55:00Z',
@@ -4870,7 +4870,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.59,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-08-11T02:55:00Z',
@@ -4885,7 +4885,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.59,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-08-11T06:55:00Z',
@@ -4897,10 +4897,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.07,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.6,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 70,
         'entry': '2021-08-12T05:55:00Z',
@@ -4912,10 +4912,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.1,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.6,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-08-13T06:55:00Z',
@@ -4927,10 +4927,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 162,
         'entry': '2021-08-13T20:10:00Z',
@@ -4942,10 +4942,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.72,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.6,
+        'assets': 0.71,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-08-14T19:40:00Z',
@@ -4960,7 +4960,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.59,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 78,
         'entry': '2021-08-14T21:40:00Z',
@@ -4975,7 +4975,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.6,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 27,
         'entry': '2021-08-15T04:55:00Z',
@@ -4987,10 +4987,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.51,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.59,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 18,
         'entry': '2021-08-15T17:10:00Z',
@@ -5005,7 +5005,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.6,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-08-15T22:55:00Z',
@@ -5017,10 +5017,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.98,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.59,
+        'assets': 0.7,
         'direction': 'long',
         'duration': 23,
         'entry': '2021-08-16T11:25:00Z',
@@ -5035,7 +5035,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.58,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 40,
         'entry': '2021-08-16T14:55:00Z',
@@ -5050,7 +5050,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.58,
+        'assets': 0.68,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-08-17T06:10:00Z',
@@ -5065,7 +5065,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.58,
+        'assets': 0.69,
         'direction': 'short',
         'duration': 58,
         'entry': '2021-08-17T14:25:00Z',
@@ -5077,10 +5077,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.65,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.68,
         'direction': 'short',
         'duration': 17,
         'entry': '2021-08-18T11:40:00Z',
@@ -5095,7 +5095,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-08-18T17:55:00Z',
@@ -5110,7 +5110,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.68,
         'direction': 'short',
         'duration': 86,
         'entry': '2021-08-18T19:55:00Z',
@@ -5122,10 +5122,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.77,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'short',
         'duration': 30,
         'entry': '2021-08-19T11:10:00Z',
@@ -5140,7 +5140,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-08-19T14:55:00Z',
@@ -5152,10 +5152,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.18,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 46,
         'entry': '2021-08-20T09:55:00Z',
@@ -5167,10 +5167,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.8,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 35,
         'entry': '2021-08-21T08:10:00Z',
@@ -5185,7 +5185,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 55,
         'entry': '2021-08-21T12:55:00Z',
@@ -5197,10 +5197,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.6,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 113,
         'entry': '2021-08-22T05:10:00Z',
@@ -5215,7 +5215,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.67,
         'direction': 'short',
         'duration': 19,
         'entry': '2021-08-22T14:55:00Z',
@@ -5230,7 +5230,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 19,
         'entry': '2021-08-22T23:55:00Z',
@@ -5242,10 +5242,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.55,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 16,
         'entry': '2021-08-23T23:25:00Z',
@@ -5260,7 +5260,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 33,
         'entry': '2021-08-24T01:55:00Z',
@@ -5275,7 +5275,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 31,
         'entry': '2021-08-24T10:55:00Z',
@@ -5287,10 +5287,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.53,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.67,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-08-25T08:25:00Z',
@@ -5302,10 +5302,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.25,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-08-25T16:55:00Z',
@@ -5317,10 +5317,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.55,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.68,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-08-26T04:55:00Z',
@@ -5332,10 +5332,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.49,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.67,
         'direction': 'short',
         'duration': 62,
         'entry': '2021-08-26T15:55:00Z',
@@ -5350,7 +5350,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.67,
         'direction': 'short',
         'duration': 9,
         'entry': '2021-08-27T00:10:00Z',
@@ -5365,7 +5365,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 48,
         'entry': '2021-08-27T03:25:00Z',
@@ -5380,7 +5380,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 66,
         'entry': '2021-08-27T14:55:00Z',
@@ -5392,10 +5392,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.35,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 37,
         'entry': '2021-08-28T16:25:00Z',
@@ -5410,7 +5410,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 38,
         'entry': '2021-08-28T21:40:00Z',
@@ -5422,10 +5422,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 154,
         'entry': '2021-08-29T03:55:00Z',
@@ -5440,7 +5440,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 13,
         'entry': '2021-08-29T22:55:00Z',
@@ -5455,7 +5455,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 111,
         'entry': '2021-08-30T03:55:00Z',
@@ -5467,10 +5467,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.58,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 29,
         'entry': '2021-08-30T19:55:00Z',
@@ -5485,7 +5485,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 8,
         'entry': '2021-08-30T22:55:00Z',
@@ -5497,10 +5497,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 93,
         'entry': '2021-08-31T14:55:00Z',
@@ -5512,10 +5512,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.75,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 68,
         'entry': '2021-09-01T10:55:00Z',
@@ -5527,10 +5527,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.64,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 7,
         'entry': '2021-09-01T16:40:00Z',
@@ -5542,10 +5542,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.21,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 18,
         'entry': '2021-09-02T21:55:00Z',
@@ -5560,7 +5560,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 20,
         'entry': '2021-09-03T01:55:00Z',
@@ -5575,7 +5575,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 36,
         'entry': '2021-09-03T04:55:00Z',
@@ -5590,7 +5590,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.64,
         'direction': 'long',
         'duration': 87,
         'entry': '2021-09-04T03:40:00Z',
@@ -5605,7 +5605,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.64,
         'direction': 'short',
         'duration': 252,
         'entry': '2021-09-04T17:55:00Z',
@@ -5620,7 +5620,7 @@
         'profit': -0.74
       },
       {
-        'assets': 0.54,
+        'assets': 0.64,
         'direction': 'long',
         'duration': 52,
         'entry': '2021-09-05T14:55:00Z',
@@ -5632,10 +5632,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.47,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 40,
         'entry': '2021-09-06T18:40:00Z',
@@ -5647,10 +5647,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.26,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 52,
         'entry': '2021-09-07T09:55:00Z',
@@ -5662,10 +5662,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.99,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 34,
         'entry': '2021-09-08T03:25:00Z',
@@ -5677,10 +5677,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -1.13,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-09-08T20:25:00Z',
@@ -5695,7 +5695,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-09-08T23:55:00Z',
@@ -5707,10 +5707,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.76,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-09-09T12:40:00Z',
@@ -5725,7 +5725,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 36,
         'entry': '2021-09-09T13:55:00Z',
@@ -5737,10 +5737,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.5,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 40,
         'entry': '2021-09-10T01:40:00Z',
@@ -5755,7 +5755,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.64,
         'direction': 'short',
         'duration': 39,
         'entry': '2021-09-10T08:55:00Z',
@@ -5770,7 +5770,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.64,
         'direction': 'short',
         'duration': 4,
         'entry': '2021-09-11T03:40:00Z',
@@ -5785,7 +5785,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 26,
         'entry': '2021-09-11T07:40:00Z',
@@ -5800,7 +5800,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 58,
         'entry': '2021-09-11T19:40:00Z',
@@ -5812,10 +5812,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.19,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 139,
         'entry': '2021-09-12T08:55:00Z',
@@ -5830,7 +5830,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 12,
         'entry': '2021-09-12T21:55:00Z',
@@ -5845,7 +5845,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 15,
         'entry': '2021-09-12T23:55:00Z',
@@ -5860,7 +5860,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 26,
         'entry': '2021-09-13T02:55:00Z',
@@ -5872,10 +5872,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.54,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-09-13T14:25:00Z',
@@ -5887,10 +5887,10 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.2,
-        'profit': 0.85
+        'profit': 0.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 25,
         'entry': '2021-09-14T06:55:00Z',
@@ -5902,7 +5902,7 @@
         'leverage': 1,
         'max_profit': 0.85,
         'min_profit': -0.15,
-        'profit': 0.85
+        'profit': 0.95
       }
     ],
     'trades': 391,
@@ -5927,27 +5927,27 @@
       'stop_loss': 3,
       'take_profit': 3,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': false,
-      "trail_last_reset": false,
       'winrate_floor': 0
     },
-    'daily_profit_pct_avg': -0.46,
+    'daily_profit_pct_avg': -0.4,
     'days': 197.7,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 0.4,
+    'final_assets': 0.45,
     'max_assets': 1.03,
-    'max_drawdown_pct': -61,
-    'mean * trades': -80.7,
+    'max_drawdown_pct': -57,
+    'mean * trades': -69.94,
     'mean_hrs_in_trade': 11.02,
-    'mean_profit': -0.3,
+    'mean_profit': -0.26,
     'median_profit': -1.49,
-    'min_assets': 0.39,
+    'min_assets': 0.44,
     'signal_exits_at_loss': 86,
     'signal_exits_in_profit': 2,
     'stop_loss_exits_at_loss': 73,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 108,
-    'total_profit_pct': -59,
+    'total_profit_pct': -55,
     'trade_history': [
       {
         'assets': 1.03,
@@ -5962,7 +5962,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.37,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 1.0,
@@ -5980,7 +5980,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.96,
+        'assets': 0.97,
         'direction': 'short',
         'duration': 125,
         'entry': '2021-03-02T17:55:00Z',
@@ -6007,7 +6007,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.15,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 0.96,
@@ -6037,7 +6037,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.29,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 0.96,
@@ -6085,7 +6085,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.92,
+        'assets': 0.93,
         'direction': 'long',
         'duration': 110,
         'entry': '2021-03-06T22:55:00Z',
@@ -6097,10 +6097,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.38,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.89,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 109,
         'entry': '2021-03-07T23:10:00Z',
@@ -6130,7 +6130,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.89,
+        'assets': 0.9,
         'direction': 'long',
         'duration': 106,
         'entry': '2021-03-08T14:55:00Z',
@@ -6142,7 +6142,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.51,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 0.92,
@@ -6157,7 +6157,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.78,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 0.89,
@@ -6175,7 +6175,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.86,
+        'assets': 0.87,
         'direction': 'short',
         'duration': 36,
         'entry': '2021-03-11T08:55:00Z',
@@ -6202,7 +6202,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.04,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
         'assets': 0.86,
@@ -6220,7 +6220,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.84,
+        'assets': 0.85,
         'direction': 'long',
         'duration': 120,
         'entry': '2021-03-12T16:55:00Z',
@@ -6250,7 +6250,7 @@
         'profit': -1.82
       },
       {
-        'assets': 0.85,
+        'assets': 0.86,
         'direction': 'long',
         'duration': 15,
         'entry': '2021-03-13T08:55:00Z',
@@ -6262,10 +6262,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.45,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.83,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 33,
         'entry': '2021-03-14T21:10:00Z',
@@ -6280,7 +6280,7 @@
         'profit': -2.03
       },
       {
-        'assets': 0.86,
+        'assets': 0.87,
         'direction': 'short',
         'duration': 113,
         'entry': '2021-03-14T23:55:00Z',
@@ -6292,10 +6292,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.83,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.88,
+        'assets': 0.89,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-03-15T22:55:00Z',
@@ -6307,10 +6307,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.15,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.86,
+        'assets': 0.87,
         'direction': 'short',
         'duration': 51,
         'entry': '2021-03-16T17:40:00Z',
@@ -6325,7 +6325,7 @@
         'profit': -2.59
       },
       {
-        'assets': 0.83,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 142,
         'entry': '2021-03-16T21:55:00Z',
@@ -6355,7 +6355,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.83,
+        'assets': 0.84,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-03-17T18:55:00Z',
@@ -6367,10 +6367,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.52,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.8,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 50,
         'entry': '2021-03-18T15:40:00Z',
@@ -6385,7 +6385,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 87,
         'entry': '2021-03-19T00:55:00Z',
@@ -6400,7 +6400,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.77,
+        'assets': 0.78,
         'direction': 'long',
         'duration': 432,
         'entry': '2021-03-19T11:55:00Z',
@@ -6415,7 +6415,7 @@
         'profit': -1.35
       },
       {
-        'assets': 0.79,
+        'assets': 0.8,
         'direction': 'short',
         'duration': 117,
         'entry': '2021-03-20T23:55:00Z',
@@ -6427,10 +6427,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.43,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 138,
         'entry': '2021-03-21T23:25:00Z',
@@ -6445,7 +6445,7 @@
         'profit': -0.98
       },
       {
-        'assets': 0.76,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 67,
         'entry': '2021-03-22T10:55:00Z',
@@ -6460,7 +6460,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 22,
         'entry': '2021-03-22T18:55:00Z',
@@ -6472,10 +6472,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.21,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.76,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 159,
         'entry': '2021-03-23T19:40:00Z',
@@ -6505,7 +6505,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.76,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-03-24T20:55:00Z',
@@ -6517,10 +6517,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.58,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'short',
         'duration': 6,
         'entry': '2021-03-25T11:55:00Z',
@@ -6532,10 +6532,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.42,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.76,
         'direction': 'short',
         'duration': 66,
         'entry': '2021-03-25T23:40:00Z',
@@ -6550,7 +6550,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.77,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 193,
         'entry': '2021-03-26T07:55:00Z',
@@ -6562,10 +6562,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.23,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.8,
+        'assets': 0.81,
         'direction': 'long',
         'duration': 77,
         'entry': '2021-03-27T15:25:00Z',
@@ -6577,10 +6577,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.55,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 144,
         'entry': '2021-03-28T07:55:00Z',
@@ -6595,7 +6595,7 @@
         'profit': -1.92
       },
       {
-        'assets': 0.76,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 154,
         'entry': '2021-03-28T19:55:00Z',
@@ -6610,7 +6610,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.78,
+        'assets': 0.79,
         'direction': 'long',
         'duration': 298,
         'entry': '2021-03-29T08:55:00Z',
@@ -6622,10 +6622,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.32,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.75,
+        'assets': 0.77,
         'direction': 'long',
         'duration': 89,
         'entry': '2021-03-31T00:40:00Z',
@@ -6640,7 +6640,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.74,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 84,
         'entry': '2021-03-31T08:55:00Z',
@@ -6655,7 +6655,7 @@
         'profit': -2.36
       },
       {
-        'assets': 0.73,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 636,
         'entry': '2021-03-31T15:55:00Z',
@@ -6670,7 +6670,7 @@
         'profit': -1.18
       },
       {
-        'assets': 0.72,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 108,
         'entry': '2021-04-02T20:55:00Z',
@@ -6685,7 +6685,7 @@
         'profit': -1.4
       },
       {
-        'assets': 0.71,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 120,
         'entry': '2021-04-03T05:55:00Z',
@@ -6700,7 +6700,7 @@
         'profit': -1.17
       },
       {
-        'assets': 0.73,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 92,
         'entry': '2021-04-03T15:55:00Z',
@@ -6712,10 +6712,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.66,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 300,
         'entry': '2021-04-04T11:55:00Z',
@@ -6730,7 +6730,7 @@
         'profit': -1.39
       },
       {
-        'assets': 0.72,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 312,
         'entry': '2021-04-05T12:55:00Z',
@@ -6745,7 +6745,7 @@
         'profit': -0.25
       },
       {
-        'assets': 0.74,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 246,
         'entry': '2021-04-06T14:55:00Z',
@@ -6757,10 +6757,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.42,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.72,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 165,
         'entry': '2021-04-08T00:10:00Z',
@@ -6775,7 +6775,7 @@
         'profit': -2.55
       },
       {
-        'assets': 0.74,
+        'assets': 0.75,
         'direction': 'long',
         'duration': 456,
         'entry': '2021-04-08T13:55:00Z',
@@ -6787,10 +6787,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.22,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.73,
+        'assets': 0.74,
         'direction': 'short',
         'duration': 36,
         'entry': '2021-04-10T21:55:00Z',
@@ -6805,7 +6805,7 @@
         'profit': -1.8
       },
       {
-        'assets': 0.71,
+        'assets': 0.73,
         'direction': 'long',
         'duration': 156,
         'entry': '2021-04-11T00:55:00Z',
@@ -6820,7 +6820,7 @@
         'profit': -1.49
       },
       {
-        'assets': 0.7,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 180,
         'entry': '2021-04-11T13:55:00Z',
@@ -6835,7 +6835,7 @@
         'profit': -1.49
       },
       {
-        'assets': 0.72,
+        'assets': 0.74,
         'direction': 'long',
         'duration': 328,
         'entry': '2021-04-12T04:55:00Z',
@@ -6847,10 +6847,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.26,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.72,
         'direction': 'long',
         'duration': 231,
         'entry': '2021-04-13T23:40:00Z',
@@ -6865,7 +6865,7 @@
         'profit': -2.36
       },
       {
-        'assets': 0.69,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 312,
         'entry': '2021-04-14T18:55:00Z',
@@ -6880,7 +6880,7 @@
         'profit': -2.33
       },
       {
-        'assets': 0.67,
+        'assets': 0.69,
         'direction': 'long',
         'duration': 96,
         'entry': '2021-04-15T20:55:00Z',
@@ -6895,7 +6895,7 @@
         'profit': -2.81
       },
       {
-        'assets': 0.69,
+        'assets': 0.71,
         'direction': 'short',
         'duration': 444,
         'entry': '2021-04-16T04:55:00Z',
@@ -6907,10 +6907,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.62,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.73,
         'direction': 'short',
         'duration': 42,
         'entry': '2021-04-17T23:40:00Z',
@@ -6922,10 +6922,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.46,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.73,
+        'assets': 0.75,
         'direction': 'short',
         'duration': 66,
         'entry': '2021-04-19T10:10:00Z',
@@ -6937,10 +6937,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.82,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.71,
+        'assets': 0.72,
         'direction': 'short',
         'duration': 163,
         'entry': '2021-04-20T00:25:00Z',
@@ -6955,7 +6955,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.69,
+        'assets': 0.7,
         'direction': 'short',
         'duration': 51,
         'entry': '2021-04-20T15:40:00Z',
@@ -6970,7 +6970,7 @@
         'profit': -2.84
       },
       {
-        'assets': 0.67,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 146,
         'entry': '2021-04-20T19:55:00Z',
@@ -6985,7 +6985,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.64,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 32,
         'entry': '2021-04-21T11:55:00Z',
@@ -7000,7 +7000,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.63,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 60,
         'entry': '2021-04-21T15:55:00Z',
@@ -7015,7 +7015,7 @@
         'profit': -2.24
       },
       {
-        'assets': 0.65,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 38,
         'entry': '2021-04-21T20:55:00Z',
@@ -7027,10 +7027,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.6,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.64,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-04-22T08:25:00Z',
@@ -7045,7 +7045,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.65,
+        'assets': 0.66,
         'direction': 'short',
         'duration': 19,
         'entry': '2021-04-22T17:40:00Z',
@@ -7057,10 +7057,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.38,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 219,
         'entry': '2021-04-24T00:40:00Z',
@@ -7075,7 +7075,7 @@
         'profit': -1.76
       },
       {
-        'assets': 0.62,
+        'assets': 0.64,
         'direction': 'long',
         'duration': 120,
         'entry': '2021-04-24T18:55:00Z',
@@ -7090,7 +7090,7 @@
         'profit': -2.09
       },
       {
-        'assets': 0.61,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 132,
         'entry': '2021-04-25T04:55:00Z',
@@ -7105,7 +7105,7 @@
         'profit': -1.43
       },
       {
-        'assets': 0.6,
+        'assets': 0.62,
         'direction': 'long',
         'duration': 48,
         'entry': '2021-04-25T15:55:00Z',
@@ -7120,7 +7120,7 @@
         'profit': -1.95
       },
       {
-        'assets': 0.62,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 13,
         'entry': '2021-04-25T19:55:00Z',
@@ -7132,10 +7132,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.68,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 95,
         'entry': '2021-04-26T01:55:00Z',
@@ -7147,10 +7147,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.7,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.65,
+        'assets': 0.67,
         'direction': 'long',
         'duration': 208,
         'entry': '2021-04-26T22:25:00Z',
@@ -7162,10 +7162,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.95,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.64,
+        'assets': 0.66,
         'direction': 'long',
         'duration': 156,
         'entry': '2021-04-27T20:55:00Z',
@@ -7180,7 +7180,7 @@
         'profit': -1.88
       },
       {
-        'assets': 0.63,
+        'assets': 0.65,
         'direction': 'short',
         'duration': 36,
         'entry': '2021-04-28T09:55:00Z',
@@ -7195,7 +7195,7 @@
         'profit': -1.87
       },
       {
-        'assets': 0.62,
+        'assets': 0.64,
         'direction': 'long',
         'duration': 36,
         'entry': '2021-04-28T12:55:00Z',
@@ -7210,7 +7210,7 @@
         'profit': -1.64
       },
       {
-        'assets': 0.6,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 48,
         'entry': '2021-04-28T15:55:00Z',
@@ -7225,7 +7225,7 @@
         'profit': -2.17
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 96,
         'entry': '2021-04-28T19:55:00Z',
@@ -7240,7 +7240,7 @@
         'profit': -2.26
       },
       {
-        'assets': 0.61,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 169,
         'entry': '2021-04-29T03:55:00Z',
@@ -7252,10 +7252,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.91,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.63,
+        'assets': 0.65,
         'direction': 'long',
         'duration': 85,
         'entry': '2021-04-30T06:55:00Z',
@@ -7267,10 +7267,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.78,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 102,
         'entry': '2021-05-01T19:25:00Z',
@@ -7285,7 +7285,7 @@
         'profit': -2.68
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 261,
         'entry': '2021-05-02T03:55:00Z',
@@ -7300,7 +7300,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.58,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 228,
         'entry': '2021-05-03T01:55:00Z',
@@ -7315,7 +7315,7 @@
         'profit': -2.28
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 48,
         'entry': '2021-05-03T20:55:00Z',
@@ -7327,10 +7327,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.35,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.61,
+        'assets': 0.63,
         'direction': 'short',
         'duration': 34,
         'entry': '2021-05-04T12:25:00Z',
@@ -7342,10 +7342,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.14,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 50,
         'entry': '2021-05-05T06:40:00Z',
@@ -7360,7 +7360,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.61,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 243,
         'entry': '2021-05-05T13:55:00Z',
@@ -7372,10 +7372,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.15,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 215,
         'entry': '2021-05-06T18:55:00Z',
@@ -7390,7 +7390,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.6,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 217,
         'entry': '2021-05-07T13:55:00Z',
@@ -7402,10 +7402,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.57,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 189,
         'entry': '2021-05-08T18:10:00Z',
@@ -7420,7 +7420,7 @@
         'profit': -2.04
       },
       {
-        'assets': 0.58,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 192,
         'entry': '2021-05-09T09:55:00Z',
@@ -7435,7 +7435,7 @@
         'profit': -1.55
       },
       {
-        'assets': 0.57,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 144,
         'entry': '2021-05-10T01:55:00Z',
@@ -7450,7 +7450,7 @@
         'profit': -1.85
       },
       {
-        'assets': 0.59,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 69,
         'entry': '2021-05-10T13:55:00Z',
@@ -7462,10 +7462,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.62,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 142,
         'entry': '2021-05-11T12:10:00Z',
@@ -7480,7 +7480,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 171,
         'entry': '2021-05-12T00:55:00Z',
@@ -7495,7 +7495,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.57,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 31,
         'entry': '2021-05-12T15:55:00Z',
@@ -7507,10 +7507,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.47,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-05-13T15:40:00Z',
@@ -7522,10 +7522,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.57,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 42,
         'entry': '2021-05-14T04:40:00Z',
@@ -7540,7 +7540,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 119,
         'entry': '2021-05-14T10:55:00Z',
@@ -7555,7 +7555,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 52,
         'entry': '2021-05-15T01:55:00Z',
@@ -7570,7 +7570,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 122,
         'entry': '2021-05-15T06:55:00Z',
@@ -7582,10 +7582,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.34,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 52,
         'entry': '2021-05-16T10:55:00Z',
@@ -7600,7 +7600,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-05-16T15:55:00Z',
@@ -7612,10 +7612,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.8,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.58,
         'direction': 'short',
         'duration': 28,
         'entry': '2021-05-17T14:25:00Z',
@@ -7627,10 +7627,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.28,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.56,
         'direction': 'short',
         'duration': 19,
         'entry': '2021-05-17T22:40:00Z',
@@ -7645,7 +7645,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 23,
         'entry': '2021-05-18T10:55:00Z',
@@ -7660,7 +7660,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.56,
         'direction': 'short',
         'duration': 56,
         'entry': '2021-05-18T13:55:00Z',
@@ -7672,10 +7672,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.52,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.58,
         'direction': 'short',
         'duration': 11,
         'entry': '2021-05-19T23:40:00Z',
@@ -7687,10 +7687,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.87,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.6,
         'direction': 'long',
         'duration': 5,
         'entry': '2021-05-20T11:55:00Z',
@@ -7702,10 +7702,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.01,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.58,
         'direction': 'long',
         'duration': 65,
         'entry': '2021-05-20T23:10:00Z',
@@ -7720,7 +7720,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 52,
         'entry': '2021-05-21T09:55:00Z',
@@ -7735,7 +7735,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.55,
+        'assets': 0.58,
         'direction': 'short',
         'duration': 11,
         'entry': '2021-05-21T14:55:00Z',
@@ -7747,10 +7747,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.41,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 7,
         'entry': '2021-05-22T04:55:00Z',
@@ -7762,10 +7762,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.42,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 152,
         'entry': '2021-05-22T18:40:00Z',
@@ -7777,10 +7777,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.81,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.6,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 44,
         'entry': '2021-05-24T07:55:00Z',
@@ -7792,10 +7792,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.1,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 37,
         'entry': '2021-05-25T06:55:00Z',
@@ -7810,7 +7810,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 32,
         'entry': '2021-05-25T12:55:00Z',
@@ -7825,7 +7825,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.58,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 43,
         'entry': '2021-05-26T02:55:00Z',
@@ -7837,10 +7837,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.77,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 44,
         'entry': '2021-05-26T22:10:00Z',
@@ -7855,7 +7855,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 79,
         'entry': '2021-05-27T01:55:00Z',
@@ -7870,7 +7870,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 90,
         'entry': '2021-05-27T11:55:00Z',
@@ -7885,7 +7885,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 58,
         'entry': '2021-05-28T00:55:00Z',
@@ -7897,10 +7897,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.07,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.58,
         'direction': 'short',
         'duration': 54,
         'entry': '2021-05-28T16:55:00Z',
@@ -7912,10 +7912,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.16,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 35,
         'entry': '2021-05-29T08:25:00Z',
@@ -7927,10 +7927,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.48,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.58,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-05-30T00:40:00Z',
@@ -7945,7 +7945,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 211,
         'entry': '2021-05-30T07:55:00Z',
@@ -7960,7 +7960,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.55,
         'direction': 'short',
         'duration': 54,
         'entry': '2021-05-31T02:55:00Z',
@@ -7975,7 +7975,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 39,
         'entry': '2021-05-31T08:55:00Z',
@@ -7987,10 +7987,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.74,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.54,
         'direction': 'long',
         'duration': 121,
         'entry': '2021-05-31T22:10:00Z',
@@ -8005,7 +8005,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 17,
         'entry': '2021-06-01T13:40:00Z',
@@ -8020,7 +8020,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 171,
         'entry': '2021-06-01T16:55:00Z',
@@ -8035,7 +8035,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 254,
         'entry': '2021-06-02T07:55:00Z',
@@ -8047,10 +8047,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.12,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'long',
         'duration': 48,
         'entry': '2021-06-03T21:25:00Z',
@@ -8065,7 +8065,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.52,
         'direction': 'short',
         'duration': 33,
         'entry': '2021-06-04T02:55:00Z',
@@ -8077,10 +8077,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.08,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 21,
         'entry': '2021-06-04T23:10:00Z',
@@ -8095,7 +8095,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.49,
+        'assets': 0.52,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-06-05T09:40:00Z',
@@ -8107,10 +8107,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.15,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 183,
         'entry': '2021-06-06T10:40:00Z',
@@ -8125,7 +8125,7 @@
         'profit': -2.34
       },
       {
-        'assets': 0.47,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 180,
         'entry': '2021-06-07T01:55:00Z',
@@ -8140,7 +8140,7 @@
         'profit': -2.6
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 46,
         'entry': '2021-06-07T16:55:00Z',
@@ -8152,10 +8152,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.38,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-08T13:25:00Z',
@@ -8167,10 +8167,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.65,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 40,
         'entry': '2021-06-09T01:55:00Z',
@@ -8185,7 +8185,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-06-09T06:55:00Z',
@@ -8197,10 +8197,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.3,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'long',
         'duration': 90,
         'entry': '2021-06-10T09:55:00Z',
@@ -8215,7 +8215,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.47,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 18,
         'entry': '2021-06-11T00:25:00Z',
@@ -8230,7 +8230,7 @@
         'profit': -1.26
       },
       {
-        'assets': 0.46,
+        'assets': 0.49,
         'direction': 'short',
         'duration': 91,
         'entry': '2021-06-11T01:55:00Z',
@@ -8245,7 +8245,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.44,
+        'assets': 0.47,
         'direction': 'long',
         'duration': 175,
         'entry': '2021-06-11T10:55:00Z',
@@ -8260,7 +8260,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.46,
+        'assets': 0.49,
         'direction': 'short',
         'duration': 35,
         'entry': '2021-06-12T01:55:00Z',
@@ -8272,10 +8272,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.54,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.45,
+        'assets': 0.48,
         'direction': 'short',
         'duration': 156,
         'entry': '2021-06-12T23:55:00Z',
@@ -8290,7 +8290,7 @@
         'profit': -1.15
       },
       {
-        'assets': 0.47,
+        'assets': 0.49,
         'direction': 'long',
         'duration': 44,
         'entry': '2021-06-13T12:55:00Z',
@@ -8302,10 +8302,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.63,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.46,
+        'assets': 0.48,
         'direction': 'long',
         'duration': 426,
         'entry': '2021-06-14T23:25:00Z',
@@ -8320,7 +8320,7 @@
         'profit': -1.93
       },
       {
-        'assets': 0.47,
+        'assets': 0.5,
         'direction': 'short',
         'duration': 71,
         'entry': '2021-06-16T10:55:00Z',
@@ -8332,10 +8332,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.18,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 64,
         'entry': '2021-06-17T12:10:00Z',
@@ -8347,10 +8347,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.91,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 105,
         'entry': '2021-06-18T06:10:00Z',
@@ -8362,10 +8362,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.11,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.51,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 374,
         'entry': '2021-06-19T02:55:00Z',
@@ -8377,10 +8377,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.83,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.49,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 81,
         'entry': '2021-06-20T20:55:00Z',
@@ -8395,7 +8395,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 30,
         'entry': '2021-06-21T03:55:00Z',
@@ -8407,10 +8407,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.29,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.56,
         'direction': 'short',
         'duration': 43,
         'entry': '2021-06-22T08:25:00Z',
@@ -8422,10 +8422,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.56,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 73,
         'entry': '2021-06-22T18:55:00Z',
@@ -8437,10 +8437,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.7,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 25,
         'entry': '2021-06-23T23:40:00Z',
@@ -8455,7 +8455,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 80,
         'entry': '2021-06-24T02:55:00Z',
@@ -8470,7 +8470,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-06-24T12:55:00Z',
@@ -8482,10 +8482,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.97,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'long',
         'duration': 42,
         'entry': '2021-06-25T02:10:00Z',
@@ -8500,7 +8500,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.55,
         'direction': 'short',
         'duration': 53,
         'entry': '2021-06-25T11:55:00Z',
@@ -8512,10 +8512,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.96,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 10,
         'entry': '2021-06-26T06:55:00Z',
@@ -8527,10 +8527,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.31,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-06-26T13:55:00Z',
@@ -8545,7 +8545,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-06-26T21:10:00Z',
@@ -8560,7 +8560,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 37,
         'entry': '2021-06-27T00:55:00Z',
@@ -8572,10 +8572,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.43,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 124,
         'entry': '2021-06-27T11:55:00Z',
@@ -8587,10 +8587,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.56,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.58,
         'direction': 'long',
         'duration': 255,
         'entry': '2021-06-28T15:55:00Z',
@@ -8602,10 +8602,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.9,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 310,
         'entry': '2021-06-30T04:55:00Z',
@@ -8617,10 +8617,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.82,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 333,
         'entry': '2021-07-01T19:10:00Z',
@@ -8635,7 +8635,7 @@
         'profit': -1.76
       },
       {
-        'assets': 0.56,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 123,
         'entry': '2021-07-02T22:55:00Z',
@@ -8647,10 +8647,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.26,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.63,
         'direction': 'long',
         'duration': 218,
         'entry': '2021-07-04T03:25:00Z',
@@ -8662,10 +8662,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.34,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.6,
+        'assets': 0.64,
         'direction': 'short',
         'duration': 115,
         'entry': '2021-07-05T01:55:00Z',
@@ -8677,10 +8677,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.37,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.58,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 37,
         'entry': '2021-07-06T02:10:00Z',
@@ -8695,7 +8695,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.6,
         'direction': 'long',
         'duration': 135,
         'entry': '2021-07-06T05:55:00Z',
@@ -8710,7 +8710,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.56,
+        'assets': 0.6,
         'direction': 'long',
         'duration': 300,
         'entry': '2021-07-06T22:55:00Z',
@@ -8725,7 +8725,7 @@
         'profit': -0.64
       },
       {
-        'assets': 0.57,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 91,
         'entry': '2021-07-07T23:55:00Z',
@@ -8737,10 +8737,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.33,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 189,
         'entry': '2021-07-08T22:10:00Z',
@@ -8755,7 +8755,7 @@
         'profit': -2.64
       },
       {
-        'assets': 0.55,
+        'assets': 0.6,
         'direction': 'long',
         'duration': 372,
         'entry': '2021-07-09T13:55:00Z',
@@ -8770,7 +8770,7 @@
         'profit': -0.47
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 204,
         'entry': '2021-07-10T20:55:00Z',
@@ -8785,7 +8785,7 @@
         'profit': -1.88
       },
       {
-        'assets': 0.54,
+        'assets': 0.58,
         'direction': 'long',
         'duration': 264,
         'entry': '2021-07-11T13:55:00Z',
@@ -8800,7 +8800,7 @@
         'profit': -1.19
       },
       {
-        'assets': 0.55,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 296,
         'entry': '2021-07-12T11:55:00Z',
@@ -8812,10 +8812,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.35,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 168,
         'entry': '2021-07-14T00:55:00Z',
@@ -8830,7 +8830,7 @@
         'profit': -1.44
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 240,
         'entry': '2021-07-14T14:55:00Z',
@@ -8845,7 +8845,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 360,
         'entry': '2021-07-15T10:55:00Z',
@@ -8860,7 +8860,7 @@
         'profit': -0.78
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 84,
         'entry': '2021-07-16T16:55:00Z',
@@ -8875,7 +8875,7 @@
         'profit': -2.2
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 240,
         'entry': '2021-07-16T23:55:00Z',
@@ -8890,7 +8890,7 @@
         'profit': -1.57
       },
       {
-        'assets': 0.49,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 228,
         'entry': '2021-07-17T19:55:00Z',
@@ -8905,7 +8905,7 @@
         'profit': -1.77
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'short',
         'duration': 425,
         'entry': '2021-07-18T14:55:00Z',
@@ -8917,10 +8917,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.99,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.49,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 79,
         'entry': '2021-07-20T21:40:00Z',
@@ -8935,7 +8935,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 62,
         'entry': '2021-07-21T04:55:00Z',
@@ -8947,10 +8947,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.47,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.51,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 522,
         'entry': '2021-07-21T22:25:00Z',
@@ -8965,7 +8965,7 @@
         'profit': 0.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 48,
         'entry': '2021-07-23T17:55:00Z',
@@ -8980,7 +8980,7 @@
         'profit': -1.46
       },
       {
-        'assets': 0.51,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 24,
         'entry': '2021-07-23T21:55:00Z',
@@ -8992,10 +8992,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.24,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 287,
         'entry': '2021-07-24T23:55:00Z',
@@ -9007,10 +9007,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.36,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 32,
         'entry': '2021-07-26T15:55:00Z',
@@ -9022,10 +9022,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.38,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 94,
         'entry': '2021-07-27T03:55:00Z',
@@ -9040,7 +9040,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 141,
         'entry': '2021-07-27T13:55:00Z',
@@ -9052,10 +9052,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -3.02,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.52,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 92,
         'entry': '2021-07-28T10:10:00Z',
@@ -9070,7 +9070,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.51,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 288,
         'entry': '2021-07-28T18:55:00Z',
@@ -9085,7 +9085,7 @@
         'profit': -2.4
       },
       {
-        'assets': 0.53,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 174,
         'entry': '2021-07-29T18:55:00Z',
@@ -9097,10 +9097,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.32,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 34,
         'entry': '2021-07-30T20:55:00Z',
@@ -9112,10 +9112,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.17,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.54,
+        'assets': 0.58,
         'direction': 'long',
         'duration': 336,
         'entry': '2021-07-31T10:55:00Z',
@@ -9130,7 +9130,7 @@
         'profit': -1.24
       },
       {
-        'assets': 0.55,
+        'assets': 0.6,
         'direction': 'short',
         'duration': 93,
         'entry': '2021-08-01T14:55:00Z',
@@ -9142,10 +9142,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.63,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.62,
         'direction': 'short',
         'duration': 243,
         'entry': '2021-08-02T08:40:00Z',
@@ -9157,10 +9157,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.1,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.56,
+        'assets': 0.61,
         'direction': 'short',
         'duration': 285,
         'entry': '2021-08-03T12:10:00Z',
@@ -9175,7 +9175,7 @@
         'profit': -1.71
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 240,
         'entry': '2021-08-04T13:55:00Z',
@@ -9190,7 +9190,7 @@
         'profit': -2.7
       },
       {
-        'assets': 0.52,
+        'assets': 0.57,
         'direction': 'short',
         'duration': 63,
         'entry': '2021-08-05T09:55:00Z',
@@ -9205,7 +9205,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.54,
+        'assets': 0.59,
         'direction': 'long',
         'duration': 21,
         'entry': '2021-08-05T16:55:00Z',
@@ -9217,10 +9217,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.34,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 114,
         'entry': '2021-08-06T06:25:00Z',
@@ -9232,10 +9232,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.73,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.57,
+        'assets': 0.62,
         'direction': 'long',
         'duration': 129,
         'entry': '2021-08-07T19:55:00Z',
@@ -9247,10 +9247,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.35,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.55,
+        'assets': 0.61,
         'direction': 'long',
         'duration': 75,
         'entry': '2021-08-08T12:40:00Z',
@@ -9265,7 +9265,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.53,
+        'assets': 0.59,
         'direction': 'short',
         'duration': 178,
         'entry': '2021-08-08T18:55:00Z',
@@ -9280,7 +9280,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.52,
+        'assets': 0.57,
         'direction': 'long',
         'duration': 360,
         'entry': '2021-08-09T10:55:00Z',
@@ -9295,7 +9295,7 @@
         'profit': -2.0
       },
       {
-        'assets': 0.51,
+        'assets': 0.56,
         'direction': 'short',
         'duration': 164,
         'entry': '2021-08-10T16:55:00Z',
@@ -9310,7 +9310,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'long',
         'duration': 276,
         'entry': '2021-08-11T06:55:00Z',
@@ -9325,7 +9325,7 @@
         'profit': -2.1
       },
       {
-        'assets': 0.51,
+        'assets': 0.56,
         'direction': 'short',
         'duration': 127,
         'entry': '2021-08-12T05:55:00Z',
@@ -9337,10 +9337,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.1,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.53,
+        'assets': 0.58,
         'direction': 'long',
         'duration': 158,
         'entry': '2021-08-13T06:55:00Z',
@@ -9352,10 +9352,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.15,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.51,
+        'assets': 0.56,
         'direction': 'long',
         'duration': 177,
         'entry': '2021-08-13T20:10:00Z',
@@ -9370,7 +9370,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.5,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 111,
         'entry': '2021-08-14T19:40:00Z',
@@ -9385,7 +9385,7 @@
         'profit': -1.38
       },
       {
-        'assets': 0.5,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 216,
         'entry': '2021-08-15T04:55:00Z',
@@ -9400,7 +9400,7 @@
         'profit': -1.25
       },
       {
-        'assets': 0.48,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 192,
         'entry': '2021-08-15T22:55:00Z',
@@ -9415,7 +9415,7 @@
         'profit': -2.51
       },
       {
-        'assets': 0.5,
+        'assets': 0.55,
         'direction': 'short',
         'duration': 354,
         'entry': '2021-08-16T14:55:00Z',
@@ -9427,10 +9427,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -2.45,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.49,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 75,
         'entry': '2021-08-18T11:40:00Z',
@@ -9445,7 +9445,7 @@
         'profit': -2.44
       },
       {
-        'assets': 0.47,
+        'assets': 0.52,
         'direction': 'long',
         'duration': 24,
         'entry': '2021-08-18T17:55:00Z',
@@ -9460,7 +9460,7 @@
         'profit': -2.17
       },
       {
-        'assets': 0.47,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 228,
         'entry': '2021-08-18T19:55:00Z',
@@ -9475,7 +9475,7 @@
         'profit': -1.39
       },
       {
-        'assets': 0.48,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 61,
         'entry': '2021-08-19T14:55:00Z',
@@ -9487,10 +9487,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.23,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.5,
+        'assets': 0.55,
         'direction': 'long',
         'duration': 58,
         'entry': '2021-08-20T09:55:00Z',
@@ -9502,10 +9502,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.8,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.49,
+        'assets': 0.54,
         'direction': 'long',
         'duration': 369,
         'entry': '2021-08-21T08:10:00Z',
@@ -9520,7 +9520,7 @@
         'profit': -1.77
       },
       {
-        'assets': 0.48,
+        'assets': 0.52,
         'direction': 'short',
         'duration': 108,
         'entry': '2021-08-22T14:55:00Z',
@@ -9535,7 +9535,7 @@
         'profit': -2.22
       },
       {
-        'assets': 0.47,
+        'assets': 0.52,
         'direction': 'long',
         'duration': 312,
         'entry': '2021-08-22T23:55:00Z',
@@ -9550,7 +9550,7 @@
         'profit': -0.7
       },
       {
-        'assets': 0.49,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 368,
         'entry': '2021-08-24T01:55:00Z',
@@ -9562,10 +9562,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.87,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.53,
         'direction': 'long',
         'duration': 144,
         'entry': '2021-08-25T16:55:00Z',
@@ -9580,7 +9580,7 @@
         'profit': -1.86
       },
       {
-        'assets': 0.49,
+        'assets': 0.54,
         'direction': 'short',
         'duration': 86,
         'entry': '2021-08-26T04:55:00Z',
@@ -9592,10 +9592,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.49,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.47,
+        'assets': 0.52,
         'direction': 'short',
         'duration': 271,
         'entry': '2021-08-26T15:55:00Z',
@@ -9610,7 +9610,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.49,
+        'assets': 0.54,
         'direction': 'long',
         'duration': 408,
         'entry': '2021-08-27T14:55:00Z',
@@ -9622,10 +9622,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.35,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.48,
+        'assets': 0.53,
         'direction': 'short',
         'duration': 228,
         'entry': '2021-08-29T03:55:00Z',
@@ -9640,7 +9640,7 @@
         'profit': -2.01
       },
       {
-        'assets': 0.47,
+        'assets': 0.52,
         'direction': 'long',
         'duration': 60,
         'entry': '2021-08-29T22:55:00Z',
@@ -9655,7 +9655,7 @@
         'profit': -2.47
       },
       {
-        'assets': 0.46,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 192,
         'entry': '2021-08-30T03:55:00Z',
@@ -9670,7 +9670,7 @@
         'profit': -1.45
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 36,
         'entry': '2021-08-30T19:55:00Z',
@@ -9685,7 +9685,7 @@
         'profit': -2.28
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'short',
         'duration': 432,
         'entry': '2021-08-30T22:55:00Z',
@@ -9700,7 +9700,7 @@
         'profit': -0.02
       },
       {
-        'assets': 0.46,
+        'assets': 0.51,
         'direction': 'long',
         'duration': 82,
         'entry': '2021-09-01T10:55:00Z',
@@ -9712,10 +9712,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.64,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 48,
         'entry': '2021-09-02T21:55:00Z',
@@ -9730,7 +9730,7 @@
         'profit': -2.63
       },
       {
-        'assets': 0.44,
+        'assets': 0.49,
         'direction': 'short',
         'duration': 36,
         'entry': '2021-09-03T01:55:00Z',
@@ -9745,7 +9745,7 @@
         'profit': -2.47
       },
       {
-        'assets': 0.44,
+        'assets': 0.49,
         'direction': 'long',
         'duration': 444,
         'entry': '2021-09-03T04:55:00Z',
@@ -9760,7 +9760,7 @@
         'profit': 0.34
       },
       {
-        'assets': 0.44,
+        'assets': 0.48,
         'direction': 'short',
         'duration': 252,
         'entry': '2021-09-04T17:55:00Z',
@@ -9775,7 +9775,7 @@
         'profit': -0.74
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 73,
         'entry': '2021-09-05T14:55:00Z',
@@ -9787,10 +9787,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.47,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.44,
+        'assets': 0.49,
         'direction': 'long',
         'duration': 183,
         'entry': '2021-09-06T18:40:00Z',
@@ -9805,7 +9805,7 @@
         'profit': -1.88
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'short',
         'duration': 58,
         'entry': '2021-09-07T09:55:00Z',
@@ -9817,10 +9817,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.99,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.47,
+        'assets': 0.52,
         'direction': 'short',
         'duration': 57,
         'entry': '2021-09-08T03:25:00Z',
@@ -9832,10 +9832,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.13,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.46,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 210,
         'entry': '2021-09-08T20:25:00Z',
@@ -9850,7 +9850,7 @@
         'profit': -2.1
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'long',
         'duration': 228,
         'entry': '2021-09-09T13:55:00Z',
@@ -9865,7 +9865,7 @@
         'profit': -2.13
       },
       {
-        'assets': 0.46,
+        'assets': 0.51,
         'direction': 'short',
         'duration': 152,
         'entry': '2021-09-10T08:55:00Z',
@@ -9877,10 +9877,10 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -1.24,
-        'profit': 2.85
+        'profit': 2.95
       },
       {
-        'assets': 0.45,
+        'assets': 0.5,
         'direction': 'short',
         'duration': 351,
         'entry': '2021-09-11T03:40:00Z',
@@ -9895,7 +9895,7 @@
         'profit': -2.92
       },
       {
-        'assets': 0.44,
+        'assets': 0.49,
         'direction': 'long',
         'duration': 156,
         'entry': '2021-09-12T08:55:00Z',
@@ -9910,7 +9910,7 @@
         'profit': -1.92
       },
       {
-        'assets': 0.43,
+        'assets': 0.48,
         'direction': 'short',
         'duration': 24,
         'entry': '2021-09-12T21:55:00Z',
@@ -9925,7 +9925,7 @@
         'profit': -1.84
       },
       {
-        'assets': 0.42,
+        'assets': 0.46,
         'direction': 'long',
         'duration': 36,
         'entry': '2021-09-12T23:55:00Z',
@@ -9940,7 +9940,7 @@
         'profit': -2.6
       },
       {
-        'assets': 0.41,
+        'assets': 0.45,
         'direction': 'short',
         'duration': 129,
         'entry': '2021-09-13T02:55:00Z',
@@ -9955,7 +9955,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.39,
+        'assets': 0.44,
         'direction': 'short',
         'duration': 79,
         'entry': '2021-09-13T14:25:00Z',
@@ -9970,7 +9970,7 @@
         'profit': -3.15
       },
       {
-        'assets': 0.4,
+        'assets': 0.45,
         'direction': 'long',
         'duration': 100,
         'entry': '2021-09-14T06:55:00Z',
@@ -9982,7 +9982,7 @@
         'leverage': 1,
         'max_profit': 2.85,
         'min_profit': -0.15,
-        'profit': 2.85
+        'profit': 2.95
       }
     ],
     'trades': 269,

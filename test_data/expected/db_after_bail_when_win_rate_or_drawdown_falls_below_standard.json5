@@ -3,8 +3,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -100,
+      'floor_grace_period': 20,
       'leverage': 4,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -14,22 +17,19 @@
       'stop_loss': 1.5,
       'take_profit': 50,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-          'mean_floor': 4,
-          'median_floor': 4,
-      'floor_grace_period': 20
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.52,
     'days': 146.2,
     'end_date': '2021-09-14T17:55:00Z',
     'final_assets': 2.12,
-    'max_assets': 2.6,
+    'max_assets': 2.61,
     'max_drawdown_pct': -37,
-    'mean * trades': 188.0,
+    'mean * trades': 188.4,
     'mean_hrs_in_trade': 45.87,
-    'mean_profit': 9.4,
+    'mean_profit': 9.42,
     'median_profit': -6.6,
     'min_assets': 0.74,
     'signal_exits_at_loss': 0,
@@ -217,10 +217,10 @@
         'leverage': 4,
         'max_profit': 199.4,
         'min_profit': -1.67,
-        'profit': 199.4
+        'profit': 199.8
       },
       {
-        'assets': 2.06,
+        'assets': 2.07,
         'direction': 'short',
         'duration': 11,
         'entry': '2017-12-19T15:55:00Z',
@@ -280,7 +280,7 @@
         'profit': -6.6
       },
       {
-        'assets': 2.6,
+        'assets': 2.61,
         'direction': 'short',
         'duration': 3264,
         'entry': '2018-01-09T11:55:00Z',
@@ -348,8 +348,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -65,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0.2,
+      'mean_floor': -5,
+      'median_floor': -5,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -366,18 +369,15 @@
       'stop_loss': 10,
       'take_profit': 50,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': false,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': -5,
-      'median_floor': -5,
-      'floor_grace_period': 50
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.18,
     'days': 1473.0,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 13.36,
-    'max_assets': 13.36,
+    'final_assets': 13.37,
+    'max_assets': 13.37,
     'max_drawdown_pct': -64,
     'mean * trades': 403.65,
     'mean_hrs_in_trade': 42.97,
@@ -389,7 +389,7 @@
     'stop_loss_exits_at_loss': 3,
     'stop_loss_exits_in_profit': 151,
     'take_profit_exits': 1,
-    'total_profit_pct': 1235,
+    'total_profit_pct': 1236,
     'trade_history': [
       {
         'assets': 1.05,
@@ -1679,7 +1679,7 @@
         'leverage': 1,
         'max_profit': 49.85,
         'min_profit': -0.4,
-        'profit': 49.85
+        'profit': 49.95
       },
       {
         'assets': 1.48,
@@ -1742,7 +1742,7 @@
         'profit': 7.05
       },
       {
-        'assets': 1.69,
+        'assets': 1.7,
         'direction': 'short',
         'duration': 4,
         'entry': '2019-06-30T15:55:00Z',
@@ -1757,7 +1757,7 @@
         'profit': 2.55
       },
       {
-        'assets': 1.81,
+        'assets': 1.82,
         'direction': 'long',
         'duration': 156,
         'entry': '2019-07-08T11:55:00Z',
@@ -1817,7 +1817,7 @@
         'profit': 2.55
       },
       {
-        'assets': 2.23,
+        'assets': 2.24,
         'direction': 'long',
         'duration': 76,
         'entry': '2019-07-31T07:55:00Z',
@@ -1877,7 +1877,7 @@
         'profit': 3.4
       },
       {
-        'assets': 2.05,
+        'assets': 2.06,
         'direction': 'long',
         'duration': 240,
         'entry': '2019-08-23T19:55:00Z',
@@ -1937,7 +1937,7 @@
         'profit': 4.7
       },
       {
-        'assets': 1.64,
+        'assets': 1.65,
         'direction': 'long',
         'duration': 1203,
         'entry': '2019-09-02T15:55:00Z',
@@ -2192,7 +2192,7 @@
         'profit': 3.4
       },
       {
-        'assets': 2.38,
+        'assets': 2.39,
         'direction': 'short',
         'duration': 574,
         'entry': '2020-01-19T19:55:00Z',
@@ -2267,7 +2267,7 @@
         'profit': 7.05
       },
       {
-        'assets': 2.27,
+        'assets': 2.28,
         'direction': 'long',
         'duration': 374,
         'entry': '2020-03-04T07:55:00Z',
@@ -2342,7 +2342,7 @@
         'profit': 11.75
       },
       {
-        'assets': 3.12,
+        'assets': 3.13,
         'direction': 'short',
         'duration': 52,
         'entry': '2020-04-10T11:55:00Z',
@@ -2447,7 +2447,7 @@
         'profit': 11.75
       },
       {
-        'assets': 7.9,
+        'assets': 7.91,
         'direction': 'long',
         'duration': 50,
         'entry': '2020-05-28T11:55:00Z',
@@ -2462,7 +2462,7 @@
         'profit': 11.75
       },
       {
-        'assets': 6.16,
+        'assets': 6.17,
         'direction': 'short',
         'duration': 960,
         'entry': '2020-06-07T15:55:00Z',
@@ -2522,7 +2522,7 @@
         'profit': 11.75
       },
       {
-        'assets': 6.43,
+        'assets': 6.44,
         'direction': 'short',
         'duration': 162,
         'entry': '2020-06-24T15:55:00Z',
@@ -2552,7 +2552,7 @@
         'profit': -10.95
       },
       {
-        'assets': 5.24,
+        'assets': 5.25,
         'direction': 'short',
         'duration': 1008,
         'entry': '2020-07-02T19:55:00Z',
@@ -2567,7 +2567,7 @@
         'profit': -8.47
       },
       {
-        'assets': 5.46,
+        'assets': 5.47,
         'direction': 'long',
         'duration': 217,
         'entry': '2020-07-06T07:55:00Z',
@@ -2597,7 +2597,7 @@
         'profit': -8.59
       },
       {
-        'assets': 5.58,
+        'assets': 5.59,
         'direction': 'long',
         'duration': 809,
         'entry': '2020-07-21T07:55:00Z',
@@ -2687,7 +2687,7 @@
         'profit': 11.75
       },
       {
-        'assets': 3.37,
+        'assets': 3.38,
         'direction': 'long',
         'duration': 642,
         'entry': '2020-08-15T07:55:00Z',
@@ -2732,7 +2732,7 @@
         'profit': 11.75
       },
       {
-        'assets': 4.39,
+        'assets': 4.4,
         'direction': 'short',
         'duration': 244,
         'entry': '2020-09-02T15:55:00Z',
@@ -2807,7 +2807,7 @@
         'profit': 4.25
       },
       {
-        'assets': 4.39,
+        'assets': 4.4,
         'direction': 'long',
         'duration': 288,
         'entry': '2020-10-05T23:55:00Z',
@@ -2867,7 +2867,7 @@
         'profit': -22.05
       },
       {
-        'assets': 3.61,
+        'assets': 3.62,
         'direction': 'long',
         'duration': 327,
         'entry': '2020-10-19T15:55:00Z',
@@ -2897,7 +2897,7 @@
         'profit': -17.45
       },
       {
-        'assets': 3.33,
+        'assets': 3.34,
         'direction': 'long',
         'duration': 461,
         'entry': '2020-10-29T19:55:00Z',
@@ -2942,7 +2942,7 @@
         'profit': 4.25
       },
       {
-        'assets': 3.04,
+        'assets': 3.05,
         'direction': 'short',
         'duration': 11,
         'entry': '2020-11-26T03:55:00Z',
@@ -3047,7 +3047,7 @@
         'profit': 11.75
       },
       {
-        'assets': 5.76,
+        'assets': 5.77,
         'direction': 'long',
         'duration': 75,
         'entry': '2021-03-03T07:55:00Z',
@@ -3062,7 +3062,7 @@
         'profit': 11.75
       },
       {
-        'assets': 6.44,
+        'assets': 6.45,
         'direction': 'short',
         'duration': 100,
         'entry': '2021-03-16T03:55:00Z',
@@ -3092,7 +3092,7 @@
         'profit': 11.75
       },
       {
-        'assets': 6.07,
+        'assets': 6.08,
         'direction': 'short',
         'duration': 144,
         'entry': '2021-04-05T07:55:00Z',
@@ -3107,7 +3107,7 @@
         'profit': -15.62
       },
       {
-        'assets': 5.64,
+        'assets': 5.65,
         'direction': 'long',
         'duration': 288,
         'entry': '2021-04-05T19:55:00Z',
@@ -3197,7 +3197,7 @@
         'profit': 4.25
       },
       {
-        'assets': 9.56,
+        'assets': 9.57,
         'direction': 'long',
         'duration': 778,
         'entry': '2021-05-05T15:55:00Z',
@@ -3212,7 +3212,7 @@
         'profit': 11.75
       },
       {
-        'assets': 9.97,
+        'assets': 9.98,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-05-10T23:55:00Z',
@@ -3227,7 +3227,7 @@
         'profit': 4.25
       },
       {
-        'assets': 11.14,
+        'assets': 11.15,
         'direction': 'long',
         'duration': 34,
         'entry': '2021-05-25T23:55:00Z',
@@ -3242,7 +3242,7 @@
         'profit': 11.75
       },
       {
-        'assets': 6.24,
+        'assets': 6.25,
         'direction': 'short',
         'duration': 528,
         'entry': '2021-05-29T19:55:00Z',
@@ -3272,7 +3272,7 @@
         'profit': 4.25
       },
       {
-        'assets': 7.27,
+        'assets': 7.28,
         'direction': 'short',
         'duration': 540,
         'entry': '2021-06-05T23:55:00Z',
@@ -3287,7 +3287,7 @@
         'profit': 11.75
       },
       {
-        'assets': 7.58,
+        'assets': 7.59,
         'direction': 'long',
         'duration': 139,
         'entry': '2021-06-09T23:55:00Z',
@@ -3332,7 +3332,7 @@
         'profit': 4.25
       },
       {
-        'assets': 9.87,
+        'assets': 9.88,
         'direction': 'short',
         'duration': 49,
         'entry': '2021-07-08T03:55:00Z',
@@ -3362,7 +3362,7 @@
         'profit': -24.47
       },
       {
-        'assets': 8.33,
+        'assets': 8.34,
         'direction': 'short',
         'duration': 445,
         'entry': '2021-07-12T19:55:00Z',
@@ -3407,7 +3407,7 @@
         'profit': 4.25
       },
       {
-        'assets': 9.44,
+        'assets': 9.45,
         'direction': 'long',
         'duration': 109,
         'entry': '2021-08-06T19:55:00Z',
@@ -3422,7 +3422,7 @@
         'profit': 4.25
       },
       {
-        'assets': 10.55,
+        'assets': 10.56,
         'direction': 'short',
         'duration': 271,
         'entry': '2021-08-16T23:55:00Z',
@@ -3437,7 +3437,7 @@
         'profit': 11.75
       },
       {
-        'assets': 11.0,
+        'assets': 11.01,
         'direction': 'long',
         'duration': 328,
         'entry': '2021-08-20T15:55:00Z',
@@ -3467,7 +3467,7 @@
         'profit': 4.25
       },
       {
-        'assets': 11.95,
+        'assets': 11.96,
         'direction': 'long',
         'duration': 485,
         'entry': '2021-09-02T03:55:00Z',
@@ -3482,7 +3482,7 @@
         'profit': 4.25
       },
       {
-        'assets': 13.36,
+        'assets': 13.37,
         'direction': 'short',
         'duration': 200,
         'entry': '2021-09-07T15:55:00Z',
@@ -3505,8 +3505,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -33,
+      'floor_grace_period': 50,
       'leverage': 10,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -3516,33 +3519,30 @@
       'stop_loss': 1,
       'take_profit': 0.5,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 50
+      'winrate_floor': 50
     },
-    'daily_profit_pct_avg': -0.39,
+    'daily_profit_pct_avg': -0.32,
     'days': 117.3,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 0.63,
-    'max_assets': 1.07,
-    'max_drawdown_pct': -40,
-    'mean * trades': -41.02,
+    'final_assets': 0.68,
+    'max_assets': 1.09,
+    'max_drawdown_pct': -37,
+    'mean * trades': -33.04,
     'mean_hrs_in_trade': 0.93,
-    'mean_profit': -2.93,
-    'median_profit': 3.5,
-    'min_assets': 0.63,
+    'mean_profit': -2.36,
+    'median_profit': 4.5,
+    'min_assets': 0.68,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 6,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 8,
-    'total_profit_pct': -36,
+    'total_profit_pct': -31,
     'trade_history': [
       {
-        'assets': 1.03,
+        'assets': 1.04,
         'direction': 'short',
         'duration': 4,
         'entry': '2017-09-04T07:55:00Z',
@@ -3554,10 +3554,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -8.99,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 1.07,
+        'assets': 1.09,
         'direction': 'long',
         'duration': 4,
         'entry': '2017-09-18T11:55:00Z',
@@ -3569,10 +3569,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -4.36,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.95,
+        'assets': 0.97,
         'direction': 'short',
         'duration': 7,
         'entry': '2017-09-22T15:55:00Z',
@@ -3587,7 +3587,7 @@
         'profit': -11.5
       },
       {
-        'assets': 0.98,
+        'assets': 1.01,
         'direction': 'long',
         'duration': 62,
         'entry': '2017-09-25T07:55:00Z',
@@ -3599,10 +3599,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -9.88,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 1.02,
+        'assets': 1.06,
         'direction': 'short',
         'duration': 4,
         'entry': '2017-10-04T15:55:00Z',
@@ -3614,10 +3614,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -3.01,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.9,
+        'assets': 0.93,
         'direction': 'long',
         'duration': 19,
         'entry': '2017-10-06T11:55:00Z',
@@ -3632,7 +3632,7 @@
         'profit': -11.5
       },
       {
-        'assets': 0.93,
+        'assets': 0.98,
         'direction': 'short',
         'duration': 1,
         'entry': '2017-10-18T07:55:00Z',
@@ -3644,10 +3644,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -2.83,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.82,
+        'assets': 0.86,
         'direction': 'long',
         'duration': 9,
         'entry': '2017-10-20T19:55:00Z',
@@ -3662,7 +3662,7 @@
         'profit': -11.5
       },
       {
-        'assets': 0.85,
+        'assets': 0.9,
         'direction': 'short',
         'duration': 1,
         'entry': '2017-10-24T03:55:00Z',
@@ -3674,10 +3674,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -1.4,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.88,
+        'assets': 0.94,
         'direction': 'long',
         'duration': 3,
         'entry': '2017-10-29T19:55:00Z',
@@ -3689,10 +3689,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -10.2,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.78,
+        'assets': 0.83,
         'direction': 'short',
         'duration': 33,
         'entry': '2017-11-09T15:55:00Z',
@@ -3707,7 +3707,7 @@
         'profit': -11.5
       },
       {
-        'assets': 0.81,
+        'assets': 0.87,
         'direction': 'long',
         'duration': 2,
         'entry': '2017-11-15T11:55:00Z',
@@ -3719,10 +3719,10 @@
         'leverage': 10,
         'max_profit': 3.5,
         'min_profit': -2.46,
-        'profit': 3.5
+        'profit': 4.5
       },
       {
-        'assets': 0.71,
+        'assets': 0.77,
         'direction': 'short',
         'duration': 4,
         'entry': '2017-12-19T15:55:00Z',
@@ -3737,7 +3737,7 @@
         'profit': -11.5
       },
       {
-        'assets': 0.63,
+        'assets': 0.68,
         'direction': 'long',
         'duration': 4,
         'entry': '2017-12-27T07:55:00Z',
@@ -3760,8 +3760,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -33,
+      'floor_grace_period': 20,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -3771,22 +3774,19 @@
       'stop_loss': 2,
       'take_profit': 30,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 20
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.5,
     'days': 146.3,
     'end_date': '2021-09-14T17:55:00Z',
     'final_assets': 2.07,
-    'max_assets': 2.36,
+    'max_assets': 2.37,
     'max_drawdown_pct': -19,
-    'mean * trades': 106.8,
+    'mean * trades': 107.2,
     'mean_hrs_in_trade': 57.38,
-    'mean_profit': 5.34,
+    'mean_profit': 5.36,
     'median_profit': -4.3,
     'min_assets': 0.87,
     'signal_exits_at_loss': 0,
@@ -3794,7 +3794,7 @@
     'stop_loss_exits_at_loss': 16,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 2,
-    'total_profit_pct': 106,
+    'total_profit_pct': 107,
     'trade_history': [
       {
         'assets': 0.96,
@@ -3974,7 +3974,7 @@
         'leverage': 2,
         'max_profit': 59.7,
         'min_profit': -0.83,
-        'profit': 59.7
+        'profit': 59.9
       },
       {
         'assets': 1.69,
@@ -3992,7 +3992,7 @@
         'profit': -4.3
       },
       {
-        'assets': 1.61,
+        'assets': 1.62,
         'direction': 'long',
         'duration': 19,
         'entry': '2017-12-27T07:55:00Z',
@@ -4007,7 +4007,7 @@
         'profit': -4.3
       },
       {
-        'assets': 1.54,
+        'assets': 1.55,
         'direction': 'short',
         'duration': 16,
         'entry': '2017-12-28T11:55:00Z',
@@ -4037,7 +4037,7 @@
         'profit': -4.3
       },
       {
-        'assets': 2.36,
+        'assets': 2.37,
         'direction': 'short',
         'duration': 2130,
         'entry': '2018-01-09T11:55:00Z',
@@ -4049,7 +4049,7 @@
         'leverage': 2,
         'max_profit': 59.7,
         'min_profit': -3.17,
-        'profit': 59.7
+        'profit': 59.9
       },
       {
         'assets': 2.26,
@@ -4067,7 +4067,7 @@
         'profit': -4.3
       },
       {
-        'assets': 2.16,
+        'assets': 2.17,
         'direction': 'short',
         'duration': 5,
         'entry': '2018-01-22T15:55:00Z',
@@ -4105,8 +4105,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -33,
+      'floor_grace_period': 10,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -4116,30 +4119,27 @@
       'stop_loss': 1,
       'take_profit': 2,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 10
+      'winrate_floor': 50
     },
-    'daily_profit_pct_avg': -0.09,
+    'daily_profit_pct_avg': -0.08,
     'days': 58.8,
     'end_date': '2021-09-14T17:55:00Z',
     'final_assets': 0.95,
     'max_assets': 1.03,
     'max_drawdown_pct': -10,
-    'mean * trades': -5.0,
+    'mean * trades': -4.4,
     'mean_hrs_in_trade': 3.47,
-    'mean_profit': -0.5,
+    'mean_profit': -0.44,
     'median_profit': -2.3,
-    'min_assets': 0.91,
+    'min_assets': 0.92,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 7,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 3,
-    'total_profit_pct': -5,
+    'total_profit_pct': -4,
     'trade_history': [
       {
         'assets': 0.98,
@@ -4157,7 +4157,7 @@
         'profit': -2.3
       },
       {
-        'assets': 1.01,
+        'assets': 1.02,
         'direction': 'long',
         'duration': 7,
         'entry': '2017-09-18T11:55:00Z',
@@ -4169,7 +4169,7 @@
         'leverage': 2,
         'max_profit': 3.7,
         'min_profit': -0.87,
-        'profit': 3.7
+        'profit': 3.9
       },
       {
         'assets': 0.99,
@@ -4199,10 +4199,10 @@
         'leverage': 2,
         'max_profit': 3.7,
         'min_profit': -1.98,
-        'profit': 3.7
+        'profit': 3.9
       },
       {
-        'assets': 1.0,
+        'assets': 1.01,
         'direction': 'short',
         'duration': 235,
         'entry': '2017-10-04T15:55:00Z',
@@ -4262,7 +4262,7 @@
         'profit': -2.3
       },
       {
-        'assets': 0.91,
+        'assets': 0.92,
         'direction': 'short',
         'duration': 24,
         'entry': '2017-10-24T03:55:00Z',
@@ -4289,7 +4289,7 @@
         'leverage': 2,
         'max_profit': 3.7,
         'min_profit': -2.04,
-        'profit': 3.7
+        'profit': 3.9
       }
     ],
     'trades': 10,
@@ -4300,8 +4300,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -33,
+      'floor_grace_period': 10,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -4311,12 +4314,9 @@
       'stop_loss': 2,
       'take_profit': 30,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 10
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.2,
     'days': 69.7,
@@ -4495,8 +4495,11 @@
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_five_trades.csv',
       'drawdown_limit': -60,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -4506,24 +4509,21 @@
       'stop_loss': 12,
       'take_profit': 12,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 50
+      'winrate_floor': 50
     },
-    'daily_profit_pct_avg': -0.34,
+    'daily_profit_pct_avg': -0.33,
     'days': 76.8,
     'end_date': '2021-03-28T04:00:00Z',
-    'final_assets': 0.77,
-    'max_assets': 2.46,
+    'final_assets': 0.78,
+    'max_assets': 2.47,
     'max_drawdown_pct': -68,
-    'mean * trades': 29.85,
+    'mean * trades': 30.85,
     'mean_hrs_in_trade': 31.2,
-    'mean_profit': 5.97,
+    'mean_profit': 6.17,
     'median_profit': -3.04,
-    'min_assets': 0.77,
+    'min_assets': 0.78,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 3,
@@ -4547,7 +4547,7 @@
         'profit': -3.04
       },
       {
-        'assets': 1.54,
+        'assets': 1.55,
         'direction': 'long',
         'duration': 3,
         'entry': '2021-01-28T20:00:00Z',
@@ -4559,10 +4559,10 @@
         'leverage': 5,
         'max_profit': 59.25,
         'min_profit': -22.21,
-        'profit': 59.25
+        'profit': 59.75
       },
       {
-        'assets': 2.46,
+        'assets': 2.47,
         'direction': 'short',
         'duration': 5,
         'entry': '2021-02-22T12:00:00Z',
@@ -4574,10 +4574,10 @@
         'leverage': 5,
         'max_profit': 59.25,
         'min_profit': -16.71,
-        'profit': 59.25
+        'profit': 59.75
       },
       {
-        'assets': 1.69,
+        'assets': 1.7,
         'direction': 'long',
         'duration': 11,
         'entry': '2021-03-03T04:00:00Z',
@@ -4592,7 +4592,7 @@
         'profit': -31.33
       },
       {
-        'assets': 0.77,
+        'assets': 0.78,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-03-16T00:00:00Z',
@@ -4615,8 +4615,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3_first_trade_removed.csv',
       'drawdown_limit': -33,
+      'floor_grace_period': 20,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -4626,30 +4629,27 @@
       'stop_loss': 3,
       'take_profit': 6,
       'trail_delay': true,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 20
+      'winrate_floor': 50
     },
-    'daily_profit_pct_avg': 0.07,
+    'daily_profit_pct_avg': 0.08,
     'days': 148.7,
     'end_date': '2021-09-14T17:55:00Z',
-    'final_assets': 1.11,
-    'max_assets': 1.31,
+    'final_assets': 1.13,
+    'max_assets': 1.33,
     'max_drawdown_pct': -24,
-    'mean * trades': 18.0,
+    'mean * trades': 19.6,
     'mean_hrs_in_trade': 24.2,
-    'mean_profit': 0.9,
+    'mean_profit': 0.98,
     'median_profit': -6.3,
-    'min_assets': 0.84,
+    'min_assets': 0.85,
     'signal_exits_at_loss': 0,
     'signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 12,
     'stop_loss_exits_in_profit': 0,
     'take_profit_exits': 8,
-    'total_profit_pct': 10,
+    'total_profit_pct': 12,
     'trade_history': [
       {
         'assets': 0.94,
@@ -4694,7 +4694,7 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -1.98,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
         'assets': 0.92,
@@ -4724,10 +4724,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -4.49,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 0.96,
+        'assets': 0.97,
         'direction': 'short',
         'duration': 110,
         'entry': '2017-10-18T07:55:00Z',
@@ -4757,7 +4757,7 @@
         'profit': -6.3
       },
       {
-        'assets': 0.84,
+        'assets': 0.85,
         'direction': 'short',
         'duration': 662,
         'entry': '2017-10-24T03:55:00Z',
@@ -4772,7 +4772,7 @@
         'profit': -6.3
       },
       {
-        'assets': 0.94,
+        'assets': 0.95,
         'direction': 'long',
         'duration': 738,
         'entry': '2017-10-29T19:55:00Z',
@@ -4784,10 +4784,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -4.25,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 1.05,
+        'assets': 1.06,
         'direction': 'short',
         'duration': 251,
         'entry': '2017-11-09T15:55:00Z',
@@ -4799,10 +4799,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -5.02,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 1.18,
+        'assets': 1.19,
         'direction': 'long',
         'duration': 269,
         'entry': '2017-11-15T11:55:00Z',
@@ -4814,10 +4814,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -0.83,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 1.31,
+        'assets': 1.33,
         'direction': 'short',
         'duration': 64,
         'entry': '2017-12-19T15:55:00Z',
@@ -4829,10 +4829,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -4.53,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 1.23,
+        'assets': 1.24,
         'direction': 'long',
         'duration': 22,
         'entry': '2017-12-27T07:55:00Z',
@@ -4847,7 +4847,7 @@
         'profit': -6.3
       },
       {
-        'assets': 1.15,
+        'assets': 1.17,
         'direction': 'short',
         'duration': 37,
         'entry': '2017-12-28T11:55:00Z',
@@ -4862,7 +4862,7 @@
         'profit': -6.3
       },
       {
-        'assets': 1.08,
+        'assets': 1.09,
         'direction': 'long',
         'duration': 441,
         'entry': '2018-01-02T19:55:00Z',
@@ -4877,7 +4877,7 @@
         'profit': -6.3
       },
       {
-        'assets': 1.21,
+        'assets': 1.22,
         'direction': 'short',
         'duration': 149,
         'entry': '2018-01-09T11:55:00Z',
@@ -4889,10 +4889,10 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -3.17,
-        'profit': 11.7
+        'profit': 11.9
       },
       {
-        'assets': 1.13,
+        'assets': 1.15,
         'direction': 'long',
         'duration': 59,
         'entry': '2018-01-20T19:55:00Z',
@@ -4907,7 +4907,7 @@
         'profit': -6.3
       },
       {
-        'assets': 1.06,
+        'assets': 1.07,
         'direction': 'short',
         'duration': 9,
         'entry': '2018-01-22T15:55:00Z',
@@ -4922,7 +4922,7 @@
         'profit': -6.3
       },
       {
-        'assets': 0.99,
+        'assets': 1.01,
         'direction': 'long',
         'duration': 52,
         'entry': '2018-01-25T03:55:00Z',
@@ -4937,7 +4937,7 @@
         'profit': -6.3
       },
       {
-        'assets': 1.11,
+        'assets': 1.13,
         'direction': 'short',
         'duration': 105,
         'entry': '2018-01-30T15:55:00Z',
@@ -4949,7 +4949,7 @@
         'leverage': 2,
         'max_profit': 11.7,
         'min_profit': -3.61,
-        'profit': 11.7
+        'profit': 11.9
       }
     ],
     'trades': 20,
@@ -4960,8 +4960,11 @@
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_T3.csv',
       'drawdown_limit': -40,
+      'floor_grace_period': 20,
       'leverage': 2,
       'loss_limit_fraction': 0.2,
+      'mean_floor': -5,
+      'median_floor': -5,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -4982,12 +4985,9 @@
       'stop_loss': 10,
       'take_profit': 40,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': false,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': -5,
-      'median_floor': -5,
-      'floor_grace_period': 20
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.16,
     'days': 244.8,

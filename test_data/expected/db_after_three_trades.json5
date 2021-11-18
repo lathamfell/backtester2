@@ -1,47 +1,44 @@
 [
   {
-    "_id": {
-      "datafilename": "BYBITBTCUSD_240_2021_three_trades.csv",
-      "start_date": "2021-01-01T00:00:00Z",
-      'signal_timeframe': [],
-      "leverage": 2,
-      "stop_loss": 6,
-      "take_profit": 4,
-      "trailing_sl": false,
-      "trail_delay": false,
-      "trail_last_reset": false,
-      "sl_reset_points": [
-        []
-      ],
-      "loss_limit_fraction": 0,
-      'signal_exit': true,
-      "drawdown_limit": -100,
-      "winrate_floor": 50,
+    '_id': {
+      'datafilename': 'BYBITBTCUSD_240_2021_three_trades.csv',
+      'drawdown_limit': -100,
+      'floor_grace_period': 50,
+      'leverage': 2,
+      'loss_limit_fraction': 0,
       'mean_floor': 4,
       'median_floor': 4,
-      "floor_grace_period": 50,
+      'signal_exit': true,
+      'signal_timeframe': [],
+      'sl_reset_points': [
+        []
+      ],
+      'start_date': '2021-01-01T00:00:00Z',
+      'stop_loss': 6,
+      'take_profit': 4,
+      'trail_delay': false,
+      'trail_last_reset': false,
+      'trailing_sl': false,
+      'winrate_floor': 50
     },
-    "end_date": "2021-03-03T04:00:00Z",
-    "days": 61.3,
-    "mean_hrs_in_trade": 10.67,
-    "total_profit_pct": 24,
-    "daily_profit_pct_avg": 0.36,
-    "max_drawdown_pct": 0,
-    'mean * trades': 23.1,
-    "win_rate": 100,
-    "final_assets": 1.25,
-    "max_assets": 1.25,
-    "min_assets": 1.0,
-    'trades': 3,
-    "stop_loss_exits_in_profit": 0,
-    "stop_loss_exits_at_loss": 0,
-    "take_profit_exits": 3,
-    "signal_exits_in_profit": 0,
-    "signal_exits_at_loss": 0,
-    "mean_profit": 7.7,
-    "median_profit": 7.7,
-    "valid": true,
-    "trade_history": [
+    'daily_profit_pct_avg': 0.37,
+    'days': 61.3,
+    'end_date': '2021-03-03T04:00:00Z',
+    'final_assets': 1.26,
+    'max_assets': 1.26,
+    'max_drawdown_pct': 0,
+    'mean * trades': 23.7,
+    'mean_hrs_in_trade': 10.67,
+    'mean_profit': 7.9,
+    'median_profit': 7.9,
+    'min_assets': 1.0,
+    'signal_exits_at_loss': 0,
+    'signal_exits_in_profit': 0,
+    'stop_loss_exits_at_loss': 0,
+    'stop_loss_exits_in_profit': 0,
+    'take_profit_exits': 3,
+    'total_profit_pct': 25,
+    'trade_history': [
       {
         'assets': 1.08,
         'direction': 'short',
@@ -55,7 +52,7 @@
         'leverage': 2,
         'max_profit': 7.7,
         'min_profit': -11.78,
-        'profit': 7.7
+        'profit': 7.9
       },
       {
         'assets': 1.16,
@@ -70,10 +67,10 @@
         'leverage': 2,
         'max_profit': 7.7,
         'min_profit': -8.88,
-        'profit': 7.7
+        'profit': 7.9
       },
       {
-        'assets': 1.25,
+        'assets': 1.26,
         'direction': 'short',
         'duration': 3,
         'entry': '2021-02-22T12:00:00Z',
@@ -85,8 +82,11 @@
         'leverage': 2,
         'max_profit': 7.7,
         'min_profit': -6.69,
-        'profit': 7.7
+        'profit': 7.9
       }
     ],
+    'trades': 3,
+    'valid': true,
+    'win_rate': 100
   }
 ]

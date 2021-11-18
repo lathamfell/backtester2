@@ -8,23 +8,23 @@ import re
 from dateutil import parser
 from datetime import timedelta
 
-# note: HTF file must have long/short cols labeled
+# note: HTF file must have short/long cols labeled
 # note: for LTF file use the 5m base file that goes back to the same mo/year as the HTF. It won't be edited
 # NOTE: WHEN ADDING FRESH DATA TO BASE FILES DO NOT BRING IN THE 5M SIGNALS TOO!  BASE FILES == NO SIGNALS
 PAIRS = [  # tuples of HTF file/LTF file
-    ("data/TV_data_exports/COINBASE_ETHUSD_10m_06_2021.csv", "data/ethusd-5m_base_06_2021.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_15m_03_2021.csv", "data/ethusd-5m_base_03_2021.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_30m_01_2020.csv", "data/ethusd-5m_base_01_2020.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_45m_01_2020.csv", "data/ethusd-5m_base_01_2020.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_1h_01_2019.csv", "data/ethusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_90m_01_2018.csv", "data/ethusd-5m_base_01_2018.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_2h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_3h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_4h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_6h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_8h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_12h_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
-    ("data/TV_data_exports/COINBASE_ETHUSD_1D_12_2017.csv", "data/ethusd-5m_base_12_2017.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_10m_06_2021.csv", "data/btcusd-5m_base_05_2021.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_15m_04_2021.csv", "data/btcusd-5m_base_03_2021.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
+    ("data/TV_data_exports/BYBIT_BTCUSD_90m_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_6h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_8h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_12h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv")
 ]
 
 
@@ -35,31 +35,35 @@ def main():
 
 
 def process_pair(htf_datafilename, ltf_datafilename):
-    htf = htf_datafilename.split("_")[4]
-    ltf = 5
-    df_htf = pd.read_csv(htf_datafilename)
-    df_ltf = pd.read_csv(ltf_datafilename)
-    out_df = df_ltf.copy(deep=True)
+    try:
+        htf = htf_datafilename.split("_")[4]
+        ltf = 5
+        df_htf = pd.read_csv(htf_datafilename)
+        df_ltf = pd.read_csv(ltf_datafilename)
+        out_df = df_ltf.copy(deep=True)
 
-    for row in df_htf.itertuples():
-        sig = get_sig(row)
-        if sig:
-            dt_htf = parser.parse(getattr(row, 'time'))
-            ltf_sig_time = (dt_htf + get_lf_timedelta(htf=htf, ltf=ltf)).isoformat().replace('+00:00', 'Z')
-            try:
-                lf_idx = df_ltf.loc[df_ltf['time'] == ltf_sig_time].index[0]
-            except IndexError:
-                # LTF time doesn't exist in the LTF file
-                print(f"skipped signal at time {dt_htf}, not found in LTF file")
-                continue
+        for row in df_htf.itertuples():
+            sig = get_sig(row)
+            if sig:
+                dt_htf = parser.parse(getattr(row, 'time'))
+                ltf_sig_time = (dt_htf + get_lf_timedelta(htf=htf, ltf=ltf)).isoformat().replace('+00:00', 'Z')
+                try:
+                    lf_idx = df_ltf.loc[df_ltf['time'] == ltf_sig_time].index[0]
+                except IndexError:
+                    # LTF time doesn't exist in the LTF file
+                    print(f"skipped signal at time {dt_htf}, not found in LTF file")
+                    continue
 
-            out_df.at[lf_idx, sig] = 1
-            print(f"mapped signal at {dt_htf} to LTF {ltf_sig_time}")
+                out_df.at[lf_idx, sig] = 1
+                print(f"mapped signal at {dt_htf} to LTF {ltf_sig_time}")
 
-    base_month_and_year = ltf_datafilename.split("_")[2] + "_" + ltf_datafilename.split("_")[3].split(".")[0]
-    htf_name_wo_year = "_".join([htf_datafilename.split("_")[2].split("/")[1], htf_datafilename.split("_")[3], htf])
-    outfilename = f"data/{htf_name_wo_year}_on_5m_{base_month_and_year}.csv"
-    out_df.to_csv(outfilename, index=False)
+        base_month_and_year = ltf_datafilename.split("_")[2] + "_" + ltf_datafilename.split("_")[3].split(".")[0]
+        htf_name_wo_year = "_".join([htf_datafilename.split("_")[2].split("/")[1], htf_datafilename.split("_")[3], htf])
+        outfilename = f"data/{htf_name_wo_year}_on_5m_{base_month_and_year}.csv"
+        out_df.to_csv(outfilename, index=False)
+    except:
+        print(f"error processing file {htf_datafilename}")
+        raise
 
 
 def get_lf_timedelta(htf, ltf):
