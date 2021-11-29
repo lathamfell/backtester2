@@ -24,27 +24,44 @@ def run_btc_custom_reset_pts():
 def run_btc_standard_reset_pts():
     main(
         db_coll=cc.BTC_COLL,
-        datafilenames=["data/COINBASE_BTCUSD_1D_45m_on_5m_01_2020.csv"],
+        datafilenames=[
+            "data/COINBASE_BTCUSD_all_TFs_on_5m.csv",
+            #"data/COINBASE_BTCUSD_1D_45m_on_5m_01_2020.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_6h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_4h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_3h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_2h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_90m_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_1h_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_45m_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_30m_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv",
+            #"data/ready_for_analysis/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv",
+        ],
         #enable_qol=False,
         #mean_floor=4,
         #median_floor=4,
         #winrate_floor=80,
         #winrate_floor=90,
-        winrate_floor=50,
+        winrate_floor=10,
         drawdown_limits=[-100],
+        signal_timeframes=[["1h", "5m"]],
         #mean_floor=3,
         #median_floor=3,
-        mean_floor=-2,
-        median_floor=-2,
+        mean_floor=-100,
+        median_floor=-100,
         take_profits=[2],
-        stop_losses=[7.5],
-        leverages=[2],
+        stop_losses=[8],
+        leverages=[1],
         #sls=cc.SLS_ONE_RESET
+        sls=[[[]]]
         #+ cc.SLS_TWO_RESETS
         #+ cc.SLS_THREE_RESETS
         #+ cc.SLS_FOUR_RESETS
-        #+ [[[]]]
-        sls=[[[0.5, -0.25], [1.5, -0.5]]]
+        #sls=[[[0.5, -0.25], [1.5, -0.5]]]
     )
 
 

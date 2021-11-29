@@ -18,7 +18,8 @@ PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_90m_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    ("data/TV_data_exports/BYBIT_BTCUSD_45m_08_2021.csv", "data/btcusd-5m_base_08_2021.csv"),
+    ("data/TV_data_exports/BYBIT_BTCUSD_1D_08_2021.csv", "data/btcusd-5m_base_08_2021.csv")
     #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
@@ -35,6 +36,7 @@ def main():
 
 
 def process_pair(htf_datafilename, ltf_datafilename):
+    print(f"processing {htf_datafilename} with base {ltf_datafilename}")
     try:
         htf = htf_datafilename.split("_")[4]
         ltf = 5

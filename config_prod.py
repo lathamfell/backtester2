@@ -34,7 +34,7 @@ WRITE_INVALID_TO_DB = True  # don't change this lol.  odd behavior
 ENABLE_QOL = True
 REPLACE = False
 ACCURACY_TESTER_MODE = False  # only runs equal TP/Sl spec; overwrites leverage, trail/delay, sls, dd, winrate floor
-SIGNAL_EXITS = [True]
+SIGNAL_EXITS = [True, False]
 
 SIGNAL_TIMEFRAME_START_TIMES = {
     "BTC": {

@@ -36,7 +36,8 @@ def test_main_with_one_trade(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_one_trade.json5")
 
@@ -60,7 +61,8 @@ def test_main_with_one_trade_and_multiple_configs(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_one_trade_and_multiple_configs.json5")
 
@@ -84,7 +86,8 @@ def test_main_with_three_trades(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_three_trades.json5")
 
@@ -108,7 +111,8 @@ def test_main_with_three_trades_and_reset_sl_no_trailing(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_three_trades_and_reset_sl_no_trailing.json5")
 
@@ -132,7 +136,8 @@ def test_main_with_33_trades_and_good_reset_config_no_trailing(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_33_trades_good_reset_config_no_trailing.json5")
 
@@ -157,7 +162,8 @@ def test_main_with_invalid_sl_leverage_config(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_invalid_sl_leverage_config.json5")
 
@@ -182,7 +188,8 @@ def test_main_with_five_trades_and_trailing_reset_sl(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_five_trades_and_trailing_reset_sl.json5")
 
@@ -207,7 +214,8 @@ def test_main_with_five_trades_trailing_sl_no_reset(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_five_trades_trailing_sl_no_reset.json5")
 
@@ -232,7 +240,8 @@ def test_main_with_five_trades_with_trail_delay(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_five_trades_with_trail_delay.json5")
 
@@ -257,7 +266,8 @@ def test_main_with_scenario_that_covers_signal_exits_in_profit(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_scenario_that_covers_signal_exits_in_profit.json5")
 
@@ -282,7 +292,8 @@ def test_main_with_trail_configs_to_check_validity_function(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_trail_configs_to_check_validity_function.json5")
 
@@ -307,7 +318,8 @@ def test_main_with_15m_chart(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_15m_chart.json5")
 
@@ -332,7 +344,8 @@ def test_loss_limiter(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_loss_limiter.json5")
 
@@ -357,7 +370,8 @@ def test_invalid_tp_tsl_combinations(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_invalid_tp_tsl_combinations.json5")
 
@@ -383,7 +397,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=20,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     # should not screen out
     main(
@@ -406,7 +421,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=-5,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     # should screen out on drawdown
     main(
@@ -429,7 +445,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     
     # screens out during a long stop loss exit
@@ -453,7 +470,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=20,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
 
     # screens out during a long take profit exit
@@ -477,7 +495,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=10,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     ),
 
     # screens out during a long signal exit
@@ -501,7 +520,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=10,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     # screens out during a short stop loss exit
     main(
@@ -524,7 +544,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     # screens out during a short take profit exit
     main(
@@ -547,7 +568,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=4,
         floor_grace_period=20,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     # screens out during a short signal exit
     main(
@@ -570,7 +592,8 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         median_floor=-5,
         floor_grace_period=20,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5")
 
@@ -590,7 +613,8 @@ def test_leverage_adjustment_with_large_stop_loss(coll):
         multiproc=False,
         write_invalid_to_db=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_leverage_adjustment_with_large_stop_loss.json5")
 
@@ -615,7 +639,8 @@ def test_invalid_scenarios_not_written_to_db(coll):
         floor_grace_period=50,
         write_invalid_to_db=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_invalid_scenarios_not_written_to_db.json5")
 
@@ -640,7 +665,8 @@ def test_invalid_scenarios_due_to_initial_drawdown_screener(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5")
 
@@ -664,7 +690,8 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_scenarios_already_in_db_are_not_rerun.json5")
     # run it again without clearing db, then re-compare
@@ -686,7 +713,8 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_scenarios_already_in_db_are_not_rerun.json5")
 
@@ -710,7 +738,8 @@ def test_scenarios_already_in_db_are_rerun_with_replace_option(coll):
         floor_grace_period=50,
         multiproc=False,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5")
     # preserve original file
@@ -738,7 +767,8 @@ def test_scenarios_already_in_db_are_rerun_with_replace_option(coll):
             multiproc=False,
             enable_qol=False,
             replace_existing_scenarios=True,
-            accuracy_tester_mode=False
+            accuracy_tester_mode=False,
+            signal_exits=[True]
         )
         compare(coll, "db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5")
     finally:
@@ -768,7 +798,8 @@ def test_multiproc(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5")
 
@@ -794,7 +825,8 @@ def test_htf_dataset(coll):
         median_floor=-5,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_htf_dataset.json5")
 
@@ -818,7 +850,8 @@ def test_multiple_datafilenames(coll):
         median_floor=-5,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_multiple_datafilenames.json5")
 
@@ -850,7 +883,8 @@ def test_accuracy_tester_mode(coll):
         median_floor=4,
         floor_grace_period=50,
         enable_qol=False,
-        accuracy_tester_mode=True
+        accuracy_tester_mode=True,
+        signal_exits=[True]
     )
     compare(coll, "db_after_accuracy_tester_mode.json5")
 
@@ -874,7 +908,8 @@ def test_timeframe_specific_column_headers(coll):
         mean_floor=-5,
         median_floor=-5,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_timeframe_specific_column_headers.json5")
 
@@ -900,7 +935,8 @@ def test_configurable_start_date(coll):
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
-        accuracy_tester_mode=False
+        accuracy_tester_mode=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_configurable_start_date.json5")
 
@@ -961,7 +997,8 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         winrate_floor=0,
         mean_floor=4,
         median_floor=4,
-        enable_qol=False
+        enable_qol=False,
+        signal_exits=[True]
     )
     # this should bail out on median
     main(
@@ -980,7 +1017,8 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         winrate_floor=0,
         mean_floor=0.2,
         median_floor=5,
-        enable_qol=False
+        enable_qol=False,
+        signal_exits=[True]
     )
     # this should not bail out because it maintains mean and median
     main(
@@ -999,7 +1037,8 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         winrate_floor=0,
         mean_floor=1,
         median_floor=0.5,
-        enable_qol=False
+        enable_qol=False,
+        signal_exits=[True]
     )
     compare(coll, "db_after_bail_when_mean_or_median_falls_below_standard.json5")
 
@@ -1014,7 +1053,9 @@ def test_when_ltf_and_htf_print_signal_in_same_row(coll):
         sls=[[[]]],
         multiproc=False,
         enable_qol=False,
-        trail_last_resets=[False]
+        trail_last_resets=[False],
+        signal_exits=[True],
+        loss_limit_fractions=[0.2]
     )
     compare(coll, "db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5")
 
@@ -1035,9 +1076,33 @@ def test_last_reset_trailing_option(coll):
         drawdown_limits=[-100],
         trailing_sls=[False],
         trail_delays=[False],
-        trail_last_resets=[True]
+        trail_last_resets=[True],
+        signal_exits=[True],
+        loss_limit_fractions=[0.2]
     )
     compare(coll, "db_after_last_reset_trailing_option.json5")
+
+
+"""
+def test_tri_arrow(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=["BYBIT_BTCUSD_1D_45m_5m_on_5m_08_2021.csv"],
+        take_profits=[2],
+        stop_losses=[2],
+        leverages=[1],
+        sls=[[[]]],
+        multiproc=False,
+        enable_qol=False,
+        winrate_floor=0,
+        mean_floor=-10,
+        median_floor=-10,
+        drawdown_limits=[-100],
+        trailing_sls=[False],
+        trail_delays=[False]
+    )
+    compare(coll, "db_after_tri_arrow.json5")
+"""
 
 
 def test_get_adjusted_leverage():

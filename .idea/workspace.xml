@@ -2,160 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065ebe3e-165f-4f99-8914-4d11134505c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/BYBIT_BTCUSD_90m_on_5m_01_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_10m_on_5m_05_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_10m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_12h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_12h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_15m_on_5m_03_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_15m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1h_on_5m_01_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_2h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_2h_on_5m_01_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_2h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_30m_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_30m_on_5m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_30m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_3h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_3h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_3h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_on_5m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_4h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_4h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_4h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_6h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_6h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_6h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_8h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_8h_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_90m_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_90m_on_5m_01_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_90m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_10m_on_5m_06_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_12h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_15m_on_5m_03_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_1D_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_1h_on_5m_01_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_2h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_30m_on_5m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_3h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_45m_on_5m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_4h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_6h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_8h_on_5m_12_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/COINBASE_ETHUSD_90m_on_5m_01_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_10m_06_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_12h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_15m_04_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_6h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_8h_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_90m_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_12h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_12h_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_12h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_12h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_12h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_15_1h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_15_2h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_15m_on_5m_03_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1D_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1D_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1D_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1D_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1D_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_4h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_4h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_4h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_on_5m_01_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_1h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_8h_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_8h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_8h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_8h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_on_5m_01_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_2h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_30_2h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_30_2h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_30_on_5m_01_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_30m_on_5m_01_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_12h_on_5m_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_12h_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_12h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_12h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_12h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_1D_on_5m_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_1D_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_1D_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_1D_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_1D_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_4h_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_5m_on_5m_08_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_1D_on_5m_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_1D_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_1D_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_1D_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_1D_on_5m_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_on_5m_01_2015.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_on_5m_2017.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_on_5m_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_on_5m_2020.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_analysis/COINBASE_BTCUSD_8h_on_5m_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_45m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/btcusd-5m_base_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_data/expected/db_after_tri_arrow.json5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_10m_on_5m_05_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_12h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_15m_on_5m_03_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_1D_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_1h_on_5m_01_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_2h_on_5m_01_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_30m_on_5m_01_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_3h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_45m_on_5m_01_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_4h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_5m_on_5m_08_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_6h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_8h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_BTCUSD_90m_on_5m_01_2018.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_10m_on_5m_06_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_12h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_15m_on_5m_03_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_1D_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_1h_on_5m_01_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_2h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_30m_on_5m_01_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_3h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_45m_on_5m_01_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_4h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_6h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_8h_on_5m_12_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/all_TF_source_docs_for_multi_file/COINBASE_ETHUSD_90m_on_5m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_90m_on_5m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1D_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_1h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_2h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_30m_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_3h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_45m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_4h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_6h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TF_source_docs_do_not_delete/BYBIT_BTCUSD_90m_5m_on_5m_08_2021.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_01_2015.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_01_2017.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_01_2018.csv" afterDir="false" />
@@ -163,83 +35,22 @@
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2020.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_01_2020.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_03_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_03_2021.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_05_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_05_2021.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_12h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_12h_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_12h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_12h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_12h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_15_1h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_15_2h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_15m_on_5m_03_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1D_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1D_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1D_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1D_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1D_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_4h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_4h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_4h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_on_5m_01_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_1h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_8h_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_8h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_8h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_8h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_on_5m_01_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_2h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_30_2h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_30_2h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_30_on_5m_01_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_30m_on_5m_01_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_12h_on_5m_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_12h_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_12h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_12h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_12h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_1D_on_5m_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_1D_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_1D_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_1D_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_1D_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_4h_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_5m_on_5m_08_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_1D_on_5m_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_1D_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_1D_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_1D_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_1D_on_5m_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_on_5m_01_2015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_on_5m_2017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_on_5m_2019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_on_5m_2020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hopefully_do_not_need_anymore/COINBASE_BTCUSD_8h_on_5m_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_1h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_1h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_2h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_2h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_30m_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_30m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_3h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_3h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_45m_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_45m_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_4h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_4h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_6h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_6h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_90m_5m_on_5m_08_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_analysis/BYBIT_BTCUSD_90m_5m_on_5m_08_2021.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reset_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/reset_run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signal_remapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/signal_remapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_33_trades_good_reset_config_no_trailing.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_33_trades_good_reset_config_no_trailing.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_mean_or_median_falls_below_standard.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_mean_or_median_falls_below_standard.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_htf_dataset.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_htf_dataset.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_tp_tsl_combinations.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_tp_tsl_combinations.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_loss_limiter.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_loss_limiter.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_no_signal_exit_option.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_no_signal_exit_option.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_timeframe_specific_column_headers.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_timeframe_specific_column_headers.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_trail_configs_to_check_validity_function.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_trail_configs_to_check_validity_function.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,6 +102,7 @@
     <property name="ToolWindowSciView.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;JSON5" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JSON&#10;JSON5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="python.debugger.dataview.autoresize" value="false" />
     <property name="settings.editor.selected.configurable" value="Console" />
@@ -308,7 +120,7 @@
       <recent name="$PROJECT_DIR$/input" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test.test_timeframe_specific_column_headers">
+  <component name="RunManager" selected="Python tests.pytest in test.test_when_ltf_and_htf_print_signal_in_same_row">
     <configuration name="reset_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -332,15 +144,15 @@
       <method v="2" />
     </configuration>
     <configuration name="signal_remapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject" />
+      <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Latham\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -1040,11 +852,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.signal_remapper" />
         <item itemvalue="Python.reset_run" />
         <item itemvalue="Python.sl_generator_from_single_pts" />
         <item itemvalue="Python.sl_generator_from_combo_pts" />
         <item itemvalue="Python.thunderdome" />
-        <item itemvalue="Python.signal_remapper" />
       </list>
     </recent_temporary>
   </component>
@@ -1080,7 +892,8 @@
       <workItem from="1635294765831" duration="6514000" />
       <workItem from="1635352743294" duration="7127000" />
       <workItem from="1635361798888" duration="49283000" />
-      <workItem from="1637187098935" duration="8501000" />
+      <workItem from="1637187098935" duration="15935000" />
+      <workItem from="1637794582106" duration="5989000" />
     </task>
     <servers />
   </component>
@@ -1112,52 +925,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>72</line>
+          <line>74</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>98</line>
+          <line>101</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>125</line>
+          <line>129</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>151</line>
+          <line>156</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>178</line>
+          <line>184</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>207</line>
+          <line>214</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>234</line>
+          <line>242</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>260</line>
+          <line>270</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>287</line>
+          <line>298</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1177,27 +990,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>341</line>
+          <line>354</line>
           <option name="timeStamp" value="216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>368</line>
+          <line>382</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>627</line>
+          <line>652</line>
           <option name="timeStamp" value="296" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>675</line>
+          <line>702</line>
           <option name="timeStamp" value="298" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>726</line>
+          <line>755</line>
           <option name="timeStamp" value="342" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1207,7 +1020,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>845</line>
+          <line>878</line>
           <option name="timeStamp" value="374" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1217,32 +1030,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>808</line>
+          <line>840</line>
           <option name="timeStamp" value="428" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>446</line>
+          <line>463</line>
           <option name="timeStamp" value="436" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>869</line>
+          <line>903</line>
           <option name="timeStamp" value="451" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>297</line>
+          <line>308</line>
           <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/signal_remapper.py</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="510" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1030</line>
+          <line>1071</line>
           <option name="timeStamp" value="516" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1252,12 +1065,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>908</line>
+          <line>944</line>
           <option name="timeStamp" value="570" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>397</line>
+          <line>412</line>
           <option name="timeStamp" value="575" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1272,83 +1085,88 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1007</line>
+          <line>1046</line>
           <option name="timeStamp" value="615" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1038</line>
+          <line>1081</line>
           <option name="timeStamp" value="618" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1022</line>
+          <line>1063</line>
           <option name="timeStamp" value="620" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>457</line>
+          <line>460</line>
           <option name="timeStamp" value="625" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>413</line>
+          <line>416</line>
           <option name="timeStamp" value="628" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>427</line>
+          <line>430</line>
           <option name="timeStamp" value="629" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>661</line>
+          <line>688</line>
           <option name="timeStamp" value="630" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>663</line>
+          <line>690</line>
           <option name="timeStamp" value="631" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>668</line>
+          <line>695</line>
           <option name="timeStamp" value="632" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>674</line>
+          <line>701</line>
           <option name="timeStamp" value="633" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>676</line>
+          <line>703</line>
           <option name="timeStamp" value="634" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>805</line>
+          <line>832</line>
           <option name="timeStamp" value="635" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>363</line>
+          <line>366</line>
           <option name="timeStamp" value="636" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>379</line>
+          <line>382</line>
           <option name="timeStamp" value="637" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>486</line>
+          <line>489</line>
           <option name="timeStamp" value="638" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>641</line>
+          <line>668</line>
           <option name="timeStamp" value="639" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>1087</line>
+          <option name="timeStamp" value="640" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1362,6 +1180,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_trail_configs_to_check_validity_function.coverage" NAME="pytest for test.test_main_with_trail_configs_to_check_validity_function Coverage Results" MODIFIED="1637179532101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade_and_multiple_configs.coverage" NAME="pytest for test.test_main_with_one_trade_and_multiple_configs Coverage Results" MODIFIED="1637178243337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_win_rate_or_drawdown_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_win_rate_or_drawdown_falls_below_standard Coverage Results" MODIFIED="1637179748400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1637794717969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_33_trades_and_good_reset_config_no_trailing.coverage" NAME="pytest for test.test_main_with_33_trades_and_good_reset_config_no_trailing Coverage Results" MODIFIED="1637178366112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_htf_dataset.coverage" NAME="pytest in test.test_htf_dataset Coverage Results" MODIFIED="1637179916066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_timeframe_specific_column_headers.coverage" NAME="pytest in test.test_timeframe_specific_column_headers Coverage Results" MODIFIED="1637187256884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1378,10 +1197,10 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_mean_or_median_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_mean_or_median_falls_below_standard Coverage Results" MODIFIED="1637180181259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_with_trail_delay.coverage" NAME="pytest for test.test_main_with_five_trades_with_trail_delay Coverage Results" MODIFIED="1637178467070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_due_to_initial_drawdown_screener.coverage" NAME="pytest in test.test_invalid_scenarios_due_to_initial_drawdown_screener Coverage Results" MODIFIED="1637179860711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_main_with_one_trade Coverage Results" MODIFIED="1637178110335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1637179905992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_main_with_one_trade Coverage Results" MODIFIED="1638224513348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_invalid_sl_leverage_config.coverage" NAME="pytest for test.test_main_with_invalid_sl_leverage_config Coverage Results" MODIFIED="1637178431079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_when_ltf_and_htf_print_signal_in_same_row.coverage" NAME="pytest in test.test_when_ltf_and_htf_print_signal_in_same_row Coverage Results" MODIFIED="1637180245741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_when_ltf_and_htf_print_signal_in_same_row.coverage" NAME="pytest in test.test_when_ltf_and_htf_print_signal_in_same_row Coverage Results" MODIFIED="1638225002103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_leverage_adjustment_with_large_stop_loss.coverage" NAME="pytest for test.test_leverage_adjustment_with_large_stop_loss Coverage Results" MODIFIED="1637179801491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_accuracy_tester_mode.coverage" NAME="pytest in test.test_accuracy_tester_mode Coverage Results" MODIFIED="1637179992450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_scenario_that_covers_signal_exits_in_profit.coverage" NAME="pytest for test.test_main_with_scenario_that_covers_signal_exits_in_profit Coverage Results" MODIFIED="1637178476653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
