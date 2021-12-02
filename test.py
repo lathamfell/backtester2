@@ -1083,13 +1083,12 @@ def test_last_reset_trailing_option(coll):
     compare(coll, "db_after_last_reset_trailing_option.json5")
 
 
-"""
 def test_tri_arrow(coll):
     main(
         db_coll=c.COLL,
-        datafilenames=["BYBIT_BTCUSD_1D_45m_5m_on_5m_08_2021.csv"],
-        take_profits=[2],
-        stop_losses=[2],
+        datafilenames=["test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv"],
+        take_profits=[1.5],
+        stop_losses=[8],
         leverages=[1],
         sls=[[[]]],
         multiproc=False,
@@ -1102,7 +1101,6 @@ def test_tri_arrow(coll):
         trail_delays=[False]
     )
     compare(coll, "db_after_tri_arrow.json5")
-"""
 
 
 def test_get_adjusted_leverage():

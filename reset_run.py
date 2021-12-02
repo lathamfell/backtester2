@@ -25,7 +25,7 @@ def run_btc_standard_reset_pts():
     main(
         db_coll=cc.BTC_COLL,
         datafilenames=[
-            "data/COINBASE_BTCUSD_all_TFs_on_5m.csv",
+            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_11_2018.csv",
             #"data/COINBASE_BTCUSD_1D_45m_on_5m_01_2020.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv",
@@ -41,27 +41,28 @@ def run_btc_standard_reset_pts():
             #"data/ready_for_analysis/BYBIT_BTCUSD_15m_5m_on_5m_08_2021.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_10m_5m_on_5m_08_2021.csv",
         ],
-        #enable_qol=False,
+        enable_qol=False,
         #mean_floor=4,
         #median_floor=4,
         #winrate_floor=80,
         #winrate_floor=90,
-        winrate_floor=10,
-        drawdown_limits=[-100],
-        signal_timeframes=[["1h", "5m"]],
+        winrate_floor=60,
+        drawdown_limits=[-90],
+        #signal_timeframes=[["1h", "5m"]],
         #mean_floor=3,
         #median_floor=3,
-        mean_floor=-100,
-        median_floor=-100,
-        take_profits=[2],
-        stop_losses=[8],
-        leverages=[1],
-        #sls=cc.SLS_ONE_RESET
+        mean_floor=0,
+        median_floor=0,
+        #take_profits=[2],
+        #stop_losses=[0.5],
+        #leverages=[1],
         sls=[[[]]]
-        #+ cc.SLS_TWO_RESETS
-        #+ cc.SLS_THREE_RESETS
-        #+ cc.SLS_FOUR_RESETS
-        #sls=[[[0.5, -0.25], [1.5, -0.5]]]
+        + cc.SLS_ONE_RESET
+        + cc.SLS_TWO_RESETS
+        + cc.SLS_THREE_RESETS
+        + cc.SLS_FOUR_RESETS
+        #sls=[[[0.5, -0.25], [1.5, -0.5]]],
+        #multiproc=False
     )
 
 

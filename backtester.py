@@ -64,7 +64,7 @@ def main(
     replace_existing_scenarios=c.REPLACE,  # True to overwrite scenarios with matching id
     accuracy_tester_mode=c.ACCURACY_TESTER_MODE,
     signal_exits=c.SIGNAL_EXITS,
-    check_for_dupes_up_front=False
+    check_for_dupes_up_front=False,
 ):
     start_time = time.perf_counter()
 
@@ -99,7 +99,9 @@ def main(
     mongo = pymongo.MongoClient(db_connection)
     bt_coll = mongo[db][db_coll]
     if clear_db:
-        print(f"Clearing db collection while leaving indexes in place. This may take some time.")
+        print(
+            f"Clearing db collection while leaving indexes in place. This may take some time."
+        )
         bt_coll.delete_many({})
 
     # print(f"db connection established at {time.perf_counter() - start_time} seconds")
@@ -117,12 +119,16 @@ def main(
                                     for trail_last_reset in trail_last_resets:
                                         for sl in sls:
                                             for drawdown_limit in drawdown_limits:
-                                                for loss_limit_fraction in loss_limit_fractions:
+                                                for (
+                                                    loss_limit_fraction
+                                                ) in loss_limit_fractions:
                                                     for signal_exit in signal_exits:
                                                         scenario_count += 1
     scenario_num = 0
 
-    print(f"{scenario_count} scenarios counted at {time.perf_counter() - start_time} seconds")
+    print(
+        f"{scenario_count} scenarios counted at {time.perf_counter() - start_time} seconds"
+    )
     for datafilename in datafilenames:
         # derive characteristics from filename and load to dataframe
         try:
@@ -135,9 +141,13 @@ def main(
         for signal_timeframe in signal_timeframes:
             file_type = get_file_type(df, signal_timeframe)
             for signal_start_date in signal_start_dates:
-                start_date = get_start_date(signal_start_date, file_type, df, signal_timeframe, coin)
+                start_date = get_start_date(
+                    signal_start_date, file_type, df, signal_timeframe, coin
+                )
                 for leverage in leverages:
-                    print(f"assembling specs for {datafilename_only} signal timeframe {signal_timeframe} leverage {leverage}")
+                    print(
+                        f"assembling specs for {datafilename_only} signal timeframe {signal_timeframe} leverage {leverage}"
+                    )
                     for stop_loss in stop_losses:
                         for take_profit in take_profits:
                             if accuracy_tester_mode and stop_loss != take_profit:
@@ -147,7 +157,9 @@ def main(
                                     for trail_last_reset in trail_last_resets:
                                         for sl in sls:
                                             for drawdown_limit in drawdown_limits:
-                                                for loss_limit_fraction in loss_limit_fractions:
+                                                for (
+                                                    loss_limit_fraction
+                                                ) in loss_limit_fractions:
                                                     for signal_exit in signal_exits:
                                                         scenario_num += 1
                                                         spec = {
@@ -164,7 +176,9 @@ def main(
                                                             "take_profit": take_profit,
                                                             "trailing_sl": trailing_sl,
                                                             "trail_last_reset": trail_last_reset,
-                                                            "sl_reset_points": get_scrubbed_sl_reset_points(sl),
+                                                            "sl_reset_points": get_scrubbed_sl_reset_points(
+                                                                sl
+                                                            ),
                                                             "trail_delay": trail_delay,
                                                             "db": db,
                                                             "db_coll": db_coll,
@@ -175,14 +189,20 @@ def main(
                                                             "mean_floor": mean_floor,
                                                             "median_floor": median_floor,
                                                             "floor_grace_period": floor_grace_period,
-                                                            "signal_exit": signal_exit
+                                                            "signal_exit": signal_exit,
                                                         }
-                                                        spec["_id"] = get_unique_composite_key(spec)
+                                                        spec[
+                                                            "_id"
+                                                        ] = get_unique_composite_key(
+                                                            spec
+                                                        )
                                                         specs.append(spec)
 
                                                         if check_for_dupes_up_front:
                                                             if spec["_id"] in spec_ids:
-                                                                raise ValueError(f"spec {spec['_id']} already found")
+                                                                raise ValueError(
+                                                                    f"spec {spec['_id']} already found"
+                                                                )
                                                             spec_ids.append(spec["_id"])
 
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
@@ -206,8 +226,10 @@ def main(
         # now all specs are "not in db!"
         specs_not_in_db += specs_in_db
 
-    print(f"{len(specs) - len(specs_not_in_db)} out of {len(specs)} are already in db, "
-          f"leaving {len(specs_not_in_db)} to load.")
+    print(
+        f"{len(specs) - len(specs_not_in_db)} out of {len(specs)} are already in db, "
+        f"leaving {len(specs_not_in_db)} to load."
+    )
     if enable_qol:
         input("Press enter to continue")
 
@@ -252,7 +274,7 @@ def get_scrubbed_sl_reset_points(sl):
 
 def calculate_interval_timeframe(df):
     # given a pandas dataframe representing the datafile, calculate timeframe from the first two time values
-    return (df.iloc[1]['time'] - df.iloc[0]['time']).total_seconds() / 60
+    return (df.iloc[1]["time"] - df.iloc[0]["time"]).total_seconds() / 60
 
 
 def get_file_type(df, signal_timeframe):
@@ -260,9 +282,21 @@ def get_file_type(df, signal_timeframe):
     if len(signal_timeframe) == 0:
         if row.get("short") and row.get("long"):
             return FileType.SINGLE
-        if row.get("short_htf") and row.get("long_htf") and row.get("short_ltf") and row.get("long_ltf") and row.get("short_lltf") and row.get("long_lltf"):
+        if (
+            row.get("short_htf")
+            and row.get("long_htf")
+            and row.get("short_ltf")
+            and row.get("long_ltf")
+            and row.get("short_lltf")
+            and row.get("long_lltf")
+        ):
             return FileType.TRIPLE
-        if row.get("short_htf") and row.get("long_htf") and row.get("short_ltf") and row.get("long_ltf"):
+        if (
+            row.get("short_htf")
+            and row.get("long_htf")
+            and row.get("short_ltf")
+            and row.get("long_ltf")
+        ):
             return FileType.DOUBLE
     return FileType.MULTI
 
@@ -291,7 +325,7 @@ def scenario_in_db(coll, _id):
 
 def chunks(sequence, chunk_size):
     for j in range(0, len(sequence), chunk_size):
-        yield sequence[j:j + chunk_size]
+        yield sequence[j : j + chunk_size]
 
 
 def run_single_scenario(spec):
@@ -322,7 +356,9 @@ class ScenarioRunner:
 
         self.start_date_ts = pd.to_datetime(self.spec["start_date"])
 
-        self.end_date = self.spec["df"].iloc[-1]["time"].isoformat().replace("+00:00", "Z")
+        self.end_date = (
+            self.spec["df"].iloc[-1]["time"].isoformat().replace("+00:00", "Z")
+        )
         self.sl_reset_points_hit = []
         self.candles_spent_in_trade = 0
 
@@ -335,13 +371,14 @@ class ScenarioRunner:
         self.win_rate = None
 
         self.htf_shadow = None  # only used in HTF dataset scenarios
+        self.ltf_shadow = None  # only used in triple arrow scenarios
 
     def run_scenario(self):
+        # print(f"Running scenario with spec: {self.spec}")
         if not is_valid_scenario(self.spec):
             del self.spec["df"]  # no longer need it, and it doesn't print gracefully
             print(f"invalid spec: {self.spec}")
-            return get_invalid_scenario_result(
-                self.spec["_id"], self.end_date)
+            return get_invalid_scenario_result(self.spec["_id"], self.end_date)
 
         for row in self.spec["df"].itertuples():
             if getattr(row, "time") < self.start_date_ts:
@@ -351,14 +388,18 @@ class ScenarioRunner:
             if self.long_entry_price:
                 self.candles_spent_in_trade += 1
                 # get the low point of the candle
-                self.price_movement_at_candle_low = ((
-                    getattr(self.row, "low") / self.long_entry_price
-                ) - 1) * 100
+                self.price_movement_at_candle_low = (
+                    (getattr(self.row, "low") / self.long_entry_price) - 1
+                ) * 100
                 # check for a new trade low and min profit and if so save it for later
-                self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
+                self.price_movement_low = min(
+                    self.price_movement_low, self.price_movement_at_candle_low
+                )
                 if self.price_movement_low == self.price_movement_at_candle_low:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_low, exit_type=STOP_LOSS)[0]
+                    self.min_profit = self.get_profit_pct_from_exit_pct(
+                        exit_pct=self.price_movement_low, exit_type=STOP_LOSS
+                    )[0]
                 # check for SL
                 if self.price_movement_at_candle_low <= (-1 * self.stop_loss):
                     # we stopped out somewhere in this candle
@@ -368,14 +409,18 @@ class ScenarioRunner:
                         return self.finish_scenario(failed=True)
                 if self.long_entry_price:
                     # get the high point of the candle
-                    self.price_movement_at_candle_high = ((
-                        getattr(self.row, "high") / self.long_entry_price
-                    ) - 1) * 100
+                    self.price_movement_at_candle_high = (
+                        (getattr(self.row, "high") / self.long_entry_price) - 1
+                    ) * 100
                     # check for a new trade high
-                    self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
+                    self.price_movement_high = max(
+                        self.price_movement_high, self.price_movement_at_candle_high
+                    )
                     if self.price_movement_high == self.price_movement_at_candle_high:
                         # new max profit for this trade: save it, and reset trailing if applicable
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=self.price_movement_high, exit_type=STOP_LOSS)[0]
+                        self.max_profit = self.get_profit_pct_from_exit_pct(
+                            exit_pct=self.price_movement_high, exit_type=STOP_LOSS
+                        )[0]
                         if self.trailing_on:
                             # this is a new max, need to move trailing SL
                             self.stop_loss = (
@@ -385,7 +430,11 @@ class ScenarioRunner:
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
-                        except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                        except (
+                            e.TooMuchDrawdown,
+                            e.WinRateTooLow,
+                            e.MeanOrMedianTooLow,
+                        ):
                             return self.finish_scenario(failed=True)
                     else:
                         # we didn't TP yet, but check if we hit a reset point
@@ -402,14 +451,18 @@ class ScenarioRunner:
             if self.short_entry_price:
                 self.candles_spent_in_trade += 1
                 # get the high point of the candle
-                self.price_movement_at_candle_high = ((
-                    getattr(self.row, "high") / self.short_entry_price
-                ) - 1) * 100
+                self.price_movement_at_candle_high = (
+                    (getattr(self.row, "high") / self.short_entry_price) - 1
+                ) * 100
                 # check for new trade high (i.e. new min profit in a short)
-                self.price_movement_high = max(self.price_movement_high, self.price_movement_at_candle_high)
+                self.price_movement_high = max(
+                    self.price_movement_high, self.price_movement_at_candle_high
+                )
                 if self.price_movement_high == self.price_movement_at_candle_high:
                     # new min profit for this trade
-                    self.min_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_high), exit_type=STOP_LOSS)[0]
+                    self.min_profit = self.get_profit_pct_from_exit_pct(
+                        exit_pct=(-1 * self.price_movement_high), exit_type=STOP_LOSS
+                    )[0]
                 # check for SL
                 if self.price_movement_at_candle_high >= self.stop_loss:
                     # we stopped out somewhere in this candle
@@ -420,14 +473,18 @@ class ScenarioRunner:
 
                 if self.short_entry_price:
                     # get the low point of the candle
-                    self.price_movement_at_candle_low = ((
-                        getattr(self.row, "low") / self.short_entry_price
-                    ) - 1) * 100
+                    self.price_movement_at_candle_low = (
+                        (getattr(self.row, "low") / self.short_entry_price) - 1
+                    ) * 100
                     # check for a new trade low (i.e. new max profit in a short)
-                    self.price_movement_low = min(self.price_movement_low, self.price_movement_at_candle_low)
+                    self.price_movement_low = min(
+                        self.price_movement_low, self.price_movement_at_candle_low
+                    )
                     if self.price_movement_low == self.price_movement_at_candle_low:
                         # new max profit for this trade
-                        self.max_profit = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.price_movement_low), exit_type=STOP_LOSS)[0]
+                        self.max_profit = self.get_profit_pct_from_exit_pct(
+                            exit_pct=(-1 * self.price_movement_low), exit_type=STOP_LOSS
+                        )[0]
                         if self.trailing_on:
                             # this is a new min, need to move trailing SL
                             self.stop_loss = (
@@ -439,7 +496,11 @@ class ScenarioRunner:
                         # take the profit
                         try:
                             self.finish_trade(_type=TAKE_PROFIT)
-                        except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                        except (
+                            e.TooMuchDrawdown,
+                            e.WinRateTooLow,
+                            e.MeanOrMedianTooLow,
+                        ):
                             return self.finish_scenario(failed=True)
                     else:
                         # we didn't TP yet, but check if we hit a reset point
@@ -456,13 +517,9 @@ class ScenarioRunner:
             if self.should_open_long():
                 self.long_entry_price = getattr(self.row, "close")
                 # clear out sl reset points for the next trade
-                self.sl_reset_points_hit = (
-                    []
-                )
+                self.sl_reset_points_hit = []
                 # reset stop_loss to starting value
-                self.stop_loss = self.sl_trail = self.spec[
-                    "stop_loss"
-                ]
+                self.stop_loss = self.sl_trail = self.spec["stop_loss"]
                 # reset trailing
                 self.trailing_on = (
                     self.spec["trailing_sl"] and not self.spec["trail_delay"]
@@ -470,7 +527,9 @@ class ScenarioRunner:
                 self.profit_pct = None
                 self.candles_spent_in_trade = 0
 
-                self.price_movement_at_candle_high = self.price_movement_at_candle_low = 0
+                self.price_movement_at_candle_high = (
+                    self.price_movement_at_candle_low
+                ) = 0
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
@@ -479,21 +538,22 @@ class ScenarioRunner:
                     stop_loss=self.stop_loss,
                     max_leverage=self.spec["leverage"],
                     total_profit_pct=self.total_profit_pct,
-                    loss_limit_fraction=self.spec["loss_limit_fraction"])[0]
+                    loss_limit_fraction=self.spec["loss_limit_fraction"],
+                )[0]
                 self.trade = {
-                    "entry": getattr(self.row, 'time').isoformat().replace('+00:00', 'Z'),
-                    "direction": "long"
+                    "entry": getattr(self.row, "time")
+                    .isoformat()
+                    .replace("+00:00", "Z"),
+                    "direction": "long",
                 }
 
             # check for short entry
             if self.should_open_short():
                 self.short_entry_price = getattr(self.row, "close")
                 # clear out sl reset points for the next trade
-                self.sl_reset_points_hit = ([])
+                self.sl_reset_points_hit = []
                 # reset stop_loss to starting value
-                self.stop_loss = self.sl_trail = self.spec[
-                    "stop_loss"
-                ]
+                self.stop_loss = self.sl_trail = self.spec["stop_loss"]
                 # reset trailing
                 self.trailing_on = (
                     self.spec["trailing_sl"] and not self.spec["trail_delay"]
@@ -501,7 +561,9 @@ class ScenarioRunner:
                 self.profit_pct = None
                 self.candles_spent_in_trade = 0
 
-                self.price_movement_at_candle_high = self.price_movement_at_candle_low = 0
+                self.price_movement_at_candle_high = (
+                    self.price_movement_at_candle_low
+                ) = 0
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
@@ -510,143 +572,262 @@ class ScenarioRunner:
                     stop_loss=self.stop_loss,
                     max_leverage=self.spec["leverage"],
                     total_profit_pct=self.total_profit_pct,
-                    loss_limit_fraction=self.spec["loss_limit_fraction"])[0]
+                    loss_limit_fraction=self.spec["loss_limit_fraction"],
+                )[0]
                 self.trade = {
-                    "entry": getattr(self.row, 'time').isoformat().replace('+00:00', 'Z'),
-                    "direction": "short"
+                    "entry": getattr(self.row, "time")
+                    .isoformat()
+                    .replace("+00:00", "Z"),
+                    "direction": "short",
                 }
 
         return self.finish_scenario()
 
     def should_close_short(self):
-        bot_in_short = self.short_entry_price
-        # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
-            long_signal = getattr(self.row, "long") == 1
-            return bot_in_short and long_signal
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
-            long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
-            return bot_in_short and long_signal
+            return self.should_close_short_single_timeframe(long_header="long")
+        if (
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 1
+        ):
+            return self.should_close_short_single_timeframe(long_header=f"long_{self.spec['signal_timeframe'][0]}")
 
-        # multi timeframe scenarios: same logic, header depends on file type
-        long_htf_header = None
         if self.spec["file_type"] in [FileType.DOUBLE, FileType.TRIPLE]:
-            long_htf_header = "long_htf"
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
-            long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
+            return self.should_close_short_double_or_triple_timeframe(
+                long_htf_header="long_htf"
+            )
+        if self.spec["file_type"] == FileType.MULTI:
+            return self.should_close_short_double_or_triple_timeframe(
+                long_htf_header=f"long_{self.spec['signal_timeframe'][0]}"
+            )
 
+    def should_close_short_single_timeframe(self, long_header):
+        bot_in_short = self.short_entry_price
+        long_signal = getattr(self.row, long_header) == 1
+        return bot_in_short and long_signal
+
+    def should_close_short_double_or_triple_timeframe(self, long_htf_header):
+        bot_in_short = self.short_entry_price
         opposing_htf_signal = getattr(self.row, long_htf_header) == 1
-        if bot_in_short and opposing_htf_signal:
-            return True
-
-        # triple timeframe scenario
-
-
-        return False
+        return bot_in_short and opposing_htf_signal
 
     def should_close_long(self):
-        bot_in_long = self.long_entry_price
-        # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
-            short_signal = getattr(self.row, "short") == 1
-            return bot_in_long and short_signal
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
-            short_signal = getattr(self.row, f"short_{self.spec['signal_timeframe'][0]}") == 1
-            return bot_in_long and short_signal
+            return self.should_close_long_single_timeframe(short_header="short")
+        if (
+                self.spec["file_type"] == FileType.MULTI
+                and len(self.spec["signal_timeframe"]) == 1
+        ):
+            return self.should_close_long_single_timeframe(short_header=f"short_{self.spec['signal_timeframe'][0]}")
 
-        # double/multi timeframe scenarios: same logic, header depends on file type
-        short_htf_header = None
         if self.spec["file_type"] in [FileType.DOUBLE, FileType.TRIPLE]:
-            short_htf_header = "short_htf"
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
-            short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
+            return self.should_close_long_double_or_triple_timeframe(
+                short_htf_header="short_htf"
+            )
+        if self.spec["file_type"] == FileType.MULTI:
+            return self.should_close_long_double_or_triple_timeframe(
+                short_htf_header=f"short_{self.spec['signal_timeframe'][0]}"
+            )
 
+    def should_close_long_single_timeframe(self, short_header):
+        bot_in_long = self.long_entry_price
+        short_signal = getattr(self.row, short_header) == 1
+        return bot_in_long and short_signal
+
+    def should_close_long_double_or_triple_timeframe(self, short_htf_header):
+        bot_in_long = self.long_entry_price
         opposing_htf_signal = getattr(self.row, short_htf_header) == 1
-        if bot_in_long and opposing_htf_signal:
-            return True
-        return False
+        return bot_in_long and opposing_htf_signal
 
     def should_open_short(self):
         if self.spec["file_type"] == FileType.SINGLE:
             return self.should_open_short_single_timeframe(short_header="short")
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
-            return self.should_open_short_single_timeframe(short_header=f"short_{self.spec['signal_timeframe'][0]}")
+        if (
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 1
+        ):
+            return self.should_open_short_single_timeframe(
+                short_header=f"short_{self.spec['signal_timeframe'][0]}"
+            )
         if self.spec["file_type"] == FileType.DOUBLE:
             return self.should_open_short_double_timeframe(
                 short_htf_header="short_htf",
                 short_ltf_header="short_ltf",
-                long_htf_header="long_htf"
+                long_htf_header="long_htf",
             )
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
+        if (
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 2
+        ):
             return self.should_open_short_double_timeframe(
                 short_htf_header=f"short_{self.spec['signal_timeframe'][0]}",
                 short_ltf_header=f"short_{self.spec['signal_timeframe'][1]}",
-                long_htf_header=f"long_{self.spec['signal_timeframe'][0]}"
+                long_htf_header=f"long_{self.spec['signal_timeframe'][0]}",
             )
-        #if self.spec["file_type"] == FileType.TRIPLE:
-        #    return self.should_open_short_triple_timeframe(
-        #        short_htf_header="short_htf",
-        #        short_ltf_header="short_ltf",
-        #        short_lltf_header="short_lltf",
-        #        long_htf_header="long_htf"
-        #    )
+        if self.spec["file_type"] == FileType.TRIPLE:
+            return self.should_open_short_triple_timeframe(
+                short_htf_header="short_htf",
+                short_ltf_header="short_ltf",
+                short_lltf_header="short_lltf",
+                long_htf_header="long_htf",
+                long_ltf_header="long_ltf",
+            )
 
     def should_open_short_single_timeframe(self, short_header):
         bot_in_trade = self.short_entry_price or self.long_entry_price
         short_signal = getattr(self.row, short_header) == 1
         return not bot_in_trade and short_signal
 
-    def should_open_short_double_timeframe(self, short_htf_header, short_ltf_header, long_htf_header):
+    def should_open_short_double_timeframe(
+        self, short_htf_header, short_ltf_header, long_htf_header
+    ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
         htf_signal = getattr(self.row, short_htf_header) == 1
         ltf_signal = getattr(self.row, short_ltf_header) == 1
         opposing_htf_signal = getattr(self.row, long_htf_header) == 1
-        if htf_signal and not bot_in_trade:  # should_close_short() already called
+        if htf_signal:
             self.htf_shadow = "short"
+        if htf_signal and not bot_in_trade:  # should_close_short() already called
             return True
-        if ltf_signal and self.htf_shadow == "short" and not bot_in_trade and not opposing_htf_signal:
+        if (
+            ltf_signal
+            and self.htf_shadow == "short"
+            and not bot_in_trade
+            and not opposing_htf_signal
+        ):
             return True
         return False
 
-    def should_open_short_triple_timeframe(self, short_htf_header, short_ltf_header, short_lltf_header, long_htf_header):
+    def should_open_short_triple_timeframe(
+        self,
+        short_htf_header,
+        short_ltf_header,
+        short_lltf_header,
+        long_htf_header,
+        long_ltf_header,
+    ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
         htf_signal = getattr(self.row, short_htf_header) == 1
         ltf_signal = getattr(self.row, short_ltf_header) == 1
         lltf_signal = getattr(self.row, short_lltf_header) == 1
         opposing_htf_signal = getattr(self.row, long_htf_header) == 1
-        if htf_signal and not bot_in_trade:  # should_close_short() already called
+        opposing_ltf_signal = getattr(self.row, long_ltf_header) == 1
+        # always switch the shadow if there is a signal
+        if htf_signal:
             self.htf_shadow = "short"
+        if ltf_signal:
+            self.ltf_shadow = "short"
+
+        if htf_signal and not bot_in_trade:  # should_close_short() already called
             return True
-        #if ltf_signal and self.htf_shadow
+        if (
+            ltf_signal
+            and self.htf_shadow == "short"
+            and not bot_in_trade
+            and not opposing_htf_signal
+        ):
+            return True
+        if (
+            lltf_signal
+            and self.htf_shadow == "short"
+            and self.ltf_shadow == "short"
+            and not bot_in_trade
+            and not opposing_htf_signal
+            and not opposing_ltf_signal
+        ):
+            return True
+        return False
 
     def should_open_long(self):
-        bot_in_trade = self.long_entry_price or self.short_entry_price
-
-        # single timeframe scenarios: same logic, header depends on file type
         if self.spec["file_type"] == FileType.SINGLE:
-            long_signal = getattr(self.row, "long") == 1
-            return not bot_in_trade and long_signal
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 1:
-            long_signal = getattr(self.row, f"long_{self.spec['signal_timeframe'][0]}") == 1
-            return not bot_in_trade and long_signal
-
-        # double/multi timeframe scenarios: same logic, header depends on file type
-        long_htf_header = long_ltf_header = short_htf_header = None
+            return self.should_open_long_single_timeframe(long_header="long")
+        if (
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 1
+        ):
+            return self.should_open_long_single_timeframe(
+                long_header=f"long_{self.spec['signal_timeframe'][0]}"
+            )
         if self.spec["file_type"] == FileType.DOUBLE:
-            long_htf_header = "long_htf"
-            long_ltf_header = "long_ltf"
-            short_htf_header = "short_htf"
-        if self.spec["file_type"] == FileType.MULTI and len(self.spec["signal_timeframe"]) == 2:
-            long_htf_header = f"long_{self.spec['signal_timeframe'][0]}"
-            long_ltf_header = f"long_{self.spec['signal_timeframe'][1]}"
-            short_htf_header = f"short_{self.spec['signal_timeframe'][0]}"
+            return self.should_open_long_double_timeframe(
+                long_htf_header="long_htf",
+                long_ltf_header="long_ltf",
+                short_htf_header="short_htf"
+            )
+        if (
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 2
+        ):
+            return self.should_open_long_double_timeframe(
+                long_htf_header=f"long_{self.spec['signal_timeframe'][0]}",
+                long_ltf_header=f"long_{self.spec['signal_timeframe'][1]}",
+                short_htf_header=f"short_{self.spec['signal_timeframe'][0]}"
+            )
+        if self.spec["file_type"] == FileType.TRIPLE:
+            return self.should_open_long_triple_timeframe(
+                long_htf_header="long_htf",
+                long_ltf_header="long_ltf",
+                long_lltf_header="long_lltf",
+                short_htf_header="short_htf",
+                short_ltf_header="short_ltf"
+            )
+
+    def should_open_long_single_timeframe(self, long_header):
+        bot_in_trade = self.short_entry_price or self.long_entry_price
+        long_signal = getattr(self.row, long_header) == 1
+        return not bot_in_trade and long_signal
+
+    def should_open_long_double_timeframe(self, long_htf_header, long_ltf_header, short_htf_header):
+        bot_in_trade = self.short_entry_price or self.long_entry_price
         htf_signal = getattr(self.row, long_htf_header) == 1
         ltf_signal = getattr(self.row, long_ltf_header) == 1
         opposing_htf_signal = getattr(self.row, short_htf_header) == 1
-        if htf_signal and not bot_in_trade:  # should_close_long() already called
+        if htf_signal:
             self.htf_shadow = "long"
+        if htf_signal and not bot_in_trade:  # should_close_long() already called
             return True
-        if ltf_signal and self.htf_shadow == "long" and not bot_in_trade and not opposing_htf_signal:
+        if (
+            ltf_signal
+            and self.htf_shadow == "long"
+            and not bot_in_trade
+            and not opposing_htf_signal
+        ):
+            return True
+        return False
+
+    def should_open_long_triple_timeframe(
+            self, long_htf_header, long_ltf_header, long_lltf_header, short_htf_header, short_ltf_header
+    ):
+        bot_in_trade = self.short_entry_price or self.long_entry_price
+        htf_signal = getattr(self.row, long_htf_header) == 1
+        ltf_signal = getattr(self.row, long_ltf_header) == 1
+        lltf_signal = getattr(self.row, long_lltf_header) == 1
+        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
+        opposing_ltf_signal = getattr(self.row, short_ltf_header) == 1
+        # always switch the shadow if there is a signal
+        if htf_signal:
+            self.htf_shadow = "long"
+        if ltf_signal:
+            self.ltf_shadow = "long"
+
+        if htf_signal and not bot_in_trade:  # should_close_short() already called
+            return True
+        if (
+            ltf_signal
+            and self.htf_shadow == "long"
+            and not bot_in_trade
+            and not opposing_htf_signal
+        ):
+            self.ltf_shadow = "long"
+            return True
+        if (
+            lltf_signal
+            and self.htf_shadow == "long"
+            and self.ltf_shadow == "long"
+            and not bot_in_trade
+            and not opposing_htf_signal
+            and not opposing_ltf_signal
+        ):
             return True
         return False
 
@@ -667,7 +848,9 @@ class ScenarioRunner:
     def get_profit_pct_from_exit_pct(self, exit_pct, exit_type):
         # takes an exit price based profit pct like 2% and returns final profit pct after fees and leverage
         exit_pct = min(exit_pct, self.spec["take_profit"])  # cut off anything beyond TP
-        exit_pct = max(exit_pct, -1 * self.spec["stop_loss"])  # cut off anything below SL
+        exit_pct = max(
+            exit_pct, -1 * self.spec["stop_loss"]
+        )  # cut off anything below SL
         if exit_type == TAKE_PROFIT:
             fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
         else:
@@ -678,46 +861,62 @@ class ScenarioRunner:
     def get_exit_price_from_exit_pct(self, exit_pct):
         # take an exit pct like -2% and returns exit price based on direction and entry price
         if self.long_entry_price:
-            return round(self.long_entry_price * (1 + exit_pct/100), 1)
+            return round(self.long_entry_price * (1 + exit_pct / 100), 1)
         if self.short_entry_price:
-            return round(self.short_entry_price * (1 - exit_pct/100), 1)
+            return round(self.short_entry_price * (1 - exit_pct / 100), 1)
 
     def finish_trade(self, _type):
         exit_type = None
         exit_pct = None
         exit_price = None
         if _type == STOP_LOSS:
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=(-1 * self.stop_loss), exit_type=_type)
-            exit_price = self.get_exit_price_from_exit_pct(exit_pct=(-1 * self.stop_loss))
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(
+                exit_pct=(-1 * self.stop_loss), exit_type=_type
+            )
+            exit_price = self.get_exit_price_from_exit_pct(
+                exit_pct=(-1 * self.stop_loss)
+            )
             if self.profit_pct > 0:
                 exit_type = "sl_profit"
             else:
                 exit_type = "sl_loss"
 
         elif _type == TAKE_PROFIT:
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(exit_pct=self.spec["take_profit"], exit_type=_type)
-            exit_price = self.get_exit_price_from_exit_pct(exit_pct=self.spec["take_profit"])
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(
+                exit_pct=self.spec["take_profit"], exit_type=_type
+            )
+            exit_price = self.get_exit_price_from_exit_pct(
+                exit_pct=self.spec["take_profit"]
+            )
             exit_type = "tp"
 
         elif _type == SIGNAL:
             exit_price = getattr(self.row, "close")
-            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(exit_price=exit_price, exit_type=_type)
+            self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(
+                exit_price=exit_price, exit_type=_type
+            )
             if self.profit_pct > 0:
                 exit_type = "sig_profit"
             else:
                 exit_type = "sig_loss"
 
-        self.assets *= 1 + self.profit_pct/100
+        self.assets *= 1 + self.profit_pct / 100
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
-        drawdown_pct = int((1 - (self.assets / self.max_assets)) * -100)  # e.g. -68 (=68% drawdown from peak)
+        drawdown_pct = int(
+            (1 - (self.assets / self.max_assets)) * -100
+        )  # e.g. -68 (=68% drawdown from peak)
         self.max_drawdown_pct = min(drawdown_pct, self.max_drawdown_pct)
         self.total_profit_pct = int((self.assets - 1) * 100)  # e.g. 103 (=103% profit)
 
         # update trade history
-        self.trade["entry_price"] = self.short_entry_price if self.short_entry_price else self.long_entry_price
+        self.trade["entry_price"] = (
+            self.short_entry_price if self.short_entry_price else self.long_entry_price
+        )
         self.trade["exit_price"] = exit_price
-        self.trade["exit"] = getattr(self.row, "time").isoformat().replace("+00:00", "Z")
+        self.trade["exit"] = (
+            getattr(self.row, "time").isoformat().replace("+00:00", "Z")
+        )
         self.trade["exit_pct"] = round(exit_pct, 2)
         self.trade["profit"] = round(self.profit_pct, 2)
         self.trade["duration"] = self.candles_spent_in_trade
@@ -756,22 +955,19 @@ class ScenarioRunner:
             mean_profit = round(mean(self.get_profits()), 2)
             median_profit = round(median(self.get_profits()), 2)
             mean_hrs_in_trade = round(
-                mean(self.get_durations()) * int(self.spec["interval_timeframe"]) / 60, 2
+                mean(self.get_durations()) * int(self.spec["interval_timeframe"]) / 60,
+                2,
             )
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         if failed:
             print(f"failed strat {self.spec}")
         else:
-            print(
-                f"{mean_profit} {median_profit} mean/median from spec: {self.spec}"
-            )
+            print(f"{mean_profit} {median_profit} mean/median from spec: {self.spec}")
 
         minutes = self.total_candles * int(self.spec["interval_timeframe"])
         days = round(minutes / 1440, 1)
-        daily_profit_pct_avg = round(
-            (self.assets ** (1 / float(days)) - 1) * 100, 2
-        )
+        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
 
         result = {
             "_id": self.spec["_id"],
@@ -782,11 +978,11 @@ class ScenarioRunner:
             "max_drawdown_pct": self.max_drawdown_pct,
             "win_rate": self.win_rate,
             "trades": len(self.trade_history),
-            "stop_loss_exits_in_profit": self.get_exit_type_count('sl_profit'),
-            "stop_loss_exits_at_loss": self.get_exit_type_count('sl_loss'),
-            "take_profit_exits": self.get_exit_type_count('tp'),
-            "signal_exits_in_profit": self.get_exit_type_count('sig_profit'),
-            "signal_exits_at_loss": self.get_exit_type_count('sig_loss'),
+            "stop_loss_exits_in_profit": self.get_exit_type_count("sl_profit"),
+            "stop_loss_exits_at_loss": self.get_exit_type_count("sl_loss"),
+            "take_profit_exits": self.get_exit_type_count("tp"),
+            "signal_exits_in_profit": self.get_exit_type_count("sig_profit"),
+            "signal_exits_at_loss": self.get_exit_type_count("sig_loss"),
             "mean_profit": mean_profit,
             "median_profit": median_profit,
             "mean * trades": round(mean_profit * len(self.trade_history), 2),
@@ -795,7 +991,7 @@ class ScenarioRunner:
             "valid": not failed,
             "final_assets": round(self.assets, 2),
             "min_assets": round(self.min_assets, 2),
-            "max_assets": round(self.max_assets, 2)
+            "max_assets": round(self.max_assets, 2),
         }
         if QUICK_RUN:
             print(f"result for spec {self.spec['_id']}: \n{result}")
@@ -803,19 +999,27 @@ class ScenarioRunner:
         return result
 
     def calculate_win_rate(self):
-        self.win_rate = int(len(self.get_positive_profits()) / len(self.get_durations()) * 100)
+        self.win_rate = int(
+            len(self.get_positive_profits()) / len(self.get_durations()) * 100
+        )
 
     def get_positive_profits(self):
-        return [trade['profit'] for trade in self.trade_history if trade['profit'] > 0]
+        return [trade["profit"] for trade in self.trade_history if trade["profit"] > 0]
 
     def get_profits(self):
-        return [trade['profit'] for trade in self.trade_history]
+        return [trade["profit"] for trade in self.trade_history]
 
     def get_exit_type_count(self, exit_type):
-        return len([trade['exit_type'] for trade in self.trade_history if trade['exit_type'] == exit_type])
+        return len(
+            [
+                trade["exit_type"]
+                for trade in self.trade_history
+                if trade["exit_type"] == exit_type
+            ]
+        )
 
     def get_durations(self):
-        return [trade['duration'] for trade in self.trade_history]
+        return [trade["duration"] for trade in self.trade_history]
 
     def check_reset_points(self, price_movement):
         for sl_reset_point in self.spec["sl_reset_points"]:
@@ -837,7 +1041,7 @@ class ScenarioRunner:
                         self.sl_reset_points_hit.append(sl_trigger)
                         if self.start_trailing():
                             # update the trail
-                            self.sl_trail = (sl_trigger + new_sl)
+                            self.sl_trail = sl_trigger + new_sl
                             # update current sl with trail
                             if self.short_entry_price:
                                 self.stop_loss = price_movement + self.sl_trail
@@ -849,15 +1053,19 @@ class ScenarioRunner:
                         return
 
     def start_trailing(self):
-        if self.spec['trailing_sl']:
+        if self.spec["trailing_sl"]:
             return True
-        last_reset_hit = len(self.sl_reset_points_hit) == len(self.spec['sl_reset_points'])
-        if self.spec['trail_last_reset'] and last_reset_hit:
+        last_reset_hit = len(self.sl_reset_points_hit) == len(
+            self.spec["sl_reset_points"]
+        )
+        if self.spec["trail_last_reset"] and last_reset_hit:
             return True
         return False
 
 
-def get_adjusted_leverage(stop_loss, max_leverage, total_profit_pct, loss_limit_fraction):
+def get_adjusted_leverage(
+    stop_loss, max_leverage, total_profit_pct, loss_limit_fraction
+):
     if loss_limit_fraction == 0:  # no loss limit desired
         return max_leverage, 0
     pct_of_starting_assets = total_profit_pct + 100
@@ -869,7 +1077,9 @@ def get_adjusted_leverage(stop_loss, max_leverage, total_profit_pct, loss_limit_
         return max_leverage, loss_limit
     # max with 1 to avoid sub-1 lev. Multiple both by 100 to avoid float division imprecision
     adj_leverage = max(1, (loss_limit * 100) // (stop_loss * 100))
-    adj_leverage = min(max_leverage, adj_leverage)  # make sure we don't exceed configured lev
+    adj_leverage = min(
+        max_leverage, adj_leverage
+    )  # make sure we don't exceed configured lev
     return int(adj_leverage), loss_limit
 
 
@@ -879,7 +1089,7 @@ def is_valid_scenario(spec):
     tp_tsl_valid = False
     drawdown_valid = False
     # a valid scenario is protected from liquidation
-    if spec["stop_loss"]/100 < (1 / (1 + spec["leverage"])):
+    if spec["stop_loss"] / 100 < (1 / (1 + spec["leverage"])):
         protected = True
     # a valid scenario uses one of the valid trail/trail delay configs
     config = (spec["trailing_sl"], spec["trail_delay"])
@@ -915,7 +1125,7 @@ def get_unique_composite_key(spec):
         "median_floor": spec["median_floor"],
         "mean_floor": spec["mean_floor"],
         "floor_grace_period": spec["floor_grace_period"],
-        "signal_exit": spec["signal_exit"]
+        "signal_exit": spec["signal_exit"],
     }
     return unique_composite_key
 

@@ -18,8 +18,8 @@ PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_45m_08_2021.csv", "data/btcusd-5m_base_08_2021.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_1D_08_2021.csv", "data/btcusd-5m_base_08_2021.csv")
+    ("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_45m_05_2021.csv", "data/btcusd-5m_base_03_2021.csv")
     #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
@@ -53,7 +53,7 @@ def process_pair(htf_datafilename, ltf_datafilename):
                     lf_idx = df_ltf.loc[df_ltf['time'] == ltf_sig_time].index[0]
                 except IndexError:
                     # LTF time doesn't exist in the LTF file
-                    print(f"skipped signal at time {dt_htf}, not found in LTF file")
+                    print(f"skipped HTF signal at time {dt_htf}, target {ltf_sig_time} not found in LTF file")
                     continue
 
                 out_df.at[lf_idx, sig] = 1
@@ -95,6 +95,7 @@ def get_lf_timedelta(htf, ltf):
         return timedelta(hours=0, minutes=10)
     if htf == "10m" and ltf == 5:
         return timedelta(hours=0, minutes=5)
+    raise Exception(f"Unknown htf or ltf provided. htf: {htf}, ltf: {ltf}")
 
 
 def get_sig(row):
