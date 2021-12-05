@@ -28,6 +28,12 @@ class FileType(Enum):
     MULTI = "MULTI"
 
 
+class EntryTimeframe(Enum):
+    HTF = "HTF"
+    LTF = "LTF"
+    LLTF = "LLTF"
+
+
 # valid combinations of trail_sl and trail_delay are:
 # 1. T T: trailing with delay
 # 2. T F: trailing without delay
@@ -136,7 +142,12 @@ def main(
         except IndexError:
             datafilename_only = datafilename
         coin = "BTC" if "BTC" in datafilename_only else "ETH"
-        df = pd.read_csv(filepath_or_buffer=datafilename, parse_dates=["time"])
+        df = pd.read_csv(
+            filepath_or_buffer=datafilename,
+            parse_dates=["time"],
+            dtype={
+                'short_htf': str, 'long_htf': str, 'short_ltf': str, 'long_ltf': str
+            })
         interval_timeframe = calculate_interval_timeframe(df=df)
         for signal_timeframe in signal_timeframes:
             file_type = get_file_type(df, signal_timeframe)
@@ -370,8 +381,10 @@ class ScenarioRunner:
         self.row = None
         self.win_rate = None
 
+        self.entry_timeframe = None  # for each trade, records which timeframe the entry signal fired on
         self.htf_shadow = None  # only used in HTF dataset scenarios
         self.ltf_shadow = None  # only used in triple arrow scenarios
+        self.set_initial_shadows()
 
     def run_scenario(self):
         # print(f"Running scenario with spec: {self.spec}")
@@ -545,7 +558,9 @@ class ScenarioRunner:
                     .isoformat()
                     .replace("+00:00", "Z"),
                     "direction": "long",
+                    "entry_timeframe": self.entry_timeframe
                 }
+                self.entry_timeframe = None  # reset to avoid accidental carryover
 
             # check for short entry
             if self.should_open_short():
@@ -579,9 +594,40 @@ class ScenarioRunner:
                     .isoformat()
                     .replace("+00:00", "Z"),
                     "direction": "short",
+                    "entry_timeframe": self.entry_timeframe
                 }
+                self.entry_timeframe = None  # reset to avoid accidental carryover
 
         return self.finish_scenario()
+
+    def set_initial_shadows(self):
+        if self.spec["file_type"] == FileType.SINGLE or (
+            self.spec["file_type"] == FileType.MULTI
+            and self.spec["signal_timeframe"] == 1
+        ):
+            # no need for initial shadow with single timeframes
+            return
+        if self.spec["file_type"] == FileType.MULTI:
+            raise Exception(
+                "Backtester needs update to 'check_for_initial_shadow' to handle multi files with multiple TFs"
+            )
+        row = self.spec["df"].iloc[0]
+        if self.spec["file_type"] in [FileType.DOUBLE, FileType.TRIPLE]:
+            if not ((row["short_htf"] in ["shadow", 1, '1']) ^ (row["long_htf"] in ["shadow", 1, '1'])):
+                raise Exception(f"Double or triple arrow file {self.spec['datafilename']} provided without proper initial HTF shadow")
+            if row["short_htf"] in ["shadow", 1, '1']:
+                self.htf_shadow = "short"
+            if row["long_htf"] in ["shadow", 1, '1']:
+                self.htf_shadow = "long"
+
+        if self.spec["file_type"] == FileType.TRIPLE:
+            # for triple arrow files, also set LTF shadow
+            if not ((row["short_ltf"] in ["shadow", 1, '1']) ^ (row["long_ltf"] in ["shadow", 1, '1'])):
+                raise Exception(f"Triple arrow file {self.spec['datafilename']} provided without proper initial LTF shadow")
+            if row["short_ltf"] in ["shadow", 1, '1']:
+                self.ltf_shadow = "short"
+            if row["long_ltf"] in ["shadow", 1, '1']:
+                self.ltf_shadow = "long"
 
     def should_close_short(self):
         if self.spec["file_type"] == FileType.SINGLE:
@@ -590,7 +636,9 @@ class ScenarioRunner:
             self.spec["file_type"] == FileType.MULTI
             and len(self.spec["signal_timeframe"]) == 1
         ):
-            return self.should_close_short_single_timeframe(long_header=f"long_{self.spec['signal_timeframe'][0]}")
+            return self.should_close_short_single_timeframe(
+                long_header=f"long_{self.spec['signal_timeframe'][0]}"
+            )
 
         if self.spec["file_type"] in [FileType.DOUBLE, FileType.TRIPLE]:
             return self.should_close_short_double_or_triple_timeframe(
@@ -603,22 +651,24 @@ class ScenarioRunner:
 
     def should_close_short_single_timeframe(self, long_header):
         bot_in_short = self.short_entry_price
-        long_signal = getattr(self.row, long_header) == 1
+        long_signal = getattr(self.row, long_header) in [1, '1']
         return bot_in_short and long_signal
 
     def should_close_short_double_or_triple_timeframe(self, long_htf_header):
         bot_in_short = self.short_entry_price
-        opposing_htf_signal = getattr(self.row, long_htf_header) == 1
+        opposing_htf_signal = getattr(self.row, long_htf_header) in [1, '1']
         return bot_in_short and opposing_htf_signal
 
     def should_close_long(self):
         if self.spec["file_type"] == FileType.SINGLE:
             return self.should_close_long_single_timeframe(short_header="short")
         if (
-                self.spec["file_type"] == FileType.MULTI
-                and len(self.spec["signal_timeframe"]) == 1
+            self.spec["file_type"] == FileType.MULTI
+            and len(self.spec["signal_timeframe"]) == 1
         ):
-            return self.should_close_long_single_timeframe(short_header=f"short_{self.spec['signal_timeframe'][0]}")
+            return self.should_close_long_single_timeframe(
+                short_header=f"short_{self.spec['signal_timeframe'][0]}"
+            )
 
         if self.spec["file_type"] in [FileType.DOUBLE, FileType.TRIPLE]:
             return self.should_close_long_double_or_triple_timeframe(
@@ -631,12 +681,12 @@ class ScenarioRunner:
 
     def should_close_long_single_timeframe(self, short_header):
         bot_in_long = self.long_entry_price
-        short_signal = getattr(self.row, short_header) == 1
+        short_signal = getattr(self.row, short_header) in [1, '1']
         return bot_in_long and short_signal
 
     def should_close_long_double_or_triple_timeframe(self, short_htf_header):
         bot_in_long = self.long_entry_price
-        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
+        opposing_htf_signal = getattr(self.row, short_htf_header) in [1, '1']
         return bot_in_long and opposing_htf_signal
 
     def should_open_short(self):
@@ -675,19 +725,20 @@ class ScenarioRunner:
 
     def should_open_short_single_timeframe(self, short_header):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        short_signal = getattr(self.row, short_header) == 1
+        short_signal = getattr(self.row, short_header) in [1, '1']
         return not bot_in_trade and short_signal
 
     def should_open_short_double_timeframe(
         self, short_htf_header, short_ltf_header, long_htf_header
     ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        htf_signal = getattr(self.row, short_htf_header) == 1
-        ltf_signal = getattr(self.row, short_ltf_header) == 1
-        opposing_htf_signal = getattr(self.row, long_htf_header) == 1
+        htf_signal = getattr(self.row, short_htf_header) in [1, '1']
+        ltf_signal = getattr(self.row, short_ltf_header) in [1, '1']
+        opposing_htf_signal = getattr(self.row, long_htf_header) in [1, '1']
         if htf_signal:
             self.htf_shadow = "short"
         if htf_signal and not bot_in_trade:  # should_close_short() already called
+            self.entry_timeframe = EntryTimeframe.HTF.name
             return True
         if (
             ltf_signal
@@ -695,6 +746,7 @@ class ScenarioRunner:
             and not bot_in_trade
             and not opposing_htf_signal
         ):
+            self.entry_timeframe = EntryTimeframe.LTF.name
             return True
         return False
 
@@ -707,11 +759,11 @@ class ScenarioRunner:
         long_ltf_header,
     ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        htf_signal = getattr(self.row, short_htf_header) == 1
-        ltf_signal = getattr(self.row, short_ltf_header) == 1
-        lltf_signal = getattr(self.row, short_lltf_header) == 1
-        opposing_htf_signal = getattr(self.row, long_htf_header) == 1
-        opposing_ltf_signal = getattr(self.row, long_ltf_header) == 1
+        htf_signal = getattr(self.row, short_htf_header) in [1, '1']
+        ltf_signal = getattr(self.row, short_ltf_header) in [1, '1']
+        lltf_signal = getattr(self.row, short_lltf_header) in [1, '1']
+        opposing_htf_signal = getattr(self.row, long_htf_header) in [1, '1']
+        opposing_ltf_signal = getattr(self.row, long_ltf_header) in [1, '1']
         # always switch the shadow if there is a signal
         if htf_signal:
             self.htf_shadow = "short"
@@ -719,6 +771,7 @@ class ScenarioRunner:
             self.ltf_shadow = "short"
 
         if htf_signal and not bot_in_trade:  # should_close_short() already called
+            self.entry_timeframe = EntryTimeframe.HTF.name
             return True
         if (
             ltf_signal
@@ -726,6 +779,7 @@ class ScenarioRunner:
             and not bot_in_trade
             and not opposing_htf_signal
         ):
+            self.entry_timeframe = EntryTimeframe.LTF.name
             return True
         if (
             lltf_signal
@@ -735,6 +789,7 @@ class ScenarioRunner:
             and not opposing_htf_signal
             and not opposing_ltf_signal
         ):
+            self.entry_timeframe = EntryTimeframe.LLTF.name
             return True
         return False
 
@@ -752,7 +807,7 @@ class ScenarioRunner:
             return self.should_open_long_double_timeframe(
                 long_htf_header="long_htf",
                 long_ltf_header="long_ltf",
-                short_htf_header="short_htf"
+                short_htf_header="short_htf",
             )
         if (
             self.spec["file_type"] == FileType.MULTI
@@ -761,7 +816,7 @@ class ScenarioRunner:
             return self.should_open_long_double_timeframe(
                 long_htf_header=f"long_{self.spec['signal_timeframe'][0]}",
                 long_ltf_header=f"long_{self.spec['signal_timeframe'][1]}",
-                short_htf_header=f"short_{self.spec['signal_timeframe'][0]}"
+                short_htf_header=f"short_{self.spec['signal_timeframe'][0]}",
             )
         if self.spec["file_type"] == FileType.TRIPLE:
             return self.should_open_long_triple_timeframe(
@@ -769,22 +824,25 @@ class ScenarioRunner:
                 long_ltf_header="long_ltf",
                 long_lltf_header="long_lltf",
                 short_htf_header="short_htf",
-                short_ltf_header="short_ltf"
+                short_ltf_header="short_ltf",
             )
 
     def should_open_long_single_timeframe(self, long_header):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        long_signal = getattr(self.row, long_header) == 1
+        long_signal = getattr(self.row, long_header) in [1, '1']
         return not bot_in_trade and long_signal
 
-    def should_open_long_double_timeframe(self, long_htf_header, long_ltf_header, short_htf_header):
+    def should_open_long_double_timeframe(
+        self, long_htf_header, long_ltf_header, short_htf_header
+    ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        htf_signal = getattr(self.row, long_htf_header) == 1
-        ltf_signal = getattr(self.row, long_ltf_header) == 1
-        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
+        htf_signal = getattr(self.row, long_htf_header) in [1, '1']
+        ltf_signal = getattr(self.row, long_ltf_header) in [1, '1']
+        opposing_htf_signal = getattr(self.row, short_htf_header) in [1, '1']
         if htf_signal:
             self.htf_shadow = "long"
         if htf_signal and not bot_in_trade:  # should_close_long() already called
+            self.entry_timeframe = EntryTimeframe.HTF.name
             return True
         if (
             ltf_signal
@@ -792,18 +850,24 @@ class ScenarioRunner:
             and not bot_in_trade
             and not opposing_htf_signal
         ):
+            self.entry_timeframe = EntryTimeframe.LTF.name
             return True
         return False
 
     def should_open_long_triple_timeframe(
-            self, long_htf_header, long_ltf_header, long_lltf_header, short_htf_header, short_ltf_header
+        self,
+        long_htf_header,
+        long_ltf_header,
+        long_lltf_header,
+        short_htf_header,
+        short_ltf_header,
     ):
         bot_in_trade = self.short_entry_price or self.long_entry_price
-        htf_signal = getattr(self.row, long_htf_header) == 1
-        ltf_signal = getattr(self.row, long_ltf_header) == 1
-        lltf_signal = getattr(self.row, long_lltf_header) == 1
-        opposing_htf_signal = getattr(self.row, short_htf_header) == 1
-        opposing_ltf_signal = getattr(self.row, short_ltf_header) == 1
+        htf_signal = getattr(self.row, long_htf_header) in [1, '1']
+        ltf_signal = getattr(self.row, long_ltf_header) in [1, '1']
+        lltf_signal = getattr(self.row, long_lltf_header) in [1, '1']
+        opposing_htf_signal = getattr(self.row, short_htf_header) in [1, '1']
+        opposing_ltf_signal = getattr(self.row, short_ltf_header) in [1, '1']
         # always switch the shadow if there is a signal
         if htf_signal:
             self.htf_shadow = "long"
@@ -811,6 +875,7 @@ class ScenarioRunner:
             self.ltf_shadow = "long"
 
         if htf_signal and not bot_in_trade:  # should_close_short() already called
+            self.entry_timeframe = EntryTimeframe.HTF.name
             return True
         if (
             ltf_signal
@@ -819,6 +884,7 @@ class ScenarioRunner:
             and not opposing_htf_signal
         ):
             self.ltf_shadow = "long"
+            self.entry_timeframe = EntryTimeframe.LTF.name
             return True
         if (
             lltf_signal
@@ -828,6 +894,7 @@ class ScenarioRunner:
             and not opposing_htf_signal
             and not opposing_ltf_signal
         ):
+            self.entry_timeframe = EntryTimeframe.LLTF.name
             return True
         return False
 

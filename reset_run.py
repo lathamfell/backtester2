@@ -25,8 +25,11 @@ def run_btc_standard_reset_pts():
     main(
         db_coll=cc.BTC_COLL,
         datafilenames=[
-            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_11_2018.csv",
-            #"data/COINBASE_BTCUSD_1D_45m_on_5m_01_2020.csv",
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_05_2021.csv",
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv",
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_5m_on_5m_05_2021.csv"
+            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_11_2018.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_1D_5m_on_5m_08_2021.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_12h_5m_on_5m_08_2021.csv",
             #"data/ready_for_analysis/BYBIT_BTCUSD_8h_5m_on_5m_08_2021.csv",
@@ -61,6 +64,7 @@ def run_btc_standard_reset_pts():
         + cc.SLS_TWO_RESETS
         + cc.SLS_THREE_RESETS
         + cc.SLS_FOUR_RESETS
+        + cc.SLS_FIVE_RESETS
         #sls=[[[0.5, -0.25], [1.5, -0.5]]],
         #multiproc=False
     )

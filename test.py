@@ -323,7 +323,7 @@ def test_main_with_15m_chart(coll):
     )
     compare(coll, "db_after_15m_chart.json5")
 
-
+"""
 def test_loss_limiter(coll):
     main(
         db_coll=c.COLL,
@@ -348,7 +348,7 @@ def test_loss_limiter(coll):
         signal_exits=[True]
     )
     compare(coll, "db_after_loss_limiter.json5")
-
+"""
 
 def test_invalid_tp_tsl_combinations(coll):
     main(
@@ -888,7 +888,7 @@ def test_accuracy_tester_mode(coll):
     )
     compare(coll, "db_after_accuracy_tester_mode.json5")
 
-
+"""
 def test_timeframe_specific_column_headers(coll):
     main(
         db_coll=c.COLL,
@@ -912,7 +912,7 @@ def test_timeframe_specific_column_headers(coll):
         signal_exits=[True]
     )
     compare(coll, "db_after_timeframe_specific_column_headers.json5")
-
+"""
 
 def test_configurable_start_date(coll):
     main(
@@ -940,7 +940,7 @@ def test_configurable_start_date(coll):
     )
     compare(coll, "db_after_configurable_start_date.json5")
 
-
+"""
 def test_no_signal_exit_option(coll):
     main(
         db_coll=c.COLL,
@@ -963,7 +963,7 @@ def test_no_signal_exit_option(coll):
         signal_exits=[False]
     )
     compare(coll, "db_after_no_signal_exit_option.json5")
-
+"""
 
 def test_duplicate_scenarios_are_rejected(coll):
     with pytest.raises(ValueError):
@@ -1082,7 +1082,7 @@ def test_last_reset_trailing_option(coll):
     )
     compare(coll, "db_after_last_reset_trailing_option.json5")
 
-
+"""
 def test_tri_arrow(coll):
     main(
         db_coll=c.COLL,
@@ -1101,6 +1101,125 @@ def test_tri_arrow(coll):
         trail_delays=[False]
     )
     compare(coll, "db_after_tri_arrow.json5")
+"""
+
+def test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file(coll):
+    with pytest.raises(Exception) as e_info:
+        main(
+            db_coll=c.COLL,
+            datafilenames=[
+                "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv"  # Triple arrow, no HTF or LTF shadow indication
+            ],
+            take_profits=[1.5],
+            stop_losses=[8],
+            leverages=[1],
+            sls=[[[]]],
+            multiproc=False,
+            enable_qol=False,
+            winrate_floor=0,
+            mean_floor=-10,
+            median_floor=-10,
+            drawdown_limits=[-100],
+            trailing_sls=[False],
+            trail_delays=[False],
+            signal_exits=[False]
+        )
+    assert str(e_info.value) == "Double or triple arrow file BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv provided without proper initial HTF shadow"
+
+    with pytest.raises(Exception) as e_info:
+        main(
+            db_coll=c.COLL,
+            datafilenames=[
+                "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv"  # Double arrow, no HTF shadow indication
+            ],
+            take_profits=[1.5],
+            stop_losses=[8],
+            leverages=[1],
+            sls=[[[]]],
+            multiproc=False,
+            enable_qol=False,
+            winrate_floor=0,
+            mean_floor=-10,
+            median_floor=-10,
+            drawdown_limits=[-100],
+            trailing_sls=[False],
+            trail_delays=[False],
+            signal_exits=[False]
+        )
+    assert str(e_info.value) == "Double or triple arrow file BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv provided without proper initial HTF shadow"
+
+    with pytest.raises(Exception) as e_info:
+        main(
+            db_coll=c.COLL,
+            datafilenames=[
+                "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_initial_HTF.csv"  # Triple arrow, no LTF shadow ind.
+            ],
+            take_profits=[1.5],
+            stop_losses=[8],
+            leverages=[1],
+            sls=[[[]]],
+            multiproc=False,
+            enable_qol=False,
+            winrate_floor=0,
+            mean_floor=-10,
+            median_floor=-10,
+            drawdown_limits=[-100],
+            trailing_sls=[False],
+            trail_delays=[False],
+            signal_exits=[False]
+        )
+    assert str(e_info.value) == "Triple arrow file BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_initial_HTF.csv provided without proper initial LTF shadow"
+
+    with pytest.raises(Exception) as e_info:
+        main(
+            db_coll=c.COLL,
+            datafilenames=[
+                # Triple arrow, too many HTF shadow indications
+                "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_HTF.csv"
+            ],
+            take_profits=[1.5],
+            stop_losses=[8],
+            leverages=[1],
+            sls=[[[]]],
+            multiproc=False,
+            enable_qol=False,
+            winrate_floor=0,
+            mean_floor=-10,
+            median_floor=-10,
+            drawdown_limits=[-100],
+            trailing_sls=[False],
+            trail_delays=[False],
+            signal_exits=[False]
+        )
+    assert str(e_info.value) == "Double or triple arrow file BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_HTF.csv provided without proper initial HTF shadow"
+
+    with pytest.raises(Exception) as e_info:
+        main(
+            db_coll=c.COLL,
+            datafilenames=[
+                # Triple arrow, too many LTF shadow indications
+                "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_LTF.csv"
+            ],
+            take_profits=[1.5],
+            stop_losses=[8],
+            leverages=[1],
+            sls=[[[]]],
+            multiproc=False,
+            enable_qol=False,
+            winrate_floor=0,
+            mean_floor=-10,
+            median_floor=-10,
+            drawdown_limits=[-100],
+            trailing_sls=[False],
+            trail_delays=[False],
+            signal_exits=[False]
+        )
+    assert str(e_info.value) == "Triple arrow file BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_LTF.csv provided without proper initial LTF shadow"
+
+
+def test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_multi_file(coll):
+    # this will need to be done before the next time we use a multi file
+    pass
 
 
 def test_get_adjusted_leverage():
