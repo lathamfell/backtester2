@@ -57,6 +57,7 @@ def main(
     trail_delays=c.TRAIL_DELAYS,
     trail_last_resets=c.TRAIL_LAST_RESETS,
     sls=c.SLS,
+    dcas=c.DCAS,
     loss_limit_fractions=c.LOSS_LIMIT_FRACTIONS,
     drawdown_limits=c.DRAWDOWN_LIMITS,
     winrate_floor=c.WINRATE_FLOOR,
@@ -120,16 +121,17 @@ def main(
                         for take_profit in take_profits:
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
-                            for trailing_sl in trailing_sls:
-                                for trail_delay in trail_delays:
-                                    for trail_last_reset in trail_last_resets:
-                                        for sl in sls:
-                                            for drawdown_limit in drawdown_limits:
-                                                for (
-                                                    loss_limit_fraction
-                                                ) in loss_limit_fractions:
-                                                    for signal_exit in signal_exits:
-                                                        scenario_count += 1
+                            for dca in dcas:
+                                for trailing_sl in trailing_sls:
+                                    for trail_delay in trail_delays:
+                                        for trail_last_reset in trail_last_resets:
+                                            for sl in sls:
+                                                for drawdown_limit in drawdown_limits:
+                                                    for (
+                                                        loss_limit_fraction
+                                                    ) in loss_limit_fractions:
+                                                        for signal_exit in signal_exits:
+                                                            scenario_count += 1
     scenario_num = 0
 
     print(
@@ -163,58 +165,60 @@ def main(
                         for take_profit in take_profits:
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
-                            for trailing_sl in trailing_sls:
-                                for trail_delay in trail_delays:
-                                    for trail_last_reset in trail_last_resets:
-                                        for sl in sls:
-                                            for drawdown_limit in drawdown_limits:
-                                                for (
-                                                    loss_limit_fraction
-                                                ) in loss_limit_fractions:
-                                                    for signal_exit in signal_exits:
-                                                        scenario_num += 1
-                                                        spec = {
-                                                            "scenario_num": scenario_num,
-                                                            "scenario_count": scenario_count,
-                                                            "datafilename": datafilename_only,
-                                                            "start_date": start_date,
-                                                            "signal_timeframe": signal_timeframe,
-                                                            "df": df,
-                                                            "interval_timeframe": interval_timeframe,
-                                                            "file_type": file_type,
-                                                            "leverage": leverage,
-                                                            "stop_loss": stop_loss,
-                                                            "take_profit": take_profit,
-                                                            "trailing_sl": trailing_sl,
-                                                            "trail_last_reset": trail_last_reset,
-                                                            "sl_reset_points": get_scrubbed_sl_reset_points(
-                                                                sl
-                                                            ),
-                                                            "trail_delay": trail_delay,
-                                                            "db": db,
-                                                            "db_coll": db_coll,
-                                                            "write_invalid_to_db": write_invalid_to_db,
-                                                            "loss_limit_fraction": loss_limit_fraction,
-                                                            "drawdown_limit": drawdown_limit,
-                                                            "winrate_floor": winrate_floor,
-                                                            "mean_floor": mean_floor,
-                                                            "median_floor": median_floor,
-                                                            "floor_grace_period": floor_grace_period,
-                                                            "signal_exit": signal_exit,
-                                                        }
-                                                        spec[
-                                                            "_id"
-                                                        ] = get_unique_composite_key(
-                                                            spec
-                                                        )
-                                                        specs.append(spec)
+                            for dca in dcas:
+                                for trailing_sl in trailing_sls:
+                                    for trail_delay in trail_delays:
+                                        for trail_last_reset in trail_last_resets:
+                                            for sl in sls:
+                                                for drawdown_limit in drawdown_limits:
+                                                    for (
+                                                        loss_limit_fraction
+                                                    ) in loss_limit_fractions:
+                                                        for signal_exit in signal_exits:
+                                                            scenario_num += 1
+                                                            spec = {
+                                                                "scenario_num": scenario_num,
+                                                                "scenario_count": scenario_count,
+                                                                "datafilename": datafilename_only,
+                                                                "start_date": start_date,
+                                                                "signal_timeframe": signal_timeframe,
+                                                                "df": df,
+                                                                "interval_timeframe": interval_timeframe,
+                                                                "file_type": file_type,
+                                                                "leverage": leverage,
+                                                                "stop_loss": stop_loss,
+                                                                "take_profit": take_profit,
+                                                                "dca": dca,
+                                                                "trailing_sl": trailing_sl,
+                                                                "trail_last_reset": trail_last_reset,
+                                                                "sl_reset_points": get_scrubbed_sl_reset_points(
+                                                                    sl
+                                                                ),
+                                                                "trail_delay": trail_delay,
+                                                                "db": db,
+                                                                "db_coll": db_coll,
+                                                                "write_invalid_to_db": write_invalid_to_db,
+                                                                "loss_limit_fraction": loss_limit_fraction,
+                                                                "drawdown_limit": drawdown_limit,
+                                                                "winrate_floor": winrate_floor,
+                                                                "mean_floor": mean_floor,
+                                                                "median_floor": median_floor,
+                                                                "floor_grace_period": floor_grace_period,
+                                                                "signal_exit": signal_exit,
+                                                            }
+                                                            spec[
+                                                                "_id"
+                                                            ] = get_unique_composite_key(
+                                                                spec
+                                                            )
+                                                            specs.append(spec)
 
-                                                        if check_for_dupes_up_front:
-                                                            if spec["_id"] in spec_ids:
-                                                                raise ValueError(
-                                                                    f"spec {spec['_id']} already found"
-                                                                )
-                                                            spec_ids.append(spec["_id"])
+                                                            if check_for_dupes_up_front:
+                                                                if spec["_id"] in spec_ids:
+                                                                    raise ValueError(
+                                                                        f"spec {spec['_id']} already found"
+                                                                    )
+                                                                spec_ids.append(spec["_id"])
 
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
@@ -351,6 +355,7 @@ class ScenarioRunner:
 
         self.long_entry_price = None
         self.short_entry_price = None
+        self.entry_price_original = None  # saves pre-DCA entry price, to be put into trade record
         self.assets = 1.0
         self.min_assets = self.max_assets = self.assets
         self.stop_loss_exits_in_profit = 0
@@ -364,6 +369,7 @@ class ScenarioRunner:
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
         self.total_candles = 0
+        self.units = 1 if not self.spec['dca'] else 0.5  # units per trade; with DCA half are held in reserve
 
         self.start_date_ts = pd.to_datetime(self.spec["start_date"])
 
@@ -404,6 +410,16 @@ class ScenarioRunner:
                 self.price_movement_at_candle_low = (
                     (getattr(self.row, "low") / self.long_entry_price) - 1
                 ) * 100
+                # check for DCA
+                if self.spec["dca"] > 0 and (self.price_movement_at_candle_high <= (-1 * self.spec["dca"])):
+                    # update the entry price
+                    self.long_entry_price = self.long_entry_price * (1 - self.spec['dca']/100/2)
+                    # recalculate price movement at candle low with new entry price
+                    self.price_movement_at_candle_low = (
+                            (getattr(self.row, "low") / self.long_entry_price) - 1
+                    ) * 100
+                    # allocate the other units
+                    self.units *= 2
                 # check for a new trade low and min profit and if so save it for later
                 self.price_movement_low = min(
                     self.price_movement_low, self.price_movement_at_candle_low
@@ -420,6 +436,8 @@ class ScenarioRunner:
                         self.finish_trade(_type=STOP_LOSS)
                     except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
+
+                # now check for the good stuff
                 if self.long_entry_price:
                     # get the high point of the candle
                     self.price_movement_at_candle_high = (
@@ -467,6 +485,17 @@ class ScenarioRunner:
                 self.price_movement_at_candle_high = (
                     (getattr(self.row, "high") / self.short_entry_price) - 1
                 ) * 100
+
+                # check for DCA
+                if self.spec["dca"] > 0 and (self.price_movement_at_candle_high >= self.spec["dca"]):
+                    # update the entry price
+                    self.short_entry_price = self.short_entry_price * (1 + self.spec['dca']/100/2)
+                    # recalculate price movement at candle high with new entry price
+                    self.price_movement_at_candle_high = (
+                        (getattr(self.row, "high") / self.short_entry_price) - 1
+                    ) * 100
+                    # allocate the other units
+                    self.units *= 2
                 # check for new trade high (i.e. new min profit in a short)
                 self.price_movement_high = max(
                     self.price_movement_high, self.price_movement_at_candle_high
@@ -484,6 +513,7 @@ class ScenarioRunner:
                     except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
                         return self.finish_scenario(failed=True)
 
+                # now check for the good stuff
                 if self.short_entry_price:
                     # get the low point of the candle
                     self.price_movement_at_candle_low = (
@@ -528,7 +558,7 @@ class ScenarioRunner:
 
             # check for long entry
             if self.should_open_long():
-                self.long_entry_price = getattr(self.row, "close")
+                self.long_entry_price = self.entry_price_original = getattr(self.row, "close")
                 # clear out sl reset points for the next trade
                 self.sl_reset_points_hit = []
                 # reset stop_loss to starting value
@@ -546,6 +576,7 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
+                self.units = 1 if not self.spec['dca'] else 0.5
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -564,7 +595,7 @@ class ScenarioRunner:
 
             # check for short entry
             if self.should_open_short():
-                self.short_entry_price = getattr(self.row, "close")
+                self.short_entry_price = self.entry_price_original = getattr(self.row, "close")
                 # clear out sl reset points for the next trade
                 self.sl_reset_points_hit = []
                 # reset stop_loss to starting value
@@ -582,6 +613,7 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
+                self.units = 1 if not self.spec['dca'] else 0.5
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -967,7 +999,7 @@ class ScenarioRunner:
             else:
                 exit_type = "sig_loss"
 
-        self.assets *= 1 + self.profit_pct / 100
+        self.assets *= 1 + self.profit_pct / 100 * self.units
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
         drawdown_pct = int(
@@ -977,9 +1009,10 @@ class ScenarioRunner:
         self.total_profit_pct = int((self.assets - 1) * 100)  # e.g. 103 (=103% profit)
 
         # update trade history
-        self.trade["entry_price"] = (
+        self.trade["entry_price_dca"] = (
             self.short_entry_price if self.short_entry_price else self.long_entry_price
         )
+        self.trade["entry_price_original"] = self.entry_price_original
         self.trade["exit_price"] = exit_price
         self.trade["exit"] = (
             getattr(self.row, "time").isoformat().replace("+00:00", "Z")
@@ -992,6 +1025,7 @@ class ScenarioRunner:
         self.trade["exit_type"] = exit_type
         self.trade["min_profit"] = round(self.min_profit, 2)
         self.trade["max_profit"] = round(self.max_profit, 2)
+        self.trade["units"] = self.units
         self.trade_history.append(self.trade)
 
         # check drawdown
@@ -1182,6 +1216,7 @@ def get_unique_composite_key(spec):
         "leverage": spec["leverage"],
         "stop_loss": spec["stop_loss"],
         "take_profit": spec["take_profit"],
+        "dca": spec["dca"],
         "trailing_sl": spec["trailing_sl"],
         "sl_reset_points": spec["sl_reset_points"],
         "trail_delay": spec["trail_delay"],

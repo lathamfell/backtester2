@@ -2,58 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065ebe3e-165f-4f99-8914-4d11134505c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/BYBIT_BTCUSD_1D_on_5m_01_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_on_5m_01_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_11_2018.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_5m_on_5m_05_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_HTF.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_double_LTF.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021_with_initial_HTF.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/btcoll_prod_1D45_11_2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/btcoll_prod_5m_strats.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_data/expected/db_after_dca.json5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/btcoll_prod.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_5mTF_on_5m_01_2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_5mTF_on_5m_01_2018.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2018.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/btcusd-5m_base_01_2018.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_05_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_05_2021.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_03_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_03_2021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/reset_run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signal_remapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/signal_remapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/COINBASE_BTCUSD_15_1h_on_5m_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/COINBASE_BTCUSD_15_1h_on_5m_2021.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/COINBASE_BTCUSD_1D_45m_on_5m_2020.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/COINBASE_BTCUSD_1D_45m_on_5m_2020.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/btcusd-5m_with_cols_2017_laguerre_4h_1D.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/btcusd-5m_with_cols_2017_laguerre_4h_1D.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_33_trades_good_reset_config_no_trailing.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_33_trades_good_reset_config_no_trailing.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_mean_or_median_falls_below_standard.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_mean_or_median_falls_below_standard.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_configurable_start_date.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_configurable_start_date.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_and_trailing_reset_sl.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_and_trailing_reset_sl.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_trailing_sl_no_reset.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_trailing_sl_no_reset.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_with_trail_delay.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_five_trades_with_trail_delay.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_htf_dataset.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_htf_dataset.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_tp_tsl_combinations.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_tp_tsl_combinations.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_last_reset_trailing_option.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_last_reset_trailing_option.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenario_that_covers_signal_exits_in_profit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenario_that_covers_signal_exits_in_profit.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_three_trades_and_reset_sl_no_trailing.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_three_trades_and_reset_sl_no_trailing.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_trail_configs_to_check_validity_function.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_trail_configs_to_check_validity_function.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +80,7 @@
       <recent name="$PROJECT_DIR$/input" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test.test_when_ltf_and_htf_print_signal_in_same_row">
+  <component name="RunManager" selected="Python tests.pytest for test.test_main_with_one_trade">
     <configuration name="reset_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -557,6 +514,23 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test.test_dca" type="tests" factoryName="py.test">
+      <module name="backtester2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Latham\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.test_dca&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in test.test_duplicate_scenarios_are_rejected" type="tests" factoryName="py.test">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -888,6 +862,7 @@
       <item itemvalue="Python tests.pytest in test.test_signal_exits_only" />
       <item itemvalue="Python tests.pytest in test.test_timeframe_specific_column_headers" />
       <item itemvalue="Python tests.pytest in test.test_when_ltf_and_htf_print_signal_in_same_row" />
+      <item itemvalue="Python tests.pytest in test.test_dca" />
     </list>
     <recent_temporary>
       <list>
@@ -932,7 +907,7 @@
       <workItem from="1635352743294" duration="7127000" />
       <workItem from="1635361798888" duration="49283000" />
       <workItem from="1637187098935" duration="15935000" />
-      <workItem from="1637794582106" duration="64433000" />
+      <workItem from="1637794582106" duration="71354000" />
     </task>
     <servers />
   </component>
@@ -964,52 +939,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>74</line>
+          <line>77</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>101</line>
+          <line>105</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>129</line>
+          <line>134</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>156</line>
+          <line>162</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>184</line>
+          <line>191</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>214</line>
+          <line>222</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>242</line>
+          <line>251</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>270</line>
+          <line>280</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>298</line>
+          <line>309</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1029,27 +1004,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>354</line>
+          <line>366</line>
           <option name="timeStamp" value="216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>382</line>
+          <line>395</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>652</line>
+          <line>677</line>
           <option name="timeStamp" value="296" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>702</line>
+          <line>729</line>
           <option name="timeStamp" value="298" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>755</line>
+          <line>784</line>
           <option name="timeStamp" value="342" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1059,7 +1034,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>878</line>
+          <line>911</line>
           <option name="timeStamp" value="374" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1069,22 +1044,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>840</line>
+          <line>872</line>
           <option name="timeStamp" value="428" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>463</line>
+          <line>480</line>
           <option name="timeStamp" value="436" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>903</line>
+          <line>936</line>
           <option name="timeStamp" value="451" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>308</line>
+          <line>320</line>
           <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1094,7 +1069,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1071</line>
+          <line>1111</line>
           <option name="timeStamp" value="516" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1104,12 +1079,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>944</line>
+          <line>978</line>
           <option name="timeStamp" value="570" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>412</line>
+          <line>427</line>
           <option name="timeStamp" value="575" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1124,163 +1099,168 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1046</line>
+          <line>1084</line>
           <option name="timeStamp" value="615" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1081</line>
+          <line>1121</line>
           <option name="timeStamp" value="618" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1063</line>
+          <line>1102</line>
           <option name="timeStamp" value="620" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>533</line>
-          <option name="timeStamp" value="625" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>482</line>
+          <line>511</line>
           <option name="timeStamp" value="628" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>420</line>
+          <line>436</line>
           <option name="timeStamp" value="636" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>440</line>
+          <line>458</line>
           <option name="timeStamp" value="637" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>566</line>
+          <line>597</line>
           <option name="timeStamp" value="638" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1086</line>
+          <line>1126</line>
           <option name="timeStamp" value="640" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>419</line>
+          <line>435</line>
           <option name="timeStamp" value="641" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>444</line>
+          <line>462</line>
           <option name="timeStamp" value="642" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>459</line>
+          <line>477</line>
           <option name="timeStamp" value="643" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>510</line>
+          <line>540</line>
           <option name="timeStamp" value="644" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>524</line>
+          <line>554</line>
           <option name="timeStamp" value="645" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>657</line>
+          <line>689</line>
           <option name="timeStamp" value="647" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>687</line>
+          <line>719</line>
           <option name="timeStamp" value="648" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>760</line>
+          <line>792</line>
           <option name="timeStamp" value="649" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>864</line>
+          <line>896</line>
           <option name="timeStamp" value="650" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>939</line>
+          <line>971</line>
           <option name="timeStamp" value="651" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>960</line>
+          <line>992</line>
           <option name="timeStamp" value="652" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>951</line>
+          <line>983</line>
           <option name="timeStamp" value="653" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>874</line>
+          <line>906</line>
           <option name="timeStamp" value="654" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>770</line>
+          <line>802</line>
           <option name="timeStamp" value="655" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1107</line>
+          <line>1147</line>
           <option name="timeStamp" value="656" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1128</line>
+          <line>1169</line>
           <option name="timeStamp" value="659" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>614</line>
-          <option name="timeStamp" value="661" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1150</line>
+          <line>1192</line>
           <option name="timeStamp" value="662" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1172</line>
+          <line>1215</line>
           <option name="timeStamp" value="663" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1195</line>
+          <line>1239</line>
           <option name="timeStamp" value="664" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1126</line>
+          <line>1167</line>
           <option name="timeStamp" value="665" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>1265</line>
+          <option name="timeStamp" value="669" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>616</line>
-          <option name="timeStamp" value="667" />
+          <line>396</line>
+          <option name="timeStamp" value="670" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
           <line>560</line>
-          <option name="timeStamp" value="668" />
+          <option name="timeStamp" value="671" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backtester.py</url>
+          <line>491</line>
+          <option name="timeStamp" value="673" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backtester.py</url>
+          <line>489</line>
+          <option name="timeStamp" value="674" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1296,6 +1276,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_win_rate_or_drawdown_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_win_rate_or_drawdown_falls_below_standard Coverage Results" MODIFIED="1638684959846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1638673313473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_33_trades_and_good_reset_config_no_trailing.coverage" NAME="pytest for test.test_main_with_33_trades_and_good_reset_config_no_trailing Coverage Results" MODIFIED="1638684555748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca.coverage" NAME="pytest in test.test_dca Coverage Results" MODIFIED="1638781746322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_htf_dataset.coverage" NAME="pytest in test.test_htf_dataset Coverage Results" MODIFIED="1638686610258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_timeframe_specific_column_headers.coverage" NAME="pytest in test.test_timeframe_specific_column_headers Coverage Results" MODIFIED="1637187256884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_duplicate_scenarios_are_rejected.coverage" NAME="pytest in test.test_duplicate_scenarios_are_rejected Coverage Results" MODIFIED="1638687721770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1312,8 +1293,8 @@
     <SUITE FILE_PATH="coverage/backtester2$reset_run.coverage" NAME="reset_run Coverage Results" MODIFIED="1638231595361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_with_trail_delay.coverage" NAME="pytest for test.test_main_with_five_trades_with_trail_delay Coverage Results" MODIFIED="1638684641380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_due_to_initial_drawdown_screener.coverage" NAME="pytest in test.test_invalid_scenarios_due_to_initial_drawdown_screener Coverage Results" MODIFIED="1638685106797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_main_with_one_trade Coverage Results" MODIFIED="1638684373793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1638686081570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_main_with_one_trade Coverage Results" MODIFIED="1638784200848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_invalid_sl_leverage_config.coverage" NAME="pytest for test.test_main_with_invalid_sl_leverage_config Coverage Results" MODIFIED="1638684567103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_get_adjusted_leverage.coverage" NAME="pytest in test.test_get_adjusted_leverage Coverage Results" MODIFIED="1638686566434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_tri_arrow.coverage" NAME="pytest for test.test_tri_arrow Coverage Results" MODIFIED="1638320052079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

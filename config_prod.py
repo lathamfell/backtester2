@@ -15,6 +15,7 @@ DB = "bt"
 COLL = cc.BTC_COLL
 TAKE_PROFITS = [0.1, 0.15, 0.3, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 8, 9, 10]
 STOP_LOSSES = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+DCAS = [0, 0.5, 1, 2, 3, 4, 5]
 LEVERAGES = [1, 2, 3, 4, 5, 6, 8, 10]
 # TRAILING_SLS = [True, False]
 # TRAIL_DELAYS = [True, False]
