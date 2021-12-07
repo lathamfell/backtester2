@@ -1171,7 +1171,7 @@ def test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_trip
         main(
             db_coll=c.COLL,
             datafilenames=[
-                "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv"  # Double arrow, no HTF shadow indication
+                "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021_missing_shadows.csv"  # Double arrow, no HTF shadow indication
             ],
             take_profits=[1.5],
             dcas=[0],
@@ -1188,7 +1188,7 @@ def test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_trip
             trail_delays=[False],
             signal_exits=[False]
         )
-    assert str(e_info.value) == "Double or triple arrow file BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv provided without proper initial HTF shadow"
+    assert str(e_info.value) == "Double or triple arrow file BYBIT_BTCUSD_1D_45m_on_5m_05_2021_missing_shadows.csv provided without proper initial HTF shadow"
 
     with pytest.raises(Exception) as e_info:
         main(
@@ -1272,7 +1272,7 @@ def test_dca(coll):
         stop_losses=[8],
         leverages=[1],
         sls=[[[]]],
-        dcas=[0, 1, 5],
+        dcas=[0, 1, 8],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,

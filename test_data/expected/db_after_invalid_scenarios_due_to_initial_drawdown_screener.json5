@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 5,
@@ -43,11 +44,12 @@
     'total_profit_pct': -27,
     'trade_history': [
       {
-        'assets': 0.94,
+        'assets': 0.9425,
         'direction': 'short',
         'duration': 30,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T10:25:00Z',
         'exit_pct': -1,
@@ -56,14 +58,16 @@
         'leverage': 5,
         'max_profit': 8.44,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.89,
+        'assets': 0.8883,
         'direction': 'long',
         'duration': 17,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T13:20:00Z',
         'exit_pct': -1,
@@ -72,14 +76,16 @@
         'leverage': 5,
         'max_profit': 1.39,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.84,
+        'assets': 0.8372,
         'direction': 'short',
         'duration': 3,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-08T20:10:00Z',
         'exit_pct': -1,
@@ -88,14 +94,16 @@
         'leverage': 5,
         'max_profit': 6.08,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.91,
+        'assets': 0.9092,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -104,14 +112,16 @@
         'leverage': 5,
         'max_profit': 18.6,
         'min_profit': -2.18,
-        'profit': 8.6
+        'profit': 8.6,
+        'units': 1.0
       },
       {
-        'assets': 0.86,
+        'assets': 0.8569,
         'direction': 'short',
         'duration': 15,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-21T21:10:00Z',
         'exit_pct': -1,
@@ -120,14 +130,16 @@
         'leverage': 5,
         'max_profit': 7.35,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.81,
+        'assets': 0.8076,
         'direction': 'long',
         'duration': 18,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-25T17:25:00Z',
         'exit_pct': -1,
@@ -136,14 +148,16 @@
         'leverage': 5,
         'max_profit': 4.16,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.76,
+        'assets': 0.7612,
         'direction': 'short',
         'duration': 235,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T11:30:00Z',
         'exit_pct': -1,
@@ -152,14 +166,16 @@
         'leverage': 5,
         'max_profit': 8.04,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.72,
+        'assets': 0.7174,
         'direction': 'long',
         'duration': 43,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-05T23:30:00Z',
         'exit_pct': -1,
@@ -168,14 +184,16 @@
         'leverage': 5,
         'max_profit': -0.33,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.68,
+        'assets': 0.6762,
         'direction': 'short',
         'duration': 4,
         'entry': '2017-10-18T07:55:00Z',
-        'entry_price': 5283.47,
+        'entry_price_dca': 5283.5,
+        'entry_price_original': 5283.47,
         'entry_timeframe': null,
         'exit': '2017-10-18T08:15:00Z',
         'exit_pct': -1,
@@ -184,14 +202,16 @@
         'leverage': 5,
         'max_profit': 3.47,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.64,
+        'assets': 0.6373,
         'direction': 'long',
         'duration': 31,
         'entry': '2017-10-20T03:55:00Z',
-        'entry_price': 5681.12,
+        'entry_price_dca': 5681.1,
+        'entry_price_original': 5681.12,
         'entry_timeframe': null,
         'exit': '2017-10-20T06:30:00Z',
         'exit_pct': -1,
@@ -200,14 +220,16 @@
         'leverage': 5,
         'max_profit': 2.58,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       },
       {
-        'assets': 0.77,
+        'assets': 0.7717,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
-        'entry_price': 5731.0,
+        'entry_price_dca': 5731.0,
+        'entry_price_original': 5731.0,
         'entry_timeframe': null,
         'exit': '2017-10-25T03:15:00Z',
         'exit_pct': 4.37,
@@ -216,14 +238,16 @@
         'leverage': 5,
         'max_profit': 31.09,
         'min_profit': -3.08,
-        'profit': 21.09
+        'profit': 21.09,
+        'units': 1.0
       },
       {
-        'assets': 0.73,
+        'assets': 0.7274,
         'direction': 'long',
         'duration': 31,
         'entry': '2017-10-26T15:55:00Z',
-        'entry_price': 5940.25,
+        'entry_price_dca': 5940.2,
+        'entry_price_original': 5940.25,
         'entry_timeframe': null,
         'exit': '2017-10-26T18:30:00Z',
         'exit_pct': -1,
@@ -232,7 +256,8 @@
         'leverage': 5,
         'max_profit': 2.01,
         'min_profit': -5.75,
-        'profit': -5.75
+        'profit': -5.75,
+        'units': 1.0
       }
     ],
     'trades': 12,
@@ -242,6 +267,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 5,
@@ -283,11 +309,12 @@
     'total_profit_pct': 22,
     'trade_history': [
       {
-        'assets': 1.05,
+        'assets': 1.0521,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T12:30:00Z',
         'exit_pct': 1.19,
@@ -296,14 +323,16 @@
         'leverage': 5,
         'max_profit': 15.21,
         'min_profit': -9.45,
-        'profit': 5.21
+        'profit': 5.21,
+        'units': 1.0
       },
       {
-        'assets': 0.83,
+        'assets': 0.8338,
         'direction': 'long',
         'duration': 20,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T13:35:00Z',
         'exit_pct': -4,
@@ -312,14 +341,16 @@
         'leverage': 5,
         'max_profit': 1.39,
         'min_profit': -20.75,
-        'profit': -20.75
+        'profit': -20.75,
+        'units': 1.0
       },
       {
-        'assets': 0.7,
+        'assets': 0.6954,
         'direction': 'short',
         'duration': 119,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-09T05:50:00Z',
         'exit_pct': -4,
@@ -328,14 +359,16 @@
         'leverage': 4,
         'max_profit': 6.19,
         'min_profit': -16.6,
-        'profit': -16.6
+        'profit': -16.6,
+        'units': 1.0
       },
       {
-        'assets': 0.73,
+        'assets': 0.7312,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -344,14 +377,16 @@
         'leverage': 3,
         'max_profit': 11.16,
         'min_profit': -1.31,
-        'profit': 5.16
+        'profit': 5.16,
+        'units': 1.0
       },
       {
-        'assets': 0.74,
+        'assets': 0.7447,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-22T12:50:00Z',
         'exit_pct': 0.77,
@@ -360,14 +395,16 @@
         'leverage': 3,
         'max_profit': 7.85,
         'min_profit': -11.19,
-        'profit': 1.85
+        'profit': 1.85,
+        'units': 1.0
       },
       {
         'assets': 0.89,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-28T10:20:00Z',
         'exit_pct': 6.65,
@@ -376,14 +413,16 @@
         'leverage': 3,
         'max_profit': 25.5,
         'min_profit': -6.51,
-        'profit': 19.5
+        'profit': 19.5,
+        'units': 1.0
       },
       {
-        'assets': 0.76,
+        'assets': 0.7635,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T19:55:00Z',
         'exit_pct': -3.4,
@@ -392,14 +431,16 @@
         'leverage': 4,
         'max_profit': 6.44,
         'min_profit': -14.28,
-        'profit': -14.21
+        'profit': -14.21,
+        'units': 1.0
       },
       {
-        'assets': 0.98,
+        'assets': 0.9823,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-09T19:55:00Z',
         'exit_pct': 9.7,
@@ -408,14 +449,16 @@
         'leverage': 3,
         'max_profit': 34.66,
         'min_profit': -5.75,
-        'profit': 28.66
+        'profit': 28.66,
+        'units': 1.0
       },
       {
-        'assets': 1.03,
+        'assets': 1.0333,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
-        'entry_price': 5283.47,
+        'entry_price_dca': 5283.5,
+        'entry_price_original': 5283.47,
         'entry_timeframe': null,
         'exit': '2017-10-18T14:30:00Z',
         'exit_pct': 1.45,
@@ -424,14 +467,16 @@
         'leverage': 4,
         'max_profit': 13.19,
         'min_profit': -9.27,
-        'profit': 5.19
+        'profit': 5.19,
+        'units': 1.0
       },
       {
-        'assets': 1.28,
+        'assets': 1.2795,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
-        'entry_price': 5681.12,
+        'entry_price_dca': 5681.1,
+        'entry_price_original': 5681.12,
         'entry_timeframe': null,
         'exit': '2017-10-20T20:45:00Z',
         'exit_pct': 4.92,
@@ -440,14 +485,16 @@
         'leverage': 5,
         'max_profit': 33.83,
         'min_profit': -8.79,
-        'profit': 23.83
+        'profit': 23.83,
+        'units': 1.0
       },
       {
-        'assets': 1.55,
+        'assets': 1.5494,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
-        'entry_price': 5731.0,
+        'entry_price_dca': 5731.0,
+        'entry_price_original': 5731.0,
         'entry_timeframe': null,
         'exit': '2017-10-25T03:15:00Z',
         'exit_pct': 4.37,
@@ -456,14 +503,16 @@
         'leverage': 5,
         'max_profit': 31.09,
         'min_profit': -3.08,
-        'profit': 21.09
+        'profit': 21.09,
+        'units': 1.0
       },
       {
-        'assets': 1.23,
+        'assets': 1.2279,
         'direction': 'long',
         'duration': 260,
         'entry': '2017-10-26T15:55:00Z',
-        'entry_price': 5940.25,
+        'entry_price_dca': 5940.2,
+        'entry_price_original': 5940.25,
         'entry_timeframe': null,
         'exit': '2017-10-27T13:35:00Z',
         'exit_pct': -4,
@@ -472,7 +521,8 @@
         'leverage': 5,
         'max_profit': 3.78,
         'min_profit': -20.75,
-        'profit': -20.75
+        'profit': -20.75,
+        'units': 1.0
       }
     ],
     'trades': 12,
@@ -482,6 +532,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 5,
@@ -523,11 +574,12 @@
     'total_profit_pct': 138,
     'trade_history': [
       {
-        'assets': 1.04,
+        'assets': 1.0417,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T12:30:00Z',
         'exit_pct': 1.19,
@@ -536,14 +588,16 @@
         'leverage': 4,
         'max_profit': 12.17,
         'min_profit': -7.56,
-        'profit': 4.17
+        'profit': 4.17,
+        'units': 1.0
       },
       {
-        'assets': 0.83,
+        'assets': 0.8271,
         'direction': 'long',
         'duration': 22,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T13:45:00Z',
         'exit_pct': -5,
@@ -552,14 +606,16 @@
         'leverage': 4,
         'max_profit': 1.11,
         'min_profit': -20.6,
-        'profit': -20.6
+        'profit': -20.6,
+        'units': 1.0
       },
       {
-        'assets': 0.88,
+        'assets': 0.8844,
         'direction': 'short',
         'duration': 426,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-10T07:25:00Z',
         'exit_pct': 2.46,
@@ -568,14 +624,16 @@
         'leverage': 3,
         'max_profit': 12.93,
         'min_profit': -13.5,
-        'profit': 6.93
+        'profit': 6.93,
+        'units': 1.0
       },
       {
         'assets': 0.93,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -584,14 +642,16 @@
         'leverage': 3,
         'max_profit': 11.16,
         'min_profit': -1.31,
-        'profit': 5.16
+        'profit': 5.16,
+        'units': 1.0
       },
       {
-        'assets': 0.95,
+        'assets': 0.9472,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-22T12:50:00Z',
         'exit_pct': 0.77,
@@ -600,14 +660,16 @@
         'leverage': 3,
         'max_profit': 7.85,
         'min_profit': -11.19,
-        'profit': 1.85
+        'profit': 1.85,
+        'units': 1.0
       },
       {
-        'assets': 1.13,
+        'assets': 1.1319,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-28T10:20:00Z',
         'exit_pct': 6.65,
@@ -616,14 +678,16 @@
         'leverage': 3,
         'max_profit': 25.5,
         'min_profit': -6.51,
-        'profit': 19.5
+        'profit': 19.5,
+        'units': 1.0
       },
       {
-        'assets': 0.97,
+        'assets': 0.9711,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T19:55:00Z',
         'exit_pct': -3.4,
@@ -632,14 +696,16 @@
         'leverage': 4,
         'max_profit': 6.44,
         'min_profit': -14.28,
-        'profit': -14.21
+        'profit': -14.21,
+        'units': 1.0
       },
       {
-        'assets': 1.25,
+        'assets': 1.2493,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-09T19:55:00Z',
         'exit_pct': 9.7,
@@ -648,14 +714,16 @@
         'leverage': 3,
         'max_profit': 34.66,
         'min_profit': -5.75,
-        'profit': 28.66
+        'profit': 28.66,
+        'units': 1.0
       },
       {
-        'assets': 1.31,
+        'assets': 1.3142,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
-        'entry_price': 5283.47,
+        'entry_price_dca': 5283.5,
+        'entry_price_original': 5283.47,
         'entry_timeframe': null,
         'exit': '2017-10-18T14:30:00Z',
         'exit_pct': 1.45,
@@ -664,14 +732,16 @@
         'leverage': 4,
         'max_profit': 13.19,
         'min_profit': -9.27,
-        'profit': 5.19
+        'profit': 5.19,
+        'units': 1.0
       },
       {
-        'assets': 1.63,
+        'assets': 1.6273,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
-        'entry_price': 5681.12,
+        'entry_price_dca': 5681.1,
+        'entry_price_original': 5681.12,
         'entry_timeframe': null,
         'exit': '2017-10-20T20:45:00Z',
         'exit_pct': 4.92,
@@ -680,14 +750,16 @@
         'leverage': 5,
         'max_profit': 33.83,
         'min_profit': -8.79,
-        'profit': 23.83
+        'profit': 23.83,
+        'units': 1.0
       },
       {
-        'assets': 1.97,
+        'assets': 1.9705,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
-        'entry_price': 5731.0,
+        'entry_price_dca': 5731.0,
+        'entry_price_original': 5731.0,
         'entry_timeframe': null,
         'exit': '2017-10-25T03:15:00Z',
         'exit_pct': 4.37,
@@ -696,14 +768,16 @@
         'leverage': 5,
         'max_profit': 31.09,
         'min_profit': -3.08,
-        'profit': 21.09
+        'profit': 21.09,
+        'units': 1.0
       },
       {
-        'assets': 2.38,
+        'assets': 2.3834,
         'direction': 'long',
         'duration': 920,
         'entry': '2017-10-26T15:55:00Z',
-        'entry_price': 5940.25,
+        'entry_price_dca': 5940.2,
+        'entry_price_original': 5940.25,
         'entry_timeframe': null,
         'exit': '2017-10-29T20:35:00Z',
         'exit_pct': 4.34,
@@ -712,7 +786,8 @@
         'leverage': 5,
         'max_profit': 30.95,
         'min_profit': -25.5,
-        'profit': 20.95
+        'profit': 20.95,
+        'units': 1.0
       }
     ],
     'trades': 12,
@@ -722,6 +797,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 5,
@@ -763,11 +839,12 @@
     'total_profit_pct': 133,
     'trade_history': [
       {
-        'assets': 1.03,
+        'assets': 1.0312,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T12:30:00Z',
         'exit_pct': 1.19,
@@ -776,14 +853,16 @@
         'leverage': 3,
         'max_profit': 9.12,
         'min_profit': -5.67,
-        'profit': 3.12
+        'profit': 3.12,
+        'units': 1.0
       },
       {
-        'assets': 0.84,
+        'assets': 0.841,
         'direction': 'long',
         'duration': 26,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T14:05:00Z',
         'exit_pct': -6,
@@ -792,14 +871,16 @@
         'leverage': 3,
         'max_profit': 0.84,
         'min_profit': -18.45,
-        'profit': -18.45
+        'profit': -18.45,
+        'units': 1.0
       },
       {
-        'assets': 0.88,
+        'assets': 0.8798,
         'direction': 'short',
         'duration': 426,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-10T07:25:00Z',
         'exit_pct': 2.46,
@@ -808,14 +889,16 @@
         'leverage': 2,
         'max_profit': 8.62,
         'min_profit': -9.0,
-        'profit': 4.62
+        'profit': 4.62,
+        'units': 1.0
       },
       {
-        'assets': 0.91,
+        'assets': 0.9101,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -824,14 +907,16 @@
         'leverage': 2,
         'max_profit': 7.44,
         'min_profit': -0.87,
-        'profit': 3.44
+        'profit': 3.44,
+        'units': 1.0
       },
       {
-        'assets': 0.93,
+        'assets': 0.9269,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-22T12:50:00Z',
         'exit_pct': 0.77,
@@ -840,14 +925,16 @@
         'leverage': 3,
         'max_profit': 7.85,
         'min_profit': -11.19,
-        'profit': 1.85
+        'profit': 1.85,
+        'units': 1.0
       },
       {
-        'assets': 1.11,
+        'assets': 1.1077,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-28T10:20:00Z',
         'exit_pct': 6.65,
@@ -856,14 +943,16 @@
         'leverage': 3,
         'max_profit': 25.5,
         'min_profit': -6.51,
-        'profit': 19.5
+        'profit': 19.5,
+        'units': 1.0
       },
       {
-        'assets': 0.99,
+        'assets': 0.9896,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T19:55:00Z',
         'exit_pct': -3.4,
@@ -872,14 +961,16 @@
         'leverage': 3,
         'max_profit': 4.83,
         'min_profit': -10.71,
-        'profit': -10.66
+        'profit': -10.66,
+        'units': 1.0
       },
       {
-        'assets': 1.27,
+        'assets': 1.2732,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-09T19:55:00Z',
         'exit_pct': 9.7,
@@ -888,14 +979,16 @@
         'leverage': 3,
         'max_profit': 34.66,
         'min_profit': -5.75,
-        'profit': 28.66
+        'profit': 28.66,
+        'units': 1.0
       },
       {
-        'assets': 1.34,
+        'assets': 1.3393,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
-        'entry_price': 5283.47,
+        'entry_price_dca': 5283.5,
+        'entry_price_original': 5283.47,
         'entry_timeframe': null,
         'exit': '2017-10-18T14:30:00Z',
         'exit_pct': 1.45,
@@ -904,14 +997,16 @@
         'leverage': 4,
         'max_profit': 13.19,
         'min_profit': -9.27,
-        'profit': 5.19
+        'profit': 5.19,
+        'units': 1.0
       },
       {
-        'assets': 1.59,
+        'assets': 1.5945,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
-        'entry_price': 5681.12,
+        'entry_price_dca': 5681.1,
+        'entry_price_original': 5681.12,
         'entry_timeframe': null,
         'exit': '2017-10-20T20:45:00Z',
         'exit_pct': 4.92,
@@ -920,14 +1015,16 @@
         'leverage': 4,
         'max_profit': 27.06,
         'min_profit': -7.03,
-        'profit': 19.06
+        'profit': 19.06,
+        'units': 1.0
       },
       {
-        'assets': 1.93,
+        'assets': 1.9309,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
-        'entry_price': 5731.0,
+        'entry_price_dca': 5731.0,
+        'entry_price_original': 5731.0,
         'entry_timeframe': null,
         'exit': '2017-10-25T03:15:00Z',
         'exit_pct': 4.37,
@@ -936,14 +1033,16 @@
         'leverage': 5,
         'max_profit': 31.09,
         'min_profit': -3.08,
-        'profit': 21.09
+        'profit': 21.09,
+        'units': 1.0
       },
       {
-        'assets': 2.34,
+        'assets': 2.3354,
         'direction': 'long',
         'duration': 920,
         'entry': '2017-10-26T15:55:00Z',
-        'entry_price': 5940.25,
+        'entry_price_dca': 5940.2,
+        'entry_price_original': 5940.25,
         'entry_timeframe': null,
         'exit': '2017-10-29T20:35:00Z',
         'exit_pct': 4.34,
@@ -952,7 +1051,8 @@
         'leverage': 5,
         'max_profit': 30.95,
         'min_profit': -25.5,
-        'profit': 20.95
+        'profit': 20.95,
+        'units': 1.0
       }
     ],
     'trades': 12,
@@ -962,6 +1062,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 5,
@@ -1008,6 +1109,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 10,
@@ -1049,11 +1151,12 @@
     'total_profit_pct': -50,
     'trade_history': [
       {
-        'assets': 0.89,
+        'assets': 0.885,
         'direction': 'short',
         'duration': 30,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T10:25:00Z',
         'exit_pct': -1,
@@ -1062,14 +1165,16 @@
         'leverage': 10,
         'max_profit': 16.89,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.78,
+        'assets': 0.7832,
         'direction': 'long',
         'duration': 17,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T13:20:00Z',
         'exit_pct': -1,
@@ -1078,14 +1183,16 @@
         'leverage': 10,
         'max_profit': 2.78,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.69,
+        'assets': 0.6932,
         'direction': 'short',
         'duration': 3,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-08T20:10:00Z',
         'exit_pct': -1,
@@ -1094,14 +1201,16 @@
         'leverage': 10,
         'max_profit': 12.15,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.81,
+        'assets': 0.8123,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -1110,14 +1219,16 @@
         'leverage': 10,
         'max_profit': 37.19,
         'min_profit': -4.36,
-        'profit': 17.19
+        'profit': 17.19,
+        'units': 1.0
       },
       {
-        'assets': 0.72,
+        'assets': 0.7189,
         'direction': 'short',
         'duration': 15,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-21T21:10:00Z',
         'exit_pct': -1,
@@ -1126,14 +1237,16 @@
         'leverage': 10,
         'max_profit': 14.69,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.64,
+        'assets': 0.6362,
         'direction': 'long',
         'duration': 18,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-25T17:25:00Z',
         'exit_pct': -1,
@@ -1142,14 +1255,16 @@
         'leverage': 10,
         'max_profit': 8.32,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.56,
+        'assets': 0.5631,
         'direction': 'short',
         'duration': 235,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T11:30:00Z',
         'exit_pct': -1,
@@ -1158,14 +1273,16 @@
         'leverage': 10,
         'max_profit': 16.09,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       },
       {
-        'assets': 0.5,
+        'assets': 0.4983,
         'direction': 'long',
         'duration': 43,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-05T23:30:00Z',
         'exit_pct': -1,
@@ -1174,7 +1291,8 @@
         'leverage': 10,
         'max_profit': -0.67,
         'min_profit': -11.5,
-        'profit': -11.5
+        'profit': -11.5,
+        'units': 1.0
       }
     ],
     'trades': 8,
@@ -1184,6 +1302,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 10,
@@ -1225,11 +1344,12 @@
     'total_profit_pct': 7,
     'trade_history': [
       {
-        'assets': 1.05,
+        'assets': 1.0521,
         'direction': 'short',
         'duration': 55,
         'entry': '2017-09-04T07:55:00Z',
-        'entry_price': 4367.0,
+        'entry_price_dca': 4367.0,
+        'entry_price_original': 4367.0,
         'entry_timeframe': null,
         'exit': '2017-09-04T12:30:00Z',
         'exit_pct': 1.19,
@@ -1238,14 +1358,16 @@
         'leverage': 5,
         'max_profit': 15.21,
         'min_profit': -9.45,
-        'profit': 5.21
+        'profit': 5.21,
+        'units': 1.0
       },
       {
-        'assets': 0.83,
+        'assets': 0.8338,
         'direction': 'long',
         'duration': 20,
         'entry': '2017-09-08T11:55:00Z',
-        'entry_price': 4627.84,
+        'entry_price_dca': 4627.8,
+        'entry_price_original': 4627.84,
         'entry_timeframe': null,
         'exit': '2017-09-08T13:35:00Z',
         'exit_pct': -4,
@@ -1254,14 +1376,16 @@
         'leverage': 5,
         'max_profit': 1.39,
         'min_profit': -20.75,
-        'profit': -20.75
+        'profit': -20.75,
+        'units': 1.0
       },
       {
-        'assets': 0.7,
+        'assets': 0.6954,
         'direction': 'short',
         'duration': 119,
         'entry': '2017-09-08T19:55:00Z',
-        'entry_price': 4197.2,
+        'entry_price_dca': 4197.2,
+        'entry_price_original': 4197.2,
         'entry_timeframe': null,
         'exit': '2017-09-09T05:50:00Z',
         'exit_pct': -4,
@@ -1270,14 +1394,16 @@
         'leverage': 4,
         'max_profit': 6.19,
         'min_profit': -16.6,
-        'profit': -16.6
+        'profit': -16.6,
+        'units': 1.0
       },
       {
-        'assets': 0.73,
+        'assets': 0.7312,
         'direction': 'long',
         'duration': 34,
         'entry': '2017-09-18T11:55:00Z',
-        'entry_price': 3947.27,
+        'entry_price_dca': 3947.3,
+        'entry_price_original': 3947.27,
         'entry_timeframe': null,
         'exit': '2017-09-18T14:45:00Z',
         'exit_pct': 1.87,
@@ -1286,14 +1412,16 @@
         'leverage': 3,
         'max_profit': 11.16,
         'min_profit': -1.31,
-        'profit': 5.16
+        'profit': 5.16,
+        'units': 1.0
       },
       {
-        'assets': 0.74,
+        'assets': 0.7447,
         'direction': 'short',
         'duration': 203,
         'entry': '2017-09-21T19:55:00Z',
-        'entry_price': 3631.81,
+        'entry_price_dca': 3631.8,
+        'entry_price_original': 3631.81,
         'entry_timeframe': null,
         'exit': '2017-09-22T12:50:00Z',
         'exit_pct': 0.77,
@@ -1302,14 +1430,16 @@
         'leverage': 3,
         'max_profit': 7.85,
         'min_profit': -11.19,
-        'profit': 1.85
+        'profit': 1.85,
+        'units': 1.0
       },
       {
         'assets': 0.89,
         'direction': 'long',
         'duration': 797,
         'entry': '2017-09-25T15:55:00Z',
-        'entry_price': 3930.0,
+        'entry_price_dca': 3930.0,
+        'entry_price_original': 3930.0,
         'entry_timeframe': null,
         'exit': '2017-09-28T10:20:00Z',
         'exit_pct': 6.65,
@@ -1318,14 +1448,16 @@
         'leverage': 3,
         'max_profit': 25.5,
         'min_profit': -6.51,
-        'profit': 19.5
+        'profit': 19.5,
+        'units': 1.0
       },
       {
-        'assets': 0.76,
+        'assets': 0.7635,
         'direction': 'short',
         'duration': 336,
         'entry': '2017-10-04T15:55:00Z',
-        'entry_price': 4212.04,
+        'entry_price_dca': 4212.0,
+        'entry_price_original': 4212.04,
         'entry_timeframe': null,
         'exit': '2017-10-05T19:55:00Z',
         'exit_pct': -3.4,
@@ -1334,14 +1466,16 @@
         'leverage': 4,
         'max_profit': 6.44,
         'min_profit': -14.28,
-        'profit': -14.21
+        'profit': -14.21,
+        'units': 1.0
       },
       {
-        'assets': 0.98,
+        'assets': 0.9823,
         'direction': 'long',
         'duration': 1152,
         'entry': '2017-10-05T19:55:00Z',
-        'entry_price': 4355.35,
+        'entry_price_dca': 4355.4,
+        'entry_price_original': 4355.35,
         'entry_timeframe': null,
         'exit': '2017-10-09T19:55:00Z',
         'exit_pct': 9.7,
@@ -1350,14 +1484,16 @@
         'leverage': 3,
         'max_profit': 34.66,
         'min_profit': -5.75,
-        'profit': 28.66
+        'profit': 28.66,
+        'units': 1.0
       },
       {
-        'assets': 1.03,
+        'assets': 1.0333,
         'direction': 'short',
         'duration': 79,
         'entry': '2017-10-18T07:55:00Z',
-        'entry_price': 5283.47,
+        'entry_price_dca': 5283.5,
+        'entry_price_original': 5283.47,
         'entry_timeframe': null,
         'exit': '2017-10-18T14:30:00Z',
         'exit_pct': 1.45,
@@ -1366,14 +1502,16 @@
         'leverage': 4,
         'max_profit': 13.19,
         'min_profit': -9.27,
-        'profit': 5.19
+        'profit': 5.19,
+        'units': 1.0
       },
       {
-        'assets': 1.28,
+        'assets': 1.2795,
         'direction': 'long',
         'duration': 202,
         'entry': '2017-10-20T03:55:00Z',
-        'entry_price': 5681.12,
+        'entry_price_dca': 5681.1,
+        'entry_price_original': 5681.12,
         'entry_timeframe': null,
         'exit': '2017-10-20T20:45:00Z',
         'exit_pct': 4.92,
@@ -1382,14 +1520,16 @@
         'leverage': 5,
         'max_profit': 33.83,
         'min_profit': -8.79,
-        'profit': 23.83
+        'profit': 23.83,
+        'units': 1.0
       },
       {
-        'assets': 1.6,
+        'assets': 1.6033,
         'direction': 'short',
         'duration': 232,
         'entry': '2017-10-24T07:55:00Z',
-        'entry_price': 5731.0,
+        'entry_price_dca': 5731.0,
+        'entry_price_original': 5731.0,
         'entry_timeframe': null,
         'exit': '2017-10-25T03:15:00Z',
         'exit_pct': 4.37,
@@ -1398,14 +1538,16 @@
         'leverage': 6,
         'max_profit': 37.31,
         'min_profit': -3.7,
-        'profit': 25.31
+        'profit': 25.31,
+        'units': 1.0
       },
       {
-        'assets': 1.07,
+        'assets': 1.071,
         'direction': 'long',
         'duration': 260,
         'entry': '2017-10-26T15:55:00Z',
-        'entry_price': 5940.25,
+        'entry_price_dca': 5940.2,
+        'entry_price_original': 5940.25,
         'entry_timeframe': null,
         'exit': '2017-10-27T13:35:00Z',
         'exit_pct': -4,
@@ -1414,7 +1556,8 @@
         'leverage': 8,
         'max_profit': 6.05,
         'min_profit': -33.2,
-        'profit': -33.2
+        'profit': -33.2,
+        'units': 1.0
       }
     ],
     'trades': 12,
@@ -1424,6 +1567,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 10,
@@ -1470,6 +1614,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 10,
@@ -1516,6 +1661,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
+      'dca': 0,
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'leverage': 10,

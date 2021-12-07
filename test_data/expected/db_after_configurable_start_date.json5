@@ -2,10 +2,13 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_five_trades.csv',
-      'start_date': '2021-01-29T00:00:00Z',
+      'dca': 0,
       'drawdown_limit': -100,
+      'floor_grace_period': 50,
       'leverage': 5,
       'loss_limit_fraction': 0,
+      'mean_floor': 4,
+      'median_floor': 4,
       'signal_exit': true,
       'signal_timeframe': [],
       'sl_reset_points': [
@@ -18,15 +21,13 @@
           -2.5
         ]
       ],
+      'start_date': '2021-01-29T00:00:00Z',
       'stop_loss': 12,
       'take_profit': 20,
       'trail_delay': false,
+      'trail_last_reset': false,
       'trailing_sl': true,
-      "trail_last_reset": false,
-      'winrate_floor': 50,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'floor_grace_period': 50
+      'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.86,
     'days': 58.3,
@@ -47,11 +48,12 @@
     'total_profit_pct': -39,
     'trade_history': [
       {
-        'assets': 1.12,
+        'assets': 1.1243,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-02-22T12:00:00Z',
-        'entry_price': 53277.5,
+        'entry_price_dca': 53277.5,
+        'entry_price_original': 53277.5,
         'entry_timeframe': null,
         'exit': '2021-02-22T20:00:00Z',
         'exit_pct': 2.64,
@@ -60,14 +62,16 @@
         'leverage': 5,
         'max_profit': 14.93,
         'min_profit': -16.71,
-        'profit': 12.43
+        'profit': 12.43,
+        'units': 1.0
       },
       {
-        'assets': 1.32,
+        'assets': 1.3193,
         'direction': 'long',
         'duration': 2,
         'entry': '2021-03-03T04:00:00Z',
-        'entry_price': 49828.5,
+        'entry_price_dca': 49828.5,
+        'entry_price_original': 49828.5,
         'entry_timeframe': null,
         'exit': '2021-03-03T12:00:00Z',
         'exit_pct': 3.62,
@@ -76,14 +80,16 @@
         'leverage': 5,
         'max_profit': 19.85,
         'min_profit': -0.75,
-        'profit': 17.35
+        'profit': 17.35,
+        'units': 1.0
       },
       {
-        'assets': 0.6,
+        'assets': 0.6032,
         'direction': 'short',
         'duration': 16,
         'entry': '2021-03-16T00:00:00Z',
-        'entry_price': 54302.5,
+        'entry_price_dca': 54302.5,
+        'entry_price_original': 54302.5,
         'entry_timeframe': null,
         'exit': '2021-03-18T16:00:00Z',
         'exit_pct': -10.71,
@@ -92,7 +98,8 @@
         'leverage': 5,
         'max_profit': 5.72,
         'min_profit': -55.05,
-        'profit': -54.28
+        'profit': -54.28,
+        'units': 1.0
       }
     ],
     'trades': 3,

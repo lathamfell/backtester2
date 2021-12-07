@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'COINBASE_BTCUSD_1D_45m_on_5m_2020_fake_truncated.csv',
+      'dca': 0,
       'drawdown_limit': -50,
       'floor_grace_period': 50,
       'leverage': 2,
@@ -40,11 +41,12 @@
     'total_profit_pct': 0,
     'trade_history': [
       {
-        'assets': 1.0,
+        'assets': 0.9978,
         'direction': 'long',
         'duration': 2,
         'entry': '2020-01-01T00:00:00Z',
-        'entry_price': 7158.1,
+        'entry_price_dca': 7158.1,
+        'entry_price_original': 7158.1,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:10:00Z',
         'exit_pct': 0.04,
@@ -53,14 +55,16 @@
         'leverage': 2,
         'max_profit': -0.16,
         'min_profit': -0.42,
-        'profit': -0.22
+        'profit': -0.22,
+        'units': 1.0
       },
       {
-        'assets': 1.0,
+        'assets': 0.9962,
         'direction': 'short',
         'duration': 3,
         'entry': '2020-01-01T00:10:00Z',
-        'entry_price': 7161.0,
+        'entry_price_dca': 7161.0,
+        'entry_price_original': 7161.0,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:25:00Z',
         'exit_pct': 0.07,
@@ -69,14 +73,16 @@
         'leverage': 2,
         'max_profit': -0.1,
         'min_profit': -0.29,
-        'profit': -0.16
+        'profit': -0.16,
+        'units': 1.0
       },
       {
-        'assets': 0.99,
+        'assets': 0.9941,
         'direction': 'long',
         'duration': 3,
         'entry': '2020-01-01T00:25:00Z',
-        'entry_price': 7156.1,
+        'entry_price_dca': 7156.1,
+        'entry_price_original': 7156.1,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:40:00Z',
         'exit_pct': 0.05,
@@ -85,14 +91,16 @@
         'leverage': 2,
         'max_profit': -0.17,
         'min_profit': -0.3,
-        'profit': -0.2
+        'profit': -0.2,
+        'units': 1.0
       },
       {
-        'assets': 0.99,
+        'assets': 0.9915,
         'direction': 'short',
         'duration': 2,
         'entry': '2020-01-01T00:40:00Z',
-        'entry_price': 7159.5,
+        'entry_price_dca': 7159.5,
+        'entry_price_original': 7159.5,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:50:00Z',
         'exit_pct': 0.02,
@@ -101,14 +109,16 @@
         'leverage': 2,
         'max_profit': -0.26,
         'min_profit': -0.3,
-        'profit': -0.26
+        'profit': -0.26,
+        'units': 1.0
       },
       {
-        'assets': 1.0,
+        'assets': 0.9955,
         'direction': 'long',
         'duration': 7,
         'entry': '2020-01-01T00:50:00Z',
-        'entry_price': 7158.2,
+        'entry_price_dca': 7158.2,
+        'entry_price_original': 7158.2,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T01:25:00Z',
         'exit_pct': 0.25,
@@ -117,7 +127,8 @@
         'leverage': 2,
         'max_profit': 0.2,
         'min_profit': -0.53,
-        'profit': 0.4
+        'profit': 0.4,
+        'units': 1.0
       }
     ],
     'trades': 5,

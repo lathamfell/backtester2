@@ -2,6 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -40,11 +41,12 @@
     'total_profit_pct': 0,
     'trade_history': [
       {
-        'assets': 1.0,
+        'assets': 1.0045,
         'direction': 'short',
         'duration': 1,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T08:00:00Z',
         'exit_pct': 0.5,
@@ -53,7 +55,8 @@
         'leverage': 1,
         'max_profit': 0.35,
         'min_profit': -5.89,
-        'profit': 0.45
+        'profit': 0.45,
+        'units': 1.0
       }
     ],
     'trades': 1,
@@ -63,6 +66,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -109,6 +113,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -159,6 +164,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -197,11 +203,12 @@
     'total_profit_pct': 2,
     'trade_history': [
       {
-        'assets': 1.02,
+        'assets': 1.0245,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 2.5,
@@ -210,7 +217,8 @@
         'leverage': 1,
         'max_profit': 2.35,
         'min_profit': -5.89,
-        'profit': 2.45
+        'profit': 2.45,
+        'units': 1.0
       }
     ],
     'trades': 1,
@@ -220,6 +228,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -261,11 +270,12 @@
     'total_profit_pct': 2,
     'trade_history': [
       {
-        'assets': 1.02,
+        'assets': 1.0245,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 2.5,
@@ -274,7 +284,8 @@
         'leverage': 1,
         'max_profit': 2.35,
         'min_profit': -5.89,
-        'profit': 2.45
+        'profit': 2.45,
+        'units': 1.0
       }
     ],
     'trades': 1,
@@ -284,6 +295,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -334,6 +346,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -372,11 +385,12 @@
     'total_profit_pct': 3,
     'trade_history': [
       {
-        'assets': 1.03,
+        'assets': 1.0345,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
@@ -385,7 +399,8 @@
         'leverage': 1,
         'max_profit': 3.35,
         'min_profit': -5.89,
-        'profit': 3.45
+        'profit': 3.45,
+        'units': 1.0
       }
     ],
     'trades': 1,
@@ -395,6 +410,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -436,11 +452,12 @@
     'total_profit_pct': 3,
     'trade_history': [
       {
-        'assets': 1.03,
+        'assets': 1.0345,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
@@ -449,7 +466,8 @@
         'leverage': 1,
         'max_profit': 3.35,
         'min_profit': -5.89,
-        'profit': 3.45
+        'profit': 3.45,
+        'units': 1.0
       }
     ],
     'trades': 1,
@@ -459,6 +477,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
+      'dca': 0,
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 1,
@@ -504,11 +523,12 @@
     'total_profit_pct': 3,
     'trade_history': [
       {
-        'assets': 1.03,
+        'assets': 1.0345,
         'direction': 'short',
         'duration': 2,
         'entry': '2021-01-11T04:00:00Z',
-        'entry_price': 34371.0,
+        'entry_price_dca': 34371.0,
+        'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T12:00:00Z',
         'exit_pct': 3.5,
@@ -517,7 +537,8 @@
         'leverage': 1,
         'max_profit': 3.35,
         'min_profit': -5.89,
-        'profit': 3.45
+        'profit': 3.45,
+        'units': 1.0
       }
     ],
     'trades': 1,

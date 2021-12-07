@@ -369,7 +369,7 @@ class ScenarioRunner:
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
         self.total_candles = 0
-        self.units = 1 if not self.spec['dca'] else 0.5  # units per trade; with DCA half are held in reserve
+        self.units = 1.0 if not self.spec['dca'] else 0.5  # units per trade; with DCA half are held in reserve
 
         self.start_date_ts = pd.to_datetime(self.spec["start_date"])
 
@@ -411,7 +411,7 @@ class ScenarioRunner:
                     (getattr(self.row, "low") / self.long_entry_price) - 1
                 ) * 100
                 # check for DCA
-                if self.spec["dca"] > 0 and (self.price_movement_at_candle_high <= (-1 * self.spec["dca"])):
+                if self.spec["dca"] > 0 and (self.price_movement_at_candle_low <= (-1 * self.spec["dca"])) and self.units < 1:
                     # update the entry price
                     self.long_entry_price = self.long_entry_price * (1 - self.spec['dca']/100/2)
                     # recalculate price movement at candle low with new entry price
@@ -487,7 +487,7 @@ class ScenarioRunner:
                 ) * 100
 
                 # check for DCA
-                if self.spec["dca"] > 0 and (self.price_movement_at_candle_high >= self.spec["dca"]):
+                if self.spec["dca"] > 0 and (self.price_movement_at_candle_high >= self.spec["dca"]) and self.units < 1:
                     # update the entry price
                     self.short_entry_price = self.short_entry_price * (1 + self.spec['dca']/100/2)
                     # recalculate price movement at candle high with new entry price
@@ -576,7 +576,7 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.units = 1 if not self.spec['dca'] else 0.5
+                self.units = 1.0 if not self.spec['dca'] else 0.5
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -613,7 +613,7 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.units = 1 if not self.spec['dca'] else 0.5
+                self.units = 1.0 if not self.spec['dca'] else 0.5
 
                 self.leverage = get_adjusted_leverage(
                     stop_loss=self.stop_loss,
@@ -1009,9 +1009,9 @@ class ScenarioRunner:
         self.total_profit_pct = int((self.assets - 1) * 100)  # e.g. 103 (=103% profit)
 
         # update trade history
-        self.trade["entry_price_dca"] = (
+        self.trade["entry_price_dca"] = round((
             self.short_entry_price if self.short_entry_price else self.long_entry_price
-        )
+        ), 1)
         self.trade["entry_price_original"] = self.entry_price_original
         self.trade["exit_price"] = exit_price
         self.trade["exit"] = (
@@ -1020,7 +1020,7 @@ class ScenarioRunner:
         self.trade["exit_pct"] = round(exit_pct, 2)
         self.trade["profit"] = round(self.profit_pct, 2)
         self.trade["duration"] = self.candles_spent_in_trade
-        self.trade["assets"] = round(self.assets, 2)
+        self.trade["assets"] = round(self.assets, 4)
         self.trade["leverage"] = self.leverage
         self.trade["exit_type"] = exit_type
         self.trade["min_profit"] = round(self.min_profit, 2)
