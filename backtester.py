@@ -1060,15 +1060,15 @@ class ScenarioRunner:
                 2,
             )
 
+        minutes = self.total_candles * int(self.spec["interval_timeframe"])
+        days = round(minutes / 1440, 1)
+        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
+
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         if failed:
             print(f"failed strat {self.spec}")
         else:
-            print(f"{mean_profit} {median_profit} mean/median from spec: {self.spec}")
-
-        minutes = self.total_candles * int(self.spec["interval_timeframe"])
-        days = round(minutes / 1440, 1)
-        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
+            print(f"{daily_profit_pct_avg:1.2f} {len(self.trade_history):3} daily profit/trades from spec: {self.spec}")
 
         result = {
             "_id": self.spec["_id"],
@@ -1100,9 +1100,7 @@ class ScenarioRunner:
         return result
 
     def calculate_win_rate(self):
-        self.win_rate = int(
-            len(self.get_positive_profits()) / len(self.get_durations()) * 100
-        )
+        self.win_rate = round((len(self.get_positive_profits()) / len(self.get_durations()) * 100), 1)
 
     def get_positive_profits(self):
         return [trade["profit"] for trade in self.trade_history if trade["profit"] > 0]

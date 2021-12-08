@@ -106,5 +106,5 @@ def reset_battle_btc():
 
 
 if __name__ == "__main__":
-    #accuracy_battle_eth()
+    accuracy_battle_eth()
     #reset_battle_btc()

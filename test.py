@@ -1272,7 +1272,7 @@ def test_dca(coll):
         stop_losses=[8],
         leverages=[1],
         sls=[[[]]],
-        dcas=[0, 1, 8],
+        dcas=[0, 0.5, 1, 8],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
@@ -1282,6 +1282,31 @@ def test_dca(coll):
         signal_exits=[False]
     )
     compare(coll, "db_after_dca.json5")
+
+
+def test_tf_specific_configs(coll):
+    """
+    main(
+        db_coll=c.COLL,
+        datafilenames=[
+            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
+            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv"
+        ],
+        take_profits=[1.5],
+        stop_losses=[8],
+        leverages=[1],
+        sls=[[[]]],
+        dcas=[0],
+        multiproc=False,
+        enable_qol=False,
+        winrate_floor=0,
+        mean_floor=-10,
+        median_floor=-10,
+        drawdown_limits=[-100],
+        signal_exits=[True]
+    )
+    """
+    pass
 
 
 def test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_multi_file(coll):

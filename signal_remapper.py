@@ -18,7 +18,7 @@ PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
+    ("data/TV_data_exports/BYBIT_BTCUSD_1D_12hTF_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_11_2018.csv", "data/btcusd-5m_base_01_2018.csv")
     #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
@@ -99,9 +99,9 @@ def get_lf_timedelta(htf, ltf):
 
 
 def get_sig(row):
-    if getattr(row, 'long') == 1:
+    if getattr(row, 'long') in [1, '1']:
         return 'long'
-    if getattr(row, 'short') == 1:
+    if getattr(row, 'short') in [1, '1']:
         return 'short'
     return None
 
