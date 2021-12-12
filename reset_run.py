@@ -25,12 +25,9 @@ def run_btc_standard_reset_pts():
     main(
         db_coll=cc.BTC_COLL,
         datafilenames=[
-            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_05_2021.csv",
-            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
             "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv",
             "data/ready_for_backtester/BYBIT_BTCUSD_1D_5m_on_5m_05_2021.csv",
-            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020.csv",
-            "data/ready_for_backtester/BYBIT_BTCUSD_1D_12hTF_45m_on_5m_01_2020.csv"
+            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020.csv"
         ],
         enable_qol=False,
         #mean_floor=4,
@@ -38,17 +35,17 @@ def run_btc_standard_reset_pts():
         #winrate_floor=80,
         #winrate_floor=90,
         winrate_floor=90,
-        drawdown_limits=[-50],
+        drawdown_limits=[-80],
         #signal_timeframes=[["1h", "5m"]],
         #mean_floor=3,
         #median_floor=3,
         mean_floor=0,
         median_floor=0,
-        take_profits=[0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.75],
+        take_profits=[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2],
         #stop_losses=[8],
         #leverages=[2],
         sls=[[[]]]
-        #+ cc.SLS_ONE_RESET
+        + cc.SLS_ONE_RESET
         #+ cc.SLS_TWO_RESETS
         #+ cc.SLS_THREE_RESETS
         #+ cc.SLS_FOUR_RESETS

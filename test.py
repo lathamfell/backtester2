@@ -335,33 +335,6 @@ def test_main_with_15m_chart(coll):
     )
     compare(coll, "db_after_15m_chart.json5")
 
-"""
-def test_loss_limiter(coll):
-    main(
-        db_coll=c.COLL,
-        datafilenames=c.DATAFILENAMES_6,
-        take_profits=[10],
-        stop_losses=[10],
-        leverages=[5],
-        trailing_sls=[True],
-        trail_delays=[True],
-        trail_last_resets=[False],
-        sls=[[[2, -1]]],
-        loss_limit_fractions=[.2],
-        multiproc=False,
-        drawdown_limits=[-100],
-        winrate_floor=50,
-        mean_floor=-5,
-        median_floor=-5,
-        floor_grace_period=50,
-        write_invalid_to_db=True,
-        enable_qol=False,
-        accuracy_tester_mode=False,
-        signal_exits=[True]
-    )
-    compare(coll, "db_after_loss_limiter.json5")
-"""
-
 def test_invalid_tp_tsl_combinations(coll):
     main(
         db_coll=c.COLL,
@@ -1282,6 +1255,28 @@ def test_dca(coll):
         signal_exits=[False]
     )
     compare(coll, "db_after_dca.json5")
+
+
+def test_screen_out_scenarios_where_dca_greater_than_sl(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=[
+            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv"
+        ],
+        take_profits=[1.5],
+        stop_losses=[1, 12],
+        leverages=[1],
+        sls=[[[]]],
+        dcas=[1, 10],
+        multiproc=False,
+        enable_qol=False,
+        winrate_floor=0,
+        mean_floor=-10,
+        median_floor=-10,
+        drawdown_limits=[-100],
+        signal_exits=[False]
+    )
+    compare(coll, "db_after_screen_out_scenarios_where_dca_greater_than_sl.json5")
 
 
 def test_tf_specific_configs(coll):

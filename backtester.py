@@ -122,6 +122,8 @@ def main(
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
                             for dca in dcas:
+                                if dca >= stop_loss:
+                                    continue
                                 for trailing_sl in trailing_sls:
                                     for trail_delay in trail_delays:
                                         for trail_last_reset in trail_last_resets:
@@ -166,6 +168,8 @@ def main(
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
                             for dca in dcas:
+                                if dca >= stop_loss:
+                                    continue
                                 for trailing_sl in trailing_sls:
                                     for trail_delay in trail_delays:
                                         for trail_last_reset in trail_last_resets:
@@ -937,10 +941,20 @@ class ScenarioRunner:
             exit_pct = ((exit_price / self.long_entry_price) - 1) * 100
         elif self.short_entry_price:
             exit_pct = ((exit_price / self.short_entry_price) - 1) * -100
-        if exit_type == TAKE_PROFIT:
+        if exit_type == TAKE_PROFIT and self.spec["dca"] and self.units == 1:
+            # TP and DCA was activated
+            fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_LIMIT_FEE
+        elif exit_type == TAKE_PROFIT and (not self.spec["dca"] or self.units == 0.5):
+            # TP and DCA wasn't configured, or wasn't activated
             fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
-        else:
+        elif self.spec["dca"] and self.units == 1:
+            # non-TP exit, but DCA was activated
+            fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_MARKET_FEE
+        elif not self.spec["dca"] or self.units == 0.5:
+            # non-TP exit, and DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
+        else:
+            raise Exception("Unexpected exit configuration encountered in get_profit_pct_from_exit_price")
         profit_pct = exit_pct * self.leverage - fees * self.leverage
         return profit_pct, exit_pct
 
@@ -950,10 +964,20 @@ class ScenarioRunner:
         exit_pct = max(
             exit_pct, -1 * self.spec["stop_loss"]
         )  # cut off anything below SL
-        if exit_type == TAKE_PROFIT:
+        if exit_type == TAKE_PROFIT and self.spec["dca"] and self.units == 1:
+            # TP and DCA was activated
+            fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_LIMIT_FEE
+        elif exit_type == TAKE_PROFIT and (not self.spec["dca"] or self.units == 0.5):
+            # TP and DCA wasn't configured, or wasn't activated
             fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
-        else:
+        elif self.spec["dca"] and self.units == 1:
+            # non-TP exit, but DCA was activated
+            fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_MARKET_FEE
+        elif not self.spec["dca"] or self.units == 0.5:
+            # non-TP exit, and DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
+        else:
+            raise Exception("Unexpected exit configuration encountered in get_profit_pct_from_exit_pct")
         profit_pct = exit_pct * self.leverage - fees * self.leverage
         return profit_pct, exit_pct
 
