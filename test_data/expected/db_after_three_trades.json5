@@ -6,7 +6,6 @@
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 2,
-      'loss_limit_fraction': 0,
       'mean_floor': 4,
       'median_floor': 4,
       'signal_exit': true,
@@ -52,10 +51,10 @@
         'exit_pct': 4,
         'exit_price': 32996.2,
         'exit_type': 'tp',
+        'final_profit': 7.9,
         'leverage': 2,
-        'max_profit': 7.7,
-        'min_profit': -11.784,
-        'profit': 7.9,
+        'max_profit_before_fees': 8,
+        'min_profit_before_fees': -11.484,
         'units': 1.0
       },
       {
@@ -70,10 +69,10 @@
         'exit_pct': 4,
         'exit_price': 34797.9,
         'exit_type': 'tp',
+        'final_profit': 7.9,
         'leverage': 2,
-        'max_profit': 7.7,
-        'min_profit': -8.884,
-        'profit': 7.9,
+        'max_profit_before_fees': 8,
+        'min_profit_before_fees': -8.584,
         'units': 1.0
       },
       {
@@ -88,10 +87,10 @@
         'exit_pct': 4,
         'exit_price': 51146.4,
         'exit_type': 'tp',
+        'final_profit': 7.9,
         'leverage': 2,
-        'max_profit': 7.7,
-        'min_profit': -6.685,
-        'profit': 7.9,
+        'max_profit_before_fees': 8,
+        'min_profit_before_fees': -6.385,
         'units': 1.0
       }
     ],

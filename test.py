@@ -3,7 +3,7 @@ import pytest
 import json5
 import os
 
-from backtester import main, get_adjusted_leverage
+from backtester import main
 
 import config_test as c
 
@@ -29,7 +29,6 @@ def test_main_with_one_trade(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -55,7 +54,6 @@ def test_main_with_one_trade_and_multiple_configs(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -81,7 +79,6 @@ def test_main_with_three_trades(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -107,7 +104,6 @@ def test_main_with_three_trades_and_reset_sl_no_trailing(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=c.SLS_1,
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -133,7 +129,6 @@ def test_main_with_33_trades_and_good_reset_config_no_trailing(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=c.SLS_2,
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -159,7 +154,6 @@ def test_main_with_invalid_sl_leverage_config(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]], [["2.5", "-0.5"]], [["2", "-1"], ["3", "-2.5"]], [["1", "-0.5"]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -186,7 +180,6 @@ def test_main_with_five_trades_and_trailing_reset_sl(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=c.SLS_3,
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -213,7 +206,6 @@ def test_main_with_five_trades_trailing_sl_no_reset(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -240,7 +232,6 @@ def test_main_with_five_trades_with_trail_delay(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_3,
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -267,7 +258,6 @@ def test_main_with_scenario_that_covers_signal_exits_in_profit(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -294,7 +284,6 @@ def test_main_with_trail_configs_to_check_validity_function(coll):
         trail_delays=[True, False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -321,7 +310,6 @@ def test_main_with_15m_chart(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=[[[2, -1]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -348,7 +336,6 @@ def test_invalid_tp_tsl_combinations(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_4,
-        loss_limit_fractions=[.1],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -363,8 +350,7 @@ def test_invalid_tp_tsl_combinations(coll):
     compare(coll, "db_after_invalid_tp_tsl_combinations.json5")
 
 
-def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
-    # should screen out on win rate
+def test_screen_out_on_win_rate(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
@@ -376,7 +362,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_7,
-        loss_limit_fractions=[.2],
         multiproc=False,
         write_invalid_to_db=True,
         drawdown_limits=[-100],
@@ -388,32 +373,10 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # should not screen out
-    main(
-        db_coll=c.COLL,
-        datafilenames=c.DATAFILENAMES_6,
-        take_profits=[50],
-        dcas=[0],
-        stop_losses=[10],
-        leverages=[5],
-        trailing_sls=[False],
-        trail_delays=[False],
-        trail_last_resets=[False],
-        sls=c.SLS_3,
-        loss_limit_fractions=[.2],
-        multiproc=False,
-        clear_db=False,
-        write_invalid_to_db=True,
-        drawdown_limits=[-65],
-        winrate_floor=50,
-        mean_floor=-5,
-        median_floor=-5,
-        floor_grace_period=50,
-        enable_qol=False,
-        accuracy_tester_mode=False,
-        signal_exits=[True]
-    )
-    # should screen out on drawdown
+    compare(coll, "db_after_screen_out_on_win_rate.json5")
+
+
+def test_screen_out_on_drawdown(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
@@ -425,7 +388,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_7,
-        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
@@ -438,7 +400,11 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # screens out during a long stop loss exit
+    compare(coll, "db_after_screen_out_on_drawdown.json5")
+
+
+def test_screen_out_during_long_stop_loss_exit(coll):
+    # either win rate or dd screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
@@ -450,7 +416,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_7,
-        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
@@ -463,7 +428,11 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # screens out during a long take profit exit
+    compare(coll, "db_after_screen_out_during_long_stop_loss_exit.json5")
+
+
+def test_screen_out_during_long_take_profit_exit(coll):
+    # either win rate or dd screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
@@ -475,32 +444,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_7,
-        loss_limit_fractions=[.2],
-        multiproc=False,
-        clear_db=False,
-        write_invalid_to_db=True,
-        drawdown_limits=[-33],
-        winrate_floor=50,
-        mean_floor=4,
-        median_floor=4,
-        floor_grace_period=10,
-        enable_qol=False,
-        accuracy_tester_mode=False,
-        signal_exits=[True]
-    ),
-    # screens out during a long signal exit
-    main(
-        db_coll=c.COLL,
-        datafilenames=c.DATAFILENAMES_6,
-        take_profits=[30],
-        dcas=[0],
-        stop_losses=[2],
-        leverages=[2],
-        trailing_sls=[True],
-        trail_delays=[True],
-        trail_last_resets=[False],
-        sls=c.SLS_7,
-        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
@@ -513,7 +456,39 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # screens out during a short stop loss exit
+    compare(coll, "db_after_screen_out_during_long_take_profit_exit.json5")
+
+
+def test_screen_out_during_long_signal_exit(coll):
+    # either win rate or dd screen out
+    main(
+        db_coll=c.COLL,
+        datafilenames=c.DATAFILENAMES_6,
+        take_profits=[30],
+        dcas=[0],
+        stop_losses=[2],
+        leverages=[2],
+        trailing_sls=[True],
+        trail_delays=[True],
+        trail_last_resets=[False],
+        sls=c.SLS_7,
+        multiproc=False,
+        clear_db=False,
+        write_invalid_to_db=True,
+        drawdown_limits=[-33],
+        winrate_floor=50,
+        mean_floor=4,
+        median_floor=4,
+        floor_grace_period=10,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        signal_exits=[True]
+    )
+    compare(coll, "db_after_screen_out_during_long_signal_exit.json5")
+
+
+def test_screen_out_during_short_stop_loss_exit(coll):
+    # either win rate or dd screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_4,
@@ -525,7 +500,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
@@ -538,7 +512,11 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # screens out during a short take profit exit
+    compare(coll, "db_after_screen_out_during_short_stop_loss_exit.json5")
+
+
+def test_screen_out_during_short_take_profit_exit(coll):
+    # either win rate or dd screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_7,
@@ -550,7 +528,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_7,
-        loss_limit_fractions=[.2],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
@@ -563,23 +540,26 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    # screens out during a short signal exit
+    compare(coll, "db_after_screen_out_during_short_take_profit_exit.json5")
+
+
+def test_screen_out_during_short_signal_exit(coll):
+    # either win rate or dd screen out
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_6,
-        take_profits=[40],
+        take_profits=[0.5],
         dcas=[0],
-        stop_losses=[10],
-        leverages=[2],
+        stop_losses=[8],
+        leverages=[1],
         trailing_sls=[False],
         trail_delays=[False],
         trail_last_resets=[False],
-        sls=c.SLS_9,
-        loss_limit_fractions=[.2],
+        sls=[[[]]],
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
-        drawdown_limits=[-40],
+        drawdown_limits=[-10],
         winrate_floor=50,
         mean_floor=-5,
         median_floor=-5,
@@ -588,7 +568,7 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    compare(coll, "db_after_bail_when_win_rate_or_drawdown_falls_below_standard.json5")
+    compare(coll, "db_after_screen_out_during_short_signal_exit.json5")
 
 
 def test_leverage_adjustment_with_large_stop_loss(coll):
@@ -625,7 +605,6 @@ def test_invalid_scenarios_not_written_to_db(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_4,
-        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-33],
         winrate_floor=50,
@@ -652,7 +631,6 @@ def test_invalid_scenarios_due_to_initial_drawdown_screener(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_0,
-        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-49],
         winrate_floor=50,
@@ -679,7 +657,6 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -703,7 +680,6 @@ def test_scenarios_already_in_db_are_not_rerun(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -729,7 +705,6 @@ def test_scenarios_already_in_db_are_rerun_with_replace_option(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0],
         drawdown_limits=[-100],
         winrate_floor=50,
         mean_floor=4,
@@ -758,7 +733,6 @@ def test_scenarios_already_in_db_are_rerun_with_replace_option(coll):
             trail_delays=[False],
             trail_last_resets=[False],
             sls=[[[]]],
-            loss_limit_fractions=[0],
             drawdown_limits=[-100],
             winrate_floor=50,
             mean_floor=4,
@@ -790,7 +764,6 @@ def test_multiproc(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=c.SLS_0,
-        loss_limit_fractions=[.2],
         multiproc=True,
         drawdown_limits=[-49],
         winrate_floor=50,
@@ -819,7 +792,6 @@ def test_htf_dataset(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[["1.5", "-1"], ["3.5", "-2"], ["4", "-2.5"], ["6", "-4.5"]]],
-        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-80],
         winrate_floor=10,
@@ -845,9 +817,8 @@ def test_multiple_datafilenames(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[".3", "-.15"], [".6", "-.35"], ["1.5", "-1"], ["4", "-3"]]],
-        loss_limit_fractions=[.2],
         multiproc=False,
-        drawdown_limits=[-80],
+        drawdown_limits=[-90],
         winrate_floor=10,
         mean_floor=-5,
         median_floor=-5,
@@ -879,7 +850,6 @@ def test_accuracy_tester_mode(coll):
         trail_delays=[True],
         trail_last_resets=[False],
         sls=[[[0.5, -0.25]]],
-        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-2],
         winrate_floor=99,
@@ -905,7 +875,6 @@ def test_timeframe_specific_column_headers(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[.2],
         multiproc=False,
         drawdown_limits=[-90],
         winrate_floor=20,
@@ -932,7 +901,6 @@ def test_configurable_start_date(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=c.SLS_3,
-        loss_limit_fractions=[0],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=50,
@@ -960,7 +928,6 @@ def test_no_signal_exit_option(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0.2],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=0,
@@ -971,6 +938,7 @@ def test_no_signal_exit_option(coll):
     )
     compare(coll, "db_after_no_signal_exit_option.json5")
 """
+
 
 def test_duplicate_scenarios_are_rejected(coll):
     with pytest.raises(ValueError):
@@ -987,8 +955,7 @@ def test_duplicate_scenarios_are_rejected(coll):
         )
 
 
-def test_bail_when_mean_or_median_falls_below_standard(coll):
-    # this should bail out on mean
+def test_screen_out_on_mean(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_15,
@@ -1000,7 +967,6 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0.2],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=0,
@@ -1009,7 +975,10 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         enable_qol=False,
         signal_exits=[True]
     )
-    # this should bail out on median
+    compare(coll, "db_after_test_screen_out_on_mean.json5")
+
+
+def test_screen_out_on_median(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_15,
@@ -1021,16 +990,18 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[]]],
-        loss_limit_fractions=[0.2],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=0,
-        mean_floor=0.2,
-        median_floor=5,
+        mean_floor=0.05,
+        median_floor=2,
         enable_qol=False,
         signal_exits=[True]
     )
-    # this should not bail out because it maintains mean and median
+    compare(coll, "db_after_screen_out_on_median.json5")
+
+
+def test_does_not_screen_out_mean_or_median(coll):
     main(
         db_coll=c.COLL,
         datafilenames=c.DATAFILENAMES_15,
@@ -1042,7 +1013,6 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         trail_delays=[False],
         trail_last_resets=[False],
         sls=[[[1.5, -1]]],
-        loss_limit_fractions=[0.2],
         multiproc=False,
         drawdown_limits=[-100],
         winrate_floor=0,
@@ -1051,7 +1021,7 @@ def test_bail_when_mean_or_median_falls_below_standard(coll):
         enable_qol=False,
         signal_exits=[True]
     )
-    compare(coll, "db_after_bail_when_mean_or_median_falls_below_standard.json5")
+    compare(coll, "db_after_does_not_screen_out_mean_or_median.json5")
 
 
 def test_when_ltf_and_htf_print_signal_in_same_row(coll):
@@ -1067,11 +1037,10 @@ def test_when_ltf_and_htf_print_signal_in_same_row(coll):
         enable_qol=False,
         trail_last_resets=[False],
         signal_exits=[True],
-        loss_limit_fractions=[0.2],
         trailing_sls=[False],
         trail_delays=[False]
     )
-    compare(coll, "db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5")
+    compare(coll, "db_after_when_ltf_and_htf_print_signal_in_same_row.json5")
 
 
 def test_last_reset_trailing_option(coll):
@@ -1092,19 +1061,21 @@ def test_last_reset_trailing_option(coll):
         trailing_sls=[False],
         trail_delays=[False],
         trail_last_resets=[True],
-        signal_exits=[True],
-        loss_limit_fractions=[0.2]
+        signal_exits=[True]
     )
     compare(coll, "db_after_last_reset_trailing_option.json5")
 
 
-"""
 def test_tri_arrow(coll):
     main(
         db_coll=c.COLL,
-        datafilenames=["test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv"],
+        datafilenames=[
+            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv",
+            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv"
+        ],
         take_profits=[1.5],
         stop_losses=[8],
+        dcas=[0],
         leverages=[1],
         sls=[[[]]],
         multiproc=False,
@@ -1117,7 +1088,6 @@ def test_tri_arrow(coll):
         trail_delays=[False]
     )
     compare(coll, "db_after_tri_arrow.json5")
-"""
 
 
 def test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file(coll):
@@ -1243,7 +1213,7 @@ def test_dca(coll):
     main(
         db_coll=c.COLL,
         datafilenames=[
-            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv"
+            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
         ],
         take_profits=[1.5],
         stop_losses=[8],
@@ -1261,6 +1231,30 @@ def test_dca(coll):
         trail_delays=[False]
     )
     compare(coll, "db_after_dca.json5")
+
+
+def test_dca_with_sig_exit(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=[
+            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
+        ],
+        take_profits=[10],
+        stop_losses=[20],
+        leverages=[1],
+        sls=[[[]]],
+        dcas=[0.25],
+        multiproc=False,
+        enable_qol=False,
+        winrate_floor=0,
+        mean_floor=-10,
+        median_floor=-10,
+        drawdown_limits=[-100],
+        signal_exits=[True],
+        trailing_sls=[False],
+        trail_delays=[False]
+    )
+    compare(coll, "db_after_dca_with_sig_exit.json5")
 
 
 def test_screen_out_scenarios_where_dca_greater_than_sl(coll):
@@ -1315,33 +1309,6 @@ def test_tf_specific_configs(coll):
 def test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_multi_file(coll):
     # this will need to be done before the next time we use a multi file
     pass
-
-
-def test_get_adjusted_leverage():
-    loss_limit_fractions = [0, .1, .2, .5]
-    leverages = [1, 2, 5, 10]
-    stop_losses = [1, 2, 4, 5, 10]
-    total_profit_pcts = [-50, 0, 50, 100, 150, 200, 301, 399, 467, 500]
-    results = []
-
-    for llf in loss_limit_fractions:
-        for l in leverages:
-            for sl in stop_losses:
-                for tpp in total_profit_pcts:
-                    adj_leverage, loss_limit = get_adjusted_leverage(
-                        stop_loss=sl, max_leverage=l, total_profit_pct=tpp,
-                        loss_limit_fraction=llf)
-                    results.append(
-                        {"tpp": tpp,
-                         "sl": sl,
-                         "l": l,
-                         "llf": llf,
-                         "adj_leverage": adj_leverage,
-                         "loss_limit": loss_limit,
-                         "potential_loss": round(sl * adj_leverage, 3)})
-    with open("test_data/expected/expected_adjusted_leverages.json5") as _f:
-        expected = json5.load(_f)
-    assert results == expected
 
 
 def compare(_coll, expected):

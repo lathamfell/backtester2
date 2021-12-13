@@ -24,7 +24,6 @@ TRAIL_DELAYS = [True, False]
 TRAIL_LAST_RESETS = [False]
 # SLS = [[[]]]
 SLS = cc.SLS_ONE_RESET + cc.SLS_TWO_RESETS + cc.SLS_THREE_RESETS
-LOSS_LIMIT_FRACTIONS = [1]
 MULTIPROCESSING = True  # multi interferes with stepping through multiple scenarios in debug mode
 DRAWDOWN_LIMITS = [-50]
 WINRATE_FLOOR = 80

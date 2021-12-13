@@ -58,7 +58,6 @@ def main(
     trail_last_resets=c.TRAIL_LAST_RESETS,
     sls=c.SLS,
     dcas=c.DCAS,
-    loss_limit_fractions=c.LOSS_LIMIT_FRACTIONS,
     drawdown_limits=c.DRAWDOWN_LIMITS,
     winrate_floor=c.WINRATE_FLOOR,
     mean_floor=c.MEAN_FLOOR,
@@ -84,7 +83,6 @@ def main(
         sls = [[[]]]
         multiproc = False
         drawdown_limits = [-100]
-        loss_limit_fractions = [0]
         winrate_floor = -1
         replace_existing_scenarios = True
     if accuracy_tester_mode:
@@ -129,11 +127,8 @@ def main(
                                         for trail_last_reset in trail_last_resets:
                                             for sl in sls:
                                                 for drawdown_limit in drawdown_limits:
-                                                    for (
-                                                        loss_limit_fraction
-                                                    ) in loss_limit_fractions:
-                                                        for signal_exit in signal_exits:
-                                                            scenario_count += 1
+                                                    for signal_exit in signal_exits:
+                                                        scenario_count += 1
     scenario_num = 0
 
     print(
@@ -175,54 +170,50 @@ def main(
                                         for trail_last_reset in trail_last_resets:
                                             for sl in sls:
                                                 for drawdown_limit in drawdown_limits:
-                                                    for (
-                                                        loss_limit_fraction
-                                                    ) in loss_limit_fractions:
-                                                        for signal_exit in signal_exits:
-                                                            scenario_num += 1
-                                                            spec = {
-                                                                "scenario_num": scenario_num,
-                                                                "scenario_count": scenario_count,
-                                                                "datafilename": datafilename_only,
-                                                                "start_date": start_date,
-                                                                "signal_timeframe": signal_timeframe,
-                                                                "df": df,
-                                                                "interval_timeframe": interval_timeframe,
-                                                                "file_type": file_type,
-                                                                "leverage": leverage,
-                                                                "stop_loss": stop_loss,
-                                                                "take_profit": take_profit,
-                                                                "dca": dca,
-                                                                "trailing_sl": trailing_sl,
-                                                                "trail_last_reset": trail_last_reset,
-                                                                "sl_reset_points": get_scrubbed_sl_reset_points(
-                                                                    sl
-                                                                ),
-                                                                "trail_delay": trail_delay,
-                                                                "db": db,
-                                                                "db_coll": db_coll,
-                                                                "write_invalid_to_db": write_invalid_to_db,
-                                                                "loss_limit_fraction": loss_limit_fraction,
-                                                                "drawdown_limit": drawdown_limit,
-                                                                "winrate_floor": winrate_floor,
-                                                                "mean_floor": mean_floor,
-                                                                "median_floor": median_floor,
-                                                                "floor_grace_period": floor_grace_period,
-                                                                "signal_exit": signal_exit,
-                                                            }
-                                                            spec[
-                                                                "_id"
-                                                            ] = get_unique_composite_key(
-                                                                spec
-                                                            )
-                                                            specs.append(spec)
+                                                    for signal_exit in signal_exits:
+                                                        scenario_num += 1
+                                                        spec = {
+                                                            "scenario_num": scenario_num,
+                                                            "scenario_count": scenario_count,
+                                                            "datafilename": datafilename_only,
+                                                            "start_date": start_date,
+                                                            "signal_timeframe": signal_timeframe,
+                                                            "df": df,
+                                                            "interval_timeframe": interval_timeframe,
+                                                            "file_type": file_type,
+                                                            "leverage": leverage,
+                                                            "stop_loss": stop_loss,
+                                                            "take_profit": take_profit,
+                                                            "dca": dca,
+                                                            "trailing_sl": trailing_sl,
+                                                            "trail_last_reset": trail_last_reset,
+                                                            "sl_reset_points": get_scrubbed_sl_reset_points(
+                                                                sl
+                                                            ),
+                                                            "trail_delay": trail_delay,
+                                                            "db": db,
+                                                            "db_coll": db_coll,
+                                                            "write_invalid_to_db": write_invalid_to_db,
+                                                            "drawdown_limit": drawdown_limit,
+                                                            "winrate_floor": winrate_floor,
+                                                            "mean_floor": mean_floor,
+                                                            "median_floor": median_floor,
+                                                            "floor_grace_period": floor_grace_period,
+                                                            "signal_exit": signal_exit,
+                                                        }
+                                                        spec[
+                                                            "_id"
+                                                        ] = get_unique_composite_key(
+                                                            spec
+                                                        )
+                                                        specs.append(spec)
 
-                                                            if check_for_dupes_up_front:
-                                                                if spec["_id"] in spec_ids:
-                                                                    raise ValueError(
-                                                                        f"spec {spec['_id']} already found"
-                                                                    )
-                                                                spec_ids.append(spec["_id"])
+                                                        if check_for_dupes_up_front:
+                                                            if spec["_id"] in spec_ids:
+                                                                raise ValueError(
+                                                                    f"spec {spec['_id']} already found"
+                                                                )
+                                                            spec_ids.append(spec["_id"])
 
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
@@ -431,7 +422,7 @@ class ScenarioRunner:
                 if self.price_movement_low == self.price_movement_at_candle_low:
                     # new min profit for this trade
                     self.min_profit = self.get_profit_pct_from_exit_pct(
-                        exit_pct=self.price_movement_low, exit_type=STOP_LOSS
+                        exit_pct=self.price_movement_low
                     )[0]
                 # check for SL
                 if self.price_movement_at_candle_low <= (-1 * self.stop_loss):
@@ -454,7 +445,7 @@ class ScenarioRunner:
                     if self.price_movement_high == self.price_movement_at_candle_high:
                         # new max profit for this trade: save it, and reset trailing if applicable
                         self.max_profit = self.get_profit_pct_from_exit_pct(
-                            exit_pct=self.price_movement_high, exit_type=STOP_LOSS
+                            exit_pct=self.price_movement_high
                         )[0]
                         if self.trailing_on:
                             # this is a new max, need to move trailing SL
@@ -507,7 +498,7 @@ class ScenarioRunner:
                 if self.price_movement_high == self.price_movement_at_candle_high:
                     # new min profit for this trade
                     self.min_profit = self.get_profit_pct_from_exit_pct(
-                        exit_pct=(-1 * self.price_movement_high), exit_type=STOP_LOSS
+                        exit_pct=(-1 * self.price_movement_high)
                     )[0]
                 # check for SL
                 if self.price_movement_at_candle_high >= self.stop_loss:
@@ -530,7 +521,7 @@ class ScenarioRunner:
                     if self.price_movement_low == self.price_movement_at_candle_low:
                         # new max profit for this trade
                         self.max_profit = self.get_profit_pct_from_exit_pct(
-                            exit_pct=(-1 * self.price_movement_low), exit_type=STOP_LOSS
+                            exit_pct=(-1 * self.price_movement_low)
                         )[0]
                         if self.trailing_on:
                             # this is a new min, need to move trailing SL
@@ -582,12 +573,6 @@ class ScenarioRunner:
                 self.price_movement_low = 1000
                 self.units = 1.0 if not self.spec['dca'] else 0.5
 
-                self.leverage = get_adjusted_leverage(
-                    stop_loss=self.stop_loss,
-                    max_leverage=self.spec["leverage"],
-                    total_profit_pct=self.total_profit_pct,
-                    loss_limit_fraction=self.spec["loss_limit_fraction"],
-                )[0]
                 self.trade = {
                     "entry": getattr(self.row, "time")
                     .isoformat()
@@ -619,12 +604,6 @@ class ScenarioRunner:
                 self.price_movement_low = 1000
                 self.units = 1.0 if not self.spec['dca'] else 0.5
 
-                self.leverage = get_adjusted_leverage(
-                    stop_loss=self.stop_loss,
-                    max_leverage=self.spec["leverage"],
-                    total_profit_pct=self.total_profit_pct,
-                    loss_limit_fraction=self.spec["loss_limit_fraction"],
-                )[0]
                 self.trade = {
                     "entry": getattr(self.row, "time")
                     .isoformat()
@@ -934,46 +913,44 @@ class ScenarioRunner:
             return True
         return False
 
-    def get_profit_pct_from_exit_price(self, exit_price, exit_type):
+    def get_profit_pct_from_exit_price(self, exit_price):
         # takes an exit price like 34,001 and returns profit pct after fees and leverage
+        # this only happens on signal exits
         exit_pct = None
         if self.long_entry_price:
             exit_pct = ((exit_price / self.long_entry_price) - 1) * 100
         elif self.short_entry_price:
             exit_pct = ((exit_price / self.short_entry_price) - 1) * -100
-        if exit_type == TAKE_PROFIT and self.spec["dca"] and self.units == 1:
-            # TP and DCA was activated
-            fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_LIMIT_FEE
-        elif exit_type == TAKE_PROFIT and (not self.spec["dca"] or self.units == 0.5):
-            # TP and DCA wasn't configured, or wasn't activated
-            fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
-        elif self.spec["dca"] and self.units == 1:
-            # non-TP exit, but DCA was activated
+        if self.spec["dca"] and self.units == 1:
+            # DCA was activated
             fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_MARKET_FEE
         elif not self.spec["dca"] or self.units == 0.5:
-            # non-TP exit, and DCA wasn't configured or wasn't activated
+            # DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
         else:
             raise Exception("Unexpected exit configuration encountered in get_profit_pct_from_exit_price")
         profit_pct = exit_pct * self.leverage - fees * self.leverage
         return profit_pct, exit_pct
 
-    def get_profit_pct_from_exit_pct(self, exit_pct, exit_type):
+    def get_profit_pct_from_exit_pct(self, exit_pct, exit_type=None):
         # takes an exit price based profit pct like 2% and returns final profit pct after fees and leverage
         exit_pct = min(exit_pct, self.spec["take_profit"])  # cut off anything beyond TP
         exit_pct = max(
             exit_pct, -1 * self.spec["stop_loss"]
         )  # cut off anything below SL
-        if exit_type == TAKE_PROFIT and self.spec["dca"] and self.units == 1:
+        if not exit_type:
+            # don't include fees, we are just tracking profit as it would look if we were staring at live trade in ByBit
+            fees = 0
+        elif exit_type == TAKE_PROFIT and self.spec["dca"] and self.units == 1:
             # TP and DCA was activated
             fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_LIMIT_FEE
         elif exit_type == TAKE_PROFIT and (not self.spec["dca"] or self.units == 0.5):
             # TP and DCA wasn't configured, or wasn't activated
             fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
-        elif self.spec["dca"] and self.units == 1:
+        elif exit_type in [STOP_LOSS, SIGNAL] and self.spec["dca"] and self.units == 1:
             # non-TP exit, but DCA was activated
             fees = BYBIT_MARKET_FEE/2 + BYBIT_LIMIT_FEE/2 + BYBIT_MARKET_FEE
-        elif not self.spec["dca"] or self.units == 0.5:
+        elif exit_type in [STOP_LOSS, SIGNAL] and (not self.spec["dca"] or self.units == 0.5):
             # non-TP exit, and DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
         else:
@@ -1016,7 +993,7 @@ class ScenarioRunner:
         elif _type == SIGNAL:
             exit_price = getattr(self.row, "close")
             self.profit_pct, exit_pct = self.get_profit_pct_from_exit_price(
-                exit_price=exit_price, exit_type=_type
+                exit_price=exit_price
             )
             if self.profit_pct > 0:
                 exit_type = "sig_profit"
@@ -1042,13 +1019,13 @@ class ScenarioRunner:
             getattr(self.row, "time").isoformat().replace("+00:00", "Z")
         )
         self.trade["exit_pct"] = round(exit_pct, 3)
-        self.trade["profit"] = round(self.profit_pct, 3)
+        self.trade["final_profit"] = round(self.profit_pct, 3)
         self.trade["duration"] = self.candles_spent_in_trade
         self.trade["assets"] = round(self.assets, 4)
         self.trade["leverage"] = self.leverage
         self.trade["exit_type"] = exit_type
-        self.trade["min_profit"] = round(self.min_profit, 3)
-        self.trade["max_profit"] = round(self.max_profit, 3)
+        self.trade["min_profit_before_fees"] = round(self.min_profit, 3)
+        self.trade["max_profit_before_fees"] = round(self.max_profit, 3)
         self.trade["units"] = self.units
         self.trade_history.append(self.trade)
 
@@ -1066,7 +1043,7 @@ class ScenarioRunner:
                 raise e.MeanOrMedianTooLow
             median_profit = median(self.get_profits())
             if median_profit < self.spec["median_floor"]:
-                raise e.MeanOrMedianTooLow
+                raise e.MeanOrMedianTooLow  # THIS IS THE UNCOVERED LINE ###
 
         # clear both for convenience, even though only one is set
         self.short_entry_price = self.long_entry_price = None
@@ -1127,10 +1104,10 @@ class ScenarioRunner:
         self.win_rate = round((len(self.get_positive_profits()) / len(self.get_durations()) * 100), 1)
 
     def get_positive_profits(self):
-        return [trade["profit"] for trade in self.trade_history if trade["profit"] > 0]
+        return [trade["final_profit"] for trade in self.trade_history if trade["final_profit"] > 0]
 
     def get_profits(self):
-        return [trade["profit"] for trade in self.trade_history]
+        return [trade["final_profit"] for trade in self.trade_history]
 
     def get_exit_type_count(self, exit_type):
         return len(
@@ -1186,26 +1163,6 @@ class ScenarioRunner:
         return False
 
 
-def get_adjusted_leverage(
-    stop_loss, max_leverage, total_profit_pct, loss_limit_fraction
-):
-    if loss_limit_fraction == 0:  # no loss limit desired
-        return max_leverage, 0
-    pct_of_starting_assets = total_profit_pct + 100
-    loss_limit = max(10, round(pct_of_starting_assets * loss_limit_fraction, 3))
-    potential_loss = stop_loss * max_leverage
-    loss_limit = min(loss_limit, 100)  # no need for loss limit to exceed 100%
-    if (potential_loss <= loss_limit) or max_leverage == 1:
-        # there are no problems.  leverage is fine
-        return max_leverage, loss_limit
-    # max with 1 to avoid sub-1 lev. Multiple both by 100 to avoid float division imprecision
-    adj_leverage = max(1, (loss_limit * 100) // (stop_loss * 100))
-    adj_leverage = min(
-        max_leverage, adj_leverage
-    )  # make sure we don't exceed configured lev
-    return int(adj_leverage), loss_limit
-
-
 def is_valid_scenario(spec):
     protected = False
     trail_config_valid = False
@@ -1243,7 +1200,6 @@ def get_unique_composite_key(spec):
         "sl_reset_points": spec["sl_reset_points"],
         "trail_delay": spec["trail_delay"],
         "trail_last_reset": spec["trail_last_reset"],
-        "loss_limit_fraction": spec["loss_limit_fraction"],
         "drawdown_limit": spec["drawdown_limit"],
         "winrate_floor": spec["winrate_floor"],
         "median_floor": spec["median_floor"],

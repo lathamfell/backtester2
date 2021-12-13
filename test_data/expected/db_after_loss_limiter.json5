@@ -5,7 +5,6 @@
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'leverage': 5,
-      'loss_limit_fraction': 0.2,
       'mean_floor': -5,
       'median_floor': -5,
       'signal_exit': true,
