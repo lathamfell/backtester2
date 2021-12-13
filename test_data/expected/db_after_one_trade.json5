@@ -46,7 +46,7 @@
                      'exit_type': 'tp',
                      'leverage': 1,
                      'max_profit': 1.85,
-                     'min_profit': -5.89,
+                     'min_profit': -5.892,
                      'profit': 1.95,
                      'units': 1.0}],
   'trades': 1,

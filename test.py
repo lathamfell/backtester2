@@ -335,6 +335,7 @@ def test_main_with_15m_chart(coll):
     )
     compare(coll, "db_after_15m_chart.json5")
 
+
 def test_invalid_tp_tsl_combinations(coll):
     main(
         db_coll=c.COLL,
@@ -437,7 +438,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-    
     # screens out during a long stop loss exit
     main(
         db_coll=c.COLL,
@@ -463,7 +463,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     )
-
     # screens out during a long take profit exit
     main(
         db_coll=c.COLL,
@@ -489,7 +488,6 @@ def test_bail_when_win_rate_or_drawdown_falls_below_standard(coll):
         accuracy_tester_mode=False,
         signal_exits=[True]
     ),
-
     # screens out during a long signal exit
     main(
         db_coll=c.COLL,
@@ -920,6 +918,7 @@ def test_timeframe_specific_column_headers(coll):
     compare(coll, "db_after_timeframe_specific_column_headers.json5")
 """
 
+
 def test_configurable_start_date(coll):
     main(
         db_coll=c.COLL,
@@ -946,6 +945,7 @@ def test_configurable_start_date(coll):
         signal_exits=[True]
     )
     compare(coll, "db_after_configurable_start_date.json5")
+
 
 """
 def test_no_signal_exit_option(coll):
@@ -1067,7 +1067,9 @@ def test_when_ltf_and_htf_print_signal_in_same_row(coll):
         enable_qol=False,
         trail_last_resets=[False],
         signal_exits=[True],
-        loss_limit_fractions=[0.2]
+        loss_limit_fractions=[0.2],
+        trailing_sls=[False],
+        trail_delays=[False]
     )
     compare(coll, "db_after_test_when_ltf_and_htf_print_signal_in_same_row.json5")
 
@@ -1095,6 +1097,7 @@ def test_last_reset_trailing_option(coll):
     )
     compare(coll, "db_after_last_reset_trailing_option.json5")
 
+
 """
 def test_tri_arrow(coll):
     main(
@@ -1115,6 +1118,7 @@ def test_tri_arrow(coll):
     )
     compare(coll, "db_after_tri_arrow.json5")
 """
+
 
 def test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file(coll):
     with pytest.raises(Exception) as e_info:
@@ -1245,14 +1249,16 @@ def test_dca(coll):
         stop_losses=[8],
         leverages=[1],
         sls=[[[]]],
-        dcas=[0, 0.5, 1, 8],
+        dcas=[0, 0.5, 1, 7],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
         mean_floor=-10,
         median_floor=-10,
         drawdown_limits=[-100],
-        signal_exits=[False]
+        signal_exits=[False],
+        trailing_sls=[False],
+        trail_delays=[False]
     )
     compare(coll, "db_after_dca.json5")
 
@@ -1274,7 +1280,9 @@ def test_screen_out_scenarios_where_dca_greater_than_sl(coll):
         mean_floor=-10,
         median_floor=-10,
         drawdown_limits=[-100],
-        signal_exits=[False]
+        signal_exits=[False],
+        trailing_sls=[False],
+        trail_delays=[False]
     )
     compare(coll, "db_after_screen_out_scenarios_where_dca_greater_than_sl.json5")
 

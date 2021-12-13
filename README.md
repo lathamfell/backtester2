@@ -23,7 +23,6 @@ Quick run settings to use for alpha runs:
         sls = [[[]]]
         multiproc = False
         drawdown_limits = [-100]
-        loss_limit_fractions = [0]
         winrate_floor = -1
 
 To connect to Big Bro Backtester (and BetaBot???) on AWS:

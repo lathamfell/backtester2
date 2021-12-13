@@ -1041,14 +1041,14 @@ class ScenarioRunner:
         self.trade["exit"] = (
             getattr(self.row, "time").isoformat().replace("+00:00", "Z")
         )
-        self.trade["exit_pct"] = round(exit_pct, 2)
-        self.trade["profit"] = round(self.profit_pct, 2)
+        self.trade["exit_pct"] = round(exit_pct, 3)
+        self.trade["profit"] = round(self.profit_pct, 3)
         self.trade["duration"] = self.candles_spent_in_trade
         self.trade["assets"] = round(self.assets, 4)
         self.trade["leverage"] = self.leverage
         self.trade["exit_type"] = exit_type
-        self.trade["min_profit"] = round(self.min_profit, 2)
-        self.trade["max_profit"] = round(self.max_profit, 2)
+        self.trade["min_profit"] = round(self.min_profit, 3)
+        self.trade["max_profit"] = round(self.max_profit, 3)
         self.trade["units"] = self.units
         self.trade_history.append(self.trade)
 

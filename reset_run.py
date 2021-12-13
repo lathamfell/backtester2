@@ -26,26 +26,31 @@ def run_btc_standard_reset_pts():
         db_coll=cc.BTC_COLL,
         datafilenames=[
             "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv",
-            "data/ready_for_backtester/BYBIT_BTCUSD_1D_5m_on_5m_05_2021.csv",
-            "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020.csv"
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_5m_on_5m_05_2021.csv",
+            #"data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020.csv"
         ],
         enable_qol=False,
         #mean_floor=4,
         #median_floor=4,
         #winrate_floor=80,
         #winrate_floor=90,
-        winrate_floor=90,
-        drawdown_limits=[-80],
+        winrate_floor=0,
+        drawdown_limits=[-100],
         #signal_timeframes=[["1h", "5m"]],
         #mean_floor=3,
         #median_floor=3,
-        mean_floor=0,
-        median_floor=0,
-        take_profits=[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2],
-        #stop_losses=[8],
-        #leverages=[2],
-        sls=[[[]]]
-        + cc.SLS_ONE_RESET
+        mean_floor=-100,
+        median_floor=-100,
+        take_profits=[0.3],
+        stop_losses=[13],
+        dcas=[0.5],
+        leverages=[2],
+        sls=[[[]]],
+        trailing_sls=[False],
+        trail_delays=[False],
+        signal_exits=[True],
+        replace_existing_scenarios=True
+        #+ cc.SLS_ONE_RESET
         #+ cc.SLS_TWO_RESETS
         #+ cc.SLS_THREE_RESETS
         #+ cc.SLS_FOUR_RESETS

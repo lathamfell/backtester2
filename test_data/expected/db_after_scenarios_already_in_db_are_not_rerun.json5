@@ -61,7 +61,7 @@
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 0
+    'win_rate': 0.0
   },
   {
     '_id': {
@@ -125,7 +125,7 @@
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 0
+    'win_rate': 0.0
   },
   {
     '_id': {
@@ -182,14 +182,14 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 0.35,
-        'min_profit': -5.89,
+        'min_profit': -5.892,
         'profit': 0.45,
         'units': 1.0
       }
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 100
+    'win_rate': 100.0
   },
   {
     '_id': {
@@ -246,14 +246,14 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 1.85,
-        'min_profit': -5.89,
+        'min_profit': -5.892,
         'profit': 1.95,
         'units': 1.0
       }
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 100
+    'win_rate': 100.0
   },
   {
     '_id': {
@@ -317,7 +317,7 @@
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 0
+    'win_rate': 0.0
   },
   {
     '_id': {
@@ -381,7 +381,7 @@
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 0
+    'win_rate': 0.0
   },
   {
     '_id': {
@@ -438,14 +438,14 @@
         'exit_type': 'tp',
         'leverage': 10,
         'max_profit': 3.5,
-        'min_profit': -58.92,
+        'min_profit': -58.918,
         'profit': 4.5,
         'units': 1.0
       }
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 100
+    'win_rate': 100.0
   },
   {
     '_id': {
@@ -502,13 +502,13 @@
         'exit_type': 'tp',
         'leverage': 10,
         'max_profit': 18.5,
-        'min_profit': -58.92,
+        'min_profit': -58.918,
         'profit': 19.5,
         'units': 1.0
       }
     ],
     'trades': 1,
     'valid': true,
-    'win_rate': 100
+    'win_rate': 100.0
   }
 ]

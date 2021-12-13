@@ -49,13 +49,13 @@
         'entry_price_original': 7158.1,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:10:00Z',
-        'exit_pct': 0.04,
+        'exit_pct': 0.041,
         'exit_price': 7161.0,
         'exit_type': 'sig_loss',
         'leverage': 2,
-        'max_profit': -0.16,
+        'max_profit': -0.163,
         'min_profit': -0.42,
-        'profit': -0.22,
+        'profit': -0.219,
         'units': 1.0
       },
       {
@@ -67,13 +67,13 @@
         'entry_price_original': 7161.0,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:25:00Z',
-        'exit_pct': 0.07,
+        'exit_pct': 0.068,
         'exit_price': 7156.1,
         'exit_type': 'sig_loss',
         'leverage': 2,
-        'max_profit': -0.1,
-        'min_profit': -0.29,
-        'profit': -0.16,
+        'max_profit': -0.102,
+        'min_profit': -0.292,
+        'profit': -0.163,
         'units': 1.0
       },
       {
@@ -85,13 +85,13 @@
         'entry_price_original': 7156.1,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:40:00Z',
-        'exit_pct': 0.05,
+        'exit_pct': 0.048,
         'exit_price': 7159.5,
         'exit_type': 'sig_loss',
         'leverage': 2,
-        'max_profit': -0.17,
+        'max_profit': -0.174,
         'min_profit': -0.3,
-        'profit': -0.2,
+        'profit': -0.205,
         'units': 1.0
       },
       {
@@ -103,13 +103,13 @@
         'entry_price_original': 7159.5,
         'entry_timeframe': 'HTF',
         'exit': '2020-01-01T00:50:00Z',
-        'exit_pct': 0.02,
+        'exit_pct': 0.018,
         'exit_price': 7158.2,
         'exit_type': 'sig_loss',
         'leverage': 2,
-        'max_profit': -0.26,
-        'min_profit': -0.3,
-        'profit': -0.26,
+        'max_profit': -0.261,
+        'min_profit': -0.303,
+        'profit': -0.264,
         'units': 1.0
       },
       {
@@ -126,13 +126,13 @@
         'exit_type': 'tp',
         'leverage': 2,
         'max_profit': 0.2,
-        'min_profit': -0.53,
+        'min_profit': -0.529,
         'profit': 0.4,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 20
+    'win_rate': 20.0
   }
 ]

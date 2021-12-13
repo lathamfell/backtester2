@@ -53,7 +53,7 @@
         'exit_price': 38495.5,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 56.96,
+        'max_profit': 56.959,
         'min_profit': -60.75,
         'profit': -60.75,
         'units': 1.0
@@ -72,7 +72,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -22.21,
+        'min_profit': -22.209,
         'profit': 59.75,
         'units': 1.0
       },
@@ -90,7 +90,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -16.71,
+        'min_profit': -16.714,
         'profit': 59.75,
         'units': 1.0
       },
@@ -108,7 +108,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -36.16,
+        'min_profit': -36.156,
         'profit': 59.75,
         'units': 1.0
       },
@@ -125,15 +125,15 @@
         'exit_price': 56187.0,
         'exit_type': 'sig_loss',
         'leverage': 5,
-        'max_profit': 34.65,
-        'min_profit': -55.05,
-        'profit': -18.1,
+        'max_profit': 34.649,
+        'min_profit': -55.052,
+        'profit': -18.102,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 60
+    'win_rate': 60.0
   },
   {
     '_id': {
@@ -185,13 +185,13 @@
         'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T20:00:00Z',
-        'exit_pct': -0.46,
+        'exit_pct': -0.458,
         'exit_price': 34528.5,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 56.96,
-        'min_profit': -29.46,
-        'profit': -3.04,
+        'max_profit': 56.959,
+        'min_profit': -29.459,
+        'profit': -3.041,
         'units': 1.0
       },
       {
@@ -208,7 +208,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -22.21,
+        'min_profit': -22.209,
         'profit': 59.75,
         'units': 1.0
       },
@@ -226,7 +226,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -16.71,
+        'min_profit': -16.714,
         'profit': 59.75,
         'units': 1.0
       },
@@ -239,13 +239,13 @@
         'entry_price_original': 49828.5,
         'entry_timeframe': null,
         'exit': '2021-03-05T00:00:00Z',
-        'exit_pct': -6.12,
+        'exit_pct': -6.117,
         'exit_price': 46780.6,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 28.67,
-        'min_profit': -36.16,
-        'profit': -31.33,
+        'max_profit': 28.666,
+        'min_profit': -36.156,
+        'profit': -31.334,
         'units': 1.0
       },
       {
@@ -257,19 +257,19 @@
         'entry_price_original': 54302.5,
         'entry_timeframe': null,
         'exit': '2021-03-18T16:00:00Z',
-        'exit_pct': -10.71,
+        'exit_pct': -10.706,
         'exit_price': 60116.3,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 5.72,
-        'min_profit': -55.05,
-        'profit': -54.28,
+        'max_profit': 5.718,
+        'min_profit': -55.052,
+        'profit': -54.282,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 40
+    'win_rate': 40.0
   },
   {
     '_id': {
@@ -369,7 +369,7 @@
         'exit_price': 38495.5,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 56.96,
+        'max_profit': 56.959,
         'min_profit': -60.75,
         'profit': -60.75,
         'units': 1.0
@@ -388,7 +388,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -22.21,
+        'min_profit': -22.209,
         'profit': 59.75,
         'units': 1.0
       },
@@ -406,7 +406,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -16.71,
+        'min_profit': -16.714,
         'profit': 59.75,
         'units': 1.0
       },
@@ -424,7 +424,7 @@
         'exit_type': 'tp',
         'leverage': 5,
         'max_profit': 59.25,
-        'min_profit': -36.16,
+        'min_profit': -36.156,
         'profit': 59.75,
         'units': 1.0
       },
@@ -441,14 +441,14 @@
         'exit_price': 56187.0,
         'exit_type': 'sig_loss',
         'leverage': 5,
-        'max_profit': 34.65,
-        'min_profit': -55.05,
-        'profit': -18.1,
+        'max_profit': 34.649,
+        'min_profit': -55.052,
+        'profit': -18.102,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 60
+    'win_rate': 60.0
   }
 ]

@@ -53,7 +53,7 @@
         'exit_price': 7653.5,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.25,
+        'max_profit': 0.248,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -72,7 +72,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.54,
+        'min_profit': -0.539,
         'profit': 4.95,
         'units': 1.0
       },
@@ -108,7 +108,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.39,
+        'min_profit': -1.395,
         'profit': 4.95,
         'units': 1.0
       },
@@ -126,7 +126,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.17,
+        'min_profit': -0.172,
         'profit': 4.95,
         'units': 1.0
       },
@@ -143,7 +143,7 @@
         'exit_price': 8266.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.93,
+        'max_profit': 0.927,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -162,7 +162,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.95,
+        'min_profit': -1.946,
         'profit': 4.95,
         'units': 1.0
       },
@@ -180,7 +180,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -3.42,
+        'min_profit': -3.418,
         'profit': 4.95,
         'units': 1.0
       },
@@ -234,7 +234,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.02,
+        'min_profit': -2.016,
         'profit': 4.95,
         'units': 1.0
       },
@@ -251,7 +251,7 @@
         'exit_price': 9176.4,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.61,
+        'max_profit': 3.612,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -288,7 +288,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.7,
+        'min_profit': -2.701,
         'profit': 4.95,
         'units': 1.0
       },
@@ -305,7 +305,7 @@
         'exit_price': 5581.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.71,
+        'max_profit': 4.711,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -323,7 +323,7 @@
         'exit_price': 5434.6,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.12,
+        'max_profit': -0.115,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -342,7 +342,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': 0.18,
+        'min_profit': 0.184,
         'profit': 4.95,
         'units': 1.0
       },
@@ -359,7 +359,7 @@
         'exit_price': 5493.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.98,
+        'max_profit': 3.984,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -378,7 +378,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.53,
+        'min_profit': -0.529,
         'profit': 4.95,
         'units': 1.0
       },
@@ -396,7 +396,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.92,
+        'min_profit': -1.919,
         'profit': 4.95,
         'units': 1.0
       },
@@ -413,7 +413,7 @@
         'exit_price': 6944.0,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.28,
+        'max_profit': 0.282,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -431,7 +431,7 @@
         'exit_price': 6858.3,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.0,
+        'max_profit': -0.001,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -450,7 +450,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.12,
+        'min_profit': -1.119,
         'profit': 4.95,
         'units': 1.0
       },
@@ -467,7 +467,7 @@
         'exit_price': 6609.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 2.04,
+        'max_profit': 2.036,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -485,7 +485,7 @@
         'exit_price': 7043.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.32,
+        'max_profit': 1.318,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -499,13 +499,13 @@
         'entry_price_original': 7142.1,
         'entry_timeframe': 'LTF',
         'exit': '2020-04-07T23:55:00Z',
-        'exit_pct': -0.9,
+        'exit_pct': -0.897,
         'exit_price': 7206.2,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 0.72,
-        'min_profit': -1.41,
-        'profit': -1.05,
+        'max_profit': 0.719,
+        'min_profit': -1.414,
+        'profit': -1.047,
         'units': 1.0
       },
       {
@@ -521,7 +521,7 @@
         'exit_price': 6845.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 2.9,
+        'max_profit': 2.896,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -539,7 +539,7 @@
         'exit_price': 6572.1,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.16,
+        'max_profit': 4.165,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -557,7 +557,7 @@
         'exit_price': 6507.4,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.82,
+        'max_profit': 1.822,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -576,7 +576,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.95,
+        'min_profit': -0.951,
         'profit': 4.95,
         'units': 1.0
       },
@@ -593,7 +593,7 @@
         'exit_price': 6850.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.05,
+        'max_profit': -0.049,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -612,7 +612,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.33,
+        'min_profit': -1.327,
         'profit': 4.95,
         'units': 1.0
       },
@@ -630,7 +630,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.31,
+        'min_profit': -1.306,
         'profit': 4.95,
         'units': 1.0
       },
@@ -648,7 +648,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -4.16,
+        'min_profit': -4.156,
         'profit': 4.95,
         'units': 1.0
       },
@@ -684,7 +684,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.81,
+        'min_profit': -1.806,
         'profit': 4.95,
         'units': 1.0
       },
@@ -701,7 +701,7 @@
         'exit_price': 9029.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.51,
+        'max_profit': 4.513,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -719,7 +719,7 @@
         'exit_price': 8726.5,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.27,
+        'max_profit': 1.267,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -738,7 +738,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -3.14,
+        'min_profit': -3.142,
         'profit': 4.95,
         'units': 1.0
       },
@@ -773,7 +773,7 @@
         'exit_price': 9133.3,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.86,
+        'max_profit': 3.865,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -791,7 +791,7 @@
         'exit_price': 9045.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.11,
+        'max_profit': -0.107,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -805,13 +805,13 @@
         'entry_price_original': 9357.3,
         'entry_timeframe': 'LTF',
         'exit': '2020-06-25T23:55:00Z',
-        'exit_pct': -1.32,
+        'exit_pct': -1.323,
         'exit_price': 9233.5,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 4.37,
+        'max_profit': 4.367,
         'min_profit': -4.05,
-        'profit': -1.47,
+        'profit': -1.473,
         'units': 1.0
       },
       {
@@ -827,8 +827,8 @@
         'exit_price': 9529.9,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 4.41,
-        'min_profit': -3.78,
+        'max_profit': 4.406,
+        'min_profit': -3.784,
         'profit': -3.36,
         'units': 1.0
       },
@@ -846,7 +846,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.88,
+        'min_profit': -0.883,
         'profit': 4.95,
         'units': 1.0
       },
@@ -882,7 +882,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.01,
+        'min_profit': -2.012,
         'profit': 4.95,
         'units': 1.0
       },
@@ -918,7 +918,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.3,
+        'min_profit': -2.304,
         'profit': 4.95,
         'units': 1.0
       },
@@ -935,7 +935,7 @@
         'exit_price': 11211.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.68,
+        'max_profit': 0.684,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -943,7 +943,7 @@
     ],
     'trades': 50,
     'valid': false,
-    'win_rate': 50
+    'win_rate': 50.0
   },
   {
     '_id': {
@@ -999,7 +999,7 @@
         'exit_price': 7653.5,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.25,
+        'max_profit': 0.248,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1018,7 +1018,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.54,
+        'min_profit': -0.539,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1054,7 +1054,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.39,
+        'min_profit': -1.395,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1072,7 +1072,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.17,
+        'min_profit': -0.172,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1089,7 +1089,7 @@
         'exit_price': 8266.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.93,
+        'max_profit': 0.927,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1108,7 +1108,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.95,
+        'min_profit': -1.946,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1126,7 +1126,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -3.42,
+        'min_profit': -3.418,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1180,7 +1180,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.02,
+        'min_profit': -2.016,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1197,7 +1197,7 @@
         'exit_price': 9176.4,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.61,
+        'max_profit': 3.612,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1234,7 +1234,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.7,
+        'min_profit': -2.701,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1251,7 +1251,7 @@
         'exit_price': 5581.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.71,
+        'max_profit': 4.711,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1269,7 +1269,7 @@
         'exit_price': 5434.6,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.12,
+        'max_profit': -0.115,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1288,7 +1288,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': 0.18,
+        'min_profit': 0.184,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1305,7 +1305,7 @@
         'exit_price': 5493.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.98,
+        'max_profit': 3.984,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1324,7 +1324,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.53,
+        'min_profit': -0.529,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1342,7 +1342,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.92,
+        'min_profit': -1.919,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1359,7 +1359,7 @@
         'exit_price': 6944.0,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.28,
+        'max_profit': 0.282,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1377,7 +1377,7 @@
         'exit_price': 6858.3,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.0,
+        'max_profit': -0.001,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1396,7 +1396,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.12,
+        'min_profit': -1.119,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1413,7 +1413,7 @@
         'exit_price': 6609.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 2.04,
+        'max_profit': 2.036,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1431,7 +1431,7 @@
         'exit_price': 7043.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.32,
+        'max_profit': 1.318,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1445,13 +1445,13 @@
         'entry_price_original': 7142.1,
         'entry_timeframe': 'LTF',
         'exit': '2020-04-07T23:55:00Z',
-        'exit_pct': -0.9,
+        'exit_pct': -0.897,
         'exit_price': 7206.2,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 0.72,
-        'min_profit': -1.41,
-        'profit': -1.05,
+        'max_profit': 0.719,
+        'min_profit': -1.414,
+        'profit': -1.047,
         'units': 1.0
       },
       {
@@ -1467,7 +1467,7 @@
         'exit_price': 6845.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 2.9,
+        'max_profit': 2.896,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1485,7 +1485,7 @@
         'exit_price': 6572.1,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.16,
+        'max_profit': 4.165,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1503,7 +1503,7 @@
         'exit_price': 6507.4,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.82,
+        'max_profit': 1.822,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1522,7 +1522,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.95,
+        'min_profit': -0.951,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1539,7 +1539,7 @@
         'exit_price': 6850.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.05,
+        'max_profit': -0.049,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1558,7 +1558,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.33,
+        'min_profit': -1.327,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1576,7 +1576,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.31,
+        'min_profit': -1.306,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1594,7 +1594,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -4.16,
+        'min_profit': -4.156,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1630,7 +1630,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -1.81,
+        'min_profit': -1.806,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1647,7 +1647,7 @@
         'exit_price': 9029.8,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 4.51,
+        'max_profit': 4.513,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1665,7 +1665,7 @@
         'exit_price': 8726.5,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 1.27,
+        'max_profit': 1.267,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1684,7 +1684,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -3.14,
+        'min_profit': -3.142,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1719,7 +1719,7 @@
         'exit_price': 9133.3,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 3.86,
+        'max_profit': 3.865,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1737,7 +1737,7 @@
         'exit_price': 9045.9,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': -0.11,
+        'max_profit': -0.107,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1751,13 +1751,13 @@
         'entry_price_original': 9357.3,
         'entry_timeframe': 'LTF',
         'exit': '2020-06-25T23:55:00Z',
-        'exit_pct': -1.32,
+        'exit_pct': -1.323,
         'exit_price': 9233.5,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 4.37,
+        'max_profit': 4.367,
         'min_profit': -4.05,
-        'profit': -1.47,
+        'profit': -1.473,
         'units': 1.0
       },
       {
@@ -1773,8 +1773,8 @@
         'exit_price': 9529.9,
         'exit_type': 'sig_loss',
         'leverage': 1,
-        'max_profit': 4.41,
-        'min_profit': -3.78,
+        'max_profit': 4.406,
+        'min_profit': -3.784,
         'profit': -3.36,
         'units': 1.0
       },
@@ -1792,7 +1792,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -0.88,
+        'min_profit': -0.883,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1828,7 +1828,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.01,
+        'min_profit': -2.012,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1864,7 +1864,7 @@
         'exit_type': 'tp',
         'leverage': 1,
         'max_profit': 4.85,
-        'min_profit': -2.3,
+        'min_profit': -2.304,
         'profit': 4.95,
         'units': 1.0
       },
@@ -1881,7 +1881,7 @@
         'exit_price': 11211.2,
         'exit_type': 'sl_loss',
         'leverage': 1,
-        'max_profit': 0.68,
+        'max_profit': 0.684,
         'min_profit': -5.15,
         'profit': -5.15,
         'units': 1.0
@@ -1889,7 +1889,7 @@
     ],
     'trades': 50,
     'valid': false,
-    'win_rate': 50
+    'win_rate': 50.0
   },
   {
     '_id': {
@@ -1948,7 +1948,7 @@
         'exit_price': 7799.2,
         'exit_type': 'sl_loss',
         'leverage': 2,
-        'max_profit': 0.5,
+        'max_profit': 0.496,
         'min_profit': -14.3,
         'profit': -14.3,
         'units': 1.0
@@ -1966,7 +1966,7 @@
         'exit_price': 7834.9,
         'exit_type': 'sl_profit',
         'leverage': 2,
-        'max_profit': 5.8,
+        'max_profit': 5.803,
         'min_profit': -0.23,
         'profit': 1.7,
         'units': 1.0
@@ -1984,8 +1984,8 @@
         'exit_price': 7989.1,
         'exit_type': 'sl_profit',
         'leverage': 2,
-        'max_profit': 5.21,
-        'min_profit': -2.0,
+        'max_profit': 5.215,
+        'min_profit': -1.999,
         'profit': 1.7,
         'units': 1.0
       },
@@ -2020,8 +2020,8 @@
         'exit_price': 8826.8,
         'exit_type': 'sl_profit',
         'leverage': 2,
-        'max_profit': 5.76,
-        'min_profit': -0.34,
+        'max_profit': 5.755,
+        'min_profit': -0.343,
         'profit': 1.7,
         'units': 1.0
       },
@@ -2038,8 +2038,8 @@
         'exit_price': 9017.7,
         'exit_type': 'sl_profit',
         'leverage': 2,
-        'max_profit': 5.45,
-        'min_profit': -10.57,
+        'max_profit': 5.448,
+        'min_profit': -10.568,
         'profit': 1.7,
         'units': 1.0
       },
@@ -2057,7 +2057,7 @@
         'exit_type': 'tp',
         'leverage': 2,
         'max_profit': 9.7,
-        'min_profit': -11.47,
+        'min_profit': -11.473,
         'profit': 9.9,
         'units': 1.0
       },
@@ -2074,8 +2074,8 @@
         'exit_price': 9459.8,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 4.76,
-        'min_profit': -10.25,
+        'max_profit': 4.761,
+        'min_profit': -10.255,
         'profit': 2.55,
         'units': 1.0
       },
@@ -2092,8 +2092,8 @@
         'exit_price': 9530.0,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 5.09,
-        'min_profit': -9.53,
+        'max_profit': 5.095,
+        'min_profit': -9.531,
         'profit': 2.55,
         'units': 1.0
       },
@@ -2111,7 +2111,7 @@
         'exit_type': 'tp',
         'leverage': 3,
         'max_profit': 14.55,
-        'min_profit': -1.45,
+        'min_profit': -1.446,
         'profit': 14.85,
         'units': 1.0
       },
@@ -2129,7 +2129,7 @@
         'exit_type': 'sl_profit',
         'leverage': 3,
         'max_profit': 11.54,
-        'min_profit': -1.89,
+        'min_profit': -1.888,
         'profit': 2.55,
         'units': 1.0
       },
@@ -2147,7 +2147,7 @@
         'exit_type': 'tp',
         'leverage': 3,
         'max_profit': 14.55,
-        'min_profit': -1.02,
+        'min_profit': -1.018,
         'profit': 14.85,
         'units': 1.0
       },
@@ -2164,7 +2164,7 @@
         'exit_price': 9539.4,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 4.96,
+        'max_profit': 4.961,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -2183,7 +2183,7 @@
         'exit_type': 'tp',
         'leverage': 3,
         'max_profit': 14.55,
-        'min_profit': -6.05,
+        'min_profit': -6.047,
         'profit': 14.85,
         'units': 1.0
       },
@@ -2200,7 +2200,7 @@
         'exit_price': 9756.0,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 10.84,
+        'max_profit': 10.836,
         'min_profit': -3.45,
         'profit': 2.55,
         'units': 1.0
@@ -2218,7 +2218,7 @@
         'exit_price': 8695.7,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 8.68,
+        'max_profit': 8.676,
         'min_profit': -0.45,
         'profit': 2.55,
         'units': 1.0
@@ -2236,8 +2236,8 @@
         'exit_price': 8613.0,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 4.72,
-        'min_profit': -7.17,
+        'max_profit': 4.722,
+        'min_profit': -7.174,
         'profit': 2.55,
         'units': 1.0
       },
@@ -2254,8 +2254,8 @@
         'exit_price': 8530.7,
         'exit_type': 'sl_profit',
         'leverage': 3,
-        'max_profit': 5.61,
-        'min_profit': -5.08,
+        'max_profit': 5.608,
+        'min_profit': -5.084,
         'profit': 2.55,
         'units': 1.0
       },
@@ -2273,7 +2273,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -20.67,
+        'min_profit': -20.666,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2290,8 +2290,8 @@
         'exit_price': 7764.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 12.37,
-        'min_profit': -10.8,
+        'max_profit': 12.369,
+        'min_profit': -10.805,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2309,7 +2309,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -6.74,
+        'min_profit': -6.738,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2326,8 +2326,8 @@
         'exit_price': 5262.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.21,
-        'min_profit': -2.24,
+        'max_profit': 9.213,
+        'min_profit': -2.241,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2344,7 +2344,7 @@
         'exit_price': 5538.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': -0.46,
+        'max_profit': -0.461,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -2363,7 +2363,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': 0.74,
+        'min_profit': 0.737,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2380,8 +2380,8 @@
         'exit_price': 5179.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.55,
-        'min_profit': -4.24,
+        'max_profit': 5.547,
+        'min_profit': -4.239,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2399,7 +2399,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -2.12,
+        'min_profit': -2.117,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2416,8 +2416,8 @@
         'exit_price': 5993.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.25,
-        'min_profit': -6.96,
+        'max_profit': 6.252,
+        'min_profit': -6.956,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2434,8 +2434,8 @@
         'exit_price': 6547.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.52,
-        'min_profit': -23.08,
+        'max_profit': 8.521,
+        'min_profit': -23.082,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2453,7 +2453,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -21.26,
+        'min_profit': -21.256,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2471,7 +2471,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 7.33,
-        'min_profit': -6.62,
+        'min_profit': -6.624,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2488,7 +2488,7 @@
         'exit_price': 7178.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 5.27,
+        'max_profit': 5.273,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -2502,12 +2502,12 @@
         'entry_price_original': 7142.1,
         'entry_timeframe': 'LTF',
         'exit': '2020-04-07T23:55:00Z',
-        'exit_pct': -0.9,
+        'exit_pct': -0.897,
         'exit_price': 7206.2,
         'exit_type': 'sig_loss',
         'leverage': 4,
-        'max_profit': 2.88,
-        'min_profit': -5.66,
+        'max_profit': 2.878,
+        'min_profit': -5.657,
         'profit': -4.19,
         'units': 1.0
       },
@@ -2524,8 +2524,8 @@
         'exit_price': 7278.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.58,
-        'min_profit': -3.33,
+        'max_profit': 11.584,
+        'min_profit': -3.331,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2542,8 +2542,8 @@
         'exit_price': 6987.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 16.66,
-        'min_profit': -1.54,
+        'max_profit': 16.659,
+        'min_profit': -1.542,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2560,8 +2560,8 @@
         'exit_price': 6918.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.35,
-        'min_profit': -5.11,
+        'max_profit': 6.355,
+        'min_profit': -5.108,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2578,8 +2578,8 @@
         'exit_price': 6996.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.7,
-        'min_profit': -3.8,
+        'max_profit': 11.699,
+        'min_profit': -3.805,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2597,7 +2597,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -25.59,
+        'min_profit': -25.591,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2614,8 +2614,8 @@
         'exit_price': 7643.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.28,
-        'min_profit': -3.11,
+        'max_profit': 7.281,
+        'min_profit': -3.111,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2632,8 +2632,8 @@
         'exit_price': 7809.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.04,
-        'min_profit': -3.77,
+        'max_profit': 7.041,
+        'min_profit': -3.766,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2650,8 +2650,8 @@
         'exit_price': 8979.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.27,
-        'min_profit': -0.62,
+        'max_profit': 7.269,
+        'min_profit': -0.618,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2668,8 +2668,8 @@
         'exit_price': 8928.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 12.04,
-        'min_profit': -4.47,
+        'max_profit': 12.042,
+        'min_profit': -4.469,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2686,8 +2686,8 @@
         'exit_price': 8877.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 16.72,
-        'min_profit': -0.62,
+        'max_profit': 16.721,
+        'min_profit': -0.618,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2705,7 +2705,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -7.22,
+        'min_profit': -7.222,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2722,7 +2722,7 @@
         'exit_price': 9600.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 15.51,
+        'max_profit': 15.513,
         'min_profit': -2.62,
         'profit': 3.4,
         'units': 1.0
@@ -2740,7 +2740,7 @@
         'exit_price': 9114.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 3.48,
+        'max_profit': 3.478,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -2759,7 +2759,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -24.19,
+        'min_profit': -24.193,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2777,7 +2777,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -13.75,
+        'min_profit': -13.748,
         'profit': 19.8,
         'units': 1.0
       },
@@ -2794,8 +2794,8 @@
         'exit_price': 9710.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.66,
-        'min_profit': -6.8,
+        'max_profit': 10.663,
+        'min_profit': -6.799,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2812,8 +2812,8 @@
         'exit_price': 9801.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.5,
-        'min_profit': -13.68,
+        'max_profit': 7.496,
+        'min_profit': -13.683,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2830,8 +2830,8 @@
         'exit_price': 9823.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.68,
-        'min_profit': -2.58,
+        'max_profit': 10.677,
+        'min_profit': -2.582,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2848,8 +2848,8 @@
         'exit_price': 9617.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.24,
-        'min_profit': -26.52,
+        'max_profit': 10.238,
+        'min_profit': -26.519,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2862,12 +2862,12 @@
         'entry_price_original': 9278.5,
         'entry_timeframe': 'LTF',
         'exit': '2020-06-25T23:55:00Z',
-        'exit_pct': -0.48,
+        'exit_pct': -0.485,
         'exit_price': 9233.5,
         'exit_type': 'sig_loss',
         'leverage': 4,
-        'max_profit': 1.94,
-        'min_profit': -3.85,
+        'max_profit': 1.944,
+        'min_profit': -3.846,
         'profit': -2.54,
         'units': 1.0
       },
@@ -2884,8 +2884,8 @@
         'exit_price': 9141.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.56,
-        'min_profit': -2.83,
+        'max_profit': 5.556,
+        'min_profit': -2.831,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2898,13 +2898,13 @@
         'entry_price_original': 9038.1,
         'entry_timeframe': 'LTF',
         'exit': '2020-07-22T23:55:00Z',
-        'exit_pct': -5.44,
+        'exit_pct': -5.441,
         'exit_price': 9529.9,
         'exit_type': 'sig_loss',
         'leverage': 4,
-        'max_profit': 4.84,
-        'min_profit': -24.1,
-        'profit': -22.37,
+        'max_profit': 4.844,
+        'min_profit': -24.096,
+        'profit': -22.366,
         'units': 1.0
       },
       {
@@ -2920,8 +2920,8 @@
         'exit_price': 9625.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.53,
-        'min_profit': -3.53,
+        'max_profit': 5.532,
+        'min_profit': -3.534,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2939,7 +2939,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.27,
-        'min_profit': -2.92,
+        'min_profit': -2.921,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2956,8 +2956,8 @@
         'exit_price': 11256.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.71,
-        'min_profit': -6.52,
+        'max_profit': 10.709,
+        'min_profit': -6.518,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2975,7 +2975,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 8.17,
-        'min_profit': -1.3,
+        'min_profit': -1.305,
         'profit': 3.4,
         'units': 1.0
       },
@@ -2992,8 +2992,8 @@
         'exit_price': 11406.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.5,
-        'min_profit': -1.13,
+        'max_profit': 5.503,
+        'min_profit': -1.128,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3011,7 +3011,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 9.64,
-        'min_profit': -9.05,
+        'min_profit': -9.047,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3028,8 +3028,8 @@
         'exit_price': 12015.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.69,
-        'min_profit': -26.27,
+        'max_profit': 9.689,
+        'min_profit': -26.265,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3047,7 +3047,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 8.46,
-        'min_profit': -23.69,
+        'min_profit': -23.692,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3064,8 +3064,8 @@
         'exit_price': 10078.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.83,
-        'min_profit': -14.74,
+        'max_profit': 9.832,
+        'min_profit': -14.741,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3082,8 +3082,8 @@
         'exit_price': 10231.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.14,
-        'min_profit': -2.32,
+        'max_profit': 7.144,
+        'min_profit': -2.322,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3100,8 +3100,8 @@
         'exit_price': 10006.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.72,
-        'min_profit': -3.74,
+        'max_profit': 5.716,
+        'min_profit': -3.742,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3118,8 +3118,8 @@
         'exit_price': 9925.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.41,
-        'min_profit': -6.3,
+        'max_profit': 6.406,
+        'min_profit': -6.297,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3136,7 +3136,7 @@
         'exit_price': 11010.2,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 2.51,
+        'max_profit': 2.506,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -3155,7 +3155,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -11.67,
+        'min_profit': -11.665,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3173,7 +3173,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 10.96,
-        'min_profit': -4.35,
+        'min_profit': -4.348,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3190,8 +3190,8 @@
         'exit_price': 10578.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.96,
-        'min_profit': -10.33,
+        'max_profit': 5.959,
+        'min_profit': -10.326,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3208,7 +3208,7 @@
         'exit_price': 10462.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.35,
+        'max_profit': 6.346,
         'min_profit': -3.92,
         'profit': 3.4,
         'units': 1.0
@@ -3222,13 +3222,13 @@
         'entry_price_original': 10676.6,
         'entry_timeframe': 'LTF',
         'exit': '2020-10-09T23:55:00Z',
-        'exit_pct': -3.59,
+        'exit_pct': -3.593,
         'exit_price': 11060.2,
         'exit_type': 'sig_loss',
         'leverage': 4,
-        'max_profit': 5.0,
+        'max_profit': 5.005,
         'min_profit': -16.86,
-        'profit': -14.97,
+        'profit': -14.972,
         'units': 1.0
       },
       {
@@ -3245,7 +3245,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -0.6,
+        'min_profit': -0.604,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3263,7 +3263,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -11.72,
+        'min_profit': -11.721,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3280,8 +3280,8 @@
         'exit_price': 13126.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.33,
-        'min_profit': -5.62,
+        'max_profit': 10.326,
+        'min_profit': -5.617,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3299,7 +3299,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -9.69,
+        'min_profit': -9.691,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3316,8 +3316,8 @@
         'exit_price': 13576.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.42,
-        'min_profit': -2.58,
+        'max_profit': 5.423,
+        'min_profit': -2.582,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3334,8 +3334,8 @@
         'exit_price': 13662.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.98,
-        'min_profit': -1.91,
+        'max_profit': 5.982,
+        'min_profit': -1.907,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3352,8 +3352,8 @@
         'exit_price': 13971.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.04,
-        'min_profit': -18.38,
+        'max_profit': 6.042,
+        'min_profit': -18.378,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3370,8 +3370,8 @@
         'exit_price': 15407.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.77,
-        'min_profit': -4.0,
+        'max_profit': 9.765,
+        'min_profit': -3.996,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3388,8 +3388,8 @@
         'exit_price': 15634.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.81,
-        'min_profit': -4.18,
+        'max_profit': 5.808,
+        'min_profit': -4.179,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3407,7 +3407,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -15.62,
+        'min_profit': -15.625,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3424,8 +3424,8 @@
         'exit_price': 18131.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.81,
-        'min_profit': -5.71,
+        'max_profit': 5.806,
+        'min_profit': -5.709,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3442,8 +3442,8 @@
         'exit_price': 18866.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.25,
-        'min_profit': -15.05,
+        'max_profit': 6.252,
+        'min_profit': -15.054,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3461,7 +3461,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -7.62,
+        'min_profit': -7.616,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3479,7 +3479,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 5.78,
-        'min_profit': -9.02,
+        'min_profit': -9.016,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3496,8 +3496,8 @@
         'exit_price': 19303.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.26,
-        'min_profit': -5.93,
+        'max_profit': 6.256,
+        'min_profit': -5.928,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3514,7 +3514,7 @@
         'exit_price': 17946.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': -0.55,
+        'max_profit': -0.548,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -3532,8 +3532,8 @@
         'exit_price': 18735.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.39,
-        'min_profit': -21.69,
+        'max_profit': 6.389,
+        'min_profit': -21.689,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3550,8 +3550,8 @@
         'exit_price': 19449.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.51,
-        'min_profit': -1.38,
+        'max_profit': 5.513,
+        'min_profit': -1.383,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3569,7 +3569,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -2.59,
+        'min_profit': -2.589,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3586,8 +3586,8 @@
         'exit_price': 23361.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.33,
-        'min_profit': -6.32,
+        'max_profit': 7.327,
+        'min_profit': -6.315,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3604,7 +3604,7 @@
         'exit_price': 22188.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 3.29,
+        'max_profit': 3.286,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -3622,8 +3622,8 @@
         'exit_price': 23315.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.29,
-        'min_profit': -0.56,
+        'max_profit': 9.289,
+        'min_profit': -0.562,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3640,8 +3640,8 @@
         'exit_price': 24085.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 12.81,
-        'min_profit': -21.02,
+        'max_profit': 12.807,
+        'min_profit': -21.021,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3659,7 +3659,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -20.37,
+        'min_profit': -20.372,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3677,7 +3677,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.08,
-        'min_profit': -4.38,
+        'min_profit': -4.376,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3694,8 +3694,8 @@
         'exit_price': 29692.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.22,
-        'min_profit': -5.64,
+        'max_profit': 6.219,
+        'min_profit': -5.637,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3712,7 +3712,7 @@
         'exit_price': 30265.8,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 2.92,
+        'max_profit': 2.916,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -3730,8 +3730,8 @@
         'exit_price': 32101.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.53,
-        'min_profit': -8.28,
+        'max_profit': 7.531,
+        'min_profit': -8.277,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3748,7 +3748,7 @@
         'exit_price': 38861.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.06,
+        'max_profit': 6.058,
         'min_profit': -9.71,
         'profit': 3.4,
         'units': 1.0
@@ -3784,7 +3784,7 @@
         'exit_price': 35719.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.85,
+        'max_profit': 10.849,
         'min_profit': -4.64,
         'profit': 3.4,
         'units': 1.0
@@ -3803,7 +3803,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -3.46,
+        'min_profit': -3.459,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3821,7 +3821,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.41,
-        'min_profit': -1.39,
+        'min_profit': -1.393,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3838,8 +3838,8 @@
         'exit_price': 36981.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.98,
-        'min_profit': -20.92,
+        'max_profit': 7.977,
+        'min_profit': -20.924,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3856,8 +3856,8 @@
         'exit_price': 32776.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 16.64,
-        'min_profit': -6.23,
+        'max_profit': 16.637,
+        'min_profit': -6.231,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3874,8 +3874,8 @@
         'exit_price': 33238.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.23,
-        'min_profit': -24.41,
+        'max_profit': 10.229,
+        'min_profit': -24.412,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3892,7 +3892,7 @@
         'exit_price': 30358.8,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 1.67,
+        'max_profit': 1.669,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -3911,7 +3911,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -11.89,
+        'min_profit': -11.893,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3928,8 +3928,8 @@
         'exit_price': 34941.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.71,
-        'min_profit': -28.3,
+        'max_profit': 11.714,
+        'min_profit': -28.296,
         'profit': 3.4,
         'units': 1.0
       },
@@ -3947,7 +3947,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -6.78,
+        'min_profit': -6.781,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3965,7 +3965,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -2.62,
+        'min_profit': -2.616,
         'profit': 19.8,
         'units': 1.0
       },
@@ -3982,8 +3982,8 @@
         'exit_price': 46751.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 17.61,
-        'min_profit': -7.42,
+        'max_profit': 17.612,
+        'min_profit': -7.415,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4000,8 +4000,8 @@
         'exit_price': 48351.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 14.67,
-        'min_profit': -13.87,
+        'max_profit': 14.665,
+        'min_profit': -13.868,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4018,8 +4018,8 @@
         'exit_price': 49089.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.07,
-        'min_profit': -13.47,
+        'max_profit': 10.067,
+        'min_profit': -13.469,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4036,8 +4036,8 @@
         'exit_price': 49710.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.54,
-        'min_profit': -2.64,
+        'max_profit': 7.543,
+        'min_profit': -2.642,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4072,8 +4072,8 @@
         'exit_price': 57368.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.48,
-        'min_profit': -7.17,
+        'max_profit': 6.475,
+        'min_profit': -7.165,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4091,7 +4091,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 8.88,
-        'min_profit': -1.61,
+        'min_profit': -1.614,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4109,7 +4109,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 9.14,
-        'min_profit': -17.51,
+        'min_profit': -17.513,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4126,8 +4126,8 @@
         'exit_price': 47981.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.5,
-        'min_profit': -3.49,
+        'max_profit': 6.504,
+        'min_profit': -3.486,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4145,7 +4145,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -6.28,
+        'min_profit': -6.284,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4163,7 +4163,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -3.15,
+        'min_profit': -3.152,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4180,8 +4180,8 @@
         'exit_price': 48899.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.14,
-        'min_profit': -1.51,
+        'max_profit': 8.136,
+        'min_profit': -1.512,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4198,8 +4198,8 @@
         'exit_price': 49382.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.86,
-        'min_profit': -0.95,
+        'max_profit': 7.865,
+        'min_profit': -0.951,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4217,7 +4217,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 5.67,
-        'min_profit': -4.96,
+        'min_profit': -4.964,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4234,8 +4234,8 @@
         'exit_price': 55229.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 19.12,
-        'min_profit': -2.99,
+        'max_profit': 19.115,
+        'min_profit': -2.987,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4252,7 +4252,7 @@
         'exit_price': 57185.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.62,
+        'max_profit': 7.625,
         'min_profit': -5.62,
         'profit': 3.4,
         'units': 1.0
@@ -4271,7 +4271,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -10.31,
+        'min_profit': -10.308,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4288,8 +4288,8 @@
         'exit_price': 56950.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.7,
-        'min_profit': -19.29,
+        'max_profit': 6.696,
+        'min_profit': -19.289,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4306,8 +4306,8 @@
         'exit_price': 57928.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.64,
-        'min_profit': -2.1,
+        'max_profit': 5.645,
+        'min_profit': -2.102,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4324,8 +4324,8 @@
         'exit_price': 59052.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.2,
-        'min_profit': -4.24,
+        'max_profit': 6.202,
+        'min_profit': -4.242,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4342,7 +4342,7 @@
         'exit_price': 53929.3,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 2.26,
+        'max_profit': 2.261,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -4360,8 +4360,8 @@
         'exit_price': 56207.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.65,
-        'min_profit': -16.06,
+        'max_profit': 6.651,
+        'min_profit': -16.058,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4378,8 +4378,8 @@
         'exit_price': 53378.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.92,
-        'min_profit': -3.81,
+        'max_profit': 6.922,
+        'min_profit': -3.812,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4397,7 +4397,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -1.42,
+        'min_profit': -1.417,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4414,8 +4414,8 @@
         'exit_price': 59620.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.14,
-        'min_profit': -8.47,
+        'max_profit': 6.142,
+        'min_profit': -8.466,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4432,8 +4432,8 @@
         'exit_price': 60205.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.73,
-        'min_profit': -28.44,
+        'max_profit': 8.734,
+        'min_profit': -28.441,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4450,8 +4450,8 @@
         'exit_price': 60860.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.66,
-        'min_profit': -7.76,
+        'max_profit': 5.656,
+        'min_profit': -7.761,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4468,7 +4468,7 @@
         'exit_price': 58830.0,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 3.02,
+        'max_profit': 3.016,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -4482,13 +4482,13 @@
         'entry_price_original': 56784.1,
         'entry_timeframe': 'LTF',
         'exit': '2021-04-19T23:55:00Z',
-        'exit_pct': -1.87,
+        'exit_pct': -1.874,
         'exit_price': 55720.0,
         'exit_type': 'sig_loss',
         'leverage': 4,
         'max_profit': 5.11,
-        'min_profit': -18.6,
-        'profit': -8.1,
+        'min_profit': -18.599,
+        'profit': -8.096,
         'units': 1.0
       },
       {
@@ -4504,8 +4504,8 @@
         'exit_price': 55162.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.52,
-        'min_profit': -1.5,
+        'max_profit': 8.516,
+        'min_profit': -1.498,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4523,7 +4523,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.1,
-        'min_profit': -4.39,
+        'min_profit': -4.393,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4540,8 +4540,8 @@
         'exit_price': 54751.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 19.25,
-        'min_profit': -3.75,
+        'max_profit': 19.247,
+        'min_profit': -3.746,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4558,8 +4558,8 @@
         'exit_price': 52893.8,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.61,
-        'min_profit': -1.89,
+        'max_profit': 8.609,
+        'min_profit': -1.886,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4577,7 +4577,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 17.47,
-        'min_profit': -15.03,
+        'min_profit': -15.035,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4594,8 +4594,8 @@
         'exit_price': 53856.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.49,
-        'min_profit': -16.04,
+        'max_profit': 5.488,
+        'min_profit': -16.041,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4612,8 +4612,8 @@
         'exit_price': 56858.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.77,
-        'min_profit': -2.77,
+        'max_profit': 7.766,
+        'min_profit': -2.772,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4630,8 +4630,8 @@
         'exit_price': 56243.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 14.27,
-        'min_profit': -5.41,
+        'max_profit': 14.265,
+        'min_profit': -5.408,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4684,8 +4684,8 @@
         'exit_price': 55401.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.41,
-        'min_profit': -7.83,
+        'max_profit': 5.415,
+        'min_profit': -7.829,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4702,8 +4702,8 @@
         'exit_price': 49239.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.27,
-        'min_profit': -9.37,
+        'max_profit': 11.271,
+        'min_profit': -9.369,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4720,8 +4720,8 @@
         'exit_price': 47183.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.23,
-        'min_profit': -0.48,
+        'max_profit': 11.231,
+        'min_profit': -0.483,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4738,8 +4738,8 @@
         'exit_price': 43239.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.59,
-        'min_profit': -3.38,
+        'max_profit': 5.589,
+        'min_profit': -3.384,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4757,7 +4757,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -19.47,
+        'min_profit': -19.465,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4775,7 +4775,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -5.71,
+        'min_profit': -5.705,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4792,8 +4792,8 @@
         'exit_price': 36709.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.65,
-        'min_profit': -3.04,
+        'max_profit': 5.652,
+        'min_profit': -3.039,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4810,8 +4810,8 @@
         'exit_price': 37869.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.79,
-        'min_profit': -13.42,
+        'max_profit': 6.786,
+        'min_profit': -13.422,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4828,8 +4828,8 @@
         'exit_price': 37956.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.73,
-        'min_profit': -1.0,
+        'max_profit': 5.731,
+        'min_profit': -1.003,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4847,7 +4847,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.84,
-        'min_profit': -3.13,
+        'min_profit': -3.133,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4864,7 +4864,7 @@
         'exit_price': 37119.2,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 5.06,
+        'max_profit': 5.059,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -4882,7 +4882,7 @@
         'exit_price': 38736.1,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 4.42,
+        'max_profit': 4.416,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -4900,8 +4900,8 @@
         'exit_price': 37093.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.46,
-        'min_profit': -7.87,
+        'max_profit': 5.459,
+        'min_profit': -7.868,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4918,8 +4918,8 @@
         'exit_price': 36014.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.57,
-        'min_profit': -1.0,
+        'max_profit': 11.567,
+        'min_profit': -0.997,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4937,7 +4937,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -13.11,
+        'min_profit': -13.109,
         'profit': 19.8,
         'units': 1.0
       },
@@ -4954,7 +4954,7 @@
         'exit_price': 35825.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.86,
+        'max_profit': 7.864,
         'min_profit': -16.82,
         'profit': 3.4,
         'units': 1.0
@@ -4972,8 +4972,8 @@
         'exit_price': 39384.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.63,
-        'min_profit': -7.75,
+        'max_profit': 5.631,
+        'min_profit': -7.751,
         'profit': 3.4,
         'units': 1.0
       },
@@ -4990,8 +4990,8 @@
         'exit_price': 38115.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.78,
-        'min_profit': -7.32,
+        'max_profit': 10.777,
+        'min_profit': -7.321,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5008,8 +5008,8 @@
         'exit_price': 34956.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 17.12,
-        'min_profit': -7.29,
+        'max_profit': 17.115,
+        'min_profit': -7.287,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5027,7 +5027,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -5.17,
+        'min_profit': -5.174,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5044,8 +5044,8 @@
         'exit_price': 32803.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.47,
-        'min_profit': -9.33,
+        'max_profit': 6.468,
+        'min_profit': -9.333,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5062,8 +5062,8 @@
         'exit_price': 33362.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.83,
-        'min_profit': -2.52,
+        'max_profit': 5.825,
+        'min_profit': -2.516,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5081,7 +5081,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 8.11,
-        'min_profit': -2.51,
+        'min_profit': -2.509,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5098,8 +5098,8 @@
         'exit_price': 34298.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.23,
-        'min_profit': -1.28,
+        'max_profit': 6.233,
+        'min_profit': -1.285,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5116,8 +5116,8 @@
         'exit_price': 33308.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.42,
-        'min_profit': -17.49,
+        'max_profit': 5.419,
+        'min_profit': -17.487,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5135,7 +5135,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 5.62,
-        'min_profit': -15.65,
+        'min_profit': -15.655,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5152,8 +5152,8 @@
         'exit_price': 32047.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.61,
-        'min_profit': -3.41,
+        'max_profit': 6.606,
+        'min_profit': -3.414,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5171,7 +5171,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -13.78,
+        'min_profit': -13.776,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5188,7 +5188,7 @@
         'exit_price': 34381.0,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 0.35,
+        'max_profit': 0.355,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -5207,7 +5207,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -2.39,
+        'min_profit': -2.393,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5224,8 +5224,8 @@
         'exit_price': 38834.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.26,
-        'min_profit': -11.66,
+        'max_profit': 9.259,
+        'min_profit': -11.655,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5243,7 +5243,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -16.98,
+        'min_profit': -16.978,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5260,8 +5260,8 @@
         'exit_price': 39552.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.6,
-        'min_profit': -3.63,
+        'max_profit': 5.604,
+        'min_profit': -3.632,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5278,8 +5278,8 @@
         'exit_price': 40386.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.25,
-        'min_profit': -0.6,
+        'max_profit': 7.246,
+        'min_profit': -0.601,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5296,8 +5296,8 @@
         'exit_price': 45444.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.06,
-        'min_profit': -0.55,
+        'max_profit': 9.055,
+        'min_profit': -0.551,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5314,8 +5314,8 @@
         'exit_price': 46386.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.66,
-        'min_profit': -1.33,
+        'max_profit': 5.658,
+        'min_profit': -1.329,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5333,7 +5333,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -3.31,
+        'min_profit': -3.312,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5351,7 +5351,7 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 9.75,
-        'min_profit': -0.83,
+        'min_profit': -0.826,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5369,7 +5369,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -24.57,
+        'min_profit': -24.569,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5386,7 +5386,7 @@
         'exit_price': 49792.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 9.14,
+        'max_profit': 9.143,
         'min_profit': -10.67,
         'profit': 3.4,
         'units': 1.0
@@ -5404,8 +5404,8 @@
         'exit_price': 48987.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.52,
-        'min_profit': -0.9,
+        'max_profit': 5.523,
+        'min_profit': -0.899,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5422,8 +5422,8 @@
         'exit_price': 47923.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 17.99,
-        'min_profit': -4.14,
+        'max_profit': 17.991,
+        'min_profit': -4.141,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5440,8 +5440,8 @@
         'exit_price': 49410.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.3,
-        'min_profit': -19.99,
+        'max_profit': 7.305,
+        'min_profit': -19.988,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5458,8 +5458,8 @@
         'exit_price': 50409.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 8.21,
-        'min_profit': -3.64,
+        'max_profit': 8.212,
+        'min_profit': -3.644,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5477,7 +5477,7 @@
         'exit_type': 'tp',
         'leverage': 4,
         'max_profit': 19.4,
-        'min_profit': -2.48,
+        'min_profit': -2.483,
         'profit': 19.8,
         'units': 1.0
       },
@@ -5490,13 +5490,13 @@
         'entry_price_original': 47151.5,
         'entry_timeframe': 'LTF',
         'exit': '2021-09-11T23:55:00Z',
-        'exit_pct': -4.27,
+        'exit_pct': -4.272,
         'exit_price': 45137.4,
         'exit_type': 'sig_loss',
         'leverage': 4,
         'max_profit': 1.5,
-        'min_profit': -26.19,
-        'profit': -17.69,
+        'min_profit': -26.188,
+        'profit': -17.686,
         'units': 1.0
       },
       {
@@ -5512,8 +5512,8 @@
         'exit_price': 44686.0,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.38,
-        'min_profit': -12.57,
+        'max_profit': 6.378,
+        'min_profit': -12.568,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5530,8 +5530,8 @@
         'exit_price': 47006.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.54,
-        'min_profit': -7.02,
+        'max_profit': 5.539,
+        'min_profit': -7.022,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5548,8 +5548,8 @@
         'exit_price': 47276.3,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.96,
-        'min_profit': -5.57,
+        'max_profit': 6.964,
+        'min_profit': -5.566,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5566,8 +5566,8 @@
         'exit_price': 42645.7,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.07,
-        'min_profit': -0.59,
+        'max_profit': 6.071,
+        'min_profit': -0.591,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5584,8 +5584,8 @@
         'exit_price': 42692.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 10.25,
-        'min_profit': -3.4,
+        'max_profit': 10.254,
+        'min_profit': -3.403,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5602,7 +5602,7 @@
         'exit_price': 44401.4,
         'exit_type': 'sl_loss',
         'leverage': 4,
-        'max_profit': 5.11,
+        'max_profit': 5.111,
         'min_profit': -28.6,
         'profit': -28.6,
         'units': 1.0
@@ -5620,8 +5620,8 @@
         'exit_price': 48191.2,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.31,
-        'min_profit': -5.58,
+        'max_profit': 6.307,
+        'min_profit': -5.579,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5638,8 +5638,8 @@
         'exit_price': 48951.1,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.97,
-        'min_profit': -1.48,
+        'max_profit': 7.971,
+        'min_profit': -1.479,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5656,8 +5656,8 @@
         'exit_price': 55579.9,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.28,
-        'min_profit': -1.23,
+        'max_profit': 7.275,
+        'min_profit': -1.231,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5674,7 +5674,7 @@
         'exit_price': 55393.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.57,
+        'max_profit': 5.567,
         'min_profit': -5.94,
         'profit': 3.4,
         'units': 1.0
@@ -5692,8 +5692,8 @@
         'exit_price': 55974.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 11.19,
-        'min_profit': -1.4,
+        'max_profit': 11.191,
+        'min_profit': -1.396,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5710,8 +5710,8 @@
         'exit_price': 56893.5,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 5.79,
-        'min_profit': -1.06,
+        'max_profit': 5.789,
+        'min_profit': -1.058,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5728,8 +5728,8 @@
         'exit_price': 59772.6,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 7.28,
-        'min_profit': -3.46,
+        'max_profit': 7.282,
+        'min_profit': -3.458,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5746,8 +5746,8 @@
         'exit_price': 62051.4,
         'exit_type': 'sl_profit',
         'leverage': 4,
-        'max_profit': 6.73,
-        'min_profit': -2.08,
+        'max_profit': 6.728,
+        'min_profit': -2.083,
         'profit': 3.4,
         'units': 1.0
       },
@@ -5765,13 +5765,13 @@
         'exit_type': 'sl_profit',
         'leverage': 4,
         'max_profit': 6.67,
-        'min_profit': -7.2,
+        'min_profit': -7.201,
         'profit': 3.4,
         'units': 1.0
       }
     ],
     'trades': 213,
     'valid': true,
-    'win_rate': 88
+    'win_rate': 88.7
   }
 ]

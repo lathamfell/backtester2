@@ -56,13 +56,13 @@
         'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-11T16:00:00Z',
-        'exit_pct': 9.63,
+        'exit_pct': 9.634,
         'exit_price': 31059.9,
         'exit_type': 'sl_profit',
         'leverage': 5,
-        'max_profit': 49.92,
-        'min_profit': -29.46,
-        'profit': 47.42,
+        'max_profit': 49.918,
+        'min_profit': -29.459,
+        'profit': 47.418,
         'units': 1.0
       },
       {
@@ -74,13 +74,13 @@
         'entry_price_original': 33459.5,
         'entry_timeframe': null,
         'exit': '2021-01-29T04:00:00Z',
-        'exit_pct': 1.91,
+        'exit_pct': 1.906,
         'exit_price': 34097.4,
         'exit_type': 'sl_profit',
         'leverage': 5,
-        'max_profit': 13.78,
-        'min_profit': -22.21,
-        'profit': 8.78,
+        'max_profit': 13.782,
+        'min_profit': -22.209,
+        'profit': 8.782,
         'units': 1.0
       },
       {
@@ -92,13 +92,13 @@
         'entry_price_original': 53277.5,
         'entry_timeframe': null,
         'exit': '2021-02-22T20:00:00Z',
-        'exit_pct': 2.64,
+        'exit_pct': 2.635,
         'exit_price': 51873.4,
         'exit_type': 'sl_profit',
         'leverage': 5,
-        'max_profit': 14.93,
-        'min_profit': -16.71,
-        'profit': 12.43,
+        'max_profit': 14.927,
+        'min_profit': -16.714,
+        'profit': 12.427,
         'units': 1.0
       },
       {
@@ -114,9 +114,9 @@
         'exit_price': 51632.4,
         'exit_type': 'sl_profit',
         'leverage': 5,
-        'max_profit': 19.85,
+        'max_profit': 19.851,
         'min_profit': -0.75,
-        'profit': 17.35,
+        'profit': 17.351,
         'units': 1.0
       },
       {
@@ -128,18 +128,18 @@
         'entry_price_original': 54302.5,
         'entry_timeframe': null,
         'exit': '2021-03-18T16:00:00Z',
-        'exit_pct': -10.71,
+        'exit_pct': -10.706,
         'exit_price': 60116.3,
         'exit_type': 'sl_loss',
         'leverage': 5,
-        'max_profit': 5.72,
-        'min_profit': -55.05,
-        'profit': -54.28,
+        'max_profit': 5.718,
+        'min_profit': -55.052,
+        'profit': -54.282,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 80
+    'win_rate': 80.0
   }
 ]

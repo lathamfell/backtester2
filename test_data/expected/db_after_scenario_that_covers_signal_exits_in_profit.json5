@@ -49,13 +49,13 @@
         'entry_price_original': 34371.0,
         'entry_timeframe': null,
         'exit': '2021-01-28T20:00:00Z',
-        'exit_pct': 2.65,
+        'exit_pct': 2.652,
         'exit_price': 33459.5,
         'exit_type': 'sig_profit',
         'leverage': 2,
-        'max_profit': 31.95,
+        'max_profit': 31.945,
         'min_profit': -34.11,
-        'profit': 5.0,
+        'profit': 5.004,
         'units': 1.0
       },
       {
@@ -71,8 +71,8 @@
         'exit_price': 53277.5,
         'exit_type': 'sig_profit',
         'leverage': 2,
-        'max_profit': 149.38,
-        'min_profit': -8.88,
+        'max_profit': 149.376,
+        'min_profit': -8.884,
         'profit': 118.16,
         'units': 1.0
       },
@@ -85,13 +85,13 @@
         'entry_price_original': 53277.5,
         'entry_timeframe': null,
         'exit': '2021-03-03T04:00:00Z',
-        'exit_pct': 6.47,
+        'exit_pct': 6.474,
         'exit_price': 49828.5,
         'exit_type': 'sig_profit',
         'leverage': 2,
-        'max_profit': 38.22,
-        'min_profit': -6.69,
-        'profit': 12.65,
+        'max_profit': 38.215,
+        'min_profit': -6.685,
+        'profit': 12.647,
         'units': 1.0
       },
       {
@@ -103,13 +103,13 @@
         'entry_price_original': 49828.5,
         'entry_timeframe': null,
         'exit': '2021-03-16T00:00:00Z',
-        'exit_pct': 8.98,
+        'exit_pct': 8.979,
         'exit_price': 54302.5,
         'exit_type': 'sig_profit',
         'leverage': 2,
-        'max_profit': 48.55,
-        'min_profit': -14.46,
-        'profit': 17.66,
+        'max_profit': 48.554,
+        'min_profit': -14.463,
+        'profit': 17.658,
         'units': 1.0
       },
       {
@@ -126,13 +126,13 @@
         'exit_type': 'sig_loss',
         'leverage': 2,
         'max_profit': 13.86,
-        'min_profit': -22.02,
-        'profit': -7.24,
+        'min_profit': -22.021,
+        'profit': -7.241,
         'units': 1.0
       }
     ],
     'trades': 5,
     'valid': true,
-    'win_rate': 80
+    'win_rate': 80.0
   }
 ]
