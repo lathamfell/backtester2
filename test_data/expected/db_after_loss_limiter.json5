@@ -7,20 +7,11 @@
       'leverage': 5,
       'mean_floor': -5,
       'median_floor': -5,
-      'signal_exit': true,
+      'htf_signal_exit': true,
       'signal_timeframe': [],
-      'sl_reset_points': [
-        [
-          2.0,
-          -1.0
-        ]
-      ],
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': 10,
       'take_profit': 10,
-      'trail_delay': true,
-      'trail_last_reset': false,
-      'trailing_sl': true,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.11,
@@ -34,8 +25,8 @@
     'mean_profit': 1.12,
     'median_profit': 2.3,
     'min_assets': 0.65,
-    'signal_exits_at_loss': 47,
-    'signal_exits_in_profit': 0,
+    'htf_signal_exits_at_loss': 47,
+    'htf_signal_exits_in_profit': 0,
     'stop_loss_exits_at_loss': 3,
     'stop_loss_exits_in_profit': 156,
     'take_profit_exits': 1,

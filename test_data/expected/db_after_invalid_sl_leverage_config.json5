@@ -2,23 +2,17 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_three_trades.csv',
-      'dca': 0,
+      'dca': [0],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
-      'leverage': 20,
+      'leverage': [20],
       'mean_floor': 4,
       'median_floor': 4,
-      'signal_exit': true,
+      'htf_signal_exit': true,
       'signal_timeframe': [],
-      'sl_reset_points': [
-        []
-      ],
       'start_date': '2021-01-01T00:00:00Z',
-      'stop_loss': 6,
-      'take_profit': 1,
-      'trail_delay': false,
-      'trail_last_reset': false,
-      'trailing_sl': false,
+      'stop_loss': [6],
+      'take_profit': [1],
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
@@ -31,8 +25,8 @@
     'mean_profit': null,
     'median_profit': null,
     'min_assets': null,
-    'signal_exits_at_loss': null,
-    'signal_exits_in_profit': null,
+    'htf_signal_exits_at_loss': null,
+    'htf_signal_exits_in_profit': null,
     'stop_loss_exits_at_loss': null,
     'stop_loss_exits_in_profit': null,
     'take_profit_exits': null,
@@ -42,146 +36,4 @@
     'valid': false,
     'win_rate': null
   },
-  {
-    '_id': {
-      'datafilename': 'BYBITBTCUSD_240_2021_three_trades.csv',
-      'dca': 0,
-      'drawdown_limit': -100,
-      'floor_grace_period': 50,
-      'leverage': 20,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'signal_exit': true,
-      'signal_timeframe': [],
-      'sl_reset_points': [
-        [
-          2.5,
-          -0.5
-        ]
-      ],
-      'start_date': '2021-01-01T00:00:00Z',
-      'stop_loss': 6,
-      'take_profit': 1,
-      'trail_delay': false,
-      'trail_last_reset': false,
-      'trailing_sl': false,
-      'winrate_floor': 50
-    },
-    'daily_profit_pct_avg': null,
-    'days': null,
-    'end_date': '2021-03-03T04:00:00Z',
-    'final_assets': null,
-    'max_assets': null,
-    'max_drawdown_pct': null,
-    'mean_hrs_in_trade': null,
-    'mean_profit': null,
-    'median_profit': null,
-    'min_assets': null,
-    'signal_exits_at_loss': null,
-    'signal_exits_in_profit': null,
-    'stop_loss_exits_at_loss': null,
-    'stop_loss_exits_in_profit': null,
-    'take_profit_exits': null,
-    'total_profit_pct': null,
-    'trade_history': null,
-    'trades': null,
-    'valid': false,
-    'win_rate': null
-  },
-  {
-    '_id': {
-      'datafilename': 'BYBITBTCUSD_240_2021_three_trades.csv',
-      'dca': 0,
-      'drawdown_limit': -100,
-      'floor_grace_period': 50,
-      'leverage': 20,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'signal_exit': true,
-      'signal_timeframe': [],
-      'sl_reset_points': [
-        [
-          2.0,
-          -1.0
-        ],
-        [
-          3.0,
-          -2.5
-        ]
-      ],
-      'start_date': '2021-01-01T00:00:00Z',
-      'stop_loss': 6,
-      'take_profit': 1,
-      'trail_delay': false,
-      'trail_last_reset': false,
-      'trailing_sl': false,
-      'winrate_floor': 50
-    },
-    'daily_profit_pct_avg': null,
-    'days': null,
-    'end_date': '2021-03-03T04:00:00Z',
-    'final_assets': null,
-    'max_assets': null,
-    'max_drawdown_pct': null,
-    'mean_hrs_in_trade': null,
-    'mean_profit': null,
-    'median_profit': null,
-    'min_assets': null,
-    'signal_exits_at_loss': null,
-    'signal_exits_in_profit': null,
-    'stop_loss_exits_at_loss': null,
-    'stop_loss_exits_in_profit': null,
-    'take_profit_exits': null,
-    'total_profit_pct': null,
-    'trade_history': null,
-    'trades': null,
-    'valid': false,
-    'win_rate': null
-  },
-  {
-    '_id': {
-      'datafilename': 'BYBITBTCUSD_240_2021_three_trades.csv',
-      'dca': 0,
-      'drawdown_limit': -100,
-      'floor_grace_period': 50,
-      'leverage': 20,
-      'mean_floor': 4,
-      'median_floor': 4,
-      'signal_exit': true,
-      'signal_timeframe': [],
-      'sl_reset_points': [
-        [
-          1.0,
-          -0.5
-        ]
-      ],
-      'start_date': '2021-01-01T00:00:00Z',
-      'stop_loss': 6,
-      'take_profit': 1,
-      'trail_delay': false,
-      'trail_last_reset': false,
-      'trailing_sl': false,
-      'winrate_floor': 50
-    },
-    'daily_profit_pct_avg': null,
-    'days': null,
-    'end_date': '2021-03-03T04:00:00Z',
-    'final_assets': null,
-    'max_assets': null,
-    'max_drawdown_pct': null,
-    'mean_hrs_in_trade': null,
-    'mean_profit': null,
-    'median_profit': null,
-    'min_assets': null,
-    'signal_exits_at_loss': null,
-    'signal_exits_in_profit': null,
-    'stop_loss_exits_at_loss': null,
-    'stop_loss_exits_in_profit': null,
-    'take_profit_exits': null,
-    'total_profit_pct': null,
-    'trade_history': null,
-    'trades': null,
-    'valid': false,
-    'win_rate': null
-  }
 ]
