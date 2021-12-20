@@ -2,10 +2,7 @@
   {
     '_id': {
       'datafilename': 'COINBASE_BTCUSD_15_1h_on_5m_2021.csv',
-      'dca': [
-        0,
-        0
-      ],
+          'dca': [[0], [0]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -7093,10 +7090,7 @@
   {
     '_id': {
       'datafilename': 'COINBASE_BTCUSD_15_1h_on_5m_2021.csv',
-      'dca': [
-        0,
-        0
-      ],
+          'dca': [[0], [0]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,

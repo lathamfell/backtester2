@@ -2,9 +2,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -266,9 +264,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -368,9 +364,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -506,9 +500,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -590,9 +582,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -636,9 +626,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -792,9 +780,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -876,9 +862,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -922,9 +906,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -968,9 +950,7 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_trunc.csv',
-      'dca': [
-        0
-      ],
+          'dca': [[0]],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
       'htf_signal_exit': true,

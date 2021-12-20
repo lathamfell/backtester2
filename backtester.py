@@ -4,6 +4,7 @@ from multiprocessing import Pool, cpu_count
 import pymongo
 from statistics import mean, median
 from enum import Enum
+import copy
 
 import config_prod as c
 import exceptions as e
@@ -94,7 +95,7 @@ def main(
                                 if accuracy_tester_mode and stop_loss != take_profit:
                                     continue
                                 for dca in dcas:
-                                    if not dca_sl_check(dca, stop_loss):
+                                    if not dca_check(dca, stop_loss):
                                         continue
                                     for drawdown_limit in drawdown_limits:
                                         for htf_signal_exit in htf_signal_exits:
@@ -138,7 +139,7 @@ def main(
                                 if accuracy_tester_mode and stop_loss != take_profit:
                                     continue
                                 for dca in dcas:
-                                    if not dca_sl_check(dca, stop_loss):
+                                    if not dca_check(dca, stop_loss):
                                         continue
                                     for drawdown_limit in drawdown_limits:
                                         for htf_signal_exit in htf_signal_exits:
@@ -311,6 +312,7 @@ class ScenarioRunner:
         self.htf_signal_exits_in_profit = 0
         self.htf_signal_exits_at_loss = 0
         self.take_profit = spec["take_profit"]  # may change after DCA
+        self.dca = None  # set for each trade depending on TF; mutated as each DCA point is hit
         self.profit_pct = None
         self.trade_history = []
         self.trade = {}
@@ -364,16 +366,15 @@ class ScenarioRunner:
                 ) * 100
                 # check for DCA
                 if (
-                    self.spec["dca"][self.tf_idx] > 0
+                    self.dca and self.dca[0] > 0
                     and (
                         self.price_movement_at_candle_low
-                        <= (-1 * self.spec["dca"][self.tf_idx])
+                        <= (-1 * self.dca[0])
                     )
-                    and self.units < 1
                 ):
                     # update the entry price
                     self.long_entry_price = self.long_entry_price * (
-                        1 - self.spec["dca"][self.tf_idx] / 100 / 2
+                        1 - self.dca[0] / 100 / 2
                     )
                     # recalculate price movement at candle low with new entry price
                     self.price_movement_at_candle_low = (
@@ -382,8 +383,10 @@ class ScenarioRunner:
                     # set new tp
                     if self.spec["tp_after_dca"] is not None:
                         self.take_profit = self.spec["tp_after_dca"]
-                    # allocate the other units
-                    self.units *= 2
+                    # allocate more units
+                    self.units += get_dca_units(self.spec["dca"][self.tf_idx])
+                    # jettison the DCA point so we don't hit it again
+                    del self.dca[0]
                 # check for a new trade low and min profit and if so save it for later
                 self.price_movement_low = min(
                     self.price_movement_low, self.price_movement_at_candle_low
@@ -447,13 +450,12 @@ class ScenarioRunner:
 
                 # check for DCA
                 if (
-                    self.spec["dca"][self.tf_idx] > 0
-                    and (self.price_movement_at_candle_high >= self.spec["dca"][self.tf_idx])
-                    and self.units < 1
+                    self.dca and self.dca[0] > 0
+                    and (self.price_movement_at_candle_high >= self.dca[0])
                 ):
                     # update the entry price
                     self.short_entry_price = self.short_entry_price * (
-                        1 + self.spec["dca"][self.tf_idx] / 100 / 2
+                        1 + self.dca[0] / 100 / 2
                     )
                     # recalculate price movement at candle high with new entry price
                     self.price_movement_at_candle_high = (
@@ -462,8 +464,10 @@ class ScenarioRunner:
                     # set new tp
                     if self.spec["tp_after_dca"] is not None:
                         self.take_profit = self.spec["tp_after_dca"]
-                    # allocate the other units
-                    self.units *= 2
+                    # allocate more units
+                    self.units += get_dca_units(self.spec["dca"][self.tf_idx])
+                    # jettison the DCA point so we don't hit it again
+                    del self.dca[0]
                 # check for new trade high (i.e. new min profit in a short)
                 self.price_movement_high = max(
                     self.price_movement_high, self.price_movement_at_candle_high
@@ -538,7 +542,12 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.units = 1.0 if not self.spec["dca"][self.tf_idx] else 0.5
+                self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
+                if self.dca[0] > 0:
+                    # allocate units as a fraction of 1, depending how many DCA pts there are
+                    self.units = get_dca_units(self.dca)
+                else:
+                    self.units = 1.0
 
                 self.trade = {
                     "entry": getattr(self.row, "time")
@@ -567,7 +576,12 @@ class ScenarioRunner:
                 self.max_profit = self.min_profit = 0
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
-                self.units = 1.0 if not self.spec["dca"][self.tf_idx] else 0.5
+                self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
+                if self.dca[0] > 0:
+                    # allocate units as a fraction of 1, depending how many DCA pts there are
+                    self.units = get_dca_units(self.dca)
+                else:
+                    self.units = 1.0
 
                 self.trade = {
                     "entry": getattr(self.row, "time")
@@ -893,15 +907,17 @@ class ScenarioRunner:
     def get_profit_pct_from_exit_price(self, exit_price):
         # takes an exit price like 34,001 and returns profit pct after fees and leverage
         # this only happens on signal exits
+        dcas_hit = len(self.spec["dca"][self.tf_idx]) - len(self.dca)
         exit_pct = None
         if self.long_entry_price:
             exit_pct = ((exit_price / self.long_entry_price) - 1) * 100
         elif self.short_entry_price:
             exit_pct = ((exit_price / self.short_entry_price) - 1) * -100
-        if self.spec["dca"][self.tf_idx] and self.units == 1:
-            # DCA was activated
-            fees = BYBIT_MARKET_FEE / 2 + BYBIT_LIMIT_FEE / 2 + BYBIT_MARKET_FEE
-        elif not self.spec["dca"][self.tf_idx] or self.units == 0.5:
+        if dcas_hit > 0:
+            # signal exit incurs market fee
+            # entry market/limit fee split depends on proportion of DCA entries
+            fees = BYBIT_MARKET_FEE / (dcas_hit + 1) + ((BYBIT_LIMIT_FEE * dcas_hit) / (dcas_hit + 1)) + BYBIT_MARKET_FEE
+        elif dcas_hit == 0:
             # DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
         else:
@@ -915,6 +931,7 @@ class ScenarioRunner:
 
     def get_profit_pct_from_exit_pct(self, exit_pct, exit_type=None):
         # takes an exit price based profit pct like 2% and returns final profit pct after fees and leverage
+        dcas_hit = len(self.spec["dca"][self.tf_idx]) - len(self.dca)
         exit_pct = min(
             exit_pct, self.take_profit[self.tf_idx]
         )  # cut off anything beyond TP
@@ -924,28 +941,16 @@ class ScenarioRunner:
         if not exit_type:
             # don't include fees, we are just tracking profit as it would look if we were staring at live trade in ByBit
             fees = 0
-        elif (
-            exit_type == TAKE_PROFIT
-            and self.spec["dca"][self.tf_idx]
-            and self.units == 1
-        ):
-            # TP and DCA was activated
-            fees = BYBIT_MARKET_FEE / 2 + BYBIT_LIMIT_FEE / 2 + BYBIT_LIMIT_FEE
-        elif exit_type == TAKE_PROFIT and (
-            not self.spec["dca"][self.tf_idx] or self.units == 0.5
-        ):
+        elif exit_type == TAKE_PROFIT and dcas_hit > 0:
+            # TP, and DCA was activated
+            fees = BYBIT_MARKET_FEE / (dcas_hit + 1) + ((BYBIT_LIMIT_FEE * dcas_hit) / (dcas_hit + 1)) + BYBIT_LIMIT_FEE
+        elif exit_type == TAKE_PROFIT and dcas_hit == 0:
             # TP and DCA wasn't configured, or wasn't activated
             fees = BYBIT_MARKET_FEE + BYBIT_LIMIT_FEE
-        elif (
-            exit_type in [STOP_LOSS, SIGNAL]
-            and self.spec["dca"][self.tf_idx]
-            and self.units == 1
-        ):
+        elif exit_type in [STOP_LOSS, SIGNAL] and dcas_hit > 0:
             # non-TP exit, but DCA was activated
-            fees = BYBIT_MARKET_FEE / 2 + BYBIT_LIMIT_FEE / 2 + BYBIT_MARKET_FEE
-        elif exit_type in [STOP_LOSS, SIGNAL] and (
-            not self.spec["dca"][self.tf_idx] or self.units == 0.5
-        ):
+            fees = BYBIT_MARKET_FEE / (dcas_hit + 1) + ((BYBIT_LIMIT_FEE * dcas_hit) / (dcas_hit + 1)) + BYBIT_MARKET_FEE
+        elif exit_type in [STOP_LOSS, SIGNAL] and dcas_hit == 0:
             # non-TP exit, and DCA wasn't configured or wasn't activated
             fees = BYBIT_MARKET_FEE * 2
         else:
@@ -1196,11 +1201,22 @@ def get_tf_idx(tf):
         raise ValueError(f"Improper argument {tf} passed to get_tf_idx")
 
 
-def dca_sl_check(dca, stop_loss):
-    for i, tf_dca in enumerate(dca):
-        if tf_dca >= stop_loss[i]:
-            return False
+def dca_check(dca, stop_loss):
+    for i, tf_dcas in enumerate(dca):
+        for dca_pct in tf_dcas:
+            # make sure we don't have a DCA set at stop loss or beyond
+            if dca_pct >= stop_loss[i]:
+                return False
+        # make sure the DCA pcts are in increasing order
+        for i in range(1, len(tf_dcas)):
+            if tf_dcas[i - 1] >= tf_dcas[i]:
+                return False
     return True
+
+
+def get_dca_units(dca):
+    # the number of units allocated to each DCA entry
+    return round(1 / (len(dca) + 1), 2)
 
 
 if __name__ == "__main__":

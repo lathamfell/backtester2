@@ -2,11 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-      'dca': [
-        2,
-        1,
-        0.5
-      ],
+          'dca': [[2], [1], [0.5]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -1174,11 +1170,7 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-      'dca': [
-        2,
-        1,
-        0.5
-      ],
+          'dca': [[2], [1], [0.5]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': false,
@@ -2256,11 +2248,7 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv',
-      'dca': [
-        2,
-        1,
-        0.5
-      ],
+          'dca': [[2], [1], [0.5]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -3320,11 +3308,7 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv',
-      'dca': [
-        2,
-        1,
-        0.5
-      ],
+          'dca': [[2], [1], [0.5]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': false,

@@ -2,10 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv',
-      'dca': [
-        10,
-        10
-      ],
+          'dca': [[10], [10]],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': false,
