@@ -13,6 +13,7 @@
       'start_date': '2020-01-01T00:00:00Z',
       'stop_loss': [5],
       'take_profit': [5],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': -0.01,
@@ -952,6 +953,7 @@
       'start_date': '2020-01-01T00:00:00Z',
       'stop_loss': [5],
       'take_profit': [5],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': -0.01,
@@ -1891,6 +1893,7 @@
       'start_date': '2020-01-01T00:00:00Z',
       'stop_loss': [7],
       'take_profit': [5],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.81,

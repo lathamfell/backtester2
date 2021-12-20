@@ -13,7 +13,6 @@ def run_btc_custom_reset_pts():
         enable_qol=True,
         take_profits=[20, 2],
         stop_losses=[7.5],
-        sls=[cc.SL_COMFORT] + [cc.SL_MALCOLM],
         winrate_floor=0,
         mean_floor=-50,
         median_floor=-50,
@@ -45,17 +44,8 @@ def run_btc_standard_reset_pts():
         stop_losses=[13],
         dcas=[0.5],
         leverages=[2],
-        sls=[[[]]],
-        trailing_sls=[False],
-        trail_delays=[False],
-        signal_exits=[True],
+        htf_signal_exits=[True],
         replace_existing_scenarios=True
-        #+ cc.SLS_ONE_RESET
-        #+ cc.SLS_TWO_RESETS
-        #+ cc.SLS_THREE_RESETS
-        #+ cc.SLS_FOUR_RESETS
-        #+ cc.SLS_FIVE_RESETS
-        #sls=[[[0.5, -0.25], [1.5, -0.5]]],
         #multiproc=False
     )
 
@@ -70,10 +60,8 @@ def run_eth_reset_pts():
         #take_profits=[2, 3, 4],
         #take_profits=[2],
         #stop_losses=[7.5, 11.25, 15],
-        sls=[cc.SL_MALCOLM] + [[[]]],
-        #sls=[cc.SL_MALCOLM] + [cc.SL_MALCOLM_AND_A_HALF] + [cc.SL_MALCOLM_DOUBLE],
         enable_qol=True,
-        signal_exits=[True, False],
+        htf_signal_exits=[True, False],
         mean_floor=-100,
         median_floor=-100,
         winrate_floor=0,

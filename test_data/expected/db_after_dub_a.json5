@@ -25,6 +25,7 @@
         2,
         1
       ],
+          'tp_after_dca': null,
       'winrate_floor': 10
     },
     'daily_profit_pct_avg': 0.11,

@@ -21,6 +21,7 @@
       'take_profit': [
         2.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.09,
@@ -86,6 +87,7 @@
       'take_profit': [
         3.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.12,

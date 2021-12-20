@@ -21,6 +21,7 @@
       'take_profit': [
         12
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -1.14,

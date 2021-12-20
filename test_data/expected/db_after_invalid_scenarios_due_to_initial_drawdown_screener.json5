@@ -21,6 +21,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -1.27,
@@ -284,6 +285,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -8.16,
@@ -385,6 +387,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -3.73,
@@ -522,6 +525,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -9.22,
@@ -605,6 +609,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
@@ -650,6 +655,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -2.92,
@@ -805,6 +811,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -13.16,
@@ -888,6 +895,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
@@ -933,6 +941,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
@@ -978,6 +987,7 @@
       'take_profit': [
         40
       ],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,

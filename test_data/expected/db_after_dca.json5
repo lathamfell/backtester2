@@ -25,6 +25,7 @@
         1.5,
         1.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.13,
@@ -1426,6 +1427,7 @@
         1.5,
         1.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.23,
@@ -2845,6 +2847,7 @@
         1.5,
         1.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.13,
@@ -4264,6 +4267,7 @@
         1.5,
         1.5
       ],
+          'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.04,

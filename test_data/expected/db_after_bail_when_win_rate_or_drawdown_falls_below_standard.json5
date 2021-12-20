@@ -13,6 +13,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [1.5],
       'take_profit': [50],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.52,
@@ -412,6 +413,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [10],
       'take_profit': [50],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.18,
@@ -4177,6 +4179,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [1],
       'take_profit': [0.5],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.32,
@@ -4468,6 +4471,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [2],
       'take_profit': [30],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.5,
@@ -4867,6 +4871,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [1],
       'take_profit': [2],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.08,
@@ -5086,6 +5091,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [2],
       'take_profit': [30],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.2,
@@ -5305,6 +5311,7 @@
       'start_date': '2021-01-01T00:00:00Z',
       'stop_loss': [12],
       'take_profit': [12],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.33,
@@ -5434,6 +5441,7 @@
       'start_date': '2017-09-04T08:00:00Z',
       'stop_loss': [3],
       'take_profit': [6],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': 0.08,
@@ -5833,6 +5841,7 @@
       'start_date': '2017-09-01T00:00:00Z',
       'stop_loss': [10],
       'take_profit': [40],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': -0.16,

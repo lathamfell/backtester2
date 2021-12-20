@@ -13,6 +13,7 @@
       'start_date': '2021-01-01T00:00:00Z',
       'stop_loss': [6],
       'take_profit': [1],
+          'tp_after_dca': null,
       'winrate_floor': 50
     },
     'daily_profit_pct_avg': null,
