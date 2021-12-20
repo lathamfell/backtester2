@@ -323,7 +323,7 @@ def test_screen_out_during_short_signal_exit(coll):
         multiproc=False,
         clear_db=False,
         write_invalid_to_db=True,
-        drawdown_limits=[-10],
+        drawdown_limits=[-11],
         winrate_floor=50,
         mean_floor=-5,
         median_floor=-5,
@@ -517,9 +517,9 @@ def test_dub_a(coll):
         db_coll=c.COLL,
         datafilenames=["test_data/btcusd-5m_with_cols_2017_laguerre_4h_1D.csv"],
         take_profits=[[2, 1]],
-        dcas=[[0, 0.5]],
+        dcas=[[0, 1]],
         stop_losses=[[4, 2]],
-        leverages=[[4, 3]],
+        leverages=[[4, 2]],
         multiproc=False,
         drawdown_limits=[-80],
         winrate_floor=10,
@@ -540,10 +540,10 @@ def test_multiple_datafilenames(coll):
             "test_data/COINBASE_BTCUSD_15_1h_on_5m_2021.csv",
             "test_data/COINBASE_BTCUSD_1h_on_5m_2021.csv"
         ],
-        take_profits=[[5]],
-        dcas=[[0]],
-        stop_losses=[[5]],
-        leverages=[[3]],
+        take_profits=[[5, 5]],
+        dcas=[[0, 0]],
+        stop_losses=[[5, 5]],
+        leverages=[[3, 3]],
         multiproc=False,
         drawdown_limits=[-90],
         winrate_floor=10,
@@ -561,23 +561,21 @@ def test_accuracy_tester_mode(coll):
     # in accuracy tester mode, only scenarios with equal TP and SL are run, others are skipped
     #   additionally, the following settings are overwritten to the following values
     #     leverages: [1]
-    #     trailing_sls: [False]
-    #     trail_delays: [False]
-    #     sls: [[[]]]
     #     drawdown_limits: [-100]
     #     winrate_floor: 0
+    #     mean_floor, median_floor: -100
     main(
         db_coll=c.COLL,
         datafilenames=["test_data/COINBASE_BTCUSD_15_1h_on_5m_2021.csv"],
-        take_profits=[[1], [3]],
-        dcas=[[0]],
-        stop_losses=[[1], [3]],
-        leverages=[[25]],
+        take_profits=[[1, 1], [3, 3]],
+        dcas=[[0, 0]],
+        stop_losses=[[1, 1], [3, 3]],
+        leverages=[[25, 25]],  # overwritten
         multiproc=False,
-        drawdown_limits=[-2],
-        winrate_floor=99,
-        mean_floor=4,
-        median_floor=4,
+        drawdown_limits=[-2],  # overwritten
+        winrate_floor=99,  # overwritten
+        mean_floor=4,  # overwritten
+        median_floor=4,  # overwritten
         floor_grace_period=50,
         enable_qol=False,
         accuracy_tester_mode=True,
@@ -727,10 +725,10 @@ def test_when_ltf_and_htf_print_signal_in_same_row(coll):
     main(
         db_coll=c.COLL,
         datafilenames=["test_data/COINBASE_BTCUSD_1D_45m_on_5m_2020_fake_truncated.csv"],
-        take_profits=[[0.25]],
-        dcas=[[0]],
-        stop_losses=[[2]],
-        leverages=[[2]],
+        take_profits=[[0.25, 0.25]],
+        dcas=[[0, 0]],
+        stop_losses=[[2, 2]],
+        leverages=[[2, 2]],
         multiproc=False,
         enable_qol=False,
         htf_signal_exits=[True],
@@ -745,10 +743,10 @@ def test_tri_arrow(coll):
             "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv",
             "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv"
         ],
-        take_profits=[[1.5, 1.5, 1.5]],
-        stop_losses=[[8, 8, 8]],
-        dcas=[[0, 0, 0]],
-        leverages=[[1, 1, 1]],
+        take_profits=[[1.6, 1.5, 1.4]],
+        stop_losses=[[9, 8, 7]],
+        dcas=[[2, 1, 0.5]],
+        leverages=[[3, 2, 1]],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
@@ -869,10 +867,10 @@ def test_dca(coll):
         datafilenames=[
             "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
         ],
-        take_profits=[[1.5]],
-        stop_losses=[[8]],
-        leverages=[[1]],
-        dcas=[[0], [0.5], [1], [7]],
+        take_profits=[[1.5, 1.5]],
+        stop_losses=[[8, 8]],
+        leverages=[[1, 1]],
+        dcas=[[0, 0], [0.5, 0.5], [1, 1], [7, 7]],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
@@ -890,10 +888,10 @@ def test_dca_with_sig_exit(coll):
         datafilenames=[
             "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
         ],
-        take_profits=[[10]],
-        stop_losses=[[20]],
-        leverages=[[1]],
-        dcas=[[0.25]],
+        take_profits=[[10, 10]],
+        stop_losses=[[20, 20]],
+        leverages=[[1, 1]],
+        dcas=[[0.25, 0.25]],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
@@ -905,16 +903,16 @@ def test_dca_with_sig_exit(coll):
     compare(coll, "db_after_dca_with_sig_exit.json5")
 
 
-def test_screen_out_scenarios_where_dca_greater_than_sl(coll):
+def test_screen_out_scenarios_where_dca_greater_than_or_eq_sl(coll):
     main(
         db_coll=c.COLL,
         datafilenames=[
             "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv"
         ],
-        take_profits=[[1.5]],
-        stop_losses=[[1, 12]],
-        leverages=[[1]],
-        dcas=[[1], [10]],
+        take_profits=[[1.5, 1.5]],
+        dcas=[[1, 12], [10, 10]],
+        stop_losses=[[1, 1], [12, 12]],
+        leverages=[[1, 1]],
         multiproc=False,
         enable_qol=False,
         winrate_floor=0,
@@ -923,32 +921,7 @@ def test_screen_out_scenarios_where_dca_greater_than_sl(coll):
         drawdown_limits=[-100],
         htf_signal_exits=[False],
     )
-    compare(coll, "db_after_screen_out_scenarios_where_dca_greater_than_sl.json5")
-
-
-def test_tf_specific_configs(coll):
-    """
-    main(
-        db_coll=c.COLL,
-        datafilenames=[
-            "test_data/BYBIT_BTCUSD_1D_45m_on_5m_05_2021.csv",
-            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_05_2021.csv"
-        ],
-        take_profits=[1.5],
-        stop_losses=[8],
-        leverages=[1],
-        sls=[[[]]],
-        dcas=[0],
-        multiproc=False,
-        enable_qol=False,
-        winrate_floor=0,
-        mean_floor=-10,
-        median_floor=-10,
-        drawdown_limits=[-100],
-        signal_exits=[True]
-    )
-    """
-    pass
+    compare(coll, "db_after_screen_out_scenarios_where_dca_greater_than_or_eq_sl.json5")
 
 
 def test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_multi_file(coll):

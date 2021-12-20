@@ -63,7 +63,7 @@ def main(
 
     if accuracy_tester_mode:
         print(f"\nRUNNING IN ACCURACY TESTER MODE\n")
-        leverages = [1]
+        leverages = [[1, 1, 1]]
         drawdown_limits = [-100]
         winrate_floor = 0
         mean_floor = median_floor = -100
@@ -92,7 +92,7 @@ def main(
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
                             for dca in dcas:
-                                if dca >= stop_loss:
+                                if not dca_sl_check(dca, stop_loss):
                                     continue
                                 for drawdown_limit in drawdown_limits:
                                     for htf_signal_exit in htf_signal_exits:
@@ -135,7 +135,7 @@ def main(
                             if accuracy_tester_mode and stop_loss != take_profit:
                                 continue
                             for dca in dcas:
-                                if dca >= stop_loss:
+                                if not dca_sl_check(dca, stop_loss):
                                     continue
                                 for drawdown_limit in drawdown_limits:
                                     for htf_signal_exit in htf_signal_exits:
@@ -963,10 +963,7 @@ class ScenarioRunner:
             exit_price = self.get_exit_price_from_exit_pct(
                 exit_pct=(-1 * self.stop_loss)
             )
-            if self.profit_pct > 0:
-                exit_type = "sl_profit"
-            else:
-                exit_type = "sl_loss"
+            exit_type = "sl_loss"
 
         elif _type == TAKE_PROFIT:
             self.profit_pct, exit_pct = self.get_profit_pct_from_exit_pct(
@@ -1184,6 +1181,13 @@ def get_tf_idx(tf):
         return 2
     else:
         raise ValueError(f"Improper argument {tf} passed to get_tf_idx")
+
+
+def dca_sl_check(dca, stop_loss):
+    for i, tf_dca in enumerate(dca):
+        if tf_dca >= stop_loss[i]:
+            return False
+    return True
 
 
 if __name__ == "__main__":

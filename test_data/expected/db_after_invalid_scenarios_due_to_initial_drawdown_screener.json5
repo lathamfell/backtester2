@@ -7,7 +7,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         5
       ],
@@ -259,7 +259,7 @@
       }
     ],
     'trades': 12,
-    'valid': False,
+    'valid': false,
     'win_rate': 0.0
   },
   {
@@ -270,7 +270,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         5
       ],
@@ -360,7 +360,7 @@
       }
     ],
     'trades': 3,
-    'valid': False,
+    'valid': false,
     'win_rate': 0.0
   },
   {
@@ -371,7 +371,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         5
       ],
@@ -497,7 +497,7 @@
       }
     ],
     'trades': 5,
-    'valid': False,
+    'valid': false,
     'win_rate': 20.0
   },
   {
@@ -508,7 +508,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         5
       ],
@@ -580,7 +580,7 @@
       }
     ],
     'trades': 2,
-    'valid': False,
+    'valid': false,
     'win_rate': 0.0
   },
   {
@@ -591,7 +591,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         5
       ],
@@ -607,26 +607,26 @@
       ],
       'winrate_floor': 50
     },
-    'daily_profit_pct_avg': None,
-    'days': None,
+    'daily_profit_pct_avg': null,
+    'days': null,
     'end_date': '2017-11-09T10:30:00Z',
-    'final_assets': None,
-    'htf_signal_exits_at_loss': None,
-    'htf_signal_exits_in_profit': None,
-    'max_assets': None,
-    'max_drawdown_pct': None,
-    'mean_hrs_in_trade': None,
-    'mean_profit': None,
-    'median_profit': None,
-    'min_assets': None,
-    'stop_loss_exits_at_loss': None,
-    'stop_loss_exits_in_profit': None,
-    'take_profit_exits': None,
-    'total_profit_pct': None,
-    'trade_history': None,
-    'trades': None,
-    'valid': False,
-    'win_rate': None
+    'final_assets': null,
+    'htf_signal_exits_at_loss': null,
+    'htf_signal_exits_in_profit': null,
+    'max_assets': null,
+    'max_drawdown_pct': null,
+    'mean_hrs_in_trade': null,
+    'mean_profit': null,
+    'median_profit': null,
+    'min_assets': null,
+    'stop_loss_exits_at_loss': null,
+    'stop_loss_exits_in_profit': null,
+    'take_profit_exits': null,
+    'total_profit_pct': null,
+    'trade_history': null,
+    'trades': null,
+    'valid': false,
+    'win_rate': null
   },
   {
     '_id': {
@@ -636,7 +636,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         10
       ],
@@ -780,7 +780,7 @@
       }
     ],
     'trades': 6,
-    'valid': False,
+    'valid': false,
     'win_rate': 0.0
   },
   {
@@ -791,7 +791,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         10
       ],
@@ -863,7 +863,7 @@
       }
     ],
     'trades': 2,
-    'valid': False,
+    'valid': false,
     'win_rate': 0.0
   },
   {
@@ -874,7 +874,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         10
       ],
@@ -890,26 +890,26 @@
       ],
       'winrate_floor': 50
     },
-    'daily_profit_pct_avg': None,
-    'days': None,
+    'daily_profit_pct_avg': null,
+    'days': null,
     'end_date': '2017-11-09T10:30:00Z',
-    'final_assets': None,
-    'htf_signal_exits_at_loss': None,
-    'htf_signal_exits_in_profit': None,
-    'max_assets': None,
-    'max_drawdown_pct': None,
-    'mean_hrs_in_trade': None,
-    'mean_profit': None,
-    'median_profit': None,
-    'min_assets': None,
-    'stop_loss_exits_at_loss': None,
-    'stop_loss_exits_in_profit': None,
-    'take_profit_exits': None,
-    'total_profit_pct': None,
-    'trade_history': None,
-    'trades': None,
-    'valid': False,
-    'win_rate': None
+    'final_assets': null,
+    'htf_signal_exits_at_loss': null,
+    'htf_signal_exits_in_profit': null,
+    'max_assets': null,
+    'max_drawdown_pct': null,
+    'mean_hrs_in_trade': null,
+    'mean_profit': null,
+    'median_profit': null,
+    'min_assets': null,
+    'stop_loss_exits_at_loss': null,
+    'stop_loss_exits_in_profit': null,
+    'take_profit_exits': null,
+    'total_profit_pct': null,
+    'trade_history': null,
+    'trades': null,
+    'valid': false,
+    'win_rate': null
   },
   {
     '_id': {
@@ -919,7 +919,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         10
       ],
@@ -935,26 +935,26 @@
       ],
       'winrate_floor': 50
     },
-    'daily_profit_pct_avg': None,
-    'days': None,
+    'daily_profit_pct_avg': null,
+    'days': null,
     'end_date': '2017-11-09T10:30:00Z',
-    'final_assets': None,
-    'htf_signal_exits_at_loss': None,
-    'htf_signal_exits_in_profit': None,
-    'max_assets': None,
-    'max_drawdown_pct': None,
-    'mean_hrs_in_trade': None,
-    'mean_profit': None,
-    'median_profit': None,
-    'min_assets': None,
-    'stop_loss_exits_at_loss': None,
-    'stop_loss_exits_in_profit': None,
-    'take_profit_exits': None,
-    'total_profit_pct': None,
-    'trade_history': None,
-    'trades': None,
-    'valid': False,
-    'win_rate': None
+    'final_assets': null,
+    'htf_signal_exits_at_loss': null,
+    'htf_signal_exits_in_profit': null,
+    'max_assets': null,
+    'max_drawdown_pct': null,
+    'mean_hrs_in_trade': null,
+    'mean_profit': null,
+    'median_profit': null,
+    'min_assets': null,
+    'stop_loss_exits_at_loss': null,
+    'stop_loss_exits_in_profit': null,
+    'take_profit_exits': null,
+    'total_profit_pct': null,
+    'trade_history': null,
+    'trades': null,
+    'valid': false,
+    'win_rate': null
   },
   {
     '_id': {
@@ -964,7 +964,7 @@
       ],
       'drawdown_limit': -49,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         10
       ],
@@ -980,25 +980,25 @@
       ],
       'winrate_floor': 50
     },
-    'daily_profit_pct_avg': None,
-    'days': None,
+    'daily_profit_pct_avg': null,
+    'days': null,
     'end_date': '2017-11-09T10:30:00Z',
-    'final_assets': None,
-    'htf_signal_exits_at_loss': None,
-    'htf_signal_exits_in_profit': None,
-    'max_assets': None,
-    'max_drawdown_pct': None,
-    'mean_hrs_in_trade': None,
-    'mean_profit': None,
-    'median_profit': None,
-    'min_assets': None,
-    'stop_loss_exits_at_loss': None,
-    'stop_loss_exits_in_profit': None,
-    'take_profit_exits': None,
-    'total_profit_pct': None,
-    'trade_history': None,
-    'trades': None,
-    'valid': False,
-    'win_rate': None
+    'final_assets': null,
+    'htf_signal_exits_at_loss': null,
+    'htf_signal_exits_in_profit': null,
+    'max_assets': null,
+    'max_drawdown_pct': null,
+    'mean_hrs_in_trade': null,
+    'mean_profit': null,
+    'median_profit': null,
+    'min_assets': null,
+    'stop_loss_exits_at_loss': null,
+    'stop_loss_exits_in_profit': null,
+    'take_profit_exits': null,
+    'total_profit_pct': null,
+    'trade_history': null,
+    'trades': null,
+    'valid': false,
+    'win_rate': null
   }
 ]

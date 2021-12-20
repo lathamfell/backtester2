@@ -7,7 +7,7 @@
       ],
       'drawdown_limit': -10,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         1
       ],
@@ -61,7 +61,7 @@
       }
     ],
     'trades': 1,
-    'valid': True,
+    'valid': true,
     'win_rate': 100.0
   },
   {
@@ -72,7 +72,7 @@
       ],
       'drawdown_limit': -10,
       'floor_grace_period': 50,
-      'htf_signal_exit': True,
+      'htf_signal_exit': true,
       'leverage': [
         1
       ],
@@ -126,7 +126,7 @@
       }
     ],
     'trades': 1,
-    'valid': True,
+    'valid': true,
     'win_rate': 100.0
   }
 ]
