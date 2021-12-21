@@ -446,24 +446,25 @@ class ScenarioRunner:
                     (getattr(self.row, "high") / self.short_entry_price) - 1
                 ) * 100
 
-                # check for DCA
-                if (
-                    self.dca and self.dca[0][0] > 0
-                    and (self.price_movement_at_candle_high >= self.dca[0][0])
-                ):
-                    # update the entry price
-                    self.short_entry_price = self.get_new_entry_price()
-                    # recalculate price movement at candle high with new entry price
-                    self.price_movement_at_candle_high = (
-                        (getattr(self.row, "high") / self.short_entry_price) - 1
-                    ) * 100
-                    # set new tp
-                    if self.spec["tp_after_dca"] is not None:
-                        self.take_profit = self.spec["tp_after_dca"]
-                    # allocate more units
-                    self.units = round(self.units + get_dca_units(self.dca), 2)
-                    # jettison the DCA point so we don't hit it again
-                    del self.dca[0]
+                # check for DCA - loop through each remaining DCA step
+                for dca_pct in self.dca:
+                    if (
+                        dca_pct and dca_pct[0] > 0
+                        and (self.price_movement_at_candle_high >= dca_pct[0])
+                    ):
+                        # update the entry price
+                        self.short_entry_price = self.get_new_entry_price()
+                        # recalculate price movement at candle high with new entry price
+                        self.price_movement_at_candle_high = (
+                            (getattr(self.row, "high") / self.short_entry_price) - 1
+                        ) * 100
+                        # set new tp
+                        if self.spec["tp_after_dca"] is not None:
+                            self.take_profit = self.spec["tp_after_dca"]
+                        # allocate more units
+                        self.units = round(self.units + get_dca_units(self.dca), 2)
+                        # jettison the DCA point so we don't hit it again
+                        del self.dca[0]
                 # check for new trade high (i.e. new min profit in a short)
                 self.price_movement_high = max(
                     self.price_movement_high, self.price_movement_at_candle_high
