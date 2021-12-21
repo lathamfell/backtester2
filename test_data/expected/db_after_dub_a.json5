@@ -2,7 +2,19 @@
   {
     '_id': {
       'datafilename': 'btcusd-5m_with_cols_2017_laguerre_4h_1D.csv',
-          'dca': [[0], [1]],
+      'dca': [
+        [
+          [
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -80,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -22,7 +34,7 @@
         2,
         1
       ],
-          'tp_after_dca': null,
+      'tp_after_dca': null,
       'winrate_floor': 10
     },
     'daily_profit_pct_avg': 0.11,
@@ -1272,7 +1284,7 @@
         'direction': 'short',
         'duration': 442,
         'entry': '2019-09-16T19:55:00Z',
-        'entry_price_dca': 10179.64,
+        'entry_price_dca': 10179.65,
         'entry_price_original': 10129.0,
         'entry_timeframe': 'LTF',
         'exit': '2019-09-18T08:45:00Z',
@@ -1596,7 +1608,7 @@
         'direction': 'short',
         'duration': 62,
         'entry': '2020-03-28T03:55:00Z',
-        'entry_price_dca': 6157.63,
+        'entry_price_dca': 6157.64,
         'entry_price_original': 6127.0,
         'entry_timeframe': 'LTF',
         'exit': '2020-03-28T09:05:00Z',

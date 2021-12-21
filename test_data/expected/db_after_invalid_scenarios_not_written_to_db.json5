@@ -2,7 +2,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
-          'dca': [[0]],
+          'dca': [[[0]]],
       'drawdown_limit': -10,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -66,7 +66,7 @@
   {
     '_id': {
       'datafilename': 'BYBITBTCUSD_240_2021_one_trade.csv',
-          'dca': [[0]],
+          'dca': [[[0]]],
       'drawdown_limit': -10,
       'floor_grace_period': 50,
       'htf_signal_exit': true,

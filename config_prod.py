@@ -17,6 +17,7 @@ TAKE_PROFITS = [[0.15], [0.3], [0.5], [1], [1.5], [2], [3], [4], [5]]
 TPS_AFTER_DCA = [None]  # None means TP % after DCA is same as before. Use [1, 1, 1] instead of None, e.g. [[1,1,1]] to move TP %
 STOP_LOSSES = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]]
 DCAS = [[0], [0.5], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]]
+DCA_WEIGHTS = [None]  # None means equal weights
 LEVERAGES = [[1], [2], [3], [4], [5], [6], [8], [10]]
 MULTIPROCESSING = True  # multi interferes with stepping through multiple scenarios in debug mode
 DRAWDOWN_LIMITS = [-50]

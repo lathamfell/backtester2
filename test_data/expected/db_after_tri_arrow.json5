@@ -2,7 +2,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-          'dca': [[2], [1], [0.5]],
+      'dca': [
+        [
+          [
+            2,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -25,7 +44,7 @@
         1.5,
         1.4
       ],
-          'tp_after_dca': null,
+      'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.15,
@@ -285,7 +304,7 @@
         'direction': 'short',
         'duration': 504,
         'entry': '2021-09-29T16:25:00Z',
-        'entry_price_dca': 41692.42,
+        'entry_price_dca': 41692.43,
         'entry_price_original': 41485.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-01T10:25:00Z',
@@ -465,7 +484,7 @@
         'direction': 'long',
         'duration': 44,
         'entry': '2021-10-09T09:55:00Z',
-        'entry_price_dca': 54776.72,
+        'entry_price_dca': 54776.71,
         'entry_price_original': 54914.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-09T13:35:00Z',
@@ -753,7 +772,7 @@
         'direction': 'long',
         'duration': 251,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-21T15:25:00Z',
@@ -771,7 +790,7 @@
         'direction': 'long',
         'duration': 364,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T01:00:00Z',
@@ -1170,7 +1189,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-          'dca': [[2], [1], [0.5]],
+      'dca': [
+        [
+          [
+            2,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': false,
@@ -1193,7 +1231,7 @@
         1.5,
         1.4
       ],
-          'tp_after_dca': null,
+      'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': -0.2,
@@ -1453,7 +1491,7 @@
         'direction': 'short',
         'duration': 504,
         'entry': '2021-09-29T16:25:00Z',
-        'entry_price_dca': 41692.42,
+        'entry_price_dca': 41692.43,
         'entry_price_original': 41485.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-01T10:25:00Z',
@@ -1633,7 +1671,7 @@
         'direction': 'long',
         'duration': 44,
         'entry': '2021-10-09T09:55:00Z',
-        'entry_price_dca': 54776.72,
+        'entry_price_dca': 54776.71,
         'entry_price_original': 54914.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-09T13:35:00Z',
@@ -1921,7 +1959,7 @@
         'direction': 'long',
         'duration': 251,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-21T15:25:00Z',
@@ -1939,7 +1977,7 @@
         'direction': 'long',
         'duration': 364,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T01:00:00Z',
@@ -2248,7 +2286,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv',
-          'dca': [[2], [1], [0.5]],
+      'dca': [
+        [
+          [
+            2,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -2271,7 +2328,7 @@
         1.5,
         1.4
       ],
-          'tp_after_dca': null,
+      'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': 0.17,
@@ -2423,7 +2480,7 @@
         'direction': 'short',
         'duration': 504,
         'entry': '2021-09-29T16:25:00Z',
-        'entry_price_dca': 41692.42,
+        'entry_price_dca': 41692.43,
         'entry_price_original': 41485.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-01T10:25:00Z',
@@ -2603,7 +2660,7 @@
         'direction': 'long',
         'duration': 44,
         'entry': '2021-10-09T09:55:00Z',
-        'entry_price_dca': 54776.72,
+        'entry_price_dca': 54776.71,
         'entry_price_original': 54914.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-09T13:35:00Z',
@@ -2891,7 +2948,7 @@
         'direction': 'long',
         'duration': 251,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-21T15:25:00Z',
@@ -2909,7 +2966,7 @@
         'direction': 'long',
         'duration': 364,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T01:00:00Z',
@@ -3308,7 +3365,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021_with_initial_ltf_shadow_flipped.csv',
-          'dca': [[2], [1], [0.5]],
+      'dca': [
+        [
+          [
+            2,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': false,
@@ -3331,7 +3407,7 @@
         1.5,
         1.4
       ],
-          'tp_after_dca': null,
+      'tp_after_dca': null,
       'winrate_floor': 0
     },
     'daily_profit_pct_avg': -0.19,
@@ -3483,7 +3559,7 @@
         'direction': 'short',
         'duration': 504,
         'entry': '2021-09-29T16:25:00Z',
-        'entry_price_dca': 41692.42,
+        'entry_price_dca': 41692.43,
         'entry_price_original': 41485.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-01T10:25:00Z',
@@ -3663,7 +3739,7 @@
         'direction': 'long',
         'duration': 44,
         'entry': '2021-10-09T09:55:00Z',
-        'entry_price_dca': 54776.72,
+        'entry_price_dca': 54776.71,
         'entry_price_original': 54914.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-09T13:35:00Z',
@@ -3951,7 +4027,7 @@
         'direction': 'long',
         'duration': 251,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-21T15:25:00Z',
@@ -3969,7 +4045,7 @@
         'direction': 'long',
         'duration': 364,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T01:00:00Z',

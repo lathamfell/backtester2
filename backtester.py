@@ -366,16 +366,14 @@ class ScenarioRunner:
                 ) * 100
                 # check for DCA
                 if (
-                    self.dca and self.dca[0] > 0
+                    self.dca and self.dca[0][0] > 0
                     and (
                         self.price_movement_at_candle_low
-                        <= (-1 * self.dca[0])
+                        <= (-1 * self.dca[0][0])
                     )
                 ):
                     # update the entry price
-                    self.long_entry_price = self.long_entry_price * (
-                        1 - self.dca[0] / 100 / 2
-                    )
+                    self.long_entry_price = self.get_new_entry_price()
                     # recalculate price movement at candle low with new entry price
                     self.price_movement_at_candle_low = (
                         (getattr(self.row, "low") / self.long_entry_price) - 1
@@ -384,7 +382,7 @@ class ScenarioRunner:
                     if self.spec["tp_after_dca"] is not None:
                         self.take_profit = self.spec["tp_after_dca"]
                     # allocate more units
-                    self.units += get_dca_units(self.spec["dca"][self.tf_idx])
+                    self.units = round(self.units + get_dca_units(self.dca), 2)
                     # jettison the DCA point so we don't hit it again
                     del self.dca[0]
                 # check for a new trade low and min profit and if so save it for later
@@ -450,13 +448,11 @@ class ScenarioRunner:
 
                 # check for DCA
                 if (
-                    self.dca and self.dca[0] > 0
-                    and (self.price_movement_at_candle_high >= self.dca[0])
+                    self.dca and self.dca[0][0] > 0
+                    and (self.price_movement_at_candle_high >= self.dca[0][0])
                 ):
                     # update the entry price
-                    self.short_entry_price = self.short_entry_price * (
-                        1 + self.dca[0] / 100 / 2
-                    )
+                    self.short_entry_price = self.get_new_entry_price()
                     # recalculate price movement at candle high with new entry price
                     self.price_movement_at_candle_high = (
                         (getattr(self.row, "high") / self.short_entry_price) - 1
@@ -465,7 +461,7 @@ class ScenarioRunner:
                     if self.spec["tp_after_dca"] is not None:
                         self.take_profit = self.spec["tp_after_dca"]
                     # allocate more units
-                    self.units += get_dca_units(self.spec["dca"][self.tf_idx])
+                    self.units = round(self.units + get_dca_units(self.dca), 2)
                     # jettison the DCA point so we don't hit it again
                     del self.dca[0]
                 # check for new trade high (i.e. new min profit in a short)
@@ -543,11 +539,8 @@ class ScenarioRunner:
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
                 self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
-                if self.dca[0] > 0:
-                    # allocate units as a fraction of 1, depending how many DCA pts there are
-                    self.units = get_dca_units(self.dca)
-                else:
-                    self.units = 1.0
+                # allocate units as a fraction of 1, depending how many DCA pts there are
+                self.units = get_dca_units(self.dca, first_entry=True)
 
                 self.trade = {
                     "entry": getattr(self.row, "time")
@@ -577,11 +570,8 @@ class ScenarioRunner:
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
                 self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
-                if self.dca[0] > 0:
-                    # allocate units as a fraction of 1, depending how many DCA pts there are
-                    self.units = get_dca_units(self.dca)
-                else:
-                    self.units = 1.0
+                # allocate units as a fraction of 1, depending how many DCA pts there are
+                self.units = get_dca_units(self.dca, first_entry=True)
 
                 self.trade = {
                     "entry": getattr(self.row, "time")
@@ -1126,6 +1116,14 @@ class ScenarioRunner:
     def get_durations(self):
         return [trade["duration"] for trade in self.trade_history]
 
+    def get_new_entry_price(self):
+        cur_entry_price = self.short_entry_price if self.short_entry_price else self.long_entry_price
+        sign = 1 if self.short_entry_price else -1
+        dca_entry_price = cur_entry_price * (1 + sign * self.dca[0][0] / 100)
+        total_units = self.units + self.dca[0][1] / 100
+        new_entry_price = ((cur_entry_price * self.units) + (dca_entry_price * self.dca[0][1] / 100)) / total_units
+        return new_entry_price
+
 
 def is_valid_scenario(spec):
     protected = False
@@ -1205,18 +1203,33 @@ def dca_check(dca, stop_loss):
     for i, tf_dcas in enumerate(dca):
         for dca_pct in tf_dcas:
             # make sure we don't have a DCA set at stop loss or beyond
-            if dca_pct >= stop_loss[i]:
+            if dca_pct[0] >= stop_loss[i]:
                 return False
         # make sure the DCA pcts are in increasing order
-        for i in range(1, len(tf_dcas)):
-            if tf_dcas[i - 1] >= tf_dcas[i]:
-                return False
+        for j in range(1, len(tf_dcas)):
+            assert tf_dcas[j - 1][0] < tf_dcas[j][0], f"DCA points {tf_dcas} are not monotonically increasing"
+        # make sure the weights do not exceed 99 (leaving at least 1% for entry weight)
+        total_dca_weight = 0
+        for dca in tf_dcas:
+            if not dca[0]:  # no DCA configured for this TF
+                continue
+            total_dca_weight += dca[1]
+        assert total_dca_weight < 100, f"DCA weights in {tf_dcas} are too high"
     return True
 
 
-def get_dca_units(dca):
+def get_dca_units(dca, first_entry=False):
     # the number of units allocated to each DCA entry
-    return round(1 / (len(dca) + 1), 2)
+    if not dca[0][0]:  # no DCA configured, go all in at entry
+        return 1.0
+    if first_entry:
+        # calculate weight of first entry based on the other weights
+        total_dca_weight = 0
+        for dca_pt in dca:
+            total_dca_weight += dca_pt[1]
+        entry_weight = 100 - total_dca_weight
+        return round(entry_weight / 100, 2)
+    return round(dca[0][1] / 100, 2)
 
 
 if __name__ == "__main__":

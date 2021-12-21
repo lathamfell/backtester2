@@ -2,7 +2,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-          'dca': [[0.75], [1], [0.5]],
+      'dca': [
+        [
+          [
+            0.75,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -289,7 +308,7 @@
         'direction': 'short',
         'duration': 56,
         'entry': '2021-09-25T02:50:00Z',
-        'entry_price_dca': 42471.92,
+        'entry_price_dca': 42471.91,
         'entry_price_original': 42366.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-09-25T07:30:00Z',
@@ -1117,7 +1136,7 @@
         'direction': 'long',
         'duration': 774,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-23T11:00:00Z',
@@ -1135,7 +1154,7 @@
         'direction': 'long',
         'duration': 175,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-24T09:15:00Z',
@@ -1606,7 +1625,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-          'dca': [[0.75], [1], [0.5]],
+      'dca': [
+        [
+          [
+            0.75,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -1893,7 +1931,7 @@
         'direction': 'short',
         'duration': 68,
         'entry': '2021-09-25T02:50:00Z',
-        'entry_price_dca': 42471.92,
+        'entry_price_dca': 42471.91,
         'entry_price_original': 42366.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-09-25T08:30:00Z',
@@ -2631,7 +2669,7 @@
         'direction': 'long',
         'duration': 774,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-23T11:00:00Z',
@@ -2649,7 +2687,7 @@
         'direction': 'long',
         'duration': 388,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T03:00:00Z',
@@ -2976,7 +3014,26 @@
   {
     '_id': {
       'datafilename': 'BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv',
-          'dca': [[0.75], [1], [0.5]],
+      'dca': [
+        [
+          [
+            0.75,
+            50
+          ]
+        ],
+        [
+          [
+            1,
+            50
+          ]
+        ],
+        [
+          [
+            0.5,
+            50
+          ]
+        ]
+      ],
       'drawdown_limit': -100,
       'floor_grace_period': 50,
       'htf_signal_exit': true,
@@ -3259,7 +3316,7 @@
         'direction': 'short',
         'duration': 56,
         'entry': '2021-09-25T02:50:00Z',
-        'entry_price_dca': 42471.92,
+        'entry_price_dca': 42471.91,
         'entry_price_original': 42366.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-09-25T07:30:00Z',
@@ -4051,7 +4108,7 @@
         'direction': 'long',
         'duration': 774,
         'entry': '2021-10-20T18:30:00Z',
-        'entry_price_dca': 66635.0,
+        'entry_price_dca': 66634.99,
         'entry_price_original': 66802.0,
         'entry_timeframe': 'LLTF',
         'exit': '2021-10-23T11:00:00Z',
@@ -4069,7 +4126,7 @@
         'direction': 'long',
         'duration': 363,
         'entry': '2021-10-23T18:40:00Z',
-        'entry_price_dca': 60964.64,
+        'entry_price_dca': 60964.65,
         'entry_price_original': 61271.0,
         'entry_timeframe': 'LTF',
         'exit': '2021-10-25T00:55:00Z',
