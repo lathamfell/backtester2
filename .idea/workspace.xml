@@ -2,9 +2,128 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065ebe3e-165f-4f99-8914-4d11134505c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_on_5m_01_2020_nonHA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_10_2021_HA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_10_2021_nonHA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_01_2015.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_01_2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_01_2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_01_2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_01_2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_03_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_05_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_base_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_og.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/btcusd-5m_og_labeled.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_01_2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_01_2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_01_2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_03_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_06_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_08_2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_12_2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og_labeled_2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020_HA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020_nonHA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020_HA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_on_5m_01_2020_nonHA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_on_5m_01_2018_HA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_on_5m_01_2018_nonHA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_45m_on_5m_01_2020_HA.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_45m_on_5m_01_2020_nonHA.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_1D_12hTF_on_5m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_1D_45m_5mTF_on_5m_09_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_1D_on_5m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_1D_on_5m_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_5mTF_on_5m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_5mTF_on_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_on_5m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_on_5m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_BTCUSD_45m_on_5m_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_ETHUSD_1D.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BYBIT_ETHUSD_45.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/COINBASE_BTCUSD_all_TFs_on_5m.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/COINBASE_ETHUSD_all_TFs_on_5m.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_10m_06_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_12h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_15m_04_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_05_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1D_12hTF_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_05_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_5TF_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_45m_5mTF_09_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_5m_05_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_6h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_8h_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_BTCUSD_90m_11_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_10h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_10m_05_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_12h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_15m_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_16h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_1D_01_2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_1D_01_2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_1D_nonHA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_1h_01_2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_20h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_2h_01_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_30m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_3h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_45m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_45m_nonHA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_4h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_5h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_6h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_7h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_8h_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_BTCUSD_90m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_10m_06_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_12h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_15m_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_1D_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_1h_01_2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_2h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_30m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_3h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_45m_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_4h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_5m_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_6h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_8h_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TV_data_exports/COINBASE_ETHUSD_90m_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_05_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_base_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_og.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/btcusd-5m_og_labeled.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_01_2018.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_01_2019.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_01_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_03_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_06_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_08_2021.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_base_12_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_og.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ethusd-5m_og_labeled_2017.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/COINBASE_BTCUSD_1D_on_5m_01_2015.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ready_for_backtester/COINBASE_BTCUSD_1D_on_5m_01_2015.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/reset_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signal_remapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/signal_remapper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +193,7 @@
       <recent name="$PROJECT_DIR$/input" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test.test_multi_dca">
+  <component name="RunManager" selected="Python.signal_remapper">
     <configuration name="reset_run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -932,8 +1051,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.reset_run" />
         <item itemvalue="Python.signal_remapper" />
+        <item itemvalue="Python.reset_run" />
         <item itemvalue="Python.sl_generator_from_single_pts" />
         <item itemvalue="Python.sl_generator_from_combo_pts" />
         <item itemvalue="Python.thunderdome" />
@@ -977,7 +1096,7 @@
       <workItem from="1638992476442" duration="692000" />
       <workItem from="1639001779249" duration="1409000" />
       <workItem from="1639087949449" duration="30396000" />
-      <workItem from="1639678042887" duration="58310000" />
+      <workItem from="1639678042887" duration="70810000" />
     </task>
     <servers />
   </component>
@@ -1244,7 +1363,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>1017</line>
+          <line>1019</line>
           <option name="timeStamp" value="753" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1282,6 +1401,11 @@
           <line>455</line>
           <option name="timeStamp" value="773" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/signal_remapper.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="774" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -1302,7 +1426,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_three_trades.coverage" NAME="pytest for test.test_main_with_three_trades Coverage Results" MODIFIED="1640074149338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_long_take_profit_exit Coverage Results" MODIFIED="1639802210246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_stop_loss_exit.coverage" NAME="pytest in test.test_screen_out_during_short_stop_loss_exit Coverage Results" MODIFIED="1639802256477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$reset_run.coverage" NAME="reset_run Coverage Results" MODIFIED="1639372581747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$reset_run.coverage" NAME="reset_run Coverage Results" MODIFIED="1640335369429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1639982447023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_main_with_one_trade Coverage Results" MODIFIED="1640074105435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dub_a.coverage" NAME="pytest in test.test_dub_a Coverage Results" MODIFIED="1640074913577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1318,7 +1442,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_move_tp_after_dca.coverage" NAME="pytest in test.test_move_tp_after_dca Coverage Results" MODIFIED="1640075516212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_short_take_profit_exit Coverage Results" MODIFIED="1639802268574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade_and_multiple_configs.coverage" NAME="pytest for test.test_main_with_one_trade_and_multiple_configs Coverage Results" MODIFIED="1640074112286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1638914086868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1640337053906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_33_trades_and_good_reset_config_no_trailing.coverage" NAME="pytest for test.test_main_with_33_trades_and_good_reset_config_no_trailing Coverage Results" MODIFIED="1639432121699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_htf_dataset.coverage" NAME="pytest in test.test_htf_dataset Coverage Results" MODIFIED="1639432734300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_timeframe_specific_column_headers.coverage" NAME="pytest in test.test_timeframe_specific_column_headers Coverage Results" MODIFIED="1637187256884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

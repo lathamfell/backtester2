@@ -18,8 +18,8 @@ PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_1D_12hTF_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_45m_11_2018.csv", "data/btcusd-5m_base_01_2018.csv")
+    ("data/TV_data_exports/COINBASE_BTCUSD_1D_01_2015.csv", "data/base_5m_files/btcusd-5m_base_01_2015.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018_HA.csv", "data/base_5m_files/btcusd-5m_base_01_2018.csv")
     #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
@@ -59,7 +59,7 @@ def process_pair(htf_datafilename, ltf_datafilename):
                 out_df.at[lf_idx, sig] = 1
                 print(f"mapped signal at {dt_htf} to LTF {ltf_sig_time}")
 
-        base_month_and_year = ltf_datafilename.split("_")[2] + "_" + ltf_datafilename.split("_")[3].split(".")[0]
+        base_month_and_year = ltf_datafilename.split("_")[4] + "_" + ltf_datafilename.split("_")[5].split(".")[0]
         htf_name_wo_year = "_".join([htf_datafilename.split("_")[2].split("/")[1], htf_datafilename.split("_")[3], htf])
         outfilename = f"data/{htf_name_wo_year}_on_5m_{base_month_and_year}.csv"
         out_df.to_csv(outfilename, index=False)
