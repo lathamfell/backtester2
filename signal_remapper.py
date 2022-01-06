@@ -12,20 +12,9 @@ from datetime import timedelta
 # note: for LTF file use the 5m base file that goes back to the same mo/year as the HTF. It won't be edited
 # NOTE: WHEN ADDING FRESH DATA TO BASE FILES DO NOT BRING IN THE 5M SIGNALS TOO!  BASE FILES == NO SIGNALS
 PAIRS = [  # tuples of HTF file/LTF file
-    #("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_10m_06_2021.csv", "data/btcusd-5m_base_05_2021.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_15m_04_2021.csv", "data/btcusd-5m_base_03_2021.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_30m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020.csv", "data/btcusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_1h_01_2019.csv", "data/btcusd-5m_base_01_2019.csv"),
-    ("data/TV_data_exports/COINBASE_BTCUSD_1D_01_2015.csv", "data/base_5m_files/btcusd-5m_base_01_2015.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_1D_11_2018_HA.csv", "data/base_5m_files/btcusd-5m_base_01_2018.csv")
-    #("data/TV_data_exports/BYBIT_BTCUSD_2h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_3h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_4h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_6h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_8h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv"),
-    #("data/TV_data_exports/BYBIT_BTCUSD_12h_11_2018.csv", "data/btcusd-5m_base_01_2018.csv")
+    #("data/TV_data_exports/BYBIT_BTCUSD_1D_01_2020.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
+    ("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
 ]
 
 
