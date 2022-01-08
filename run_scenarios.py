@@ -47,7 +47,7 @@ def run_tri_arrow(configs):
         datafilenames=[
             "data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020.csv",
         ],
-        enable_qol=False,
+        enable_qol=True,
         #signal_timeframes=[["1h", "5m"]],
         take_profits=configs[0],
         tps_after_dca=configs[0],

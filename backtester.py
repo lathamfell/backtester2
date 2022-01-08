@@ -2,7 +2,7 @@ import pandas as pd
 import time
 from multiprocessing import Pool, cpu_count
 import pymongo
-from statistics import mean, median
+from statistics import mean, median, stdev
 from enum import Enum
 import copy
 
@@ -1011,7 +1011,7 @@ class ScenarioRunner:
         )
         self.trade["exit_pct"] = round(exit_pct, 3)
         self.trade["final_profit"] = round(self.profit_pct, 3)
-        self.trade["duration"] = self.candles_spent_in_trade
+        self.trade["duration_hours"] = round(self.candles_spent_in_trade * self.spec["interval_timeframe"] / 60, 1)
         self.trade["assets"] = round(self.assets, 4)
         self.trade["leverage"] = self.spec["leverage"][self.tf_idx]
         self.trade["exit_type"] = exit_type
@@ -1041,20 +1041,20 @@ class ScenarioRunner:
 
     def finish_scenario(self, failed=False):
 
-        mean_profit = median_profit = mean_hrs_in_trade = None
+        mean_profit = median_profit = mean_hrs_in_trade = sharpe_annualized = None
+
+        minutes = self.total_candles * int(self.spec["interval_timeframe"])
+        days = round(minutes / 1440, 1)
+        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
 
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
             mean_profit = round(mean(self.get_profits()), 2)
             median_profit = round(median(self.get_profits()), 2)
-            mean_hrs_in_trade = round(
-                mean(self.get_durations()) * int(self.spec["interval_timeframe"]) / 60,
-                2,
-            )
-
-        minutes = self.total_candles * int(self.spec["interval_timeframe"])
-        days = round(minutes / 1440, 1)
-        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
+            mean_hrs_in_trade = round(mean(self.get_durations()), 1)
+        if len(self.trade_history) > 1 and stdev(self.get_profits()):
+            sharpe = self.total_profit_pct / stdev(self.get_profits())
+            sharpe_annualized = round(sharpe / (days / 365), 1)
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         if failed:
@@ -1087,6 +1087,7 @@ class ScenarioRunner:
             "final_assets": round(self.assets, 2),
             "min_assets": round(self.min_assets, 2),
             "max_assets": round(self.max_assets, 2),
+            "sharpe": sharpe_annualized
         }
 
         return result
@@ -1116,7 +1117,7 @@ class ScenarioRunner:
         )
 
     def get_durations(self):
-        return [trade["duration"] for trade in self.trade_history]
+        return [trade["duration_hours"] for trade in self.trade_history]
 
     def get_new_entry_price(self):
         cur_entry_price = self.short_entry_price if self.short_entry_price else self.long_entry_price
