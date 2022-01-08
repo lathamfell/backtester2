@@ -763,6 +763,10 @@ def test_when_ltf_and_htf_print_signal_in_same_row(coll):
         multiproc=False,
         enable_qol=False,
         htf_signal_exits=[True],
+        drawdown_limits=[-50],
+        mean_floor=2,
+        median_floor=2,
+        winrate_floor=80
     )
     compare(coll, "db_after_when_ltf_and_htf_print_signal_in_same_row.json5")
 

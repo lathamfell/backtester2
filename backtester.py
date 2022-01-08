@@ -19,7 +19,7 @@ STOP_LOSS = "STOP_LOSS"
 TAKE_PROFIT = "TAKE_PROFIT"
 SIGNAL = "SIGNAL"
 CPUS = cpu_count() - 2
-CHUNK_SIZE = 1000000
+CHUNK_SIZE = 100000
 
 
 class FileType(Enum):
@@ -100,6 +100,7 @@ def main(
                                     for drawdown_limit in drawdown_limits:
                                         for htf_signal_exit in htf_signal_exits:
                                             scenario_count += 1
+                                            print(f"{scenario_count}")
     scenario_num = 0
 
     print(
@@ -1065,7 +1066,7 @@ class ScenarioRunner:
 
         result = {
             "_id": self.spec["_id"],
-            "end_date": self.end_date,
+            "end_date": self.trade_history[-1]["exit"],
             "trade_history": self.trade_history,
             "total_profit_pct": self.total_profit_pct,
             "daily_profit_pct_avg": daily_profit_pct_avg,

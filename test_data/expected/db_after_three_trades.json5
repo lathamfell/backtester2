@@ -14,7 +14,7 @@
           'winrate_floor': 50},
   'daily_profit_pct_avg': 0.37,
   'days': 61.3,
-  'end_date': '2021-03-03T04:00:00Z',
+  'end_date': '2021-02-23T00:00:00Z',
   'final_assets': 1.26,
   'htf_signal_exits_at_loss': 0,
   'htf_signal_exits_in_profit': 0,

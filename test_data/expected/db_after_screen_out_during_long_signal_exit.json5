@@ -24,7 +24,7 @@
     },
     'daily_profit_pct_avg': 0.2,
     'days': 69.7,
-    'end_date': '2021-09-14T17:55:00Z',
+  'end_date': '2017-11-09T15:55:00Z',
     'final_assets': 1.15,
     'htf_signal_exits_at_loss': 0,
     'htf_signal_exits_in_profit': 2,
