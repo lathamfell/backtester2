@@ -55,7 +55,8 @@ def run_tri_arrow(configs):
         dcas=configs[2],
         leverages=[[1, 1, 1]],
         htf_signal_exits=[True, False],
-        replace_existing_scenarios=False
+        replace_existing_scenarios=False,
+        drawdown_limits=[-20]
         #multiproc=False
     )
 

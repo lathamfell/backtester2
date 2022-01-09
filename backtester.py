@@ -52,6 +52,7 @@ def main(
     winrate_floor=c.WINRATE_FLOOR,
     mean_floor=c.MEAN_FLOOR,
     median_floor=c.MEDIAN_FLOOR,
+    daily_profit_pct_avg_floor=c.DAILY_PROFIT_PCT_AVG_FLOOR,
     floor_grace_period=c.FLOOR_GRACE_PERIOD,
     multiproc=c.MULTIPROCESSING,
     clear_db=c.CLEAR_DB,
@@ -167,6 +168,7 @@ def main(
                                                 "winrate_floor": winrate_floor,
                                                 "mean_floor": mean_floor,
                                                 "median_floor": median_floor,
+                                                "daily_profit_pct_avg_floor": daily_profit_pct_avg_floor,
                                                 "floor_grace_period": floor_grace_period,
                                                 "htf_signal_exit": htf_signal_exit,
                                             }
@@ -343,6 +345,8 @@ class ScenarioRunner:
 
         self.row = None
         self.win_rate = None
+        self.days = None
+        self.daily_profit_pct_avg = 0
 
         self.entry_timeframe = (
             ""  # for each trade, records which timeframe the entry signal fired on
@@ -404,7 +408,7 @@ class ScenarioRunner:
                     # we stopped out somewhere in this candle
                     try:
                         self.finish_trade(_type=STOP_LOSS)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow, e.DailyProfitTooLow):
                         return self.finish_scenario(failed=True)
 
                 # now check for the good stuff
@@ -433,6 +437,7 @@ class ScenarioRunner:
                             e.TooMuchDrawdown,
                             e.WinRateTooLow,
                             e.MeanOrMedianTooLow,
+                            e.DailyProfitTooLow
                         ):
                             return self.finish_scenario(failed=True)
 
@@ -441,7 +446,7 @@ class ScenarioRunner:
                     # exit long
                     try:
                         self.finish_trade(_type=SIGNAL)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow, e.DailyProfitTooLow):
                         return self.finish_scenario(failed=True)
 
             if self.short_entry_price:
@@ -484,7 +489,7 @@ class ScenarioRunner:
                     # we stopped out somewhere in this candle
                     try:
                         self.finish_trade(_type=STOP_LOSS)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow, e.DailyProfitTooLow):
                         return self.finish_scenario(failed=True)
 
                 # now check for the good stuff
@@ -512,6 +517,7 @@ class ScenarioRunner:
                             e.TooMuchDrawdown,
                             e.WinRateTooLow,
                             e.MeanOrMedianTooLow,
+                            e.DailyProfitTooLow
                         ):
                             return self.finish_scenario(failed=True)
                     else:
@@ -523,7 +529,7 @@ class ScenarioRunner:
                 if self.spec["htf_signal_exit"] and self.should_close_short():
                     try:
                         self.finish_trade(_type=SIGNAL)
-                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow):
+                    except (e.TooMuchDrawdown, e.WinRateTooLow, e.MeanOrMedianTooLow, e.DailyProfitTooLow):
                         return self.finish_scenario(failed=True)
 
             # check for long entry
@@ -1041,6 +1047,10 @@ class ScenarioRunner:
             median_profit = median(self.get_profits())
             if median_profit < self.spec["median_floor"]:
                 raise e.MeanOrMedianTooLow
+            # screening on daily profit pct avg may be too restrictive
+            self.calculate_daily_profit_pct_avg()
+            if self.daily_profit_pct_avg < self.spec["daily_profit_pct_avg_floor"]:
+                raise e.DailyProfitTooLow
 
         # clear both prices for convenience, even though only one is set
         self.short_entry_price = self.long_entry_price = self.tf_idx = None
@@ -1048,10 +1058,7 @@ class ScenarioRunner:
     def finish_scenario(self, failed=False):
 
         mean_profit = median_profit = mean_hrs_in_trade = sharpe_annualized = None
-
-        minutes = self.total_candles * int(self.spec["interval_timeframe"])
-        days = round(minutes / 1440, 1)
-        daily_profit_pct_avg = round((self.assets ** (1 / float(days)) - 1) * 100, 2)
+        self.calculate_days()  # include the days spent idle since last trade
 
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
@@ -1060,14 +1067,14 @@ class ScenarioRunner:
             mean_hrs_in_trade = round(mean(self.get_durations()), 1)
         if len(self.trade_history) > 1 and stdev(self.get_profits()):
             sharpe = self.total_profit_pct / stdev(self.get_profits())
-            sharpe_annualized = round(sharpe / (days / 365), 1)
+            sharpe_annualized = round(sharpe / (self.days / 365), 1)
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         if failed:
             print(f"failed strat {self.spec}")
         else:
             print(
-                f"{daily_profit_pct_avg:1.2f} {len(self.trade_history):3} daily profit/trades from spec: {self.spec}"
+                f"{self.daily_profit_pct_avg:1.2f} {len(self.trade_history):3} daily profit/trades from spec: {self.spec}"
             )
 
         result = {
@@ -1078,7 +1085,7 @@ class ScenarioRunner:
             "ltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LTF.name],
             "lltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LLTF.name],
             "total_profit_pct": self.total_profit_pct,
-            "daily_profit_pct_avg": daily_profit_pct_avg,
+            "daily_profit_pct_avg": self.daily_profit_pct_avg,
             "max_drawdown_pct": self.max_drawdown_pct,
             "win_rate": self.win_rate,
             "trades": len(self.trade_history),
@@ -1090,7 +1097,7 @@ class ScenarioRunner:
             "mean_profit": mean_profit,
             "median_profit": median_profit,
             "mean * trades": round(mean_profit * len(self.trade_history), 2),
-            "days": days,
+            "days": self.days,
             "mean_hrs_in_trade": mean_hrs_in_trade,
             "valid": not failed,
             "final_assets": round(self.assets, 2),
@@ -1105,6 +1112,14 @@ class ScenarioRunner:
         self.win_rate = round(
             (len(self.get_positive_profits()) / len(self.get_durations()) * 100), 1
         )
+
+    def calculate_days(self):
+        minutes = self.total_candles * int(self.spec["interval_timeframe"])
+        self.days = round(minutes / 1440, 1)
+
+    def calculate_daily_profit_pct_avg(self):
+        self.calculate_days()
+        self.daily_profit_pct_avg = round((self.assets ** (1 / float(self.days)) - 1) * 100, 2)
 
     def get_positive_profits(self):
         return [

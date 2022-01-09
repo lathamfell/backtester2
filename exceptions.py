@@ -8,3 +8,7 @@ class WinRateTooLow(Exception):
 
 class MeanOrMedianTooLow(Exception):
     pass
+
+
+class DailyProfitTooLow(Exception):
+    pass

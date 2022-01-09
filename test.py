@@ -30,6 +30,7 @@ def test_with_15m_chart(coll):
         winrate_floor=50,
         mean_floor=-5,
         median_floor=-5,
+        daily_profit_pct_avg_floor=-100,
         floor_grace_period=50,
         write_invalid_to_db=True,
         enable_qol=False,
@@ -726,6 +727,30 @@ def test_screen_out_during_short_take_profit_exit(coll):
         htf_signal_exits=[True]
     )
     compare(coll, "db_after_screen_out_during_short_take_profit_exit.json5")
+
+
+def test_screen_out_on_daily_profit_floor(coll):
+    main(
+        db_coll=c.COLL,
+        datafilenames=["test_data/btcusd-5m_with_cols_2017_T3.csv"],
+        take_profits=[[50]],
+        tps_after_dca=[None],
+        dcas=[[[[0]]]],
+        stop_losses=[[1.5]],
+        leverages=[[4]],
+        multiproc=False,
+        write_invalid_to_db=True,
+        drawdown_limits=[-100],
+        daily_profit_pct_avg_floor=0,
+        winrate_floor=0,
+        mean_floor=-100,
+        median_floor=-100,
+        floor_grace_period=20,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        htf_signal_exits=[True]
+    )
+    compare(coll, "db_after_screen_out_on_daily_profit_floor.json5")
 
 
 def test_screen_out_on_drawdown(coll):
