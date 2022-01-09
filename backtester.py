@@ -5,6 +5,7 @@ import pymongo
 from statistics import mean, median, stdev
 from enum import Enum
 import copy
+from collections import Counter
 
 import config_prod as c
 import exceptions as e
@@ -305,7 +306,9 @@ class ScenarioRunner:
         self.entry_price_original = (
             None  # saves pre-DCA entry price, to be put into trade record
         )
-        self.assets = 1.0
+        self.assets = 1.0  # main asset tracker
+        self.assets_by_timeframe = {'HTF': 1.0, 'LTF': 1.0, 'LLTF': 1.0}  # track by timeframe alongside main combined asset tracker
+
         self.min_assets = self.max_assets = self.assets
         self.stop_loss_exits_in_profit = 0
         self.stop_loss_exits_at_loss = 0
@@ -318,6 +321,7 @@ class ScenarioRunner:
         self.trade_history = []
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
+        self.total_profit_pct_by_timeframe = {'HTF': 0, 'LTF': 0, 'LLTF': 0}
         self.total_candles = 0
         self.units = (
             None  # set for each trade depending on the DCA setting for that timeframe
@@ -551,7 +555,6 @@ class ScenarioRunner:
                     "direction": "long",
                     "entry_timeframe": self.entry_timeframe,
                 }
-                self.entry_timeframe = None  # reset to avoid accidental carryover
 
             # check for short entry
             if self.should_open_short():
@@ -582,7 +585,6 @@ class ScenarioRunner:
                     "direction": "short",
                     "entry_timeframe": self.entry_timeframe,
                 }
-                self.entry_timeframe = None  # reset to avoid accidental carryover
 
         return self.finish_scenario()
 
@@ -993,7 +995,9 @@ class ScenarioRunner:
             else:
                 exit_type = "sig_loss"
 
-        self.assets *= 1 + self.profit_pct / 100 * self.units
+        self.assets *= (1 + self.profit_pct / 100 * self.units)
+        self.assets_by_timeframe[self.entry_timeframe] *= (1 + self.profit_pct / 100 * self.units)  # track TF profit
+
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
         drawdown_pct = round(
@@ -1001,6 +1005,7 @@ class ScenarioRunner:
         )  # e.g. -68 (=68% drawdown from peak)
         self.max_drawdown_pct = min(drawdown_pct, self.max_drawdown_pct)
         self.total_profit_pct = round((self.assets - 1) * 100, 1)  # e.g. 103 (=103% profit)
+        self.total_profit_pct_by_timeframe[self.entry_timeframe] = round((self.assets_by_timeframe[self.entry_timeframe] - 1) * 100, 1)
 
         # update trade history
         self.trade["entry_price_dca"] = round(self.short_entry_price if self.short_entry_price else self.long_entry_price, 2)
@@ -1019,6 +1024,7 @@ class ScenarioRunner:
         self.trade["max_profit_before_fees"] = round(self.max_profit, 3)
         self.trade["units"] = self.units
         self.trade_history.append(self.trade)
+        self.entry_timeframe = None  # ensure no carryover to the next trade
 
         # check drawdown
         if self.max_drawdown_pct < self.spec["drawdown_limit"]:
@@ -1068,6 +1074,9 @@ class ScenarioRunner:
             "_id": self.spec["_id"],
             "end_date": self.trade_history[-1]["exit"],
             "trade_history": self.trade_history,
+            "htf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.HTF.name],
+            "ltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LTF.name],
+            "lltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LLTF.name],
             "total_profit_pct": self.total_profit_pct,
             "daily_profit_pct_avg": daily_profit_pct_avg,
             "max_drawdown_pct": self.max_drawdown_pct,
