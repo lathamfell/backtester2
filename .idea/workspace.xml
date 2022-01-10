@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065ebe3e-165f-4f99-8914-4d11134505c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/analysis/btcoll_prod.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_daily_profit_floor.json5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020_20shift.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/COINBASEBYBIT_BTCUSD_1D_on_5m_01_2015.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run_scenarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_scenarios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signal_remapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/signal_remapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_daily_profit_floor.json5" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
       <recent name="$PROJECT_DIR$/input" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test.test_screen_out_on_daily_profit_floor">
+  <component name="RunManager" selected="Python tests.pytest for test.test_tri_arrow">
     <configuration name="run_scenarios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -901,9 +902,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.signal_remapper" />
         <item itemvalue="Python.tri_arrow_config_generator" />
         <item itemvalue="Python.run_scenarios" />
-        <item itemvalue="Python.signal_remapper" />
         <item itemvalue="Python.sl_generator_from_single_pts" />
         <item itemvalue="Python.sl_generator_from_combo_pts" />
       </list>
@@ -950,7 +951,7 @@
       <workItem from="1641080289700" duration="596000" />
       <workItem from="1641082532360" duration="23008000" />
       <workItem from="1641569397305" duration="8247000" />
-      <workItem from="1641639997994" duration="27252000" />
+      <workItem from="1641639997994" duration="33652000" />
     </task>
     <servers />
   </component>
@@ -977,17 +978,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>420</line>
+          <line>419</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>871</line>
+          <line>846</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>445</line>
+          <line>444</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1027,168 +1028,163 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>490</line>
+          <line>487</line>
           <option name="timeStamp" value="628" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>434</line>
+          <line>431</line>
           <option name="timeStamp" value="642" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>447</line>
+          <line>444</line>
           <option name="timeStamp" value="643" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>530</line>
+          <line>527</line>
           <option name="timeStamp" value="645" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>359</line>
+          <line>356</line>
           <option name="timeStamp" value="670" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/signal_remapper.py</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="684" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>89</line>
+          <line>88</line>
           <option name="timeStamp" value="687" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>400</line>
+          <line>397</line>
           <option name="timeStamp" value="690" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>423</line>
+          <line>420</line>
           <option name="timeStamp" value="692" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1036</line>
+          <line>1033</line>
           <option name="timeStamp" value="715" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>411</line>
+          <line>408</line>
           <option name="timeStamp" value="716" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>982</line>
+          <line>979</line>
           <option name="timeStamp" value="724" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>991</line>
+          <line>988</line>
           <option name="timeStamp" value="725" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>999</line>
+          <line>996</line>
           <option name="timeStamp" value="726" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1001</line>
+          <line>998</line>
           <option name="timeStamp" value="727" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>571</line>
+          <line>568</line>
           <option name="timeStamp" value="749" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>541</line>
+          <line>538</line>
           <option name="timeStamp" value="750" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>554</line>
+          <line>551</line>
           <option name="timeStamp" value="757" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>584</line>
+          <line>581</line>
           <option name="timeStamp" value="758" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/signal_remapper.py</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="774" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1081</line>
+          <line>1073</line>
           <option name="timeStamp" value="776" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>530</line>
+          <line>529</line>
           <option name="timeStamp" value="779" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>548</line>
+          <line>547</line>
           <option name="timeStamp" value="780" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>574</line>
+          <line>573</line>
           <option name="timeStamp" value="781" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>973</line>
+          <line>970</line>
           <option name="timeStamp" value="782" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>909</line>
+          <line>884</line>
           <option name="timeStamp" value="783" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1003</line>
+          <line>1000</line>
           <option name="timeStamp" value="788" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1079</line>
+          <line>1071</line>
           <option name="timeStamp" value="790" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1071</line>
+          <line>1063</line>
           <option name="timeStamp" value="792" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1059</line>
+          <line>1052</line>
           <option name="timeStamp" value="793" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>313</line>
+          <line>311</line>
           <option name="timeStamp" value="794" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1068</line>
+          <line>1060</line>
           <option name="timeStamp" value="796" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1052</line>
-          <option name="timeStamp" value="797" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1202,7 +1198,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_trail_configs_to_check_validity_function.coverage" NAME="pytest for test.test_main_with_trail_configs_to_check_validity_function Coverage Results" MODIFIED="1639432299148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_screen_out_scenarios_where_dca_greater_than_sl.coverage" NAME="pytest for test.test_screen_out_scenarios_where_dca_greater_than_or_eq__sl Coverage Results" MODIFIED="1640075483298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_win_rate_or_drawdown_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_win_rate_or_drawdown_falls_below_standard Coverage Results" MODIFIED="1639414661864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca.coverage" NAME="pytest in test.test_dca Coverage Results" MODIFIED="1641692224848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca.coverage" NAME="pytest in test.test_dca Coverage Results" MODIFIED="1641783491102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_duplicate_scenarios_are_rejected.coverage" NAME="pytest in test.test_duplicate_scenarios_are_rejected Coverage Results" MODIFIED="1641624789553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_loss_limiter.coverage" NAME="pytest for test.test_loss_limiter Coverage Results" MODIFIED="1637179684973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_trailing_sl_no_reset.coverage" NAME="pytest for test.test_main_with_five_trades_trailing_sl_no_reset Coverage Results" MODIFIED="1639432190721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1214,7 +1210,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1641692415456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_with_one_trade Coverage Results" MODIFIED="1641692427263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dub_a.coverage" NAME="pytest in test.test_dub_a Coverage Results" MODIFIED="1641692298102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_tri_arrow.coverage" NAME="pytest for test.test_tri_arrow Coverage Results" MODIFIED="1641695049504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_tri_arrow.coverage" NAME="pytest for test.test_tri_arrow Coverage Results" MODIFIED="1641783608027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_double_or_triple_file.coverage" NAME="pytest for test.test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file Coverage Results" MODIFIED="1638846750329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca_with_sig_exit.coverage" NAME="pytest in test.test_dca_with_sig_exit Coverage Results" MODIFIED="1641692251721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_signal_exit.coverage" NAME="pytest in test.test_screen_out_during_long_signal_exit Coverage Results" MODIFIED="1641692584874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -1226,7 +1222,7 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_move_tp_after_dca.coverage" NAME="pytest in test.test_move_tp_after_dca Coverage Results" MODIFIED="1641692375098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_short_take_profit_exit Coverage Results" MODIFIED="1641692690800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade_and_multiple_configs.coverage" NAME="pytest for test.test_with_one_trade_and_multiple_configs Coverage Results" MODIFIED="1641692443600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1641478469184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1641751598738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_33_trades_and_good_reset_config_no_trailing.coverage" NAME="pytest for test.test_main_with_33_trades_and_good_reset_config_no_trailing Coverage Results" MODIFIED="1639432121699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_htf_dataset.coverage" NAME="pytest in test.test_htf_dataset Coverage Results" MODIFIED="1639432734300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_timeframe_specific_column_headers.coverage" NAME="pytest in test.test_timeframe_specific_column_headers Coverage Results" MODIFIED="1637187256884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1248,8 +1244,8 @@
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multi_dca.coverage" NAME="pytest in test.test_multi_dca Coverage Results" MODIFIED="1640118560566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_when_ltf_and_htf_print_signal_in_same_row.coverage" NAME="pytest in test.test_when_ltf_and_htf_print_signal_in_same_row Coverage Results" MODIFIED="1641692840348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_screen_out_scenarios_where_dca_greater_than_or_eq__sl.coverage" NAME="pytest for test.test_screen_out_scenarios_where_dca_greater_than_or_eq__sl Coverage Results" MODIFIED="1641692766845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_accuracy_tester_mode.coverage" NAME="pytest in test.test_accuracy_tester_mode Coverage Results" MODIFIED="1641692161877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_leverage_adjustment_with_large_stop_loss.coverage" NAME="pytest for test.test_leverage_adjustment_with_large_stop_loss Coverage Results" MODIFIED="1641692366177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_accuracy_tester_mode.coverage" NAME="pytest in test.test_accuracy_tester_mode Coverage Results" MODIFIED="1641783313853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_scenario_that_covers_signal_exits_in_profit.coverage" NAME="pytest for test.test_with_scenario_that_covers_signal_exits_in_profit Coverage Results" MODIFIED="1641692460534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

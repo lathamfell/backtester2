@@ -26,13 +26,12 @@ DRAWDOWN_LIMITS = [-20]
 WINRATE_FLOOR = 90
 MEAN_FLOOR = 0
 MEDIAN_FLOOR = 0
-DAILY_PROFIT_PCT_AVG_FLOOR = 0.19
-FLOOR_GRACE_PERIOD = 200  # number of trades before floors are activated
+FLOOR_GRACE_PERIOD = 50  # number of trades before floors are activated
 WRITE_INVALID_TO_DB = True  # don't change this lol.  odd behavior
 ENABLE_QOL = True
 REPLACE = False
 ACCURACY_TESTER_MODE = False  # only runs equal TP/Sl spec; overwrites leverage, dd, winrate floor
-HTF_SIGNAL_EXITS = [True, False]
+HTF_SIGNAL_EXITS = [True]
 
 SIGNAL_TIMEFRAME_START_TIMES = {
     "BTC": {

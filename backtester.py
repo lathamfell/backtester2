@@ -52,7 +52,6 @@ def main(
     winrate_floor=c.WINRATE_FLOOR,
     mean_floor=c.MEAN_FLOOR,
     median_floor=c.MEDIAN_FLOOR,
-    daily_profit_pct_avg_floor=c.DAILY_PROFIT_PCT_AVG_FLOOR,
     floor_grace_period=c.FLOOR_GRACE_PERIOD,
     multiproc=c.MULTIPROCESSING,
     clear_db=c.CLEAR_DB,
@@ -168,7 +167,6 @@ def main(
                                                 "winrate_floor": winrate_floor,
                                                 "mean_floor": mean_floor,
                                                 "median_floor": median_floor,
-                                                "daily_profit_pct_avg_floor": daily_profit_pct_avg_floor,
                                                 "floor_grace_period": floor_grace_period,
                                                 "htf_signal_exit": htf_signal_exit,
                                             }
@@ -346,7 +344,6 @@ class ScenarioRunner:
         self.row = None
         self.win_rate = None
         self.days = None
-        self.daily_profit_pct_avg = 0
 
         self.entry_timeframe = (
             ""  # for each trade, records which timeframe the entry signal fired on
@@ -1047,10 +1044,6 @@ class ScenarioRunner:
             median_profit = median(self.get_profits())
             if median_profit < self.spec["median_floor"]:
                 raise e.MeanOrMedianTooLow
-            # screening on daily profit pct avg may be too restrictive
-            self.calculate_daily_profit_pct_avg()
-            if self.daily_profit_pct_avg < self.spec["daily_profit_pct_avg_floor"]:
-                raise e.DailyProfitTooLow
 
         # clear both prices for convenience, even though only one is set
         self.short_entry_price = self.long_entry_price = self.tf_idx = None
@@ -1058,8 +1051,7 @@ class ScenarioRunner:
     def finish_scenario(self, failed=False):
 
         mean_profit = median_profit = mean_hrs_in_trade = sharpe_annualized = None
-        self.calculate_days()  # include the days spent idle since last trade
-
+        self.calculate_daily_profit_pct_avg()
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
             mean_profit = round(mean(self.get_profits()), 2)
