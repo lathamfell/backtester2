@@ -5,7 +5,7 @@ import datetime
 def main():
     # for raw BacktestMarket data, delete last column and add header labels:
     #   date, time, open, high, low, close, short, long
-    datafilename = "data/ethusd-5m_og_labeled_2017.csv"
+    datafilename = "data/base_5m_files/ethusd-5m_og_labeled_2017.csv"
     # read in csv
     df = pd.read_csv(datafilename)
     out_df = df.copy(deep=True)

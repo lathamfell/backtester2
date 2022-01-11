@@ -308,6 +308,7 @@ class ScenarioRunner:
         )
         self.assets = 1.0  # main asset tracker
         self.assets_by_timeframe = {'HTF': 1.0, 'LTF': 1.0, 'LLTF': 1.0}  # track by timeframe alongside main combined asset tracker
+        self.assets_by_direction = {'long': 1.0, 'short': 1.0}
 
         self.min_assets = self.max_assets = self.assets
         self.stop_loss_exits_in_profit = 0
@@ -322,6 +323,7 @@ class ScenarioRunner:
         self.trade = {}
         self.max_drawdown_pct = self.total_profit_pct = 0
         self.total_profit_pct_by_timeframe = {'HTF': 0, 'LTF': 0, 'LLTF': 0}
+        self.total_profit_pct_by_direction = {'long': 0, 'short': 0}
         self.total_candles = 0
         self.units = (
             None  # set for each trade depending on the DCA setting for that timeframe
@@ -345,12 +347,14 @@ class ScenarioRunner:
         self.win_rate = None
         self.days = None
 
-        self.entry_timeframe = (
-            ""  # for each trade, records which timeframe the entry signal fired on
-        )
+        #self.entry_timeframe = (
+        #    ""  # for each trade, records which timeframe the entry signal fired on
+        #)
+        self.entry_timeframe = None
         self.htf_shadow = None  # only used in HTF dataset scenarios
         self.ltf_shadow = None  # only used in triple arrow scenarios
         self.set_initial_shadows()
+        self.direction = None
 
     def run_scenario(self):
         # print(f"Running scenario with spec: {self.spec}")
@@ -535,6 +539,7 @@ class ScenarioRunner:
                 self.long_entry_price = self.entry_price_original = getattr(
                     self.row, "close"
                 )
+                self.direction = "long"
                 # reset tp and stop_loss to starting value
                 self.take_profit = self.spec["take_profit"]
                 self.stop_loss = self.spec["stop_loss"][self.tf_idx]
@@ -555,7 +560,7 @@ class ScenarioRunner:
                     "entry": getattr(self.row, "time")
                     .isoformat()
                     .replace("+00:00", "Z"),
-                    "direction": "long",
+                    "direction": self.direction,
                     "entry_timeframe": self.entry_timeframe,
                 }
 
@@ -565,6 +570,7 @@ class ScenarioRunner:
                 self.short_entry_price = self.entry_price_original = getattr(
                     self.row, "close"
                 )
+                self.direction = "short"
                 # reset stop_loss to starting value
                 self.take_profit = self.spec["take_profit"]
                 self.stop_loss = self.spec["stop_loss"][self.tf_idx]
@@ -585,7 +591,7 @@ class ScenarioRunner:
                     "entry": getattr(self.row, "time")
                     .isoformat()
                     .replace("+00:00", "Z"),
-                    "direction": "short",
+                    "direction": self.direction,
                     "entry_timeframe": self.entry_timeframe,
                 }
 
@@ -728,7 +734,10 @@ class ScenarioRunner:
         bot_in_trade = self.short_entry_price or self.long_entry_price
         short_signal = getattr(self.row, short_header) in [1, "1"]
         self.entry_timeframe = EntryTimeframe.HTF.name
-        return not bot_in_trade and short_signal
+        if not bot_in_trade and short_signal:
+            self.entry_timeframe = EntryTimeframe.HTF.name
+            return True
+        return False
 
     def should_open_short_double_timeframe(
         self, short_htf_header, short_ltf_header, long_htf_header
@@ -832,8 +841,10 @@ class ScenarioRunner:
     def should_open_long_single_timeframe(self, long_header):
         bot_in_trade = self.short_entry_price or self.long_entry_price
         long_signal = getattr(self.row, long_header) in [1, "1"]
-        self.entry_timeframe = EntryTimeframe.HTF.name
-        return not bot_in_trade and long_signal
+        if not bot_in_trade and long_signal:
+            self.entry_timeframe = EntryTimeframe.HTF.name
+            return True
+        return False
 
     def should_open_long_double_timeframe(
         self, long_htf_header, long_ltf_header, short_htf_header
@@ -1000,6 +1011,7 @@ class ScenarioRunner:
 
         self.assets *= (1 + self.profit_pct / 100 * self.units)
         self.assets_by_timeframe[self.entry_timeframe] *= (1 + self.profit_pct / 100 * self.units)  # track TF profit
+        self.assets_by_direction[self.direction] *= (1 + self.profit_pct / 100 * self.units)  # track direction profit
 
         self.min_assets = min(self.assets, self.min_assets)
         self.max_assets = max(self.assets, self.max_assets)
@@ -1009,6 +1021,7 @@ class ScenarioRunner:
         self.max_drawdown_pct = min(drawdown_pct, self.max_drawdown_pct)
         self.total_profit_pct = round((self.assets - 1) * 100, 1)  # e.g. 103 (=103% profit)
         self.total_profit_pct_by_timeframe[self.entry_timeframe] = round((self.assets_by_timeframe[self.entry_timeframe] - 1) * 100, 1)
+        self.total_profit_pct_by_direction[self.direction] = round((self.assets_by_direction[self.direction] - 1) * 100, 1)
 
         # update trade history
         self.trade["entry_price_dca"] = round(self.short_entry_price if self.short_entry_price else self.long_entry_price, 2)
@@ -1027,7 +1040,7 @@ class ScenarioRunner:
         self.trade["max_profit_before_fees"] = round(self.max_profit, 3)
         self.trade["units"] = self.units
         self.trade_history.append(self.trade)
-        self.entry_timeframe = None  # ensure no carryover to the next trade
+        self.entry_timeframe = self.direction = None  # ensure no carryover to the next trade
 
         # check drawdown
         if self.max_drawdown_pct < self.spec["drawdown_limit"]:
@@ -1076,6 +1089,8 @@ class ScenarioRunner:
             "htf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.HTF.name],
             "ltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LTF.name],
             "lltf_profit_pct": self.total_profit_pct_by_timeframe[EntryTimeframe.LLTF.name],
+            "short_profit_pct": self.total_profit_pct_by_direction["short"],
+            "long_profit_pct": self.total_profit_pct_by_direction["long"],
             "total_profit_pct": self.total_profit_pct,
             "daily_profit_pct_avg": self.daily_profit_pct_avg,
             "max_drawdown_pct": self.max_drawdown_pct,

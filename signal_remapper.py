@@ -13,9 +13,12 @@ from datetime import timedelta
 # NOTE: WHEN ADDING FRESH DATA TO BASE FILES DO NOT BRING IN THE 5M SIGNALS TOO!  BASE FILES == NO SIGNALS
 PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/COINBASEBYBIT_BTCUSD_1D_03_2015.csv", "data/base_5m_files/btcusd-5m_base_01_2015.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_1D_01_2020.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_1D_01_2020.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
-    ("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_ETHUSD_1D_01_2020.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv"),
+    #("data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LTF.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv"),
+    ("data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv")
 ]
 
 
@@ -60,8 +63,7 @@ def process_pair(htf_datafilename, ltf_datafilename):
 
 def get_lf_timedelta(htf, ltf):
     if htf == "1D" and ltf == 5:
-        #return timedelta(hours=23, minutes=55)
-        return timedelta(hours=23, minutes=(55-30))
+        return timedelta(hours=23, minutes=55)
     if htf == "12h" and ltf == 5:
         return timedelta(hours=11, minutes=55)
     if htf == "8h" and ltf == 5:
@@ -79,8 +81,7 @@ def get_lf_timedelta(htf, ltf):
     if htf == "1h" and ltf == 5:
         return timedelta(hours=0, minutes=55)
     if htf == "45m" and ltf == 5:
-        return timedelta(hours=0, minutes=(40-30))
-        #return timedelta(hours=0, minutes=40)
+        return timedelta(hours=0, minutes=40)
     if htf == "30m" and ltf == 5:
         return timedelta(hours=0, minutes=25)
     if htf == "15m" and ltf == 5:

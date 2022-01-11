@@ -2,15 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065ebe3e-165f-4f99-8914-4d11134505c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020_20shift.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/btcoll_prod_5x.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BYBIT_ETHUSD_1D_45m_5m_on_5m_01_2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BYBIT_ETHUSD_45m_on_5m_01_2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_ETHUSD_1D_01_2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LLTF.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LTF.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og_labeled_2017_isoformat_time.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtest_market_dt_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtest_market_dt_converter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/COINBASEBYBIT_BTCUSD_1D_on_5m_01_2015.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_01_2020.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_base_01_2020.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og_labeled_2017.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/base_5m_files/ethusd-5m_og_labeled_2017.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ready_for_backtester/BYBIT_BTCUSD_1D_45m_5m_on_5m_01_2020_20shift.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run_scenarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_scenarios.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signal_remapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/signal_remapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_daily_profit_floor.json5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_15m_chart.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_accuracy_tester_mode.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_configurable_start_date.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_configurable_start_date.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_dca.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_dca.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_dca_with_sig_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_dca_with_sig_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_does_not_screen_out_mean_or_median.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_does_not_screen_out_mean_or_median.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_dub_a.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_dub_a.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_due_to_initial_drawdown_screener.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_invalid_scenarios_not_written_to_db.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_move_tp_after_dca.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_move_tp_after_dca.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_multiple_datafilenames.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_one_trade_and_multiple_configs.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenario_that_covers_signal_exits_in_profit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenario_that_covers_signal_exits_in_profit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_not_rerun.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_1.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_scenarios_already_in_db_are_rerun_with_replace_option_2.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_signal_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_signal_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_stop_loss_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_stop_loss_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_take_profit_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_long_take_profit_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_signal_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_signal_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_stop_loss_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_stop_loss_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_take_profit_exit.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_during_short_take_profit_exit.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_drawdown.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_drawdown.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_median.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_median.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_win_rate.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_on_win_rate.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_scenarios_where_dca_greater_than_or_eq_sl.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_screen_out_scenarios_where_dca_greater_than_or_eq_sl.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_test_screen_out_on_mean.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_test_screen_out_on_mean.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_three_trades.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_tri_arrow.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_tri_arrow.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_data/expected/db_after_when_ltf_and_htf_print_signal_in_same_row.json5" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/expected/db_after_when_ltf_and_htf_print_signal_in_same_row.json5" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +119,29 @@
       <recent name="$PROJECT_DIR$/input" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test.test_tri_arrow">
+  <component name="RunManager" selected="Python tests.pytest in test.test_when_ltf_and_htf_print_signal_in_same_row">
+    <configuration name="backtest_market_dt_converter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="backtester2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backtest_market_dt_converter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run_scenarios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,28 +178,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/signal_remapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sl_generator_from_combo_pts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sl_generator_from_combo_pts.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -735,23 +774,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test.test_screen_out_on_daily_profit_floor" type="tests" factoryName="py.test">
-      <module name="backtester2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\Users\Latham\AppData\Local\Programs\Python\Python39\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.test_screen_out_on_daily_profit_floor&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest in test.test_screen_out_on_drawdown" type="tests" factoryName="py.test">
       <module name="backtester2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -854,13 +876,30 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test.test_with_15m_chart" type="tests" factoryName="py.test">
+      <module name="backtester2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Latham\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.test_with_15m_chart&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.signal_remapper" />
-      <item itemvalue="Python.sl_generator_from_combo_pts" />
       <item itemvalue="Python.sl_generator_from_single_pts" />
       <item itemvalue="Python.run_scenarios" />
       <item itemvalue="Python.tri_arrow_config_generator" />
-      <item itemvalue="Python tests.pytest in test.test_screen_out_on_daily_profit_floor" />
+      <item itemvalue="Python.backtest_market_dt_converter" />
+      <item itemvalue="Python tests.pytest in test.test_with_15m_chart" />
       <item itemvalue="Python tests.pytest in test.test_accuracy_tester_mode" />
       <item itemvalue="Python tests.pytest in test.test_configurable_start_date" />
       <item itemvalue="Python tests.pytest in test.test_dca" />
@@ -903,10 +942,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.signal_remapper" />
+        <item itemvalue="Python.backtest_market_dt_converter" />
         <item itemvalue="Python.tri_arrow_config_generator" />
         <item itemvalue="Python.run_scenarios" />
         <item itemvalue="Python.sl_generator_from_single_pts" />
-        <item itemvalue="Python.sl_generator_from_combo_pts" />
       </list>
     </recent_temporary>
   </component>
@@ -951,7 +990,7 @@
       <workItem from="1641080289700" duration="596000" />
       <workItem from="1641082532360" duration="23008000" />
       <workItem from="1641569397305" duration="8247000" />
-      <workItem from="1641639997994" duration="33652000" />
+      <workItem from="1641639997994" duration="45795000" />
     </task>
     <servers />
   </component>
@@ -1028,32 +1067,32 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>487</line>
+          <line>491</line>
           <option name="timeStamp" value="628" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>431</line>
+          <line>435</line>
           <option name="timeStamp" value="642" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>444</line>
+          <line>448</line>
           <option name="timeStamp" value="643" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>527</line>
+          <line>531</line>
           <option name="timeStamp" value="645" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>356</line>
+          <line>360</line>
           <option name="timeStamp" value="670" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/signal_remapper.py</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="684" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1063,72 +1102,72 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>397</line>
+          <line>401</line>
           <option name="timeStamp" value="690" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>420</line>
+          <line>424</line>
           <option name="timeStamp" value="692" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1033</line>
+          <line>1046</line>
           <option name="timeStamp" value="715" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>408</line>
+          <line>412</line>
           <option name="timeStamp" value="716" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>979</line>
+          <line>990</line>
           <option name="timeStamp" value="724" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>988</line>
+          <line>999</line>
           <option name="timeStamp" value="725" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>996</line>
+          <line>1007</line>
           <option name="timeStamp" value="726" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>998</line>
+          <line>1009</line>
           <option name="timeStamp" value="727" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>568</line>
+          <line>574</line>
           <option name="timeStamp" value="749" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>538</line>
+          <line>543</line>
           <option name="timeStamp" value="750" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>551</line>
+          <line>556</line>
           <option name="timeStamp" value="757" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>581</line>
+          <line>587</line>
           <option name="timeStamp" value="758" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/signal_remapper.py</url>
-          <line>51</line>
+          <line>54</line>
           <option name="timeStamp" value="774" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1073</line>
+          <line>1086</line>
           <option name="timeStamp" value="776" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1148,7 +1187,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>970</line>
+          <line>981</line>
           <option name="timeStamp" value="782" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1158,94 +1197,106 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1000</line>
+          <line>1011</line>
           <option name="timeStamp" value="788" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1071</line>
+          <line>1084</line>
           <option name="timeStamp" value="790" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1063</line>
+          <line>1076</line>
           <option name="timeStamp" value="792" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1052</line>
+          <line>1065</line>
           <option name="timeStamp" value="793" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>311</line>
+          <line>312</line>
           <option name="timeStamp" value="794" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backtester.py</url>
-          <line>1060</line>
+          <line>1073</line>
           <option name="timeStamp" value="796" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backtester.py</url>
+          <line>1026</line>
+          <option name="timeStamp" value="801" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backtester.py</url>
+          <line>1013</line>
+          <option name="timeStamp" value="802" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_drawdown.coverage" NAME="pytest in test.test_screen_out_on_drawdown Coverage Results" MODIFIED="1641692709947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_not_written_to_db.coverage" NAME="pytest in test.test_invalid_scenarios_not_written_to_db Coverage Results" MODIFIED="1641692341799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_scenarios_already_in_db_are_rerun_with_replace_option.coverage" NAME="pytest in test.test_scenarios_already_in_db_are_rerun_with_replace_option Coverage Results" MODIFIED="1641692553793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_signal_exit.coverage" NAME="pytest in test.test_screen_out_during_short_signal_exit Coverage Results" MODIFIED="1641692648561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_mean.coverage" NAME="pytest in test.test_screen_out_on_mean Coverage Results" MODIFIED="1641692786323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_drawdown.coverage" NAME="pytest in test.test_screen_out_on_drawdown Coverage Results" MODIFIED="1641887156692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_not_written_to_db.coverage" NAME="pytest in test.test_invalid_scenarios_not_written_to_db Coverage Results" MODIFIED="1641886826439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_scenarios_already_in_db_are_rerun_with_replace_option.coverage" NAME="pytest in test.test_scenarios_already_in_db_are_rerun_with_replace_option Coverage Results" MODIFIED="1641886937110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_signal_exit.coverage" NAME="pytest in test.test_screen_out_during_short_signal_exit Coverage Results" MODIFIED="1641887091241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_mean.coverage" NAME="pytest in test.test_screen_out_on_mean Coverage Results" MODIFIED="1641887225882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_trail_configs_to_check_validity_function.coverage" NAME="pytest for test.test_main_with_trail_configs_to_check_validity_function Coverage Results" MODIFIED="1639432299148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_screen_out_scenarios_where_dca_greater_than_sl.coverage" NAME="pytest for test.test_screen_out_scenarios_where_dca_greater_than_or_eq__sl Coverage Results" MODIFIED="1640075483298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_win_rate_or_drawdown_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_win_rate_or_drawdown_falls_below_standard Coverage Results" MODIFIED="1639414661864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca.coverage" NAME="pytest in test.test_dca Coverage Results" MODIFIED="1641783491102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca.coverage" NAME="pytest in test.test_dca Coverage Results" MODIFIED="1641886788610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_duplicate_scenarios_are_rejected.coverage" NAME="pytest in test.test_duplicate_scenarios_are_rejected Coverage Results" MODIFIED="1641624789553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_loss_limiter.coverage" NAME="pytest for test.test_loss_limiter Coverage Results" MODIFIED="1637179684973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_trailing_sl_no_reset.coverage" NAME="pytest for test.test_main_with_five_trades_trailing_sl_no_reset Coverage Results" MODIFIED="1639432190721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_configurable_start_date.coverage" NAME="pytest in test.test_configurable_start_date Coverage Results" MODIFIED="1641692206680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_three_trades.coverage" NAME="pytest for test.test_with_three_trades Coverage Results" MODIFIED="1641692804403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_long_take_profit_exit Coverage Results" MODIFIED="1641692629491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_stop_loss_exit.coverage" NAME="pytest in test.test_screen_out_during_short_stop_loss_exit Coverage Results" MODIFIED="1641692670131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_configurable_start_date.coverage" NAME="pytest in test.test_configurable_start_date Coverage Results" MODIFIED="1641886782287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_three_trades.coverage" NAME="pytest for test.test_with_three_trades Coverage Results" MODIFIED="1641887243429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_long_take_profit_exit Coverage Results" MODIFIED="1641887065243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_stop_loss_exit.coverage" NAME="pytest in test.test_screen_out_during_short_stop_loss_exit Coverage Results" MODIFIED="1641887109335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$reset_run.coverage" NAME="run_scenarios Coverage Results" MODIFIED="1641478953399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1641692415456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_with_one_trade Coverage Results" MODIFIED="1641692427263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dub_a.coverage" NAME="pytest in test.test_dub_a Coverage Results" MODIFIED="1641692298102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_tri_arrow.coverage" NAME="pytest for test.test_tri_arrow Coverage Results" MODIFIED="1641783608027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiproc.coverage" NAME="pytest in test.test_multiproc Coverage Results" MODIFIED="1641885573220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade.coverage" NAME="pytest for test.test_with_one_trade Coverage Results" MODIFIED="1641886858714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dub_a.coverage" NAME="pytest in test.test_dub_a Coverage Results" MODIFIED="1641886815322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_tri_arrow.coverage" NAME="pytest for test.test_tri_arrow Coverage Results" MODIFIED="1641887258901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_exception_is_thrown_when_initial_htf_entry_is_not_present_in_double_or_triple_file.coverage" NAME="pytest for test.test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file Coverage Results" MODIFIED="1638846750329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca_with_sig_exit.coverage" NAME="pytest in test.test_dca_with_sig_exit Coverage Results" MODIFIED="1641692251721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_signal_exit.coverage" NAME="pytest in test.test_screen_out_during_long_signal_exit Coverage Results" MODIFIED="1641692584874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_median.coverage" NAME="pytest in test.test_screen_out_on_median Coverage Results" MODIFIED="1641692744579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca_with_sig_exit.coverage" NAME="pytest in test.test_dca_with_sig_exit Coverage Results" MODIFIED="1641886799929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_signal_exit.coverage" NAME="pytest in test.test_screen_out_during_long_signal_exit Coverage Results" MODIFIED="1641886943941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_median.coverage" NAME="pytest in test.test_screen_out_on_median Coverage Results" MODIFIED="1641887174722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file.coverage" NAME="pytest for test.test_exception_is_thrown_when_initial_entry_is_not_present_in_double_or_triple_file Coverage Results" MODIFIED="1641625011572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_main_with_15m_chart.coverage" NAME="pytest in test.test_screen_out_on_daily_profit_floor Coverage Results" MODIFIED="1641736566099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiple_datafilenames.coverage" NAME="pytest in test.test_multiple_datafilenames Coverage Results" MODIFIED="1641692396723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multiple_datafilenames.coverage" NAME="pytest in test.test_multiple_datafilenames Coverage Results" MODIFIED="1641885551531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_no_signal_exit_option.coverage" NAME="pytest in test.test_no_signal_exit_option Coverage Results" MODIFIED="1637180110950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_move_tp_after_dca.coverage" NAME="pytest in test.test_move_tp_after_dca Coverage Results" MODIFIED="1641692375098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_short_take_profit_exit Coverage Results" MODIFIED="1641692690800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade_and_multiple_configs.coverage" NAME="pytest for test.test_with_one_trade_and_multiple_configs Coverage Results" MODIFIED="1641692443600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1641751598738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$backtest_market_dt_converter.coverage" NAME="backtest_market_dt_converter Coverage Results" MODIFIED="1641801726685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_move_tp_after_dca.coverage" NAME="pytest in test.test_move_tp_after_dca Coverage Results" MODIFIED="1641886848404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_short_take_profit_exit.coverage" NAME="pytest in test.test_screen_out_during_short_take_profit_exit Coverage Results" MODIFIED="1641887127097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_one_trade_and_multiple_configs.coverage" NAME="pytest for test.test_with_one_trade_and_multiple_configs Coverage Results" MODIFIED="1641886865178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$signal_remapper.coverage" NAME="signal_remapper Coverage Results" MODIFIED="1641802182926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_33_trades_and_good_reset_config_no_trailing.coverage" NAME="pytest for test.test_main_with_33_trades_and_good_reset_config_no_trailing Coverage Results" MODIFIED="1639432121699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_htf_dataset.coverage" NAME="pytest in test.test_htf_dataset Coverage Results" MODIFIED="1639432734300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_timeframe_specific_column_headers.coverage" NAME="pytest in test.test_timeframe_specific_column_headers Coverage Results" MODIFIED="1637187256884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$tri_arrow_config_generator.coverage" NAME="tri_arrow_config_generator Coverage Results" MODIFIED="1641692117272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_win_rate.coverage" NAME="pytest in test.test_screen_out_on_win_rate Coverage Results" MODIFIED="1641692748448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_on_win_rate.coverage" NAME="pytest in test.test_screen_out_on_win_rate Coverage Results" MODIFIED="1641887191264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_three_trades_and_reset_sl_no_trailing.coverage" NAME="pytest for test.test_main_with_three_trades_and_reset_sl_no_trailing Coverage Results" MODIFIED="1639432099766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_stop_loss_exit.coverage" NAME="pytest in test.test_screen_out_during_long_stop_loss_exit Coverage Results" MODIFIED="1641692607912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_screen_out_during_long_stop_loss_exit.coverage" NAME="pytest in test.test_screen_out_during_long_stop_loss_exit Coverage Results" MODIFIED="1641887040719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_dca_with_configurable_weights.coverage" NAME="pytest in test.test_dca_with_configurable_weights Coverage Results" MODIFIED="1640073353726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_scenarios_already_in_db_are_not_rerun.coverage" NAME="pytest in test.test_scenarios_already_in_db_are_not_rerun Coverage Results" MODIFIED="1641692516142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_with_15m_chart.coverage" NAME="pytest in test.test_with_15m_chart Coverage Results" MODIFIED="1641886753551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_scenarios_already_in_db_are_not_rerun.coverage" NAME="pytest in test.test_scenarios_already_in_db_are_not_rerun Coverage Results" MODIFIED="1641886930217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_last_reset_trailing_option.coverage" NAME="pytest in test.test_last_reset_trailing_option Coverage Results" MODIFIED="1639432947279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_and_trailing_reset_sl.coverage" NAME="pytest for test.test_main_with_five_trades_and_trailing_reset_sl Coverage Results" MODIFIED="1639432160020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_bail_when_mean_or_median_falls_below_standard.coverage" NAME="pytest in test.test_bail_when_mean_or_median_falls_below_standard Coverage Results" MODIFIED="1639404847368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_tp_tsl_combinations.coverage" NAME="pytest in test.test_invalid_tp_tsl_combinations Coverage Results" MODIFIED="1639432356357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_five_trades_with_trail_delay.coverage" NAME="pytest for test.test_main_with_five_trades_with_trail_delay Coverage Results" MODIFIED="1639432253141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_due_to_initial_drawdown_screener.coverage" NAME="pytest in test.test_invalid_scenarios_due_to_initial_drawdown_screener Coverage Results" MODIFIED="1641692320532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_invalid_sl_leverage_config.coverage" NAME="pytest for test.test_with_invalid_sl_leverage_config Coverage Results" MODIFIED="1641692359538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_invalid_scenarios_due_to_initial_drawdown_screener.coverage" NAME="pytest in test.test_invalid_scenarios_due_to_initial_drawdown_screener Coverage Results" MODIFIED="1641886831506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_invalid_sl_leverage_config.coverage" NAME="pytest for test.test_with_invalid_sl_leverage_config Coverage Results" MODIFIED="1641886839134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_get_adjusted_leverage.coverage" NAME="pytest in test.test_get_adjusted_leverage Coverage Results" MODIFIED="1638686566434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_does_not_screen_out_mean_or_median.coverage" NAME="pytest in test.test_does_not_screen_out_mean_or_median Coverage Results" MODIFIED="1641692271839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_does_not_screen_out_mean_or_median.coverage" NAME="pytest in test.test_does_not_screen_out_mean_or_median Coverage Results" MODIFIED="1641886806920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_multi_dca.coverage" NAME="pytest in test.test_multi_dca Coverage Results" MODIFIED="1640118560566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_when_ltf_and_htf_print_signal_in_same_row.coverage" NAME="pytest in test.test_when_ltf_and_htf_print_signal_in_same_row Coverage Results" MODIFIED="1641692840348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_screen_out_scenarios_where_dca_greater_than_or_eq__sl.coverage" NAME="pytest for test.test_screen_out_scenarios_where_dca_greater_than_or_eq__sl Coverage Results" MODIFIED="1641692766845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_leverage_adjustment_with_large_stop_loss.coverage" NAME="pytest for test.test_leverage_adjustment_with_large_stop_loss Coverage Results" MODIFIED="1641692366177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_accuracy_tester_mode.coverage" NAME="pytest in test.test_accuracy_tester_mode Coverage Results" MODIFIED="1641783313853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_scenario_that_covers_signal_exits_in_profit.coverage" NAME="pytest for test.test_with_scenario_that_covers_signal_exits_in_profit Coverage Results" MODIFIED="1641692460534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_when_ltf_and_htf_print_signal_in_same_row.coverage" NAME="pytest in test.test_when_ltf_and_htf_print_signal_in_same_row Coverage Results" MODIFIED="1641887282962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_screen_out_scenarios_where_dca_greater_than_or_eq__sl.coverage" NAME="pytest for test.test_screen_out_scenarios_where_dca_greater_than_or_eq__sl Coverage Results" MODIFIED="1641887208642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_leverage_adjustment_with_large_stop_loss.coverage" NAME="pytest for test.test_leverage_adjustment_with_large_stop_loss Coverage Results" MODIFIED="1641885519973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_in_test_test_accuracy_tester_mode.coverage" NAME="pytest in test.test_accuracy_tester_mode Coverage Results" MODIFIED="1641886769544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backtester2$pytest_for_test_test_main_with_scenario_that_covers_signal_exits_in_profit.coverage" NAME="pytest for test.test_with_scenario_that_covers_signal_exits_in_profit Coverage Results" MODIFIED="1641886872667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
