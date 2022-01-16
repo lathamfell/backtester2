@@ -1063,16 +1063,19 @@ class ScenarioRunner:
 
     def finish_scenario(self, failed=False):
 
-        mean_profit = median_profit = mean_hrs_in_trade = sharpe_annualized = None
+        mean_profit = median_profit = mean_hrs_in_trade_htf = mean_hrs_in_trade_ltf = mean_hrs_in_trade_lltf = None
         self.calculate_daily_profit_pct_avg()
         if len(self.trade_history) > 0:
             self.calculate_win_rate()
             mean_profit = round(mean(self.get_profits()), 2)
             median_profit = round(median(self.get_profits()), 2)
-            mean_hrs_in_trade = round(mean(self.get_durations()), 1)
-        if len(self.trade_history) > 1 and stdev(self.get_profits()):
-            sharpe = self.total_profit_pct / stdev(self.get_profits())
-            sharpe_annualized = round(sharpe / (self.days / 365), 1)
+            durations = self.get_durations()
+            if len(durations['HTF']):
+                mean_hrs_in_trade_htf = round(mean(durations['HTF']), 1)
+            if len(durations['LTF']):
+                mean_hrs_in_trade_ltf = round(mean(durations['LTF']), 1)
+            if len(durations['LLTF']):
+                mean_hrs_in_trade_lltf = round(mean(durations['LLTF']), 1)
 
         del self.spec["df"]  # no longer need it, and it doesn't print gracefully
         if failed:
@@ -1105,19 +1108,20 @@ class ScenarioRunner:
             "median_profit": median_profit,
             "mean * trades": round(mean_profit * len(self.trade_history), 2),
             "days": self.days,
-            "mean_hrs_in_trade": mean_hrs_in_trade,
+            "mean_hrs_in_trade_htf": mean_hrs_in_trade_htf,
+            "mean_hrs_in_trade_ltf": mean_hrs_in_trade_ltf,
+            "mean_hrs_in_trade_lltf": mean_hrs_in_trade_lltf,
             "valid": not failed,
             "final_assets": round(self.assets, 2),
             "min_assets": round(self.min_assets, 2),
-            "max_assets": round(self.max_assets, 2),
-            "sharpe": sharpe_annualized
+            "max_assets": round(self.max_assets, 2)
         }
 
         return result
 
     def calculate_win_rate(self):
         self.win_rate = round(
-            (len(self.get_positive_profits()) / len(self.get_durations()) * 100), 1
+            (len(self.get_positive_profits()) / len(self.get_durations()['all']) * 100), 1
         )
 
     def calculate_days(self):
@@ -1148,7 +1152,12 @@ class ScenarioRunner:
         )
 
     def get_durations(self):
-        return [trade["duration_hours"] for trade in self.trade_history]
+        durations = {
+            'HTF': [trade["duration_hours"] for trade in self.trade_history if trade['entry_timeframe'] == 'HTF'],
+            'LTF': [trade["duration_hours"] for trade in self.trade_history if trade['entry_timeframe'] == 'LTF'],
+            'LLTF': [trade["duration_hours"] for trade in self.trade_history if trade['entry_timeframe'] == 'LLTF'],
+            'all': [trade["duration_hours"] for trade in self.trade_history]}
+        return durations
 
     def get_new_entry_price(self):
         cur_entry_price = self.short_entry_price if self.short_entry_price else self.long_entry_price
@@ -1213,7 +1222,9 @@ def get_invalid_scenario_result(_id, end_date):
         "mean_profit": None,
         "median_profit": None,
         "days": None,
-        "mean_hrs_in_trade": None,
+        "mean_hrs_in_trade_htf": None,
+        "mean_hrs_in_trade_ltf": None,
+        "mean_hrs_in_trade_lltf": None,
         "valid": False,
         "final_assets": None,
         "min_assets": None,
