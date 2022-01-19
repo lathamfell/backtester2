@@ -16,10 +16,8 @@ PAIRS = [  # tuples of HTF file/LTF file
     #("data/TV_data_exports/BYBIT_BTCUSD_1D_01_2020.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
     #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_ETHUSD_1D_01_2020.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LTF.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv"),
-    #("data/TV_data_exports/BYBIT_ETHUSD_45m_01_2020_LLTF.csv", "data/base_5m_files/ethusd-5m_base_01_2020.csv")
-    ("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF_2_5_band_width.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv")
+    #("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_LLTF_2_5_band_width.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv")
+    ("data/TV_data_exports/BYBIT_BTCUSD_45m_01_2020_duba_LTF.csv", "data/base_5m_files/btcusd-5m_base_01_2020.csv")
 ]
 
 
