@@ -6,6 +6,7 @@
           'leverage': [1, 1],
           'mean_floor': -10,
           'median_floor': -10,
+          'signal_dca': false,
           'signal_timeframe': [],
           'start_date': '2021-05-03T00:00:00Z',
           'stop_loss': [20, 20],

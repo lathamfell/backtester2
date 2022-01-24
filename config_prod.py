@@ -32,6 +32,7 @@ ENABLE_QOL = True
 REPLACE = False
 ACCURACY_TESTER_MODE = False  # only runs equal TP/Sl spec; overwrites leverage, dd, winrate floor
 HTF_SIGNAL_EXITS = [True]
+SIGNAL_DCAS = [False]
 
 SIGNAL_TIMEFRAME_START_TIMES = {
     "BTC": {

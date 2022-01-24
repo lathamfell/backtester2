@@ -7,6 +7,7 @@
       'leverage': 1,
       'mean_floor': -5,
       'median_floor': -5,
+          'signal_dca': false,
       'htf_signal_exit': false,
       'signal_timeframe': [
         '5m'

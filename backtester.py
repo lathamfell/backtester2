@@ -60,6 +60,7 @@ def main(
     replace_existing_scenarios=c.REPLACE,  # True to overwrite scenarios with matching id
     accuracy_tester_mode=c.ACCURACY_TESTER_MODE,
     htf_signal_exits=c.HTF_SIGNAL_EXITS,
+    signal_dcas=c.SIGNAL_DCAS,
     check_for_dupes_up_front=False,
 ):
     start_time = time.perf_counter()
@@ -100,8 +101,9 @@ def main(
                                         continue
                                     for drawdown_limit in drawdown_limits:
                                         for htf_signal_exit in htf_signal_exits:
-                                            scenario_count += 1
-                                            print(f"{scenario_count}")
+                                            for signal_dca in signal_dcas:
+                                                scenario_count += 1
+                                                print(f"{scenario_count}")
     scenario_num = 0
 
     print(
@@ -145,40 +147,42 @@ def main(
                                         continue
                                     for drawdown_limit in drawdown_limits:
                                         for htf_signal_exit in htf_signal_exits:
-                                            scenario_num += 1
-                                            spec = {
-                                                "scenario_num": scenario_num,
-                                                "scenario_count": scenario_count,
-                                                "datafilename": datafilename_only,
-                                                "start_date": start_date,
-                                                "signal_timeframe": signal_timeframe,
-                                                "df": df,
-                                                "interval_timeframe": interval_timeframe,
-                                                "file_type": file_type,
-                                                "leverage": leverage,
-                                                "stop_loss": stop_loss,
-                                                "take_profit": take_profit,
-                                                "tp_after_dca": tp_after_dca,
-                                                "dca": dca,
-                                                "db": db,
-                                                "db_coll": db_coll,
-                                                "write_invalid_to_db": write_invalid_to_db,
-                                                "drawdown_limit": drawdown_limit,
-                                                "winrate_floor": winrate_floor,
-                                                "mean_floor": mean_floor,
-                                                "median_floor": median_floor,
-                                                "floor_grace_period": floor_grace_period,
-                                                "htf_signal_exit": htf_signal_exit,
-                                            }
-                                            spec["_id"] = get_unique_composite_key(spec)
-                                            specs.append(spec)
+                                            for signal_dca in signal_dcas:
+                                                scenario_num += 1
+                                                spec = {
+                                                    "scenario_num": scenario_num,
+                                                    "scenario_count": scenario_count,
+                                                    "datafilename": datafilename_only,
+                                                    "start_date": start_date,
+                                                    "signal_timeframe": signal_timeframe,
+                                                    "df": df,
+                                                    "interval_timeframe": interval_timeframe,
+                                                    "file_type": file_type,
+                                                    "leverage": leverage,
+                                                    "stop_loss": stop_loss,
+                                                    "take_profit": take_profit,
+                                                    "tp_after_dca": tp_after_dca,
+                                                    "dca": dca,
+                                                    "db": db,
+                                                    "db_coll": db_coll,
+                                                    "write_invalid_to_db": write_invalid_to_db,
+                                                    "drawdown_limit": drawdown_limit,
+                                                    "winrate_floor": winrate_floor,
+                                                    "mean_floor": mean_floor,
+                                                    "median_floor": median_floor,
+                                                    "floor_grace_period": floor_grace_period,
+                                                    "htf_signal_exit": htf_signal_exit,
+                                                    "signal_dca": signal_dca
+                                                }
+                                                spec["_id"] = get_unique_composite_key(spec)
+                                                specs.append(spec)
 
-                                            if check_for_dupes_up_front:
-                                                if spec["_id"] in spec_ids:
-                                                    raise ValueError(
-                                                        f"spec {spec['_id']} already found"
-                                                    )
-                                                spec_ids.append(spec["_id"])
+                                                if check_for_dupes_up_front:
+                                                    if spec["_id"] in spec_ids:
+                                                        raise ValueError(
+                                                            f"spec {spec['_id']} already found"
+                                                        )
+                                                    spec_ids.append(spec["_id"])
 
     print(f"specs assembled at {time.perf_counter() - start_time} seconds")
 
@@ -355,6 +359,7 @@ class ScenarioRunner:
         self.ltf_shadow = None  # only used in triple arrow scenarios
         self.set_initial_shadows()
         self.direction = None
+        #self.signal_dca_flag = False
 
     def run_scenario(self):
         # print(f"Running scenario with spec: {self.spec}")
@@ -374,7 +379,12 @@ class ScenarioRunner:
                 self.price_movement_at_candle_low = (
                     (getattr(self.row, "low") / self.long_entry_price) - 1
                 ) * 100
-                # check for DCA
+                # check for DCA due to signal
+                #if self.signal_dca_flag and self.dca and self.dca[0][0] > 0:
+                    # check for signal to DCA
+                #    if self.should_signal_dca_on_long():
+                #        self.perform_dca_on_long()
+                # check for DCA due to price movement
                 if (
                     self.dca and self.dca[0][0] > 0
                     and (
@@ -382,19 +392,20 @@ class ScenarioRunner:
                         <= (-1 * self.dca[0][0])
                     )
                 ):
-                    # update the entry price
-                    self.long_entry_price = self.get_new_entry_price()
-                    # recalculate price movement at candle low with new entry price
-                    self.price_movement_at_candle_low = (
-                        (getattr(self.row, "low") / self.long_entry_price) - 1
-                    ) * 100
-                    # set new tp
-                    if self.spec["tp_after_dca"] is not None:
-                        self.take_profit = self.spec["tp_after_dca"]
-                    # allocate more units
-                    self.units = round(self.units + get_dca_units(self.dca), 2)
-                    # jettison the DCA point so we don't hit it again
-                    del self.dca[0]
+                    # price movement either sets signal DCA flag, or causes immediate DCA
+                #    if self.spec["signal_dca"] and self.signal_dca_flag:
+                        # already set, nothing to do
+                #        pass
+                #    elif self.spec["signal_dca"] and not self.signal_dca_flag:
+                #        self.signal_dca_flag = True
+                #    else:
+                #        self.perform_dca_on_long()
+                    if self.spec["signal_dca"]:
+                        if self.should_signal_dca_on_long():
+                            self.perform_dca_on_long()
+                    else:
+                        self.perform_dca_on_long()
+
                 # check for a new trade low and min profit and if so save it for later
                 self.price_movement_low = min(
                     self.price_movement_low, self.price_movement_at_candle_low
@@ -457,25 +468,30 @@ class ScenarioRunner:
                     (getattr(self.row, "high") / self.short_entry_price) - 1
                 ) * 100
 
-                # check for DCA - loop through each remaining DCA step
-                for dca_pct in self.dca:
-                    if (
-                        dca_pct and dca_pct[0] > 0
-                        and (self.price_movement_at_candle_high >= dca_pct[0])
-                    ):
-                        # update the entry price
-                        self.short_entry_price = self.get_new_entry_price()
-                        # recalculate price movement at candle high with new entry price
-                        self.price_movement_at_candle_high = (
-                            (getattr(self.row, "high") / self.short_entry_price) - 1
-                        ) * 100
-                        # set new tp
-                        if self.spec["tp_after_dca"] is not None:
-                            self.take_profit = self.spec["tp_after_dca"]
-                        # allocate more units
-                        self.units = round(self.units + get_dca_units(self.dca), 2)
-                        # jettison the DCA point so we don't hit it again
-                        del self.dca[0]
+                # check for DCA due to signal
+                #if self.signal_dca_flag and self.dca and self.dca[0][0] > 0:
+                    # check for signal to DCA
+                #    if self.should_signal_dca_on_short():
+                #        self.perform_dca_on_short()
+                # check for DCA due to price movement
+                if (
+                    self.dca and self.dca[0][0] > 0
+                    and (self.price_movement_at_candle_high >= self.dca[0][0])
+                ):
+                    # price movement either sets signal DCA flag, or causes immediate DCA
+                #    if self.spec["signal_dca"] and self.signal_dca_flag:
+                        # already set, nothing to do do
+                #        pass
+                #    elif self.spec["signal_dca"] and not self.signal_dca_flag:
+                #        self.signal_dca_flag = True
+                #    else:
+                #        self.perform_dca_on_short()
+                    if self.spec["signal_dca"]:
+                        if self.should_signal_dca_on_short():
+                            self.perform_dca_on_short()
+                    else:
+                        self.perform_dca_on_short()
+
                 # check for new trade high (i.e. new min profit in a short)
                 self.price_movement_high = max(
                     self.price_movement_high, self.price_movement_at_candle_high
@@ -540,6 +556,7 @@ class ScenarioRunner:
                     self.row, "close"
                 )
                 self.direction = "long"
+                #self.signal_dca_flag = False
                 # reset tp and stop_loss to starting value
                 self.take_profit = self.spec["take_profit"]
                 self.stop_loss = self.spec["stop_loss"][self.tf_idx]
@@ -571,6 +588,7 @@ class ScenarioRunner:
                     self.row, "close"
                 )
                 self.direction = "short"
+                #self.signal_dca_flag = False
                 # reset stop_loss to starting value
                 self.take_profit = self.spec["take_profit"]
                 self.stop_loss = self.spec["stop_loss"][self.tf_idx]
@@ -912,6 +930,44 @@ class ScenarioRunner:
             return True
         return False
 
+    def should_signal_dca_on_long(self):
+        if self.spec["file_type"] == FileType.DOUBLE:
+            return self.should_signal_dca_on_long_double_timeframe(long_ltf_header="long_ltf")
+        if self.spec["file_type"] == FileType.TRIPLE:
+            return self.should_signal_dca_on_long_triple_timeframe(
+                long_ltf_header="long_ltf",
+                long_lltf_header="long_lltf"
+            )
+        raise Exception("should_signal_dca_on_long called in unexpected way")
+
+    def should_signal_dca_on_long_double_timeframe(self, long_ltf_header):
+        ltf_signal = getattr(self.row, long_ltf_header) in [1, "1"]
+        return ltf_signal
+
+    def should_signal_dca_on_long_triple_timeframe(self, long_ltf_header, long_lltf_header):
+        ltf_signal = getattr(self.row, long_ltf_header) in [1, "1"]
+        lltf_signal = getattr(self.row, long_lltf_header) in [1, "1"]
+        return ltf_signal or lltf_signal
+
+    def should_signal_dca_on_short(self):
+        if self.spec["file_type"] == FileType.DOUBLE:
+            return self.should_signal_dca_on_short_double_timeframe(short_ltf_header="short_ltf")
+        if self.spec["file_type"] == FileType.TRIPLE:
+            return self.should_signal_dca_on_short_triple_timeframe(
+                short_ltf_header="short_ltf",
+                short_lltf_header="short_lltf"
+            )
+        raise Exception("should_signal_dca_on_short called in unexpected way")
+
+    def should_signal_dca_on_short_double_timeframe(self, short_ltf_header):
+        ltf_signal = getattr(self.row, short_ltf_header) in [1, "1"]
+        return ltf_signal
+
+    def should_signal_dca_on_short_triple_timeframe(self, short_ltf_header, short_lltf_header):
+        ltf_signal = getattr(self.row, short_ltf_header) in [1, "1"]
+        lltf_signal = getattr(self.row, short_lltf_header) in [1, "1"]
+        return ltf_signal or lltf_signal
+
     def get_profit_pct_from_exit_price(self, exit_price):
         # takes an exit price like 34,001 and returns profit pct after fees and leverage
         # this only happens on signal exits
@@ -976,6 +1032,36 @@ class ScenarioRunner:
             return round(self.long_entry_price * (1 + exit_pct / 100), 1)
         if self.short_entry_price:
             return round(self.short_entry_price * (1 - exit_pct / 100), 1)
+
+    def perform_dca_on_long(self):
+        # update the entry price
+        self.long_entry_price = self.get_new_entry_price()
+        # recalculate price movement at candle low with new entry price
+        self.price_movement_at_candle_low = (
+            (getattr(self.row, "low") / self.long_entry_price) - 1
+        ) * 100
+        # set new tp
+        if self.spec["tp_after_dca"] is not None:
+            self.take_profit = self.spec["tp_after_dca"]
+        # allocate more units
+        self.units = round(self.units + get_dca_units(self.dca), 2)
+        # jettison the DCA point so we don't hit it again
+        del self.dca[0]
+
+    def perform_dca_on_short(self):
+        # update the entry price
+        self.short_entry_price = self.get_new_entry_price()
+        # recalculate price movement at candle high with new entry price
+        self.price_movement_at_candle_high = (
+            (getattr(self.row, "high") / self.short_entry_price) - 1
+        ) * 100
+        # set new tp
+        if self.spec["tp_after_dca"] is not None:
+            self.take_profit = self.spec["tp_after_dca"]
+        # allocate more units
+        self.units = round(self.units + get_dca_units(self.dca), 2)
+        # jettison the DCA point so we don't hit it again
+        del self.dca[0]
 
     def finish_trade(self, _type):
         exit_type = None
@@ -1161,8 +1247,12 @@ class ScenarioRunner:
 
     def get_new_entry_price(self):
         cur_entry_price = self.short_entry_price if self.short_entry_price else self.long_entry_price
-        sign = 1 if self.short_entry_price else -1
-        dca_entry_price = cur_entry_price * (1 + sign * self.dca[0][0] / 100)
+        if self.spec["signal_dca"]:
+            dca_entry_price = getattr(self.row, "close")
+        else:
+            dca_pct = self.dca[0][0]
+            sign = 1 if self.short_entry_price else -1
+            dca_entry_price = cur_entry_price * (1 + sign * dca_pct / 100)
         total_units = self.units + self.dca[0][1] / 100
         new_entry_price = ((cur_entry_price * self.units) + (dca_entry_price * self.dca[0][1] / 100)) / total_units
         return new_entry_price
@@ -1200,6 +1290,7 @@ def get_unique_composite_key(spec):
         "mean_floor": spec["mean_floor"],
         "floor_grace_period": spec["floor_grace_period"],
         "htf_signal_exit": spec["htf_signal_exit"],
+        "signal_dca": spec["signal_dca"]
     }
     return unique_composite_key
 

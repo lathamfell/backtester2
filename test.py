@@ -113,7 +113,6 @@ def test_dca(coll):
     compare(coll, "db_after_dca.json5")
 
 
-"""
 def test_dca_with_configurable_weights(coll):
     # this isn't of interest until the multi-DCA issue is solved
     main(
@@ -138,8 +137,8 @@ def test_dca_with_configurable_weights(coll):
         drawdown_limits=[-100],
         htf_signal_exits=[True]
     )
+    assert False
     compare(coll, "db_after_dca_with_configurable_weights.json5")
-"""
 
 
 def test_dca_with_sig_exit(coll):
@@ -318,7 +317,6 @@ def test_move_tp_after_dca(coll):
     compare(coll, "db_after_move_tp_after_dca.json5")
 
 
-"""
 def test_multi_dca(coll):
     # !!! this feature has a problem; AB is DCAing on price (% from original entry). BT is DCAing on the
     #   % move from entry, which only matches AB behavior for the first DCA.  This is because after each
@@ -342,8 +340,8 @@ def test_multi_dca(coll):
         drawdown_limits=[-100],
         htf_signal_exits=[True]
     )
+    assert False
     compare(coll, "db_after_multi_dca.json5")
-"""
 
 
 def test_multiple_datafilenames(coll):
@@ -815,6 +813,56 @@ def test_screen_out_scenarios_where_dca_greater_than_or_eq_sl(coll):
         htf_signal_exits=[False],
     )
     compare(coll, "db_after_screen_out_scenarios_where_dca_greater_than_or_eq_sl.json5")
+
+
+def test_signal_dca_with_dub_a(coll):
+    # signal DCA assumes limit entry on DCA signal; this is not the case!  It is market entry.
+    # TODO: fix the fees to properly represent market entry of signal DCA
+    main(
+        db_coll=c.COLL,
+        datafilenames=["test_data/btcusd-5m_with_cols_2017_laguerre_4h_1D.csv"],
+        take_profits=[[6, 1]],
+        tps_after_dca=[None],
+        dcas=[[[[2, 50]], [[1, 50]]]],
+        stop_losses=[[10, 10]],
+        leverages=[[3, 3]],
+        multiproc=False,
+        drawdown_limits=[-80],
+        winrate_floor=10,
+        mean_floor=-5,
+        median_floor=-5,
+        floor_grace_period=50,
+        enable_qol=False,
+        accuracy_tester_mode=False,
+        htf_signal_exits=[True],
+        signal_dcas=[True]
+    )
+    compare(coll, "db_after_signal_dca_with_dub_a.json5")
+
+
+def test_signal_dca_with_tri_arrow(coll):
+    # signal DCA assumes limit entry on DCA signal; this is not the case!  It is market entry.
+    # TODO: fix the fees to properly represent market entry of signal DCA
+    main(
+        db_coll=c.COLL,
+        datafilenames=[
+            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv",
+        ],
+        take_profits=[[6, 4, 1]],
+        tps_after_dca=[None],
+        stop_losses=[[10, 10, 10]],
+        dcas=[[[[8, 50]], [[3, 50]], [[3, 50]]]],
+        leverages=[[3, 3, 3]],
+        multiproc=False,
+        enable_qol=False,
+        winrate_floor=0,
+        mean_floor=-10,
+        median_floor=-10,
+        drawdown_limits=[-100],
+        htf_signal_exits=[True],
+        signal_dcas=[True]
+    )
+    compare(coll, "db_after_signal_dca_with_tri_arrow.json5")
 
 
 def test_screen_out_on_mean(coll):
