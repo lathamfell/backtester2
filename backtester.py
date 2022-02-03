@@ -388,8 +388,9 @@ class ScenarioRunner:
                 if (
                     self.dca and self.dca[0][0] > 0
                     and (
-                        self.price_movement_at_candle_low
-                        <= (-1 * self.dca[0][0])
+                    getattr(self.row, "low") <= self.dca[0][0]
+                    #    self.price_movement_at_candle_low
+                    #    <= (-1 * self.dca[0][0])
                     )
                 ):
                     # price movement either sets signal DCA flag, or causes immediate DCA
@@ -476,7 +477,8 @@ class ScenarioRunner:
                 # check for DCA due to price movement
                 if (
                     self.dca and self.dca[0][0] > 0
-                    and (self.price_movement_at_candle_high >= self.dca[0][0])
+                    #and (self.price_movement_at_candle_high >= self.dca[0][0])
+                    and getattr(self.row, "high") >= self.dca[0][0]
                 ):
                     # price movement either sets signal DCA flag, or causes immediate DCA
                 #    if self.spec["signal_dca"] and self.signal_dca_flag:
@@ -570,6 +572,7 @@ class ScenarioRunner:
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
                 self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
+                self.dca = replace_dca_pct_with_price(dca=self.dca, price=self.long_entry_price, direction="long")
                 # allocate units as a fraction of 1, depending how many DCA pts there are
                 self.units = get_dca_units(self.dca, first_entry=True)
 
@@ -602,6 +605,7 @@ class ScenarioRunner:
                 self.price_movement_high = -1000
                 self.price_movement_low = 1000
                 self.dca = copy.deepcopy(self.spec["dca"][self.tf_idx])  # get DCA fresh for this trade
+                self.dca = replace_dca_pct_with_price(dca=self.dca, price=self.short_entry_price, direction="short")
                 # allocate units as a fraction of 1, depending how many DCA pts there are
                 self.units = get_dca_units(self.dca, first_entry=True)
 
@@ -1250,12 +1254,27 @@ class ScenarioRunner:
         if self.spec["signal_dca"]:
             dca_entry_price = getattr(self.row, "close")
         else:
-            dca_pct = self.dca[0][0]
-            sign = 1 if self.short_entry_price else -1
-            dca_entry_price = cur_entry_price * (1 + sign * dca_pct / 100)
+            #dca_pct = self.dca[0][0]
+            #sign = 1 if self.short_entry_price else -1
+            #dca_entry_price = cur_entry_price * (1 + sign * dca_pct / 100)
+            dca_entry_price = self.dca[0][0]
         total_units = self.units + self.dca[0][1] / 100
         new_entry_price = ((cur_entry_price * self.units) + (dca_entry_price * self.dca[0][1] / 100)) / total_units
         return new_entry_price
+
+
+def replace_dca_pct_with_price(dca, price, direction):
+    if direction == "short":
+        sign = 1
+    elif direction == "long":
+        sign = -1
+    else:
+        raise Exception(f"replace dca_pct_with_price called with bad argument {direction}")
+
+    for dca_point in dca:
+        if dca_point[0] > 0:
+            dca_point[0] = (1 + sign * dca_point[0] / 100) * price
+    return dca
 
 
 def is_valid_scenario(spec):

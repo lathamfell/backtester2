@@ -113,34 +113,6 @@ def test_dca(coll):
     compare(coll, "db_after_dca.json5")
 
 
-def test_dca_with_configurable_weights(coll):
-    # this isn't of interest until the multi-DCA issue is solved
-    main(
-        db_coll=c.COLL,
-        datafilenames=[
-            "test_data/BYBIT_BTCUSD_1D_45m_5m_on_5m_09_2021.csv"
-        ],
-        take_profits=[[3, 2, 1]],
-        tps_after_dca=[None],
-        stop_losses=[[6, 4, 2]],
-        leverages=[[4, 2, 1]],
-        dcas=[
-            [[[0]], [[2, 50]], [[0]]],
-            [[[0]], [[0]], [[0]]],
-            [[[2, 33], [4, 34]], [[2, 50]], [[0.25, 20], [0.5, 30], [0.75, 40]]]
-        ],
-        multiproc=False,
-        enable_qol=False,
-        winrate_floor=0,
-        mean_floor=-10,
-        median_floor=-10,
-        drawdown_limits=[-100],
-        htf_signal_exits=[True]
-    )
-    assert False
-    compare(coll, "db_after_dca_with_configurable_weights.json5")
-
-
 def test_dca_with_sig_exit(coll):
     main(
         db_coll=c.COLL,
@@ -318,10 +290,6 @@ def test_move_tp_after_dca(coll):
 
 
 def test_multi_dca(coll):
-    # !!! this feature has a problem; AB is DCAing on price (% from original entry). BT is DCAing on the
-    #   % move from entry, which only matches AB behavior for the first DCA.  This is because after each
-    #   DCA entry, the entry price changes, and BT is still doing % from entry, instead of a fixed price
-    #   point like AB.
     main(
         db_coll=c.COLL,
         datafilenames=[
@@ -340,7 +308,6 @@ def test_multi_dca(coll):
         drawdown_limits=[-100],
         htf_signal_exits=[True]
     )
-    assert False
     compare(coll, "db_after_multi_dca.json5")
 
 

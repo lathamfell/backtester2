@@ -7,7 +7,6 @@ def generate_tri_configs():
     LTF_TPS = [[0.3], [0.5], [4]]  # these are set
     LLTF_TPS = [[0.2], [0.3], [0.5], [1]]  # these are set
 
-    # max SLs are 25 at 1x, 16 at 2x, 12 at 3x
     HTF_SLS = [[11]]
     LTF_SLS = [[11]]
     LLTF_SLS = [[11]]
@@ -30,13 +29,28 @@ def generate_tri_configs():
                 TRI_STOP_LOSS_COMBOS.append([i[0], j[0], k[0]])
     print(TRI_STOP_LOSS_COMBOS)
 
-    TRI_DCA_COMBOS = []
-    for i in HTF_DCAS:
-        for j in LTF_DCAS:
-            for k in LLTF_DCAS:
-                if i[0][0][0] >= j[0][0][0] and j[0][0][0] >= k[0][0][0]:
-                    TRI_DCA_COMBOS.append([i[0], j[0], k[0]])
-    print(TRI_DCA_COMBOS)
+    #TRI_DCA_COMBOS = []
+    #for i in HTF_DCAS:
+    #    for j in LTF_DCAS:
+    #        for k in LLTF_DCAS:
+    #            if i[0][0][0] >= j[0][0][0] and j[0][0][0] >= k[0][0][0]:
+    #                TRI_DCA_COMBOS.append([i[0], j[0], k[0]])
+    #print(TRI_DCA_COMBOS)
+
+    TRI_DCA_COMBOS = [
+        [[[1, 50]], [[1, 50]], [[1, 50]]],
+        [[[2, 50]], [[2, 50]], [[2, 50]]],
+        [[[3, 50]], [[3, 50]], [[3, 50]]],
+        [[[4, 50]], [[4, 50]], [[4, 50]]],
+        [[[1, 25], [2, 50]], [[1, 25], [2, 50]], [[1, 25], [2, 50]]],
+        [[[1, 25], [3, 50]], [[1, 25], [3, 50]], [[1, 25], [3, 50]]],
+        [[[1, 25], [4, 50]], [[1, 25], [4, 50]], [[1, 25], [4, 50]]],
+        [[[2, 25], [4, 50]], [[2, 25], [4, 50]], [[2, 25], [4, 50]]],
+        [[[1, 33], [2, 33]], [[1, 33], [2, 33]], [[1, 33], [2, 33]]],
+        [[[1, 33], [3, 33]], [[1, 33], [3, 33]], [[1, 33], [3, 33]]],
+        [[[1, 33], [4, 33]], [[1, 33], [4, 33]], [[1, 33], [4, 33]]],
+        [[[2, 33], [4, 33]], [[2, 33], [4, 33]], [[2, 33], [4, 33]]]
+    ]
 
     return TRI_TAKE_PROFIT_COMBOS, TRI_STOP_LOSS_COMBOS, TRI_DCA_COMBOS
 
@@ -58,8 +72,8 @@ def run_tri_arrow():
         stop_losses=configs[1],
         #dcas=[[[[1, 50]], [[1, 50]], [[1, 50]]]],
         dcas=configs[2],
-        #leverages=[[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4], [5, 5, 5]],
-        leverages=[[1, 1, 1]],
+        leverages=[[1, 1, 1], [2, 2, 2], [3, 3, 3]],
+        #leverages=[[1, 1, 1]],
         replace_existing_scenarios=False,
         drawdown_limits=[-100],
         mean_floor=0,
@@ -67,7 +81,7 @@ def run_tri_arrow():
         winrate_floor=90,
         multiproc=True,
         #multiproc=False,
-        signal_dcas=[True, False]
+        #signal_dcas=[True, False]
         #signal_dcas=[True]
     )
 
@@ -95,13 +109,22 @@ def generate_dub_configs():
             DUB_STOP_LOSS_COMBOS.append([i[0], j[0]])
     print(DUB_STOP_LOSS_COMBOS)
 
-    DUB_DCA_COMBOS = []
-    for i in HTF_DCAS:
-        for j in LTF_DCAS:
-            #if i[0][0][0] >= j[0][0][0]:
-            DUB_DCA_COMBOS.append([i[0], j[0]])
-    print(DUB_DCA_COMBOS)
-
+    #DUB_DCA_COMBOS = []
+    #for i in HTF_DCAS:
+    #    for j in LTF_DCAS:
+    #        #if i[0][0][0] >= j[0][0][0]:
+    #        DUB_DCA_COMBOS.append([i[0], j[0]])
+    #print(DUB_DCA_COMBOS)
+    DUB_DCA_COMBOS = [
+        [[[1, 50]], [[1, 50]]],
+        [[[2, 50]], [[2, 50]]],
+        [[[3, 50]], [[3, 50]]],
+        [[[4, 50]], [[4, 50]]],
+        [[[1, 25], [2, 50]], [[1, 25], [2, 50]]],
+        [[[1, 25], [3, 50]], [[1, 25], [3, 50]]],
+        [[[1, 25], [4, 50]], [[1, 25], [4, 50]]],
+        [[[2, 25], [4, 50]], [[2, 25], [4, 50]]]
+    ]
     return DUB_TAKE_PROFIT_COMBOS, DUB_STOP_LOSS_COMBOS, DUB_DCA_COMBOS
 
 

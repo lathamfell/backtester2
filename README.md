@@ -41,3 +41,46 @@ BetaBot is a collection of scripts executed as cronjobs.
 To update cron schedule:
 `crontab -e`
 
+
+Thunderdome steps:
+
+Phase 1: Single timeframe comparison.
+1. Download UTC ISO HA indicator data for 14 timeframes:
+1D, two years 
+12h, two years
+8h, two years
+6h, two years
+4h, two years
+3h, two years
+2h, two years
+90m, two years
+1h, two years
+45m, two years
+30m, two years
+15m, six months
+10m, four months
+5m, two months
+
+For each single TF dataset: 
+a. delete price data prior to desired date range.
+b. add short/long column names
+c. delete extra columns
+d. save as backtester2/data/TV_data_exports/BYBIT_BTCUSD_1D_01_2020 etc.
+2. Update 5m base data sheet up to current date.
+3. Run each single TF export through the signal remapper.
+
+4. Run accuracy tester multi timeframe on all, with TP/SL up to 20.
+Establish peak accuracy TP/SL % for each timeframe.
+
+Phase 2: Double timeframe comparison.
+Run accuracy tester with every combination of the single timeframes, with TP/SL up to 20.
+Establish peak accuracy TP/SL % for each timeframe.
+
+Phase 3: Triple timeframe comparison.
+
+
+Phase 4: Combined TF comparisons.
+
+
+Phase 5: TP/SL/DCA scenario runs.
+
